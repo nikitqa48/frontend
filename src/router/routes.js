@@ -15,7 +15,17 @@ const routes = [
         path: 'state/', component: () => import('pages/support.vue')
       }
     ]
-  }
+  },
+    {
+      path: '/news/:id',
+      name: 'detail',
+      component: () => import('layouts/Detail_news.vue'),
+      props: true,
+    },
+    {
+      path:'/calculate',
+      component: () => import('layouts/Calculate.vue')
+    }
 ]
 
 // Always leave this as last one

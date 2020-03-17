@@ -3,7 +3,6 @@
       <q-separator dark vertical inset />
       <q-btn class="invest" stretch flat label="Инвест Липецк" to = "/" />
       <q-space />
-
       <!-- <q-btn-dropdown stretch flat label="Dropdown">
         <q-list>
           <q-item-label header>Folders</q-item-label>
@@ -36,8 +35,6 @@
         </q-list>
       </q-btn-dropdown> -->
       <q-separator dark vertical />
-      <q-btn stretch flat label="О НАС"  class="header_button"/>
-      <q-separator dark vertical />
       <q-btn stretch flat label="РЕГИОН"  class="header_button"/>
        <q-separator dark vertical />
       <q-btn stretch flat label="УСЛУГИ" class="header_button"/>
@@ -48,7 +45,7 @@
        <q-separator dark vertical />
        <q-btn class="header_button" stretch flat label="ПЛОЩАДКИ" />
        <q-separator dark vertical />
-       <q-btn class="header_button" stretch flat label="ПРЕСС-ЦЕНТР" />
+       <q-btn class="header_button" stretch flat label="НОВОСТИ" />
         <q-separator dark vertical />
         <q-btn  class="header_button" stretch flat label="КОНТАКТЫ" />
     </q-toolbar>

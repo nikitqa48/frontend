@@ -3,10 +3,11 @@
             <div class="news_container">
                 <h2 class="news_head">Новости</h2>
             <div class="itms">
-                   
-                <div class="itm" v-for="item in news">
+                
+                <div class="itm" v-for="item in news" >
+                
                     <div class="itm_img"><img :src= item.image></div>
-                    
+                  
                 <div class="itm_but">
         
                     <p class="itm_data">{{item.created}}</p>
@@ -14,7 +15,8 @@
                     
                     <p class="itm_text">
                       {{item.body}}
-                            <a href="#"><button class="podrobnee" @click=" splitWord(item.body)">Подробнее</button></a>
+
+                               <router-link :to="{name: 'detail', params: { id: item.id}}"><button class="podrobnee" @click=" splitWord(item.body)">Подробнее</button>  </router-link>
                     </p>
                 </div>
                 </div>
@@ -113,7 +115,7 @@ export default {
   //  } 
   },
   mounted() {
-    const news_url = "https://backendinvest.admlr.lipetsk.ru/news/?format=json";
+    const news_url = "http://127.0.0.1:8000/news/?format=json";
 
     fetch(news_url)
       .then(response => response.json())
