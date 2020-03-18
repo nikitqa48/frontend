@@ -2,30 +2,37 @@
     <div>
           <div class="q-pa-md">
     <q-form @submit="onSubmit" class="q-gutter-md">
-      <q-radio name="shape" v-model="shape" val="line" label="Line" />
-      <q-radio name="shape" v-model="shape" val="rectangle" label="Rectangle" />
-      <q-radio name="shape" v-model="shape" val="ellipse" label="Ellipse" />
-      <q-radio name="shape" v-model="shape" val="polygon" label="Polygon" />
-
+  
+    Отрасль: <select  v-model="industry">  
+        <option value="1">Промышленность </option>
+        <option value="2">Сельское Хозяйство </option>
+        <option value="">Все отрасли</option>
+      </select>
+    Тип Поддержки: 
+    <select v-model="type">
+      <option value="direct"> Прямая финансовая поддержка </option>
+      <option value="loan"> заемная финансовая поддержка </option>
+      <option value=""> Все виды поддержки</option>
+      </select>
+   
+        Территория: <select v-model="territory">
+      <option value="oez"> ОЭЗ </option>
+      <option value="park"> Индустриальный парк </option>
+      <option value="mono"> Моногород</option>
+      <option value="vne"> Территория вне</option>
+      <option value=""> Любая территория </option>
+      </select> 
       <div>
-        <q-btn label="Submit" type="submit" color="primary"/>
+        <q-btn label="Найти" type="submit" color="primary"/>
       </div>
     </q-form>
 
-    <q-card v-if="submitResult.length > 0" flat bordered class="q-mt-md bg-grey-2">
-      <q-card-section>Submitted form contains the following formData (key = value):</q-card-section>
-      <q-separator />
-      <q-card-section class="row q-gutter-sm items-center">
-        <div
-          v-for="(item, index) in submitResult"
-          :key="index"
-          class="q-px-sm q-py-xs bg-grey-8 text-white rounded-borders text-center text-no-wrap"
-        >{{ item.name }} = {{ item.value }}</div>
-      </q-card-section>
-    </q-card>
+
   </div>
-     <div v-for="item in xz">
-         asd
+     <div v-for="item in support">
+        
+         
+{{support}}
      </div>   
     </div>
 </template>
@@ -33,29 +40,31 @@
 export default {
     data(){
         return{
-        xz:{},
+        support:{},
+        industry:'1',
+        type:'',
+        territory:'',
     shape: 'line',
       submitResult: []  
         }
     },
     methods:{
-            onSubmit (evt) {
+      onSubmit (evt) {
       const formData = new FormData(evt.target)
       const submitResult = []
-
-      for (const [ name, value ] of formData.entries()) {
-        submitResult.push({
-          name,
-          value
-        })
-      }
+      const url = 'http://127.0.0.1:8000/support/?format=json'+'&industry='+this.industry+'&type='+this.type+'&territory='+this.territory
+      console.log(url)
+      // &recipient=medium&type=loan
+        fetch(url).then(response => response.json()).then(data => (this.support = data))
+    
 
       this.submitResult = submitResult
-    }
+    },
+
     },
     mounted(){
-        const url = 'http://127.0.0.1:8000/support/?format=json'
-        fetch(url).then(response => response.json()).then(data => (this.xz = data))
+        const url = 'http://127.0.0.1:8000/support/?format=json'+'&industry=1&recipient=medium&type=loan'
+        fetch(url).then(response => response.json()).then(data => (this.support = data))
     }
 }
 
