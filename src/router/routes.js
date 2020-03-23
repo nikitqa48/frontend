@@ -8,14 +8,25 @@ const routes = [
     ]
   },
   {
-    path: '/',
+    path: '/state',
     component: () => import('layouts/second_layout.vue'),
     children: [
       {
-        path: 'state/', component: () => import('pages/support.vue')
+        path: '/', component: () => import('pages/support.vue'),
+        
+      },
+      {
+        name:'support',
+        path: 'support/', component: () => import('pages/measures.vue')
+      },
+      {
+        path:'/state/support/:id',
+        name: 'support_detail',
+        component: () => import('pages/support_detail.vue')
       }
     ]
   },
+  
     {
       path: '/news/:id',
       name: 'detail',

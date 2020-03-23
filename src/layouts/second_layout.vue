@@ -1,11 +1,8 @@
 <template>
-
 <div class="title">
      <header-vue/>
       <forms-vue/>
      <router-view/>
-   
-   
 
 </div>
 </template>

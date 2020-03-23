@@ -1,9 +1,10 @@
 <template>
   <div class="slider">
+    <div class = "history">
     <q-carousel
       infinite
       v-model="slide"
-      height="100vh"
+      height="70vh"
       ref="carousel"
       transition-prev="slide-right"
       transition-next="slide-left"
@@ -120,13 +121,23 @@
         </ul>
       </div>
     </q-carousel-control>
+    </div>
   </div>
 </template>
 <style scoped>
+.history{
+  background:white;
+  height: 100%;
+}
 .dots {
   margin-top: 100%;
   display: flex;
   flex-direction: column;
+}
+.column{
+  border:1px solid red;
+  width:70%;
+  overflow:visible!important;
 }
 .dots_industry {
   display: flex;

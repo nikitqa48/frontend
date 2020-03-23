@@ -3,7 +3,9 @@
     <div class="overlay"></div>
     <div class="container">
       <div class="left">
+         <router-link :to="{name: 'support'}">
         <div class="left_content">
+          
           <li>
             Поддержка проектов
             <br />промышленной отрасли
@@ -12,6 +14,7 @@
             <img src="../statics/image/dontknow.svg" />
           </div>
         </div>
+        </router-link>
         <div class="left_content">
           <li>
             Поддержка проектов малого и

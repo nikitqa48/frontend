@@ -346,7 +346,7 @@ font-size: 1vw;
 display:flex;
 flex-direction: row;
 cursor: pointer;
-width:17vw;
+wi\h:17vw;
 }
 .sub_title{
   margin-top:2%;
