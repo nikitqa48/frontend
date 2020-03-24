@@ -61,7 +61,7 @@
                 </div>
         
                 </div>
-               
+             
 
                 <!-- <div class="itm" v-for="item in news" >
                 
@@ -79,10 +79,13 @@
                     </p>
                 </div>
                 </div> -->
-            </div>
-            <button class="all">
-              asda
+                <div class="all">
+                   <button class="more">
+              Показать все новости
             </button>
+                </div>
+            </div>
+         
             </div>
         </div>
 </template>
@@ -112,7 +115,20 @@
   width:48%;
 }
 .all{
-  margin-top: 10%;
+margin-top: 3%;
+width:100%;
+display: flex;
+justify-content: center;
+}
+.more{
+border:none;
+border-radius: 5px;
+background:#52A4DF;
+color:white;
+cursor: pointer;
+width:14vw;
+font-size: 0.8vw;
+height:5vh;
 }
 .item2:nth-child(4){
 
@@ -212,7 +228,7 @@
 }
 .image img{
  
-  height: 100%;
+  
   width:100%;
 }
 

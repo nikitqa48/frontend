@@ -2,29 +2,56 @@
   <div class="slider">
     <div class = "history">
       <div class="number"> 1/4 </div>
-      <h4> История успеха Липецкой области</h4>
-          <hooper :settings="hooperSettings" class="ok">
+      <h4> Истории успеха </h4>
+      <p class="today"> В Липецкой области </p>
+      <div class="buttons">
+                <button  @click.prevent="slidePrev()">prev</button>
+            <button class="next" @click.prevent="slideNext()">next</button>
+      </div>
+         <hooper :settings="hooperSettings" class="ok" ref="carousel">
+ 
       <slide>
         <div class="images img1">
-         <div class="parent">
-           <div class="child">
+         <div class="wrap">
+           <div class="left">
+           </div>
+           <div class="right">
+             <img src="/statics/image/OEZ.png">
            </div>
          </div>
         </div>
       </slide>
       <slide>          
         <div class="images img2">
-          <h2>Slide 2</h2>
+                 <div class="wrap">
+           <div class="left">
+           </div>
+           <div class="right">
+             <img src="/statics/image/OEZ.png">
+           </div>
+         </div>
         </div> 
       </slide>
             <slide>          
         <div class="images img2">
-          <h2>Slide 3</h2>
+                 <div class="wrap">
+           <div class="left">
+           </div>
+           <div class="right">
+             <img src="/statics/image/OEZ.png">
+           </div>
+         </div>
         </div> 
       </slide>
                 <slide>          
         <div class="images img2">
-          <h2>Slide 4</h2>
+                 <div class="wrap">
+           <div class="left">
+           </div>
+           <div class="right">
+             <img src="/statics/image/OEZ.png">
+           </div>
+         </div>
         </div> 
       </slide>
      </hooper>
@@ -162,8 +189,42 @@
  background: url('/statics/image/indesit.png');
   height: 100vh;
 }
+.next{
+  margin-right: 2%;
+}
+.number{
+  color:white;
+  margin-top: 5%;
+}
+.buttons{
+  display: flex;
+  width:83%;
+  justify-content: space-between;
+  flex-direction: row;
+}
+.buttons button{
+  border:none;
+  cursor: pointer;
+  outline: none;
+  background:white;
+  border-radius: 5px;
+  width: 2.5vw;
+  margin-bottom: 0.5%;
+  height:5vh;
+}
+
+
+.today{
+  margin-top: 0.5%;
+  color: grey;
+}
+.history h4{
+    margin-top: 0;
+  color:white;
+  margin-bottom: 0;
+}
+
 .parent{
-    
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 50%;
@@ -180,7 +241,6 @@
 }
 .ok{
   outline: none;
-  border:1px solid red;
 }
 .dots {
   margin-top: 100%;
@@ -188,7 +248,7 @@
   flex-direction: column;
 }
 .column{
-  border:1px solid red;
+ 
   width:70%;
   overflow:visible!important;
 }
@@ -209,23 +269,7 @@
   color: white;
   width: 80%;
 }
-.buttons {
-  display: flex;
-  height: 10vh;
-  flex-direction: column;
-}
-.buttons button {
-  outline: none;
-  cursor: pointer;
-  width: 1.5vw;
-  background: none;
-  margin-top: 10%;
-  height: 1vh;
-  align-self: center;
-  border: none;
-  opacity: 0.6;
-  border-bottom: 1.5px solid white;
-}
+
 .h2_indesit {
   font-size: 3vw;
 }
@@ -259,10 +303,34 @@
   font-size: 3.75vw;
   color: white;
 }
+.left{
+  background: white;
+  width:50%;
+}
+.wrap{
+
+  display:flex;
+  flex-direction: row;
+}
+.right{
+  height:100%;
+  width:50%;
+}
+.right img{
+  width: 100%;
+}
 .images, .hooper {
-  border:1px solid red;
-  padding-top: 5%;
-  margin-left: 2%;
+
+  
+}
+.images{
+
+  margin-right: 2%;
+  height:100%;
+  
+}
+.hooper{
+ 
   height: 70%;
 }
 </style>
@@ -275,10 +343,27 @@ Vue.use(Hooper, Slide)
 
 
 export default {
-  
+    methods:{
+      slidePrev() {
+      this.$refs.carousel.slidePrev();
+    },
+
+        slideNext() {
+      this.$refs.carousel.slideNext();
+    },
+        updateCarousel(payload) {
+      this.myCarouselData = payload.currentSlide;
+    }
+  },
+  watch:{
+       carouselData () {
+      this.$refs.carousel.slideTo(this.carouselData);
+    }
+  },  
   data() {
     return {
       slide: "1",
+      carouselData: 0,
     hooperSettings: {
                     infiniteScroll: false,
                     centerMode: true,
@@ -286,19 +371,19 @@ export default {
                     playSpeed: 3500,
                     breakpoints: {
                         2400: { // 2400px ~
-                            itemsToShow: 1.5
+                            itemsToShow: 1.2
                         },
                         1800: { // 1800px ~ 2400px
-                            itemsToShow: 1.5
+                            itemsToShow: 1.2
                         },
                         1500: { // 1500px ~ 1800px
-                            itemsToShow: 1.5
+                            itemsToShow: 1.2
                         },
                         1100: { // 1100px ~ 1500px
-                            itemsToShow: 1.5
+                            itemsToShow: 1.2
                         },
                         600: { // 600px ~ 1100px
-                            itemsToShow: 1.5
+                            itemsToShow: 1.2
                         },
                         0: { // 0px ~ 600px
                             itemsToShow: 1
@@ -306,10 +391,11 @@ export default {
                     }
                 }   
     }
+
   },
   components:{
    Hooper, 
    Slide
-  }
+  },
 };
 </script>
