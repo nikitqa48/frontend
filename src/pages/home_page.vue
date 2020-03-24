@@ -34,6 +34,7 @@ import videoVue from '../components/head_page/video.vue';
 import newsVue from "../components/head_page/news.vue";
 import formsVue from "../components/forms.vue";
 import headerVue from "../components/header.vue";
+import hooper from 'hooper';
 Vue.use(fullpage, vuescroll);
 export default {
   components: {

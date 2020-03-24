@@ -16,7 +16,8 @@ module.exports = function (ctx) {
       'app.sass',
       'animate.css',
       'scrolloverflow',
-      'fullpage.css'
+      'fullpage.css',
+      'hooper.css'
     ],
 
     // https://github.com/quasarframework/quasar/tree/dev/extras
@@ -86,7 +87,8 @@ module.exports = function (ctx) {
     // animations: 'all', // --- includes all animations
     // https://quasar.dev/options/animations
     animations: [
-    
+      'bounceInLeft',
+      'bounceOutRight'
     ],
 
     // https://quasar.dev/quasar-cli/developing-ssr/configuring-ssr

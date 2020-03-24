@@ -1,7 +1,34 @@
 <template>
   <div class="slider">
     <div class = "history">
-    <q-carousel
+      <div class="number"> 1/4 </div>
+      <h4> История успеха Липецкой области</h4>
+          <hooper :settings="hooperSettings" class="ok">
+      <slide>
+        <div class="images img1">
+         <div class="parent">
+           <div class="child">
+           </div>
+         </div>
+        </div>
+      </slide>
+      <slide>          
+        <div class="images img2">
+          <h2>Slide 2</h2>
+        </div> 
+      </slide>
+            <slide>          
+        <div class="images img2">
+          <h2>Slide 3</h2>
+        </div> 
+      </slide>
+                <slide>          
+        <div class="images img2">
+          <h2>Slide 4</h2>
+        </div> 
+      </slide>
+     </hooper>
+    <!-- <q-carousel
       infinite
       v-model="slide"
       height="70vh"
@@ -120,14 +147,40 @@
           <button @click="slide = '4', show()" ref="d"></button>
         </ul>
       </div>
-    </q-carousel-control>
+    </q-carousel-control> -->
+
     </div>
   </div>
 </template>
 <style scoped>
+
 .history{
-  background:white;
-  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+ background: url('/statics/image/indesit.png');
+  height: 100vh;
+}
+.parent{
+    
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height:100%;
+}
+.child { 
+  height: 300px;
+  width: 100%;
+   background:  linear-gradient(to left, rgba(255,255,255,0) 20%, rgba(255,255,255,1),  ),url('/statics/image/OEZ.png');
+   background-size: cover;
+}
+.ok{
+  outline: none;
+  border:1px solid red;
 }
 .dots {
   margin-top: 100%;
@@ -206,20 +259,57 @@
   font-size: 3.75vw;
   color: white;
 }
+.images, .hooper {
+  border:1px solid red;
+  padding-top: 5%;
+  margin-left: 2%;
+  height: 70%;
+}
 </style>
 <script>
+import { Hooper } from 'hooper'
+import {Slide } from 'hooper'
+import 'hooper/dist/hooper.css';
+import Vue from "vue";
+Vue.use(Hooper, Slide)
+
+
 export default {
+  
   data() {
     return {
       slide: "1",
-      opts: {
-        start: 0,
-        dir: "v",
-        duration: 500,
-        beforeChange: function(prev, next) {},
-        afterChange: function(prev, next) {}
-      }
-    };
+    hooperSettings: {
+                    infiniteScroll: false,
+                    centerMode: true,
+                    autoPlay: false,
+                    playSpeed: 3500,
+                    breakpoints: {
+                        2400: { // 2400px ~
+                            itemsToShow: 1.5
+                        },
+                        1800: { // 1800px ~ 2400px
+                            itemsToShow: 1.5
+                        },
+                        1500: { // 1500px ~ 1800px
+                            itemsToShow: 1.5
+                        },
+                        1100: { // 1100px ~ 1500px
+                            itemsToShow: 1.5
+                        },
+                        600: { // 600px ~ 1100px
+                            itemsToShow: 1.5
+                        },
+                        0: { // 0px ~ 600px
+                            itemsToShow: 1
+                        }
+                    }
+                }   
+    }
+  },
+  components:{
+   Hooper, 
+   Slide
   }
 };
 </script>

@@ -14,9 +14,11 @@
                          <p class="opacity">
                              Получатель:
                          </p>
+                           <transition name="bounceInLeft">
                          <p class="poluch" v-if="support.recipient == 'small'">
                              Малые и средние предприниматели
                          </p>
+                           </transition>
                            <p class="poluch" v-if="support.recipient == 'legally'">
                              Юридические лица
                          </p>
@@ -60,6 +62,7 @@ export default {
     justify-content: center;
     background: linear-gradient(180deg, #202F40 0%, #0D0D1C 100%);
 }
+
 .container{
     margin-top: 2%;
     height:92%;
@@ -95,4 +98,5 @@ export default {
     margin-top: 1.5vh;
     display: flex;
 }
+
 </style>
