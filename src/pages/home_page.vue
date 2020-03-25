@@ -6,7 +6,7 @@
     <video-vue/>
       <full-page ref="fullpage" :options="opts" id="fullpage">
         <div class="section">
-          <industry-vue />
+        
         </div>
         <div class="section">
           <map-vue />

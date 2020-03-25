@@ -1,13 +1,14 @@
 <template>
-
                   <div class="news">
                      <div class="overlay"></div>
                      <div class="opacity"></div>
             <div class="news_container">
                 <h3 class="news_head">Новости</h3>    
             <div class="itms">
-        
+        <div class="aside">
+          <div class="wrap_aside">
                 <div class = "item1">
+                   <router-link :to="{name: 'detail', params: { id: news[0].id}}" class="rout"> 
                   <div class="image">
                      <div class="dark"></div>
                        <div class="title">
@@ -15,12 +16,13 @@
                   </div>
                   <img :src="news[0].image">
                   </div>
-                 
+                   </router-link>
                 </div>
            
                 <div class="item_container">
                   
                 <div class="item2">
+                  <router-link :to="{name: 'detail', params: { id: news[1].id}}" class="rout"> 
                   <div class="image2">
                      <div class="dark"></div>
                        <div class="title">
@@ -28,8 +30,10 @@
                   </div>
                     <img :src="news[1].image">
                   </div>
+                  </router-link>
                 </div>
             <div class="item2">
+              <router-link :to="{name: 'detail', params: { id: news[2].id}}" class="rout"> 
                   <div class="image2">
                      <div class="dark"></div>
                        <div class="title">
@@ -37,9 +41,11 @@
                   </div>
                     <img :src="news[2].image">
                   </div>
+              </router-link>
                 </div>
-                <!-- <router-link :to="{name: 'detail', params: { id: news[3].id}}"> -->
+               
                 <div class="item2">
+                  <router-link :to="{name: 'detail', params: { id: news[3].id}}" class="rout"> 
                   <div class="image2">
                      <div class="dark"></div>
                        <div class="title">
@@ -47,10 +53,11 @@
                   </div>
                     <img :src="news[3].image">
                   </div>
+                   </router-link> 
                 </div>
-           
-                
+            
                       <div class="item2">
+                        <router-link :to="{name: 'detail', params: { id: news[4].id}}" class="rout"> 
                   <div class="image2">
                     <div class="dark"></div>
                        <div class="title">
@@ -58,27 +65,13 @@
                   </div>
                     <img :src="news[4].image">
                   </div>
+                        </router-link>
                 </div>
         
                 </div>
-             
+          </div>
+        </div>
 
-                <!-- <div class="itm" v-for="item in news" >
-                
-                    <div class="itm_img"><img :src= item.image></div>
-                  
-                <div class="itm_but">
-        
-                    <p class="itm_data">{{item.created}}</p>
-                    <p class="itm_header"><b>{{item.title}}</b></p>
-                    
-                    <p class="itm_text">
-                      {{item.body}}
-                {{item}}
-                               <router-link :to="{name: 'detail', params: { id: item.id}}"><button class="podrobnee" @click=" splitWord(item.body)">Подробнее</button>  </router-link>
-                    </p>
-                </div>
-                </div> -->
                 <div class="all">
                    <button class="more">
               Показать все новости
@@ -94,28 +87,44 @@
 
 .item_container{
   align-self: flex-end;
+
+  height: 100%;
   width:45%;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
 }
+
 .news{
   height: 100vh;
   color:white;
 }
+.wrap_aside{
+  display: flex;
+  height:100%;
+}
+.aside{
+  display:flex;
+  height:60%;
+  flex-direction: row;
+}
 .item2{
   border-radius: 5px;
   cursor:pointer;
+  height:48%;
   margin-left: 2%;
   width:48%;
 }
+.rout{
+  width:100%;
+  height:100%;
+  color:white;
+}
 .item2:nth-child(3){
-  
   margin-top: 2%;
   width:48%;
 }
 .all{
-margin-top: 3%;
 width:100%;
 display: flex;
 justify-content: center;
@@ -126,7 +135,7 @@ border-radius: 5px;
 background:#52A4DF;
 color:white;
 cursor: pointer;
-width:14vw;
+width:14%;
 font-size: 0.8vw;
 height:5vh;
 }
@@ -145,7 +154,7 @@ height:5vh;
 }
 .image2{
   border-radius: 5px;
-  height:22vh;
+  height:100%;
   position: relative;
   width:100%;
 }
@@ -154,6 +163,7 @@ height:5vh;
   width:100%;
   height:100%;
 }
+
 .overlay {
   background: url('/statics/image/OEZ.png');
   background-size: cover;
@@ -186,6 +196,7 @@ height:5vh;
   margin-left: 6%;
   z-index: 1;
   width:46%;
+  height:100%;
 }
 
 .itms{
@@ -206,7 +217,6 @@ height:5vh;
     z-index: 1;
     width:95%;
     height: 70%;
-    border:1px solid red;
     margin:0 auto;
     display: flex;
     flex-direction: column;
@@ -218,17 +228,18 @@ height:5vh;
 .image{
   border-radius: 5px;
  position: relative;
-  height: 45.8vh;
+  height: 100%;
   width:100%;
 }
 .title{
-  bottom:30%;
+  bottom:55%;
+  font-size: 1vw;
   margin-left: 2%;
   position: absolute;
 }
 .image img{
  
-  
+  height:100%;
   width:100%;
 }
 

@@ -26,13 +26,18 @@ const routes = [
       }
     ]
   },
-  
     {
       path: '/news/:id',
       name: 'detail',
-      component: () => import('layouts/Detail_news.vue'),
+      component: () => import('pages/detail_news.vue'),
       props: true,
     },
+    {
+      path:'/news/',
+      name: 'news',
+      component: () => import('pages/all_news.vue'),
+    },
+    
     {
       path:'/calculate',
       component: () => import('layouts/Calculate.vue')

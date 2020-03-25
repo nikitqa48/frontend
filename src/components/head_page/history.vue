@@ -1,181 +1,113 @@
 <template>
   <div class="slider">
     <div class = "history">
-      <div class="number"> 1/4 </div>
+      <div class="number">  <hooper-pagination slot="hooper-addons" mode="fraction"></hooper-pagination></div>
       <h4> Истории успеха </h4>
       <p class="today"> В Липецкой области </p>
       <div class="buttons">
-                <button  @click.prevent="slidePrev()">prev</button>
-            <button class="next" @click.prevent="slideNext()">next</button>
+                <button   @click.prevent="slidePrev()" class="prev"><img src="/statics/image/prev_history.png"></button>
+            <button class="next" @click.prevent="slideNext()"><img src="/statics/image/next_history.png"></button>
       </div>
          <hooper :settings="hooperSettings" class="ok" ref="carousel">
- 
       <slide>
-        <div class="images img1">
-         <div class="wrap">
+        <div class="images img2">
+          <div class="wrap">
            <div class="left">
+                  <div class="levo">
+                    <h5 class="title">
+                           ООО «ЙОКОХАМА Р.П.З.»
+                <br />производство автомобильных шин
+                    </h5>
+                    <div class="left_text">
+                      <p>
+                        Наша компания очень <br>комфортно чувствует <br>себя в Липецкой области.
+                      </p>
+                    </div>
+             </div>
            </div>
            <div class="right">
-             <img src="/statics/image/OEZ.png">
+             <div class="image">
+             <img src="/statics/image/obrubok.png">
+             </div>
            </div>
          </div>
         </div>
       </slide>
       <slide>          
         <div class="images img2">
-                 <div class="wrap">
+          <div class="wrap">
            <div class="left">
+                  <div class="levo">
+                    <h5 class="title">
+                      <b>АО «ИНДЕЗИТ ИНТЕРНЕШНЛ» <br>
+                      производство бытовой техники</b>
+                    </h5>
+                    <div class="left_text">
+                      <p>
+                        Факт присутствия <br> нашей корпорации <br> в Липецке укрепился  <br>с годами.
+                      </p>
+                    </div>
+             </div>
            </div>
            <div class="right">
-             <img src="/statics/image/OEZ.png">
+             <div class="image">
+             <img src="/statics/image/indesit_obrubok.png">
+             </div>
            </div>
          </div>
         </div> 
       </slide>
             <slide>          
         <div class="images img2">
-                 <div class="wrap">
+          <div class="wrap">
            <div class="left">
+                  <div class="levo">
+                    <h5 class="title">
+                      <b>ООО «Хавле Индустриверке» производство оборудования для систем водоснабжения</b>
+                    </h5>
+                    <div class="left_text">
+                      <p>
+                       С 2011 года мы находимся <br>в Чаплыгине Липецкой <br> области и не жалеем <br>об этом.
+                      </p>
+                    </div>
+             </div>
            </div>
            <div class="right">
-             <img src="/statics/image/OEZ.png">
+             <div class="image">
+             <img src="/statics/image/hawle.png">
+             </div>
            </div>
          </div>
-        </div> 
+        </div>  
       </slide>
                 <slide>          
         <div class="images img2">
-                 <div class="wrap">
+          <div class="wrap">
            <div class="left">
+                  <div class="levo">
+                    <h5 class="title">
+                      <b> ООО «Ангел Ист Рус» производство дрожжей </b>
+                    </h5>
+                    <div class="left_text">
+                      <p>
+                        Каждый год нам нужно минимум 100 000 тонн сахарной свеклы, которую обеспечивает Липецкая область.
+                      </p>
+                    </div>
+             </div>
            </div>
            <div class="right">
-             <img src="/statics/image/OEZ.png">
+             <div class="image">
+             <img src="/statics/image/angel1.png">
+             </div>
            </div>
          </div>
         </div> 
       </slide>
+
      </hooper>
-    <!-- <q-carousel
-      infinite
-      v-model="slide"
-      height="70vh"
-      ref="carousel"
-      transition-prev="slide-right"
-      transition-next="slide-left"
-      animated
-      control-color="primary"
-      class="rounded-borders"
-    >
-      <template v-slot:control>
-        <q-carousel-control position="bottom-left" :offset="[18, 18]" class="q-gutter-xs">
-          <q-btn
-            unelevated
-            size="2vh"
-            prev-icon="img:statics/image/back.svg"
-            text-color="black"
-            icon="img:statics/image/back.svg"
-            @click="$refs.carousel.previous()"
-          />
-        </q-carousel-control>
-        <q-carousel-control position="bottom-right" :offset="[18, 18]">
-          <q-btn
-            unelevated
-            :ripple="false"
-            size="2vh"
-            label="Далее"
-            text-color="white"
-            icon="img:statics/image/next.svg"
-            @click="$refs.carousel.next()"
-          />
-        </q-carousel-control>
-      </template>
-      <q-carousel-slide
-        name="1"
-        class="column no-wrap flex-center"
-        img-src="statics/image/indesit.png"
-      >
-        <div class="sucess_container">
-          <div class="sucess">
-            <h2 class="suc">Истории успеха</h2>
-            <p class="lipetsk">В Липецкой области</p>
-          </div>
-          <div class="indesit">
-            <h2 class="h2_indesit">
-              АО «ИНДЕЗИТ ИНТЕРНЕШНЛ»
-              <br />производство бытовой техники
-            </h2>
-          </div>
-          <p class="indesit_text">Факт присутствия нашей корпорации в Липецке укрепился с годами.</p>
-        </div>
-      </q-carousel-slide>
-      <q-carousel-slide name="2" img-src="statics/image/yokohama.png">
-        <div class="sucess_container">
-          <div class="block">
-            <div class="sucess">
-              <h2 class="suc">Истории успеха</h2>
-              <p class="lipetsk">В Липецкой области</p>
-              <span class="border_indesit"></span>
-            </div>
-            <div class="indesit">
-              <h2 class="h2_indesit">
-                ООО «ЙОКОХАМА Р.П.З.»
-                <br />производство автомобильных шин
-              </h2>
-            </div>
-            <p class="indesit_text">Факт присутствия нашей корпорации в Липецке укрепился с годами.</p>
-          </div>
-        </div>
-      </q-carousel-slide>
-      <q-carousel-slide name="3" img-src="statics/image/havle.png">
-        <div class="sucess_container">
-          <div class="sucess">
-            <h2 class="suc">Истории успеха</h2>
-            <p class="lipetsk">В Липецкой области</p>
-            <span class="border_indesit"></span>
-          </div>
-          <div class="indesit">
-            <h2 class="h2_indesit">
-              ООО «Хавле Индустриверке»
-              <br />производство оборудования
-              <br />для систем водоснабжения
-            </h2>
-          </div>
-          <p
-            class="indesit_text"
-          >С 2011 года мы находимся в Чаплыгине Липецкой области и не жалеем об этом.</p>
-        </div>
-      </q-carousel-slide>
-      <q-carousel-slide name="4" v-model="slide" img-src="statics/image/Angel.png">
-        <div class="sucess_container">
-          <div class="sucess">
-            <h2 class="suc">Истории успеха</h2>
-            <p class="lipetsk">В Липецкой области</p>
-            <span class="border_indesit"></span>
-          </div>
-          <div class="indesit">
-            <h2 class="h2_indesit">
-              ООО «Ангел Ист Рус»
-              <br />производство дрожжей
-            </h2>
-          </div>
-          <p
-            class="indesit_text"
-          >Каждый год нам нужно минимум 100 000 тонн сахарной свеклы, которую обеспечивает Липецкая область.</p>
-        </div>
-      </q-carousel-slide>
-    </q-carousel>
-
-    <q-carousel-control position="top-right">
-      <div class="dots">
-        <ul class="buttons">
-          <button @click="slide = '1', show()" ref="a"></button>
-          <button @click="slide = '2', show()" ref="b"></button>
-          <button @click="slide = '3', show()" ref="c"></button>
-          <button @click="slide = '4', show()" ref="d"></button>
-        </ul>
-      </div>
-    </q-carousel-control> -->
-
+           <div class="hmm">
+  <img src="/statics/image/mouse.png">
+</div>
     </div>
   </div>
 </template>
@@ -187,11 +119,49 @@
   align-items: center;
   justify-content: center;
  background: url('/statics/image/indesit.png');
+ background-size:cover;
   height: 100vh;
 }
-.next{
-  margin-right: 2%;
+.hmm{
+  color:white;
+  margin-bottom: 2%;
 }
+.prev{
+  margin-left: 3.5%;
+  display: flex;
+  align-items:center;
+  justify-content: center;
+}
+.left_text{
+ 
+  border-left:3px solid #52A4DF;
+  font-size: 1vw;
+  margin:5%;
+}
+.left_text p{
+  margin-bottom: 0;
+   min-width:30%;
+  max-width: 60%;
+  margin-left:0.4vw;
+  font-weight: 400;
+  color:black;
+  font-size: 0.8vw;
+}
+.levo{
+  width:70%;
+  height:100%;
+  display:flex;
+  flex-direction: column;
+  justify-content: space-between;
+ 
+}
+.next{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 0.6%;
+}
+
 .number{
   color:white;
   margin-top: 5%;
@@ -212,7 +182,9 @@
   margin-bottom: 0.5%;
   height:5vh;
 }
-
+.buttons button img{
+  width:30%;
+}
 
 .today{
   margin-top: 0.5%;
@@ -239,6 +211,7 @@
    background:  linear-gradient(to left, rgba(255,255,255,0) 20%, rgba(255,255,255,1),  ),url('/statics/image/OEZ.png');
    background-size: cover;
 }
+
 .ok{
   outline: none;
 }
@@ -305,38 +278,52 @@
 }
 .left{
   background: white;
-  width:50%;
+  width:70%;
+  height:99.9%;
+}
+.title{
+  color:black;
+  font-size: 2vw;
+  line-height: 100%;
+  font-weight: 600;
+  margin:5%;
 }
 .wrap{
-
+  position: relative;
+  height:70%;
+  width:100%;
   display:flex;
   flex-direction: row;
 }
 .right{
   height:100%;
-  width:50%;
 }
-.right img{
-  width: 100%;
-}
-.images, .hooper {
-
-  
-}
-.images{
-
-  margin-right: 2%;
+.image{
   height:100%;
+  width:100%;
+  position: absolute;
+  left:30%;
+}
+
+.image img{
+  height:100%;
+  width: 70%;
+}
+
+.images{
+  margin-right: 2%;
+  height:145%;
   
 }
 .hooper{
- 
-  height: 70%;
+  height: 50%;
+  margin-bottom: 5%;
 }
 </style>
 <script>
 import { Hooper } from 'hooper'
 import {Slide } from 'hooper'
+import {Pagination as HooperPagination} from 'hooper'
 import 'hooper/dist/hooper.css';
 import Vue from "vue";
 Vue.use(Hooper, Slide)
@@ -364,26 +351,27 @@ export default {
     return {
       slide: "1",
       carouselData: 0,
+
     hooperSettings: {
-                    infiniteScroll: false,
+                    infiniteScroll: true,
                     centerMode: true,
                     autoPlay: false,
                     playSpeed: 3500,
                     breakpoints: {
                         2400: { // 2400px ~
-                            itemsToShow: 1.2
+                            itemsToShow: 1.3
                         },
                         1800: { // 1800px ~ 2400px
-                            itemsToShow: 1.2
+                            itemsToShow: 1.3
                         },
                         1500: { // 1500px ~ 1800px
-                            itemsToShow: 1.2
+                            itemsToShow: 1.3
                         },
                         1100: { // 1100px ~ 1500px
-                            itemsToShow: 1.2
+                            itemsToShow: 1.3
                         },
                         600: { // 600px ~ 1100px
-                            itemsToShow: 1.2
+                            itemsToShow: 1.3
                         },
                         0: { // 0px ~ 600px
                             itemsToShow: 1
@@ -395,7 +383,8 @@ export default {
   },
   components:{
    Hooper, 
-   Slide
+   Slide,
+   HooperPagination
   },
 };
 </script>

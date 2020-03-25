@@ -1,5 +1,5 @@
 <template>
-        <q-toolbar class="header text-white" >
+        <div class="header">
       <q-separator dark vertical inset />
       <q-btn class="invest" stretch flat label="Инвест Липецк" to = "/" />
       <q-space />
@@ -48,7 +48,7 @@
        <q-btn class="header_button" stretch flat label="НОВОСТИ" />
         <q-separator dark vertical />
         <q-btn  class="header_button" stretch flat label="КОНТАКТЫ" />
-    </q-toolbar>
+        </div>
 </template>
 <script>
 export default {
@@ -59,6 +59,10 @@ export default {
 .header{
   font-size: 1vw;
   position: absolute;
+  width:100%;
+  height:5vh;
+  color:white;
+  display: flex;
   z-index: 1;
   background: #262626;
 }

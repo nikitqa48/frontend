@@ -5,7 +5,6 @@
       <div class="left">
          <router-link :to="{name: 'support'}">
         <div class="left_content">
-          
           <li>
             Поддержка проектов
             <br />промышленной отрасли
