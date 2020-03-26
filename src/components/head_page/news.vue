@@ -250,9 +250,8 @@ export default {
 
   data() {
     return {
-      slide: "1",
-      news: null,
-      news_text:null,
+    slide: "1",
+    news: {},
     };
   },
   components:{

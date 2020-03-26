@@ -1,7 +1,7 @@
 <template>
   <div class="slider">
     <div class = "history">
-      <div class="number">  <hooper-pagination slot="hooper-addons" mode="fraction"></hooper-pagination></div>
+      <div class="number">  </div>
       <h4> Истории успеха </h4>
       <p class="today"> В Липецкой области </p>
       <div class="buttons">

@@ -36,16 +36,12 @@
       </q-btn-dropdown> -->
       <q-separator dark vertical />
       <q-btn stretch flat label="РЕГИОН"  class="header_button"/>
-       <q-separator dark vertical />
-      <q-btn stretch flat label="УСЛУГИ" class="header_button"/>
-      <q-separator dark vertical />
-      <q-btn stretch flat label="ИНВЕСТОРУ" class="header_button"/>
       <q-separator dark vertical />
       <q-btn  class="header_button" to ='/state' stretch flat label="ГОСПОДДЕРЖКА" />
        <q-separator dark vertical />
        <q-btn class="header_button" stretch flat label="ПЛОЩАДКИ" />
        <q-separator dark vertical />
-       <q-btn class="header_button" stretch flat label="НОВОСТИ" />
+       <q-btn class="header_button"  to ='/news' stretch flat label="НОВОСТИ" />
         <q-separator dark vertical />
         <q-btn  class="header_button" stretch flat label="КОНТАКТЫ" />
         </div>

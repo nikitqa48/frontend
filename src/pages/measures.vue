@@ -60,7 +60,7 @@
     border:1px solid white;
 }
 .back{
-     z-index: 1;
+    z-index: 1;
     margin-top: 1%;
     align-items: center;
     display:flex;

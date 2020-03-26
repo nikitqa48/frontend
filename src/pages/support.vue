@@ -1,58 +1,47 @@
 <template>
   <div class="support_wrap">
-    <div class="overlay"></div>
     <div class="container">
-      <div class="left">
-         <router-link :to="{name: 'support'}">
-        <div class="left_content">
-          <li>
-            Поддержка проектов
-            <br />промышленной отрасли
-          </li>
-          <div class="container_image">
-            <img src="../statics/image/dontknow.svg" />
-          </div>
-        </div>
-        </router-link>
-        <div class="left_content">
-          <li>
-            Поддержка проектов малого и
-            <br />среднего бизнеса
-          </li>
-          <div class="container_image">
-            <img src="../statics/image/dontknow.svg" />
-          </div>
-        </div>
-        <div class="left_content">
-          <li>
-            Поддержка проектов
-            <br />аграрной отрасли
-          </li>
-          <div class="container_image">
-            <img src="../statics/image/dontknow.svg" />
-          </div>
-        </div>
-        <div class="left_content">
-          <li>
-            Поддержка
-            <br />экспорта
-          </li>
-          <div class="container_image">
-            <img src="../statics/image/dontknow.svg" />
-          </div>
-        </div>
+        <h4> Навигатор по мерам государственной поддержки </h4>
+     
+           <q-form @submit="onSubmit" class="blue_container">
+   <div class="wrap">
+    Отрасль:
+     <select  v-model="industry">  
+        <option value="1">Промышленность </option>
+        <option value="2">Сельское Хозяйство </option>
+        <option value="">Все отрасли</option>
+      </select>
+   </div>
+      <div class="wrap">
+    Тип Поддержки: 
+    <select v-model="type">
+      <option value="direct"> Прямая финансовая поддержка </option>
+      <option value="loan"> заемная финансовая поддержка </option>
+      <option value=""> Все виды поддержки</option>
+      </select>
       </div>
-      <div class="right">
-        <h1 class="title">
-          Виды
-          <br />государственной
-          <br />поддержки
-        </h1>
+      <div class="wrap">
+        Территория: 
+        <select v-model="territory">
+      <option value="oez"> ОЭЗ </option>
+      <option value="park"> Индустриальный парк </option>
+      <option value="mono"> Моногород</option>
+      <option value="vne"> Территория вне</option>
+      <option value=""> Любая территория </option>
+      </select> 
       </div>
-    </div>
-    <div class="q-px-sm q-py-lg">
-      <div class="column items-center" style="margin-top: 100px; margin-bottom: 100px;"></div>
-    </div>
+      <div class="wrap">
+      Тип получателя поддержки:
+      <select v-model="recipient">
+      <option value="ip"> ИП </option>
+      <option value="lawyer"> Юр. Лицо</option>
+      </select> 
+      </div>
+      <div>
+        <q-btn label="Найти" type="submit" color="primary"/>
+      </div>
+    </q-form>
+      </div>
   </div>
 </template>
 <script>
@@ -70,17 +59,33 @@
   display: flex;
   flex-direction: column;
 }
-.overlay {
-  position: absolute;
-  background: rgba(0, 0, 0, 0.6);
-  height: 100vh;
-  width: 100%;
-}
+
 .right {
   display: flex;
   align-items: center;
   width: 50%;
 }
+.wrap{
+  display:flex;
+  flex-direction: column;
+}
+.wrap select {
+  margin-left: 1vw;
+  background: none;
+  border:1px solid white;
+  height:3vh;
+  color:white;
+}
+.select-selected:after{
+  color:white;
+}
+
+.blue_container{
+  width:100%;
+  display: flex;
+  background:rgba(28, 37, 61, 0.7);
+}
+
 .title {
   font-size: 4.5vw;
   letter-spacing: 0.01vw;
@@ -89,9 +94,7 @@
 }
 .support_wrap {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  background: url("../statics/image/Lipetsk_sup.png");
+  background: linear-gradient(180deg, #252F40 0%, #0D0D1C 100%);
   background-size: cover;
   min-height: 100vh;
 }
@@ -105,11 +108,14 @@
 }
 .container {
   display: flex;
-  justify-content: center;
-  z-index: 1;
-  width: 100%;
+  flex-direction: column;
+  width: 90%;
+  border:1px solid red;
+  margin:0 auto;
   color: white;
-  height: 100%;
+}
+.container h4{
+  margin-top: 7vh;
 }
 .container li {
   cursor: pointer;

@@ -60,6 +60,7 @@ export default {
     display: flex;
     align-items: center;
     justify-content: center;
+    background-size: cover;
     background: linear-gradient(180deg, #202F40 0%, #0D0D1C 100%);
 }
 

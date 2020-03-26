@@ -5,9 +5,7 @@
       <forms-vue />
     <video-vue/>
       <full-page ref="fullpage" :options="opts" id="fullpage">
-        <div class="section">
-        
-        </div>
+          
         <div class="section">
           <map-vue />
         </div>
