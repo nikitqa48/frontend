@@ -71,6 +71,7 @@ export default {
     flex-direction: column;
     width:80%;
 }
+
 .arrow_back{
      z-index: 1;
     width:1vw;
