@@ -36,8 +36,9 @@ const routes = [
     },
     
     {
-      path:'/calculate',
-      component: () => import('layouts/Calculate.vue')
+      path:'/contacts',
+      name:'contacts',
+      component: () => import('pages/contacts.vue')
     }
 ]
 
