@@ -34,7 +34,11 @@ const routes = [
       name: 'news',
       component: () => import('pages/all_news.vue'),
     },
-    
+    {
+      path:'/square',
+      name:'square',
+      component: () => import ('pages/interactiv_map.vue')
+    },
     {
       path:'/contacts',
       name:'contacts',

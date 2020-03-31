@@ -101,7 +101,7 @@
   height:99%;
 }
 .slide_container2{
-  width:65%;
+  width:58%;
   height:100%;
   
   margin:auto;

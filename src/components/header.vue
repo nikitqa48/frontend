@@ -39,11 +39,11 @@
       <q-separator dark vertical />
       <q-btn  class="header_button" to ='/state' stretch flat label="ГОСПОДДЕРЖКА" />
        <q-separator dark vertical />
-       <q-btn class="header_button" stretch flat label="ПЛОЩАДКИ" />
+       <q-btn class="header_button"  to = '/square' stretch flat label="ПЛОЩАДКИ" />
        <q-separator dark vertical />
        <q-btn class="header_button"  to ='/news' stretch flat label="НОВОСТИ" />
         <q-separator dark vertical />
-        <q-btn  class="header_button"   to ='/contacts' stretch flat label="КОНТАКТЫ" />
+        <q-btn  class="header_button"  to ='/contacts' stretch flat label="КОНТАКТЫ" />
         </div>
 </template>
 <script>
