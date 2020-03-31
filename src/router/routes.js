@@ -12,12 +12,9 @@ const routes = [
     component: () => import('layouts/second_layout.vue'),
     children: [
       {
+        name:'support',
         path: '/', component: () => import('pages/support.vue'),
         
-      },
-      {
-        name:'support',
-        path: 'support/', component: () => import('pages/measures.vue')
       },
       {
         path:'/state/support/:id',

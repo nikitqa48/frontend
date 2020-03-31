@@ -4,6 +4,7 @@
       height="100vh"       
       infinite
       v-model="map"
+      animated
       ref="map"
       transition-prev="slide-right"
       transition-next="slide-left"
@@ -69,12 +70,17 @@
       </q-carousel-slide>
             <q-carousel-slide name="2" >
         <div class="slide_container2">
-          <img src="/statics/image/road.png">
+          <img src="/statics/image/road.png.png">
         </div>
       </q-carousel-slide>
              <q-carousel-slide name="3" >
         <div class="slide_container2">
           <img src="/statics/image/asd.png">
+        </div>
+      </q-carousel-slide>
+            <q-carousel-slide name="4" >
+        <div class="slide_container">
+          <img src="/statics/image/avia.png.png">
         </div>
       </q-carousel-slide>
                </q-carousel>
@@ -149,9 +155,10 @@ margin-right: 0.2vw;
   padding:0;
 }
 .isactive{
-  fill:white;
-  background:red;
-  color:white;
+  fill:white!important;
+  background:#2CCCD8!important;
+  color:white!important;
+  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 .buttons button{

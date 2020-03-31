@@ -1,7 +1,7 @@
 <template>
   <div class="support_wrap">
     <div class="container">
-        <h4> Навигатор по мерам государственной поддержки </h4>
+        <h4> Государственная поддержка </h4>
      
            <q-form @submit="onSubmit" class="blue_container">
              <div class="perekrestok">
@@ -121,6 +121,7 @@ body a{
   padding-top: 2vh;
   font-size: 1vw;
 }
+
 .grey{
   color:#56718A;
   margin: 2vh;
@@ -162,6 +163,7 @@ body a{
 .item{
   background:rgba(35, 46, 75, 0.7);
   display: flex;
+  padding-top: 2vh;
   margin-top: 5vh;
   flex-direction: column;
   width:100%;
@@ -173,6 +175,7 @@ body a{
     padding-bottom: 2vh;
   align-self: center;
   display: flex;
+  flex-direction: row;
   min-width:80%;
   justify-content: space-between;
 
@@ -228,8 +231,6 @@ body a{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-
-
 }
 .sposob{
   display:flex;

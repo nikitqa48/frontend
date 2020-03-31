@@ -1,104 +1,262 @@
 <template>
-    <div class="wrap">
-        <div class="container">
-                  <div class="back">
-                    <div class = 'arrow_back'>
-                  <img class="arrow" src="statics/image/arrow_back.svg">
-                    </div>
-                     <p>Вернуться назад </p>
-                     </div>
-                     <div class = 'name'>
-                         {{support.name}}
-                     </div>
-                     <div class="category">
-                         <p class="opacity">
-                             Получатель:
-                         </p>
-                           <transition name="bounceInLeft">
-                         <p class="poluch" v-if="support.recipient == 'small'">
-                             Малые и средние предприниматели
-                         </p>
-                           </transition>
-                           <p class="poluch" v-if="support.recipient == 'legally'">
-                             Юридические лица
-                         </p>
-                             <p class="poluch" v-if="support.recipient == 'all'">
-                             Все, кроме МСП
-                         </p>
-                             <p class="poluch" v-if="support.recipient == 'industrial'">
-                             Резиденты индустриальных парков
-                         </p>
-                               <p class="poluch" v-if="support.recipient == 'resident_oez'">
-                             Резиденты ОЭЗРУ Липецк
-                         </p>
-                                       <p class="poluch" v-if="support.recipient == 'developers'">
-                            Разработчики ПО
-                         </p>
-                     </div>
+  <div class="wrap">
+    <div class="container">
+         <router-link :to="{name: 'support', }" class="rout"> 
+      <div class="back">
+        <div class="arrow_back">
+          <img class="arrow" src="statics/image/arrow_back.svg" />
         </div>
+        <p>Вернуться назад</p>
+      </div>
+         </router-link>
+      <div class="name">{{support.name}}</div>
+      <div class="category">
+        <div class="perekrestok">
+          <div class="wrapper">
+            <span class="text">Получатели:</span>
+            <!-- <q-select v-model="model" :options="options" label="Standard" outlined label-color="white" class="select" color="white"/> -->
+            <span
+              class="vid"
+              v-if="support.recipient == 'industrial'"
+            >Резиденты индустриальных парков</span>
+            <span class="vid" v-if="support.recipient == 'small'">МСП</span>
+            <span class="vid" v-if="support.recipient == 'municipality'">муниципалитет</span>
+            <span class="vid" v-if="support.recipient == 'developers'">Разработчики ПО</span>
+            <span class="vid" v-if="support.recipient == 'resident_oez'">Резиденты ОЭЗРУ Липецк</span>
+            <span class="vid" v-if="support.recipient == 'subject'">Субъект</span>
+            <span class="vid" v-if="support.recipient == 'legally'">Юридические лица</span>
+            <span class="vid" v-if="support.recipient == 'not_msp'">Все кроме МСП</span>
+            <span class="vid" v-if="support.recipient == 'cooperatives'">Кооперативы</span>
+          </div>
+        </div>
+        <div class="perekrestok">
+          <div class="wrapper">
+            <span class="text">Тип поддержки:</span>
+            <!-- <q-select v-model="model" :options="options" label="Standard" outlined label-color="white" class="select" color="white"/> -->
+            <span class="vid" v-if="support.type == 'direct'">Инвестиции</span>
+            <span class="vid" v-if="support.type == 'loan'">Налоговые льготы по налогу на займ</span>
+            <span class="vid" v-if="support.type == 'subsidies'">Субсидии</span>
+            <span class="vid" v-if="support.type == 'profit'">Налоговые льготы по налогу на прибыль</span>
+            <span class="vid" v-if="support.type == 'grant'">Гранты</span>
+            <span class="vid" v-if="support.type == 'rent'">льготы по аренде</span>
+            <span class="vid" v-if="support.type == 'garant'">гарантии</span>
+            <span
+              class="vid"
+              v-if="support.type == 'transport'"
+            >Налоговые льготы по транспортному налогу</span>
+            <span class="vid" v-if="support.type == 'earth'">налоговые льготы по земельному налогу</span>
+            <span class="vid" v-if="support.type == 'nds'">налоговые льготы по уплате НДС</span>
+            <span class="vid" v-if="support.type == 'customs'">таможенные льготы</span>
+            <span class="vid" v-if="support.type == 'infrastructure'">Субсидии на инфраструктуру</span>
+            <span
+              class="vid"
+              v-if="support.type == 'loan_profit'"
+            >кредиты под залог создаваемого имущества</span>
+          </div>
+        </div>
+        <div class="perekrestok">
+          <div class="wrapper">
+            <span class="text">Способ реализации проекта:</span>
+            <span class="vid" v-if="support.implementation == 'agreement'">Соглашение</span>
+            <span class="vid" v-if="support.implementation == 'gchp'">ГЧП</span>
+            <span class="vid" v-if="support.implementation == 'any'">Любой</span>
+          </div>
+        </div>
+        <div class="perekrestok">
+          <div class="wrapper">
+            <span class="text">Цели/ адресаты государственной поддержки:</span>
+            <span class="vid" v-if="support.implementation == 'agreement'">{{support.target}}</span>
+          </div>
+        </div>
+        <div class="perekrestok">
+          <div class="wrapper">
+            <span
+              class="text"
+            >Основные условия предоставления мер гос. поддержки для инвесторов (предпринимателей): ставка, сроки, сумма:</span>
+            <span class="vid">{{support.condition}}</span>
+          </div>
+        </div>
+                <div class="perekrestok">
+          <div class="wrapper">
+            <span
+              class="text">Куррирующий орган:</span>
+            <span class="vid" v-if="support.authority == 'uilo'">УИиИ ЛО</span>
+            <span class="vid" v-if="support.authority == 'min'">Минпромторг России</span>
+            <span class="vid" v-if="support.authority == 'bank'">Уполномоченные банки</span>
+            <span class="vid" v-if="support.authority == 'fond'">Фонд содействия инновациям</span>
+            <span class="vid" v-if="support.authority == 'rvk'">АО "РВК"</span>
+            <span class="vid" v-if="support.authority == 'business'">Центры "мой бизнес", Управляющие компании</span>
+          </div>
+        </div>
+                <div class="perekrestok">
+          <div class="wrapper">
+            <span
+              class="text"
+            >Наименование национального проекта:</span>
+            <span class="vid">{{support.project_name}}</span>
+          </div>
+        </div>
+                        <div class="perekrestok">
+          <div class="wrapper">
+            <span
+              class="text"
+            >Наименование гос программы:</span>
+            <span class="vid">{{support.program_name}}</span>
+          </div>
+        </div>
+                                <div class="perekrestok">
+          <div class="wrapper">
+            <span
+              class="text"
+            >Объем меры гос.поддержки(млрд.руб.):</span>
+            <span class="vid">{{support.money}}</span>
+          </div>
+        </div>
+                                        <div class="perekrestok">
+          <div class="wrapper">
+            <span
+              class="text"
+            >Категория получателя:</span>
+             <span class="vid" v-if="support.form == 'lawyer'">Юр.лицо</span>
+            <span class="vid" v-if="support.form == 'ip'">ИП</span>
+            <span class="vid" v-if="support.form == 'municipality'">Муниципалитет</span>
+          </div>
+        </div>
+                                      <div class="perekrestok">
+          <div class="wrapper">
+            <span
+              class="text"
+            >Налоговая ставка НДС:</span>
+            <span class="vid">{{support.nds}}</span>
+          </div>
+        </div>
+                                              <div class="perekrestok">
+          <div class="wrapper">
+            <span
+              class="text"
+            >Затраты подлежащие возмещению:</span>
+            <span class="vid">{{support.expenses}}</span>
+          </div>
+        </div>
+                                                      <div class="perekrestok">
+          <div class="wrapper">
+            <span
+              class="text"
+            >Тип проекта:</span>
+                <span class="vid" v-if="support.type_project == 'new'">Новое строительство</span>
+            <span class="vid" v-if="support.type_project == 'reconstuction'">Реконструкция</span>
+            <span class="vid" v-if="support.type_project == 'modernisation'">Модернизация</span>
+            <span class="vid" v-if="support.type_project == 'all'">любой</span>
+          </div>
+        </div>                                                     
+                <div class="perekrestok">
+          <div class="wrapper">
+            <span
+              class="text"
+            >Территория реализации проекта:</span>
+                <span class="vid" v-if="support.territory == 'without'">Без ограничений</span>
+            <span class="vid" v-if="support.territory == 'park'">индустриальные парки</span>
+            <span class="vid" v-if="support.territory == 'mono'">моногород</span>
+            <span class="vid" v-if="support.territory == 'techno'">технопарк</span>
+            <span class="vid" v-if="support.territory == 'oez'">ОЭЗ ппт липецк</span>
+            <span class="vid" v-if="support.territory == 'oezru'">ОЭЗРУ</span>
+            <span class="vid" v-if="support.territory == 'all'">Любая</span>
+            <span class="vid" v-if="support.territory == 'cluster'">Участник кластера</span>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
 </template>
 <script>
 export default {
-    data(){
-        return{
-            support:{}
-        }
-    },
-    mounted(){
-        const url = "http://127.0.0.1:8000/support/detail/"+this.$route.params.id+'?format=json';
-        fetch(url)
+  data() {
+    return {
+      support: {}
+    };
+  },
+  mounted() {
+    const url =
+      "http://127.0.0.1:8000/support/detail/" +
+      this.$route.params.id +
+      "?format=json";
+    fetch(url)
       .then(response => response.json())
       .then(data => (this.support = data));
-    
-    }
-}
+  }
+};
 </script>
 <style scoped>
-.wrap{
-    height:100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-size: cover;
-    background: linear-gradient(180deg, #202F40 0%, #0D0D1C 100%);
+.wrap {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background: linear-gradient(180deg, #202f40 0%, #0d0d1c 100%);
+}
+.wrapper {
+  display: flex;
+  padding-top: 2vh;
+  padding-bottom: 2vh;
+  flex-direction: column;
+  background: rgba(35, 46, 75, 0.7);
+}
+.perekrestok {
+  margin-top: 0.5vh;
+  margin-bottom: 0.5vh;
+  width: 100%;
+}
+.vid {
+  margin-top: 1vh;
+  margin-left: 2vh;
+  color: white;
+}
+.text {
+  color: white;
+  margin-left: 2vh;
+  margin-right: 2vh;
+  border-bottom: 1px solid white;
+  opacity: 0.5;
+}
+.container {
+  margin-top: 2%;
+  height: 92%;
+  display: flex;
+  flex-direction: column;
+  width: 80%;
 }
 
-.container{
-    margin-top: 2%;
-    height:92%;
-    display: flex;
-    flex-direction: column;
-    width:80%;
+.arrow_back {
+  z-index: 1;
+  width: 1vw;
+}
+.back p {
+  margin: 0;
+  padding-left: 0.5vw;
+  color: white;
 }
 
-.arrow_back{
-     z-index: 1;
-    width:1vw;
+.arrow {
+  z-index: 1;
+  width: 100%;
 }
-.back p{
-    margin:0;
-    padding-left: 0.5vw;
-    color:white;
+.name {
+  color: white;
+  font-size: 1vw;
+  margin-top: 2%;
 }
-.arrow{
-     z-index: 1;
-    width:100%;
+.back {
+  z-index: 1;
+  margin-top: 5vh;
+  align-items: center;
+  display: flex;
 }
-.name{
-    color:white;
-    font-size: 1vw;
-    margin-top: 2%;
+.category {
+  margin-top: 1.5vh;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  padding-bottom: 5vh;
 }
-.back{
-     z-index: 1;
-    margin-top: 1%;
-    align-items: center;
-    display:flex;
-}
-.category{
-    margin-top: 1.5vh;
-    display: flex;
-}
-
 </style>
