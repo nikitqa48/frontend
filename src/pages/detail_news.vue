@@ -35,6 +35,9 @@
     height:100%;
     padding-bottom: 2vh;
 }
+body a{
+    text-decoration: none;
+}
 .news_image img{
     height:100%;
     width:100%;

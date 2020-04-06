@@ -25,12 +25,19 @@
     </q-form>
    
                     <div class = 'items'>
-                    <div class="item" v-for="item in support">
-                          <router-link :to="{name: 'support_detail', params: { id: item.id}}"> 
-                        <p class = 'name'> название </p>
-                        <p class="isane"> {{item.name}}</p>
-                        </router-link>
-                    </div>
+
+  <q-virtual-scroll
+    style="max-height: 300px; overflow-x: hidden"
+    :items-size="size"
+    :items-fn="getItems"
+    :virtual-scroll-item-size="78"
+    separator
+  >
+    <template v-slot="{ item, index }">
+      <async-component :key="index" :index="item.index" :sent="item.sent"></async-component>
+    </template>
+  </q-virtual-scroll>
+
     
            </div>
             </div>
@@ -168,6 +175,7 @@ export default {
         return{
             support: {},
             text: '',
+             asyncContent: null
         }
     },   
     methods:{
@@ -176,7 +184,19 @@ export default {
             const url = 'http://127.0.0.1:8000/support/?type=&recipient=&industry=1&territory=&form='+'&name='+this.text
             console.log(url)
         fetch(url).then(response => response.json()).then(data => (this.support = data))
-        }
+        },
+            getItems (from, size) {
+      const items = []
+
+      for (let i = 0; i < size; i++) {
+        items.push({
+          index: this.size - from - i,
+          sent: Math.random() > 0.5
+        })
+      }
+
+      return Object.freeze(items)
+    }
     },
     mounted(){
         const url = 'http://127.0.0.1:8000/support/?type=&recipient=&industry=1&territory=&form='

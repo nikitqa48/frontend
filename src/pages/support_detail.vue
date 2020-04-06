@@ -187,6 +187,9 @@ export default {
 };
 </script>
 <style scoped>
+body a{
+  text-decoration: none;
+}
 .wrap {
   min-height: 100vh;
   display: flex;

@@ -4,7 +4,6 @@
       height="100vh"       
       infinite
       v-model="map"
-      animated
       ref="map"
       transition-prev="slide-right"
       transition-next="slide-left"
@@ -74,9 +73,17 @@
         </div>
       </q-carousel-slide>
              <q-carousel-slide name="3" >
-        <div class="slide_container2">
-          <img src="/statics/image/asd.png">
+               
+        <div class="slide_container2" v-if="map == '3'">
+          <transition
+              appear
+              enter-active-class="animated bounceInLeft"
+              leave-active-class="animated bounceOutLeft slow">
+              <img src="/statics/image/asd.png">
+            </transition>
+
         </div>
+            
       </q-carousel-slide>
             <q-carousel-slide name="4" >
         <div class="slide_container">
@@ -103,7 +110,6 @@
 .slide_container2{
   width:58%;
   height:100%;
-  
   margin:auto;
 }
 .slide_container2 img{
@@ -186,7 +192,7 @@ margin-right: 0.2vw;
 export default {
 data() {
     return {
-      map: "3"
+      map: "1"
     };
   },
   methods: {

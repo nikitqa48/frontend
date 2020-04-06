@@ -157,6 +157,7 @@ body a{
   font-size: 0.8vw;
   border-radius: 5px;
   margin-right: 2%;
+
   height:3.5vh;
   width:6vw;
 }
@@ -212,7 +213,8 @@ body a{
   outline: none;
   border-radius: 5px;
   padding-right: 2vw;
-  padding-left: 2%;
+  padding-left: 0.5vw;
+
 }
 
 .wrap select option{

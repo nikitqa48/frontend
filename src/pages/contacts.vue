@@ -6,7 +6,7 @@
         
              <div class="perekrestok">
    <div class="wrap">
-    <span class = 'text'> Начальник:</span>
+    <span class = 'text'> Начальник</span>
     <div class="border"> </div>
     <div class="parent">
     <div class="image">
@@ -17,7 +17,7 @@
             Ф.И.О
         </span>
         <span class="name">
-            Bruce richards
+            Имя Фамилия
         </span>
     </div>
          <div class="inside_parent">
@@ -60,7 +60,7 @@
             Ф.И.О
         </span>
         <span class="name">
-            Bruce richards
+            Имя Фамилия
         </span>
     </div>
          <div class="inside_parent">
@@ -103,7 +103,7 @@
             Ф.И.О
         </span>
         <span class="name">
-            Bruce richards
+            Имя Фамилия
         </span>
     </div>
          <div class="inside_parent">
@@ -146,7 +146,7 @@
             Ф.И.О
         </span>
         <span class="name">
-            Bruce richards
+            Имя Фамилия
         </span>
     </div>
          <div class="inside_parent">

@@ -43,7 +43,12 @@ const routes = [
       path:'/contacts',
       name:'contacts',
       component: () => import('pages/contacts.vue')
+    },
+    {
+      path:'/example',
+      component:() => import('pages/measures.vue')
     }
+ 
 ]
 
 // Always leave this as last one
