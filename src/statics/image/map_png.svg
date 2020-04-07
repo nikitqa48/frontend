@@ -42,8 +42,8 @@
      showgrid="false"
      inkscape:snap-text-baseline="false"
      inkscape:zoom="1.1889169"
-     inkscape:cx="506.36792"
-     inkscape:cy="403.39947"
+     inkscape:cx="378.70773"
+     inkscape:cy="360.38318"
      inkscape:window-x="-8"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
@@ -54,7 +54,8 @@
      id="path2" />
   <g
      style="mix-blend-mode:multiply"
-     id="g13">
+     id="g13"
+     transform="translate(10e-4,-1.269)">
     <mask
        id="mask0"
        mask-type="alpha"
@@ -67,9 +68,10 @@
          style="mix-blend-mode:multiply"
          id="g6">
         <path
-           d="M624.033 708.896L608.703 714.676L607 721.817L592.352 733.378L578.044 727.597L572.253 733.378L495.264 711.616L502.077 695.295L488.11 673.193L457.792 669.793L437.693 659.592L427.474 669.113L404.309 669.793L411.122 677.954L407.715 682.374L391.364 684.074L385.232 694.955L391.364 704.476L385.232 709.576L367.518 709.916L332.43 667.073L316.079 666.733L301.771 683.394L309.947 687.474L305.178 694.955L286.101 685.094V667.073L276.563 663.673L273.156 678.974L265.321 690.194L256.804 681.014L251.695 685.434L247.266 681.014L218.992 704.135L207.409 703.455L202.981 710.256L181.86 711.956L176.409 718.076L167.212 716.716L160.058 737.118L143.366 738.818L140.981 733.038L125.992 736.438V745.959L108.278 750.719L104.871 758.199L72.509 756.499L59.9047 751.739L49.0037 718.417L24.1357 699.375L41.5092 648.371L31.6302 641.231L37.4214 631.37L43.8938 635.11L54.7949 617.429H63.6519L73.1903 604.848L92.9484 598.728L102.827 604.168L108.278 564.385L93.6298 554.185L89.8825 532.423L83.0694 538.203L67.0585 521.542L70.4651 516.102L77.9595 514.062L81.7068 504.201L74.2123 498.761L68.0805 501.481L60.9267 492.98L48.3224 495.36L43.5532 483.799L55.1355 479.379L58.5421 472.579L46.9597 464.758L54.1135 454.897L38.4433 456.938L34.3554 446.737H22.7731L20.0479 438.916L49.685 435.176L52.0696 422.935L45.2565 416.135L51.3883 413.074L44.9158 400.153L69.4431 388.253L73.8716 364.111L68.0805 351.87L49.3443 330.448L67.3992 320.248L55.8168 291.685L77.6189 246.462L103.168 244.762L109.3 251.223H127.695L134.849 249.862L151.882 255.643L148.816 262.103L159.717 270.944L176.069 263.123L185.607 266.524L188.332 290.665L196.167 291.005L197.189 270.264L221.717 268.224L221.376 253.943L225.123 252.583L243.178 269.924L248.969 252.923L261.574 244.762L274.859 211.1L253.398 198.859L251.354 192.058L267.024 175.057L263.277 159.076L246.925 152.275L244.881 139.354L237.046 135.954L270.431 113.513L277.244 121.333L283.716 110.792L297.002 113.513L307.222 106.372L308.244 91.7509L296.321 80.8701L293.255 65.229L301.43 57.0684L290.87 49.5879L295.299 37.347L332.43 23.406L340.606 30.8865L342.991 16.6055H354.914L359.001 22.7259L363.771 18.3056L378.419 25.7861L375.012 57.7485L385.573 56.7284L385.913 84.9504L394.089 85.9705V109.432L399.54 110.112L403.628 104.332L431.902 107.392L435.649 112.492L465.286 101.272L470.056 91.0709L485.385 93.4511L490.495 99.2315L492.198 49.9279L542.616 26.4662L557.945 43.1274L566.462 29.5264L585.538 52.6481L593.373 58.7685L595.077 81.2102L588.264 94.1311L602.912 95.1512L609.725 106.712L634.252 113.853L647.197 111.472L659.461 132.894L657.076 147.175L633.571 165.536L634.593 196.139L646.175 219.6L652.307 261.083L633.571 277.744L642.428 285.905L642.769 310.387L628.461 310.727L620.967 319.908L622.329 329.768L638.681 330.448L637.659 382.472L617.219 388.933L619.263 403.214L630.164 408.994L618.241 425.655L625.395 443.337L637.318 441.772L644.472 450.137L635.956 463.738L639.703 467.138L659.461 460.338L693.186 481.759V500.121L718.395 501.481L722.142 509.641L711.581 522.562L715.329 535.483L772.218 547.724V557.925L782.779 555.205L791.976 564.725L787.207 577.646L795.042 585.127L809.009 575.606L847.844 609.949L836.943 623.21L821.954 600.768L810.031 612.669L817.185 627.29L804.24 635.791L798.108 656.872L805.943 662.992L805.262 682.034L789.251 690.875L784.482 718.757L771.537 721.817L728.955 715.356L725.889 729.297L702.043 709.236L682.285 715.696L671.384 707.876L670.703 696.315L659.12 704.816L656.736 716.716L644.813 721.137L629.142 717.056L624.033 708.896Z"
+           d="m 624.033,708.896 -15.33,5.78 -1.703,7.141 -14.648,11.561 -14.308,-5.781 -5.791,5.781 -76.989,-21.762 6.813,-16.321 -13.967,-22.102 -30.318,-3.4 -20.099,-10.201 -10.219,9.521 -23.165,0.68 6.813,8.161 -3.407,4.42 -16.351,1.7 -6.132,10.881 6.132,9.521 -6.132,5.1 -17.714,0.34 -35.088,-42.843 -16.351,-0.34 -14.308,16.661 8.176,4.08 -4.769,7.481 -19.077,-9.861 v -18.021 l -9.538,-3.4 -3.407,15.301 -7.835,11.22 -8.517,-9.18 -5.109,4.42 -4.429,-4.42 -28.274,23.121 -11.583,-0.68 -4.428,6.801 -21.121,1.7 -5.451,6.12 -9.197,-1.36 -7.154,20.402 -16.692,1.7 -2.385,-5.78 -14.989,3.4 v 9.521 l -17.714,4.76 -3.407,7.48 -32.362,-1.7 -12.6043,-4.76 -10.901,-33.322 -24.868,-19.042 17.3735,-51.004 -9.879,-7.14 5.7912,-9.861 6.4724,3.74 10.9011,-17.681 h 8.857 l 9.5384,-12.581 19.7581,-6.12 9.8786,5.44 5.451,-39.783 -14.6482,-10.2 -3.7473,-21.762 -6.8131,5.78 -16.0109,-16.661 3.4066,-5.44 7.4944,-2.04 3.7473,-9.861 -7.4945,-5.44 -6.1318,2.72 -7.1538,-8.501 -12.6043,2.38 -4.7692,-11.561 11.5823,-4.42 3.4066,-6.8 -11.5824,-7.821 7.1538,-9.861 -15.6702,2.041 -4.0879,-10.201 H 22.7731 l -2.7252,-7.821 29.6371,-3.74 2.3846,-12.241 -6.8131,-6.8 6.1318,-3.061 -6.4725,-12.921 24.5273,-11.9 4.4285,-24.142 -5.7911,-12.241 -18.7362,-21.422 18.0549,-10.2 -11.5824,-28.563 21.8021,-45.223 25.5491,-1.7 6.132,6.461 h 18.395 l 7.154,-1.361 17.033,5.781 -3.066,6.46 10.901,8.841 16.352,-7.821 9.538,3.401 2.725,24.141 7.835,0.34 1.022,-20.741 24.528,-2.04 -0.341,-14.281 3.747,-1.36 18.055,17.341 5.791,-17.001 12.605,-8.161 13.285,-33.662 -21.461,-12.241 -2.044,-6.801 15.67,-17.001 -3.747,-15.981 -16.352,-6.801 -2.044,-12.921 -7.835,-3.4 33.385,-22.441 6.813,7.82 6.472,-10.541 13.286,2.721 10.22,-7.141 1.022,-14.6211 -11.923,-10.8808 -3.066,-15.6411 8.175,-8.1606 -10.56,-7.4805 4.429,-12.2409 37.131,-13.941 8.176,7.4805 2.385,-14.281 h 11.923 l 4.087,6.1204 4.77,-4.4203 14.648,7.4805 -3.407,31.9624 10.561,-1.0201 0.34,28.222 8.176,1.0201 v 23.4615 l 5.451,0.68 4.088,-5.78 28.274,3.06 3.747,5.1 29.637,-11.22 4.77,-10.2011 15.329,2.3802 5.11,5.7804 1.703,-49.3036 50.418,-23.4617 15.329,16.6612 8.517,-13.601 19.076,23.1217 7.835,6.1204 1.704,22.4417 -6.813,12.9209 14.648,1.0201 6.813,11.5608 24.527,7.141 12.945,-2.381 12.264,21.422 -2.385,14.281 -23.505,18.361 1.022,30.603 11.582,23.461 6.132,41.483 -18.736,16.661 8.857,8.161 0.341,24.482 -14.308,0.34 -7.494,9.181 1.362,9.86 16.352,0.68 -1.022,52.024 -20.44,6.461 2.044,14.281 10.901,5.78 -11.923,16.661 7.154,17.682 11.923,-1.565 7.154,8.365 -8.516,13.601 3.747,3.4 19.758,-6.8 33.725,21.421 v 18.362 l 25.209,1.36 3.747,8.16 -10.561,12.921 3.748,12.921 56.889,12.241 v 10.201 l 10.561,-2.72 9.197,9.52 -4.769,12.921 7.835,7.481 13.967,-9.521 38.835,34.343 -10.901,13.261 -14.989,-22.442 -11.923,11.901 7.154,14.621 -12.945,8.501 -6.132,21.081 7.835,6.12 -0.681,19.042 -16.011,8.841 -4.769,27.882 -12.945,3.06 -42.582,-6.461 -3.066,13.941 -23.846,-20.061 -19.758,6.46 -10.901,-7.82 -0.681,-11.561 -11.583,8.501 -2.384,11.9 -11.923,4.421 -15.671,-4.081 z"
            id="path4"
-           fill="#4B5A69" />
+           inkscape:connector-curvature="0"
+           style="fill:#4b5a69" />
       </g>
     </mask>
     <g
@@ -77,11 +79,11 @@
        id="g11">
       <rect
          x="-21.7861"
-         y="-590.615"
-         width="969.777"
-         height="1456.57"
+         y="-590.61499"
+         width="969.77698"
+         height="1456.5699"
          id="rect9"
-         fill="url(#pattern0)" />
+         style="fill:url(#pattern0)" />
     </g>
   </g>
   <path
@@ -195,9 +197,10 @@
      id="path39"
      style="fill:none" />
   <path
-     d="M485.131 436.824C484.821 436.824 484.584 436.692 484.418 436.426C484.252 436.161 484.236 435.88 484.368 435.581L489.025 424.461C489.191 424.074 489.462 423.88 489.837 423.88C490.235 423.88 490.506 424.074 490.649 424.461L495.323 435.614C495.445 435.924 495.428 436.205 495.273 436.46C495.13 436.703 494.898 436.824 494.577 436.824C494.412 436.824 494.251 436.78 494.097 436.692C493.953 436.592 493.848 436.46 493.782 436.294L489.904 426.731L485.926 436.294C485.849 436.471 485.733 436.603 485.578 436.692C485.434 436.78 485.285 436.824 485.131 436.824ZM501.04 436.907C500.277 436.907 499.592 436.747 498.985 436.426C498.388 436.095 497.913 435.614 497.559 434.985C497.217 434.355 497.046 433.581 497.046 432.664V428.587C497.046 428.344 497.123 428.145 497.278 427.991C497.443 427.825 497.648 427.742 497.891 427.742C498.134 427.742 498.333 427.825 498.488 427.991C498.653 428.145 498.736 428.344 498.736 428.587V432.664C498.736 433.603 498.985 434.294 499.482 434.736C499.99 435.167 500.62 435.382 501.371 435.382C501.846 435.382 502.266 435.288 502.631 435.101C503.007 434.913 503.305 434.659 503.526 434.338C503.747 434.018 503.857 433.659 503.857 433.261V428.587C503.857 428.333 503.935 428.129 504.089 427.974C504.255 427.819 504.459 427.742 504.703 427.742C504.957 427.742 505.161 427.819 505.316 427.974C505.47 428.129 505.548 428.333 505.548 428.587V435.979C505.548 436.222 505.47 436.426 505.316 436.592C505.161 436.747 504.957 436.824 504.703 436.824C504.459 436.824 504.255 436.747 504.089 436.592C503.935 436.426 503.857 436.222 503.857 435.979V435.797C503.515 436.139 503.1 436.41 502.614 436.609C502.128 436.808 501.603 436.907 501.04 436.907ZM509.37 436.841C509.127 436.841 508.923 436.763 508.757 436.609C508.602 436.443 508.525 436.239 508.525 435.996V428.604C508.525 428.35 508.602 428.145 508.757 427.991C508.923 427.836 509.127 427.759 509.37 427.759C509.624 427.759 509.829 427.836 509.983 427.991C510.138 428.145 510.215 428.35 510.215 428.604V428.786C510.558 428.444 510.972 428.173 511.458 427.974C511.945 427.775 512.469 427.676 513.033 427.676C513.795 427.676 514.475 427.842 515.071 428.173C515.679 428.493 516.154 428.968 516.497 429.598C516.85 430.228 517.027 431.001 517.027 431.919V435.996C517.027 436.239 516.944 436.443 516.778 436.609C516.624 436.763 516.425 436.841 516.182 436.841C515.939 436.841 515.734 436.763 515.569 436.609C515.414 436.443 515.337 436.239 515.337 435.996V431.919C515.337 430.979 515.083 430.294 514.574 429.863C514.077 429.421 513.453 429.201 512.701 429.201C512.237 429.201 511.818 429.294 511.442 429.482C511.066 429.67 510.768 429.924 510.547 430.245C510.326 430.554 510.215 430.913 510.215 431.322V435.996C510.215 436.239 510.138 436.443 509.983 436.609C509.829 436.763 509.624 436.841 509.37 436.841ZM524.081 436.891C523.164 436.891 522.347 436.697 521.629 436.31C520.921 435.913 520.363 435.371 519.955 434.686C519.557 433.99 519.358 433.195 519.358 432.3C519.358 431.394 519.546 430.598 519.921 429.913C520.308 429.217 520.839 428.676 521.512 428.289C522.186 427.891 522.96 427.692 523.833 427.692C524.695 427.692 525.435 427.886 526.054 428.272C526.672 428.648 527.142 429.173 527.462 429.847C527.794 430.51 527.959 431.278 527.959 432.151C527.959 432.36 527.888 432.537 527.744 432.681C527.6 432.813 527.418 432.88 527.197 432.88H520.899C521.021 433.642 521.369 434.266 521.943 434.753C522.529 435.228 523.242 435.465 524.081 435.465C524.424 435.465 524.772 435.404 525.125 435.283C525.49 435.15 525.783 435.001 526.004 434.835C526.17 434.714 526.346 434.653 526.534 434.653C526.733 434.642 526.904 434.697 527.048 434.819C527.236 434.985 527.335 435.167 527.346 435.366C527.357 435.565 527.269 435.736 527.081 435.88C526.705 436.178 526.236 436.421 525.672 436.609C525.12 436.797 524.59 436.891 524.081 436.891ZM523.833 429.118C523.015 429.118 522.358 429.344 521.861 429.797C521.363 430.25 521.048 430.836 520.916 431.554H526.435C526.335 430.847 526.065 430.267 525.623 429.814C525.181 429.35 524.584 429.118 523.833 429.118ZM533.927 436.907C533.154 436.907 532.463 436.725 531.856 436.36C531.259 435.996 530.79 435.498 530.447 434.869C530.105 434.228 529.933 433.493 529.933 432.664V428.587C529.933 428.333 530.011 428.129 530.165 427.974C530.331 427.819 530.535 427.742 530.779 427.742C531.033 427.742 531.237 427.819 531.392 427.974C531.546 428.129 531.624 428.333 531.624 428.587V432.664C531.624 433.195 531.734 433.664 531.955 434.073C532.187 434.482 532.502 434.802 532.9 435.034C533.298 435.266 533.751 435.382 534.259 435.382C534.988 435.382 535.585 435.183 536.049 434.786C536.513 434.388 536.745 433.88 536.745 433.261V428.587C536.745 428.333 536.822 428.129 536.977 427.974C537.143 427.819 537.347 427.742 537.59 427.742C537.844 427.742 538.049 427.819 538.203 427.974C538.358 428.129 538.435 428.333 538.435 428.587V435.399H539.131C539.386 435.399 539.59 435.482 539.745 435.648C539.91 435.802 539.993 436.007 539.993 436.261V438.912C539.993 439.156 539.921 439.36 539.778 439.526C539.645 439.691 539.468 439.774 539.247 439.774C539.015 439.774 538.822 439.691 538.667 439.526C538.513 439.36 538.435 439.156 538.435 438.912V436.824H538.187C537.325 436.824 536.85 436.449 536.761 435.697C536.43 436.073 536.021 436.371 535.535 436.592C535.06 436.802 534.524 436.907 533.927 436.907ZM542.532 436.841C542.289 436.841 542.095 436.763 541.952 436.609C541.808 436.443 541.736 436.239 541.736 435.996V428.604C541.736 428.35 541.808 428.145 541.952 427.991C542.095 427.836 542.289 427.759 542.532 427.759C542.786 427.759 542.99 427.836 543.145 427.991C543.311 428.145 543.394 428.35 543.394 428.604V431.372H544.653L547.653 428.024C547.797 427.869 547.995 427.781 548.25 427.759C548.515 427.737 548.719 427.792 548.863 427.924C549.029 428.079 549.122 428.256 549.145 428.455C549.167 428.643 549.106 428.814 548.962 428.968L545.962 432.184L549.145 435.598C549.288 435.741 549.36 435.913 549.36 436.112C549.36 436.299 549.272 436.471 549.095 436.625C548.951 436.758 548.747 436.824 548.482 436.824C548.227 436.813 548.029 436.736 547.885 436.592L544.471 432.93H543.394V435.996C543.394 436.239 543.311 436.443 543.145 436.609C542.99 436.763 542.786 436.841 542.532 436.841Z"
-     fill="#2CCCD8"
-     id="path57" />
+     d="m 488.838,440.586 c -0.31,0 -0.547,-0.132 -0.713,-0.398 -0.166,-0.265 -0.182,-0.546 -0.05,-0.845 l 4.657,-11.12 c 0.166,-0.387 0.437,-0.581 0.812,-0.581 0.398,0 0.669,0.194 0.812,0.581 l 4.674,11.153 c 0.122,0.31 0.105,0.591 -0.05,0.846 -0.143,0.243 -0.375,0.364 -0.696,0.364 -0.165,0 -0.326,-0.044 -0.48,-0.132 -0.144,-0.1 -0.249,-0.232 -0.315,-0.398 l -3.878,-9.563 -3.978,9.563 c -0.077,0.177 -0.193,0.309 -0.348,0.398 -0.144,0.088 -0.293,0.132 -0.447,0.132 z m 15.909,0.083 c -0.763,0 -1.448,-0.16 -2.055,-0.481 -0.597,-0.331 -1.072,-0.812 -1.426,-1.441 -0.342,-0.63 -0.513,-1.404 -0.513,-2.321 v -4.077 c 0,-0.243 0.077,-0.442 0.232,-0.596 0.165,-0.166 0.37,-0.249 0.613,-0.249 0.243,0 0.442,0.083 0.597,0.249 0.165,0.154 0.248,0.353 0.248,0.596 v 4.077 c 0,0.939 0.249,1.63 0.746,2.072 0.508,0.431 1.138,0.646 1.889,0.646 0.475,0 0.895,-0.094 1.26,-0.281 0.376,-0.188 0.674,-0.442 0.895,-0.763 0.221,-0.32 0.331,-0.679 0.331,-1.077 v -4.674 c 0,-0.254 0.078,-0.458 0.232,-0.613 0.166,-0.155 0.37,-0.232 0.614,-0.232 0.254,0 0.458,0.077 0.613,0.232 0.154,0.155 0.232,0.359 0.232,0.613 v 7.392 c 0,0.243 -0.078,0.447 -0.232,0.613 -0.155,0.155 -0.359,0.232 -0.613,0.232 -0.244,0 -0.448,-0.077 -0.614,-0.232 -0.154,-0.166 -0.232,-0.37 -0.232,-0.613 v -0.182 c -0.342,0.342 -0.757,0.613 -1.243,0.812 -0.486,0.199 -1.011,0.298 -1.574,0.298 z m 8.33,-0.066 c -0.243,0 -0.447,-0.078 -0.613,-0.232 -0.155,-0.166 -0.232,-0.37 -0.232,-0.613 v -7.392 c 0,-0.254 0.077,-0.459 0.232,-0.613 0.166,-0.155 0.37,-0.232 0.613,-0.232 0.254,0 0.459,0.077 0.613,0.232 0.155,0.154 0.232,0.359 0.232,0.613 v 0.182 c 0.343,-0.342 0.757,-0.613 1.243,-0.812 0.487,-0.199 1.011,-0.298 1.575,-0.298 0.762,0 1.442,0.166 2.038,0.497 0.608,0.32 1.083,0.795 1.426,1.425 0.353,0.63 0.53,1.403 0.53,2.321 v 4.077 c 0,0.243 -0.083,0.447 -0.249,0.613 -0.154,0.154 -0.353,0.232 -0.596,0.232 -0.243,0 -0.448,-0.078 -0.613,-0.232 -0.155,-0.166 -0.232,-0.37 -0.232,-0.613 v -4.077 c 0,-0.94 -0.254,-1.625 -0.763,-2.056 -0.497,-0.442 -1.121,-0.662 -1.873,-0.662 -0.464,0 -0.883,0.093 -1.259,0.281 -0.376,0.188 -0.674,0.442 -0.895,0.763 -0.221,0.309 -0.332,0.668 -0.332,1.077 v 4.674 c 0,0.243 -0.077,0.447 -0.232,0.613 -0.154,0.154 -0.359,0.232 -0.613,0.232 z m 14.711,0.05 c -0.917,0 -1.734,-0.194 -2.452,-0.581 -0.708,-0.397 -1.266,-0.939 -1.674,-1.624 -0.398,-0.696 -0.597,-1.491 -0.597,-2.386 0,-0.906 0.188,-1.702 0.563,-2.387 0.387,-0.696 0.918,-1.237 1.591,-1.624 0.674,-0.398 1.448,-0.597 2.321,-0.597 0.862,0 1.602,0.194 2.221,0.58 0.618,0.376 1.088,0.901 1.408,1.575 0.332,0.663 0.497,1.431 0.497,2.304 0,0.209 -0.071,0.386 -0.215,0.53 -0.144,0.132 -0.326,0.199 -0.547,0.199 h -6.298 c 0.122,0.762 0.47,1.386 1.044,1.873 0.586,0.475 1.299,0.712 2.138,0.712 0.343,0 0.691,-0.061 1.044,-0.182 0.365,-0.133 0.658,-0.282 0.879,-0.448 0.166,-0.121 0.342,-0.182 0.53,-0.182 0.199,-0.011 0.37,0.044 0.514,0.166 0.188,0.166 0.287,0.348 0.298,0.547 0.011,0.199 -0.077,0.37 -0.265,0.514 -0.376,0.298 -0.845,0.541 -1.409,0.729 -0.552,0.188 -1.082,0.282 -1.591,0.282 z m -0.248,-7.773 c -0.818,0 -1.475,0.226 -1.972,0.679 -0.498,0.453 -0.813,1.039 -0.945,1.757 h 5.519 c -0.1,-0.707 -0.37,-1.287 -0.812,-1.74 -0.442,-0.464 -1.039,-0.696 -1.79,-0.696 z m 10.094,7.789 c -0.773,0 -1.464,-0.182 -2.071,-0.547 -0.597,-0.364 -1.066,-0.862 -1.409,-1.491 -0.342,-0.641 -0.514,-1.376 -0.514,-2.205 v -4.077 c 0,-0.254 0.078,-0.458 0.232,-0.613 0.166,-0.155 0.37,-0.232 0.614,-0.232 0.254,0 0.458,0.077 0.613,0.232 0.154,0.155 0.232,0.359 0.232,0.613 v 4.077 c 0,0.531 0.11,1 0.331,1.409 0.232,0.409 0.547,0.729 0.945,0.961 0.398,0.232 0.851,0.348 1.359,0.348 0.729,0 1.326,-0.199 1.79,-0.596 0.464,-0.398 0.696,-0.906 0.696,-1.525 v -4.674 c 0,-0.254 0.077,-0.458 0.232,-0.613 0.166,-0.155 0.37,-0.232 0.613,-0.232 0.254,0 0.459,0.077 0.613,0.232 0.155,0.155 0.232,0.359 0.232,0.613 v 6.812 h 0.696 c 0.255,0 0.459,0.083 0.614,0.249 0.165,0.154 0.248,0.359 0.248,0.613 v 2.651 c 0,0.244 -0.072,0.448 -0.215,0.614 -0.133,0.165 -0.31,0.248 -0.531,0.248 -0.232,0 -0.425,-0.083 -0.58,-0.248 -0.154,-0.166 -0.232,-0.37 -0.232,-0.614 v -2.088 h -0.248 c -0.862,0 -1.337,-0.375 -1.426,-1.127 -0.331,0.376 -0.74,0.674 -1.226,0.895 -0.475,0.21 -1.011,0.315 -1.608,0.315 z m 8.605,-0.066 c -0.243,0 -0.437,-0.078 -0.58,-0.232 -0.144,-0.166 -0.216,-0.37 -0.216,-0.613 v -7.392 c 0,-0.254 0.072,-0.459 0.216,-0.613 0.143,-0.155 0.337,-0.232 0.58,-0.232 0.254,0 0.458,0.077 0.613,0.232 0.166,0.154 0.249,0.359 0.249,0.613 v 2.768 h 1.259 l 3,-3.348 c 0.144,-0.155 0.342,-0.243 0.597,-0.265 0.265,-0.022 0.469,0.033 0.613,0.165 0.166,0.155 0.259,0.332 0.282,0.531 0.022,0.188 -0.039,0.359 -0.183,0.513 l -3,3.216 3.183,3.414 c 0.143,0.143 0.215,0.315 0.215,0.514 0,0.187 -0.088,0.359 -0.265,0.513 -0.144,0.133 -0.348,0.199 -0.613,0.199 -0.255,-0.011 -0.453,-0.088 -0.597,-0.232 l -3.414,-3.662 h -1.077 v 3.066 c 0,0.243 -0.083,0.447 -0.249,0.613 -0.155,0.154 -0.359,0.232 -0.613,0.232 z"
+     id="path57"
+     inkscape:connector-curvature="0"
+     style="fill:#2cccd8" />
   <g
      filter="url(#filter0_d)"
      id="g61">
@@ -269,25 +272,27 @@
   </defs>
   <text
      xml:space="preserve"
-     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66666667px;line-height:1.25;font-family:'Microsoft Himalaya';-inkscape-font-specification:'Microsoft Himalaya, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr;text-anchor:start;fill:#ffffff;fill-opacity:0.6;stroke:none;"
-     x="557.65045"
-     y="169.06146"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18.66666603px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;fill-opacity:0.6;stroke:none"
+     x="546.71613"
+     y="187.5657"
      id="text1646"><tspan
        sodipodi:role="line"
        id="tspan1644"
-       x="557.65045"
-       y="169.06146">Чаплыгин</tspan></text>
+       x="546.71613"
+       y="187.5657">Чаплыгин</tspan></text>
   <text
      xml:space="preserve"
-     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66666667px;line-height:1.25;font-family:'Microsoft Himalaya';-inkscape-font-specification:'Microsoft Himalaya, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr;text-anchor:start;fill:#ffffff;fill-opacity:0.6;stroke:none;"
-     x="438.67017"
-     y="168.86903"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18.66666603px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;fill-opacity:0.6;stroke:none"
+     x="427.73584"
+     y="171.39235"
      id="text1646-5"><tspan
        sodipodi:role="line"
-       id="tspan1666">Лев-Толстой</tspan></text>
+       id="tspan1666"
+       x="427.73584"
+       y="171.39235">Лев-Толстой</tspan></text>
   <text
      xml:space="preserve"
-     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66666667px;line-height:1.25;font-family:'Microsoft Himalaya';-inkscape-font-specification:'Microsoft Himalaya, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr;text-anchor:start;fill:#ffffff;fill-opacity:0.6;stroke:none;"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18.66666667px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr;text-anchor:start;fill:#ffffff;fill-opacity:0.6;stroke:none;"
      x="331.25409"
      y="163.43892"
      id="text1646-5-1"><tspan
@@ -297,7 +302,7 @@
        y="163.43892">Данков</tspan></text>
   <text
      xml:space="preserve"
-     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66666667px;line-height:1.25;font-family:'Microsoft Himalaya';-inkscape-font-specification:'Microsoft Himalaya, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr;text-anchor:start;fill:#ffffff;fill-opacity:0.6;stroke:none;"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18.66666667px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr;text-anchor:start;fill:#ffffff;fill-opacity:0.6;stroke:none;"
      x="374.99139"
      y="302.2207"
      id="text1646-5-5"><tspan
@@ -307,7 +312,7 @@
        y="302.2207">Лебедянь</tspan></text>
   <text
      xml:space="preserve"
-     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12px;line-height:1.25;font-family:'Microsoft Himalaya';-inkscape-font-specification:'Microsoft Himalaya, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;fill-opacity:0.6;stroke:none"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18.66666667px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr;text-anchor:start;fill:#ffffff;fill-opacity:0.6;stroke:none;"
      x="530.57507"
      y="312.48416"
      id="text1646-5-5-3"><tspan
@@ -317,17 +322,17 @@
        y="312.48416">Доброе</tspan></text>
   <text
      xml:space="preserve"
-     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12px;line-height:1.25;font-family:'Microsoft Himalaya';-inkscape-font-specification:'Microsoft Himalaya, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;fill-opacity:0.6;stroke:none"
-     x="273.19794"
-     y="320.05405"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18.66666603px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;fill-opacity:0.6;stroke:none"
+     x="259.7403"
+     y="324.25955"
      id="text1646-5-5-8"><tspan
        sodipodi:role="line"
        id="tspan1736"
-       x="273.19794"
-       y="320.05405">Красное</tspan></text>
+       x="259.7403"
+       y="324.25955">Красное</tspan></text>
   <text
      xml:space="preserve"
-     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12px;line-height:1.25;font-family:'Microsoft Himalaya';-inkscape-font-specification:'Microsoft Himalaya, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;fill-opacity:0.6;stroke:none"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18.66666667px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr;text-anchor:start;fill:#ffffff;fill-opacity:0.6;stroke:none;"
      x="226.26506"
      y="455.66797"
      id="text1646-5-5-8-3"><tspan
@@ -337,7 +342,7 @@
        y="455.66797">Елец</tspan></text>
   <text
      xml:space="preserve"
-     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12px;line-height:1.25;font-family:'Microsoft Himalaya';-inkscape-font-specification:'Microsoft Himalaya, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;fill-opacity:0.6;stroke:none"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18.66666667px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr;text-anchor:start;fill:#ffffff;fill-opacity:0.6;stroke:none;"
      x="146.15755"
      y="332.44794"
      id="text1646-5-5-8-3-5"><tspan
@@ -347,17 +352,17 @@
        y="332.44794">Становое</tspan></text>
   <text
      xml:space="preserve"
-     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12px;line-height:1.25;font-family:'Microsoft Himalaya';-inkscape-font-specification:'Microsoft Himalaya, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;fill-opacity:0.6;stroke:none"
-     x="67.935081"
-     y="453.56656"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18.66666603px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;fill-opacity:0.6;stroke:none"
+     x="55.318558"
+     y="455.24875"
      id="text1646-5-5-8-3-8"><tspan
        sodipodi:role="line"
        id="tspan1796"
-       x="67.935081"
-       y="453.56656">Измалково</tspan></text>
+       x="55.318558"
+       y="455.24875">Измалково</tspan></text>
   <text
      xml:space="preserve"
-     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12px;line-height:1.25;font-family:'Microsoft Himalaya';-inkscape-font-specification:'Microsoft Himalaya, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;fill-opacity:0.6;stroke:none"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18.66666667px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr;text-anchor:start;fill:#ffffff;fill-opacity:0.6;stroke:none;"
      x="146.99864"
      y="564.59198"
      id="text1646-5-5-8-3-59"><tspan
@@ -367,7 +372,7 @@
        y="564.59198">Долгоруково</tspan></text>
   <text
      xml:space="preserve"
-     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12px;line-height:1.25;font-family:'Microsoft Himalaya';-inkscape-font-specification:'Microsoft Himalaya, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;fill-opacity:0.6;stroke:none"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18.66666667px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr;text-anchor:start;fill:#ffffff;fill-opacity:0.6;stroke:none;"
      x="316.06012"
      y="522.53693"
      id="text1646-5-5-8-3-4"><tspan
@@ -377,17 +382,17 @@
        y="522.53693">Задонск</tspan></text>
   <text
      xml:space="preserve"
-     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12px;line-height:1.25;font-family:'Microsoft Himalaya';-inkscape-font-specification:'Microsoft Himalaya, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;fill-opacity:0.6;stroke:none"
-     x="374.0961"
-     y="626.8335"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18.66666603px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;fill-opacity:0.6;stroke:none"
+     x="363.16177"
+     y="632.72119"
      id="text1646-5-5-8-3-52"><tspan
        sodipodi:role="line"
        id="tspan1828"
-       x="374.0961"
-       y="626.8335">Хлевное</tspan></text>
+       x="363.16177"
+       y="632.72119">Хлевное</tspan></text>
   <text
      xml:space="preserve"
-     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12px;line-height:1.25;font-family:'Microsoft Himalaya';-inkscape-font-specification:'Microsoft Himalaya, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;fill-opacity:0.6;stroke:none"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18.66666667px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr;text-anchor:start;fill:#ffffff;fill-opacity:0.6;stroke:none;"
      x="164.99649"
      y="657.8075"
      id="text1646-5-5-8-3-52-9"><tspan
@@ -397,7 +402,7 @@
        y="657.8075">Тербуны</tspan></text>
   <text
      xml:space="preserve"
-     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12px;line-height:1.25;font-family:'Microsoft Himalaya';-inkscape-font-specification:'Microsoft Himalaya, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr;text-anchor:start;fill:#ffffff;fill-opacity:0.6;stroke:none;"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18.66666667px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr;text-anchor:start;fill:#ffffff;fill-opacity:0.6;stroke:none;"
      x="58.176575"
      y="695.6571"
      id="text1646-5-5-8-3-52-4"><tspan
@@ -405,7 +410,7 @@
        id="tspan1858">Волово</tspan></text>
   <text
      xml:space="preserve"
-     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12px;line-height:1.25;font-family:'Microsoft Himalaya';-inkscape-font-specification:'Microsoft Himalaya, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;fill-opacity:0.6;stroke:none"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18.66666667px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr;text-anchor:start;fill:#ffffff;fill-opacity:0.6;stroke:none;"
      x="538.44568"
      y="635.09778"
      id="text1646-5-5-8-3-52-8"><tspan
@@ -415,7 +420,7 @@
        y="635.09778">Усмань</tspan></text>
   <text
      xml:space="preserve"
-     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12px;line-height:1.25;font-family:'Microsoft Himalaya';-inkscape-font-specification:'Microsoft Himalaya, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;fill-opacity:0.6;stroke:none"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18.66666667px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr;text-anchor:start;fill:#ffffff;fill-opacity:0.6;stroke:none;"
      x="697.41388"
      y="627.52789"
      id="text1646-5-5-8-3-52-5"><tspan
@@ -425,7 +430,7 @@
        y="627.52789">Добринка</tspan></text>
   <text
      xml:space="preserve"
-     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12px;line-height:1.25;font-family:'Microsoft Himalaya';-inkscape-font-specification:'Microsoft Himalaya, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;fill-opacity:0.6;stroke:none"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18.66666667px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr;text-anchor:start;fill:#ffffff;fill-opacity:0.6;stroke:none;"
      x="576.29517"
      y="497.99817"
      id="text1646-5-5-8-3-52-41"><tspan

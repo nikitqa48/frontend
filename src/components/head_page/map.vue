@@ -39,7 +39,7 @@
                 В мире</button>
               <button @click="active" id="2">
                 <!-- <div   @click="active" id="2" class="svg"> -->
-                <svg   class="svg" viewBox="0 0 17 21"  xmlns="http://www.w3.org/2000/svg">
+                <svg   class="svg_jd" viewBox="0 0 17 21"  xmlns="http://www.w3.org/2000/svg">
 <path d="M0.607422 14.6964C0.607422 16.6249 2.17617 18.1937 4.10463 18.1937L2.60583 19.6925V20.1921H14.5963V19.6925L13.0975 18.1937C15.0259 18.1937 16.5947 16.6249 16.5947 14.6964V4.20482C16.5947 0.707609 13.0175 0.208008 8.60104 0.208008C4.18457 0.208008 0.607422 0.707609 0.607422 4.20482V14.6964ZM8.60104 16.1952C7.50192 16.1952 6.60264 15.296 6.60264 14.1968C6.60264 13.0977 7.50192 12.1984 8.60104 12.1984C9.70016 12.1984 10.5994 13.0977 10.5994 14.1968C10.5994 15.296 9.70016 16.1952 8.60104 16.1952ZM14.5963 9.20083H2.60583V4.20482H14.5963V9.20083Z" />
 </svg>
                 <!-- </div> -->
@@ -94,12 +94,17 @@
           </div>
 </template>
 <style scoped>
+@font-face {
+  font-family: "Montserrat bold";
+  src: url('/assets/fonts/Montserrat/Montserrat-Bold.woff') format('woff');
+  font-style: bold;
+}
 .rounded-borders{
   background:none;
 }
 .slide_container{
   width:80%;
-  height:99%;
+  height:100%;
   margin:auto;
 }
 .slide_container img{
@@ -127,12 +132,22 @@
 .dots_industry{
   width:50%;
 }
+.svg_jd{
+display:flex;
+align-items: center;
+padding:0;
+width:11%;
+margin-right: 0.5vw;
+}
+.svg_jd svg{
+  width:70%;
+}
 .svg{
 display:flex;
 align-items: center;
 padding:0;
 width:15%;
-margin-right: 0.2vw;
+margin-right: 0.5vw;
 }
 .svg svg{
   width:70%;
@@ -141,7 +156,7 @@ margin-right: 0.2vw;
   display:flex;
   width:100%;
   padding-left: 15%;
-  margin-top: 10%;
+  margin-top: 15%;
   flex-direction: column;
     justify-content: flex-start;
   align-items: flex-start;
@@ -149,7 +164,9 @@ margin-right: 0.2vw;
 }
 .dots_wrap h3{
   line-height: 5vh;
-  font-size: 2vw;
+  font-size: 2.3vw;
+  font-weight: 600;
+  font-family: "Montserrat bold";
   margin-top: 0;
   margin-bottom: 2%;
 }
@@ -168,9 +185,10 @@ margin-right: 0.2vw;
 }
 
 .buttons button{
+  margin-top: 0.5vh;
   text-align: center;
   fill:#72898B;
-  height:4vh;
+  height:5vh;
   cursor:pointer;
   display:flex;
   align-items: center;
@@ -178,10 +196,10 @@ margin-right: 0.2vw;
   outline: none;
   border-radius: 100px;
   background:#C7D7E2;
-  font-size: 0.8vw;
+  font-size: 0.93vw;
   border:none;
   color:#42595B;
-  width:6vw;
+  width:8vw;
   }
   .buttons button:nth-child(2), .buttons button:nth-child(3), .buttons button:nth-child(4){
     margin-left: 1vw;

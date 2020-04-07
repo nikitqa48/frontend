@@ -5,12 +5,20 @@
          
             <div class="university">
               <h4> Интерактивная карта площадок </h4>
+                                     <transition
+              appear
+              
+              enter-active-class="animated bounceInDown"
+              leave-active-class="animated bounceOutLeft slow">
             <div class="wrap">
-            <button class="first"          id='first'          
-                                @click="active">ОЭЗ "Липецк" </button>
-                      <button class="third" id='third' @click="active"> Индустриальные парки </button>
-                                    <button class="second"  id = 'second'  @click="active">ОЭЗ РУ </button>
+              
+            <button class="first"   id='first'  @click="active">  ОЭЗ "Липецк" </button>
+                      
+                  <button class="third" id='third' @click="active"> Индустриальные парки </button>
+                                    
+                          <button class="second"  id = 'second'  @click="active">ОЭЗ РУ </button>
             </div>
+                                     </transition>
             </div>
         
             <div class="left_map">
@@ -142,23 +150,23 @@
             </div>
             <div class="right_map">
                 <div class="right_wrapper" >
-                  <div class="back" v-if="show_greenfield == true" @click="show_greenfield = false">
-                   &#8592; назад </div>
-                   
-                  <h3 class="title" v-if="show_greenfield == true" @click="show_greenfield = true">
-                    ОЭЗ "ЛИПЕЦК"
-                  </h3>
              
-                  <p class="sub_title">
+             
+                  <!-- <p class="sub_title">
                     Площадь, кадастровый номер
-                    </p>
+                    </p> -->
                     <div  v-if="show_greenfield == false">
               
                    
               <div  v-if="show_greenfield == false">
-                <h4 >
+                <h4 class="list">
                   Список площадок 
                 </h4>
+                   <q-scroll-area v-if="show_greenfield == false"
+                   dark
+      :visible="visable"
+      style="height: 65vh; max-width: 99%;"
+    >
                 <div class="items_greenfield" v-if="show_greenfield == false">
                   <div class="green" >
     
@@ -172,7 +180,7 @@
                              <span>Площадь: </span>
                           </div>
                           <div class="inside_square">
-                            {{item.square}}
+                            {{item.square}} ГА
                           </div>
                           </div>
                                           <div class="wrap_number">
@@ -181,7 +189,19 @@
                              <span>Тип участка: </span>
                           </div>
                           <div class="inside_square">
-                            {{item.type}}
+                            <span v-if="item.type == 'greenfield'"> Гринфилд </span>
+                            <span v-if="item.type == 'brownfield'"> Браунфилд</span>
+                          </div>
+                          </div>
+                                                          <div class="wrap_number">
+                      <div class="number_row">
+                            <img src ="/statics/image/ploshad.svg">
+                             <span>Форма собственности: </span>
+                          </div>
+                          <div class="inside_square">
+                           
+                            <span v-if="item.form == 'goverment'"> Государственная </span>
+                            <span v-if="item.form == 'private'"> Частная</span>
                           </div>
                           </div>
                            </div>                  
@@ -190,64 +210,100 @@
                   </div>
                  
                 </div>
-                               <transition
-              appear
-              enter-active-class="animated bounceInDown"
-              leave-active-class="animated bounceOutLeft slow">
-              <button >ANIMATION</button>
-            </transition>
+                   </q-scroll-area>
               </div>
-                  
                   </div>
+                  <div class="q-scroll">
+                              <div class="back" v-if="show_greenfield == true" @click="show_greenfield = false">
+                   &#8592; Вернуться назад </div>
+  
+                  <h3 class="title" v-if="show_greenfield == true" @click="show_greenfield = true">
+                    ОЭЗ «Липецк»
+                  </h3>
+                      <q-scroll-area
+      dark
+      class="bg-dark text-white rounded-borders"
+      style="height: 74.6vh; max-width: 90%;"
+       v-if="show_greenfield == true"
+    >   
+             
                       <div class="greenfield_image" ref="grinf" @click="modalImage">
                     <img :src="greenfield.image" class="greenfield_inside" v-if="show_greenfield == true" >
                   </div>
-                  
-                   <div class="table" v-if="show_greenfield == true"> <p class = "gr">Гринфилд</p> <p class = "cadastr">{{greenfield.number}} </p></div>
+                  <div class="contain_qscroll">
+                   <div class="table" v-if="show_greenfield == true"> <p class = "gr">Площадь:</p> <p class = "cadastr">{{greenfield.number}} </p></div>
+                   <div class="table" v-if="show_greenfield == true"> <p class = "gr">Тип участка:</p> <p class = "cadastr"> <span v-if="greenfield.type == 'greenfield'"> Гринфилд </span>
+                            <span v-if="greenfield.type == 'brownfield'"> Браунфилд</span></p></div>
+                            <div class="table" v-if="show_greenfield == true"> <p class = "gr">Кадастровый номер:</p> <p class = "cadastr">{{greenfield.number}} </p></div>
                    <p class="earth" v-if="show_greenfield == true"> Земельный участок на территории Веневского района</p>
                    <p class="text_earth" v-if="show_greenfield == true"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Orci phasellus egestas tellus rutrum tellus pellentesque eu </p>
                 <div class="inside_greenfield" v-if="show_greenfield == true">
                   <div class="item_greend">
+                    <div class="greend_inside__img">
+                      <div class="icon">
                     <img src="/statics/image/approval 1.svg">
+                      </div>
                     <p class="usefull"> Вид разрешенного использования</p>
+                    </div>
                     <span class="usefull_inside">  Для сельскохозяйственного использования </span>
                   </div>
                     <div class="item_greend">
+                      <div class="greend_inside__img">
+                        <div class="icon">
                     <img src="/statics/image/form.svg">
+                        </div>
                     <p class="usefull"> Форма собственности</p>
+                      </div>
                     <span class="usefull_inside" v-if="greenfield.form == 'goverment'">  Государственная </span> <span class="ne_znau1" v-if="greenfield.form == 'private'"> Частная </span>
                   </div>
                       <div class="item_greend">
+                        <div class="greend_inside__img">
+                          <div class="icon">
                     <img src="/statics/image/square.svg">
+                          </div>
                     <p class="usefull"> Площадь</p>
+                        </div>
                     <span class="usefull_inside">  Земельный участок - <br> {{greenfield.square}} га </span> 
                   </div>
                                <div class="item_greend">
+                                 <div class="greend_inside__img">
+                                   <div class="icon">
                     <img src="/statics/image/water.svg">
+                                   </div>
                     <p class="usefull"> Водоснабжение</p>
+                                 </div>
                     <span class="usefull_inside"> Скважина </span> 
                   </div>
               
                                                <div class="item_greend">
+                                                 <div class="greend_inside__img">
+                                                   <div class="icon">
                     <img src="/statics/image/burn.svg">
+                                                   </div>
                     <p class="usefull"> Газоснабжение</p>
+                                                 </div>
                     <span class="usefull_inside"> Ближайшая ГРС Веневская (лимиты по запросу) </span> 
                   </div>
                                                          <div class="item_greend">
+                                                           <div class="greend_inside__img">
+                                                             <div class="icon">
                     <img src="/statics/image/energy.svg">
+                                                             </div>
                     <p class="usefull"> Электричество</p>
+                                                           </div>
                     <span class="usefull_inside"> Ближайшая ПС Бельковская (лимиты по запросу)</span> 
                   </div>
              
                 </div>
-                <div class="lgoty_nalog" v-if="show_greenfield == true">
+                <!-- <div class="lgoty_nalog" v-if="show_greenfield == true">
                 <p class="lgoty">Льготы</p>
                 <p class="number_lgoty"> 15.5% </p>
                 <p>
                 налог на прибыль</p>
-                <div class="animate-bounce">
- 
-                </div>
+                </div> -->
+                  </div>
+              </q-scroll-area>
+                  </div>
                 </div>
                 </div>
             </div>
@@ -262,63 +318,79 @@
 *{
   font-family: 'Montserrat';
 }
+.contain_qscroll{
+  width:90%;
+  margin: auto;
+}
+.q-scroll{
+  margin-top: 2%;
+}
+.cadastr{
+  font-size: 0.93vw;
+}
+.icon img{
+  width: 100%;
+}
+.icon{
+  height:5vh;
+  width:15%;
+}
+.list{
+  margin-top: 9.5vh;
+  font-size: 2vw;
+  font-weight: 600;
+  letter-spacing: 0.001vw;
+}
+.q-scrollarea__thumb{
+ background: white!important;
+}
 .wrap_number{
-  margin-right: 2vw;
+  margin-right: 1vw;
+}
+.inside_square span{
+  font-size: 1vw;
+  margin-left: 1vw;
+}
+.inside_square{
+  padding-bottom: 1vw;
 }
 .item_greend{
   display: flex;
   flex-direction: column;
-  height:15vh;
+  min-height:15vh;
+  opacity:.5;
   border:1px solid rgba(255, 255, 255, 0.7);
   position: relative;
-  width:25%;
+  width:48%;
+}
+.greend_inside__img{
+  padding:1vh;
+  display: flex;
+  flex-direction: row;
 }
 
-.item_greend:nth-child(2){
-  margin-left:5%;
-}
-.item_greend:nth-child(2) p{
-  margin-top: 5%;
- 
-}
-.item_greend:nth-child(3) p{
-margin-top: 5%;
 
-}
-.item_greend:nth-child(2) span{
-  padding-top: 10%;
-  }
   .item_greend:nth-child(3) {
-  margin-left:5%;
+  margin-top:3%;
   }
-  .item_greend:nth-child(3) span{
+  /* .item_greend:nth-child(3) span{
   padding-top: 10%;
-  }
+  } */
     .item_greend:nth-child(4) {
    margin-top: 3%;
   }
       .item_greend:nth-child(5) {
    margin-top: 3%;
-    margin-left:5%;
+   
   }
         .item_greend:nth-child(6) {
    margin-top: 3%;
-    margin-left:5%;
-  }
-    .item_greend:nth-child(4) span{
-  padding-top: 10%;
-  }
-     .item_greend:nth-child(5) span{
-  padding-top: 10%;
-  }
-     .item_greend:nth-child(6) span{
-  padding-top: 10%;
-  }
+
+        }
 .item_greend img{
-  position: absolute;
   top:10%;
   left:5%;
-  height:30%;
+  height:50%;
 }
 .lgoty{
   margin-top: 2%;
@@ -334,20 +406,21 @@ margin-top: 5%;
 }
 .number_row span{
   margin-left: 0.5vw;
+  font-size: 1vw;
   opacity:.3;
 }
 .usefull{
-  padding-top: 5%;
-  padding-left: 10%;
-  font-size: 0.7vw;
-  text-align: center;
+  padding:0;
+  margin:0;
+  margin-left: 0.5vw;
+  font-size: 0.93vw;
   color:white;
 }
 .usefull_inside{
   color: white;
   opacity:.5;
   padding-left: 10%;
-  font-size: .7vw;
+  font-size: .93vw;
 }
 .wrapper {
   align-items: center;
@@ -369,6 +442,7 @@ flex-wrap: wrap;
 }
 .inside_greenfield{
   display:flex;
+  justify-content: space-between;
   flex-wrap: wrap;
 }
 .greenfield_inside{
@@ -376,10 +450,13 @@ flex-wrap: wrap;
   width:100%;
 }
 .earth{
+  font-size: 0.93vw;
+  font-weight: 500;
   margin-top:2%;
 }
 .text_earth{
   width:90%;
+  font-size: 1.04vw;
   opacity: .6;
 }
 
@@ -402,22 +479,37 @@ flex-wrap: wrap;
 }
 .greenfield_image{
   width:18vw;
-  right: 9%;
+  right: 5%;
+  top:3%;
+  height:20%;
   position: absolute;
-  top:10;
+}
+.greenfield_image img{
+
+  height: 100%;
 }
 .back{
+  margin-top: 5vh;
+  margin-bottom: 1vh;
   font-size: 1vw;
+  opacity: .5;
   cursor:pointer;
 }
 .square_number{
-  width:80%;
+  width:100%;
+  padding-bottom: 1vh;
   display: flex;
+  justify-content: space-between;
   flex-direction: row;
-
+}
+.bg-dark{
+  background:rgba(31, 37, 55, 0.7)!important;
 }
 .title{
   margin:0;
+  font-size: 1.4vw;
+  letter-spacing: 0.02vw;
+  font-weight: 600;
   padding-right: 0;
 }
 .border{
@@ -471,6 +563,10 @@ width: 96%;
   opacity: 1!important;
   fill: #2CCCD8!important;
 }
+.click{
+  opacity: 1!important;
+  fill: #2CCCD8!important;
+}
 .university button{
   padding-left: 1.5vw;
   padding-right: 1.5vw;
@@ -503,20 +599,19 @@ width: 96%;
 }
 .right_map {
   align-self: flex-start;
-  width:50%;
+  width:52%;
   height: 100%;
   color: white;
   position:relative;
 }
 .left_map {
-  margin-left: 7%;
-  margin-right: 2.6%;
+  margin-top: 7%;
+  margin-left: 6%;
+  margin-right: 1.5%;
   position: relative;
   display: flex;
-  align-self: flex-end;
   height:100%;
   width: 50%;
-  margin-bottom: 0.5%;
 }
 .fixed-center {
   width:50vw;
@@ -527,15 +622,20 @@ width: 96%;
 .table {
   margin-top: 3%;
   display: flex;
+  flex-direction: column;
 }
 .table p{
-  margin:0;
+    margin:0;
 }
 .right_wrapper{
   display: flex;
   width:100%;
   flex-direction: column;
   margin-top: 10%;
+}
+.gr{
+  font-size: 0.93vw;
+  opacity: .5;
 }
 .active{
   opacity: 1!important;
@@ -555,6 +655,7 @@ export default {
       greenfield:{
 
       },
+      visable:true,
       index: 0,
       toggle:true,
       green:null,
@@ -615,7 +716,8 @@ export default {
   mounted() {
     const url = "https://backendinvest.admlr.lipetsk.ru/?format=json";
     const url_region = "https://backendinvest.admlr.lipetsk.ru/inform/?format=json";
-    const greenfield_url = 'https://backendinvest.admlr.lipetsk.ru/greenfield/?format=json'
+    // const greenfield_url = 'https://backendinvest.admlr.lipetsk.ru/greenfield/?format=json'
+    const greenfield_url = 'http://127.0.0.1:8000/greenfield/?format=json'
     fetch(url, {
       method: "GET"
     })

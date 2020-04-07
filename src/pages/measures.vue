@@ -24,22 +24,22 @@
         </div>
     </q-form>
    
-                    <div class = 'items'>
+  <div class="q-ma-md">
+    <div>
+      <q-toggle v-model="visible" label="Show scrollbar" />
+    </div>
 
-  <q-virtual-scroll
-    style="max-height: 300px; overflow-x: hidden"
-    :items-size="size"
-    :items-fn="getItems"
-    :virtual-scroll-item-size="78"
-    separator
-  >
-    <template v-slot="{ item, index }">
-      <async-component :key="index" :index="item.index" :sent="item.sent"></async-component>
-    </template>
-  </q-virtual-scroll>
-
-    
-           </div>
+    <q-scroll-area
+      :visible="visible"
+      style="height: 200px; max-width: 300px;"
+    >
+      <div v-for="n in 100" :key="n" class="q-py-xs">
+        Lorem ipsum dolor sit amet, consectetur adipisicing
+        elit, sed do eiusmod tempor incididunt ut labore et
+        dolore magna aliqua.
+      </div>
+    </q-scroll-area>
+  </div>
             </div>
        
         </div>
@@ -150,6 +150,9 @@
     flex-wrap: nowrap;
     margin-top: 5%;
 }
+*{
+    color:white;
+}
 body{
     height: 100%;
 }
@@ -175,7 +178,8 @@ export default {
         return{
             support: {},
             text: '',
-             asyncContent: null
+             asyncContent: null,
+             visable:true
         }
     },   
     methods:{
