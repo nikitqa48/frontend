@@ -1,16 +1,14 @@
 <template>
 <div>        
-        <q-fab color="white" icon="keyboard_arrow_up" direction="up" outline unelevated flat
+        <button 
       class="absolute" 
+       @click="show=!show"
     >
-        <q-fab-action color="white" outline icon="call">
-                            <q-tooltip anchor="center left" self="center right" :offset="[10, 10]">
-          <strong>Мы с вами свяжемся</strong>
-          (<q-icon name="keyboard_arrow_left"/>)
-        </q-tooltip>
-        </q-fab-action>
-        <q-fab-action color="white"  outline  @click="show=!show" icon="chat" />
-      </q-fab>
+    <div class="img">
+      <img src="/statics/image/call.svg">
+    </div>
+     Обратная связь
+        </button>
      <q-form
       @submit="onSubmit"
       @reset="onReset"
@@ -155,14 +153,31 @@ export default {
 <style scoped>
 .absolute{
   right: 0;
-  border:1px solid white;
-  border-radius: 15px;
-  margin-right: 2%;
-  margin-top: 43%;
+  border:none;
+  height: 6vh;
+  width:14vw;
+  border-radius: 150px;
+  margin-right: 6%;
+  font-size: 0.8vw;
+  color:white;
+  background: #2CCCD8;
+  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 45%;
+  cursor: pointer;
   z-index: 10;
 }
 .absolute:hover{
-  background: rgba(255, 255, 255, 0.3);
+  /* background: rgba(255, 255, 255, 0.3); */
+}
+.img{
+  width:1.2vw;
+  margin-right: 0.5vw;
+}
+.img img{
+  width:100%;
 }
 .form_inside{
   margin-top: 5%;

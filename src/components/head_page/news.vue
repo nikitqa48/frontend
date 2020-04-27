@@ -57,7 +57,7 @@
                 </div>
             
                       <div class="item2">
-                        <router-link :to="{name: 'detail', params: { id: news[4].id}}" class="rout"> 
+                        <router-link :to="{name: 'news', params: { id: news[4].id}}" class="rout"> 
                   <div class="image2">
                     <div class="dark"></div>
                        <div class="title">
@@ -72,11 +72,15 @@
           </div>
         </div>
 
+
                 <div class="all">
-                   <button class="more">
+                  <router-link :to="{name: 'news'}" class="more" id='more'> 
+                   
               Показать все новости
-            </button>
+            
+            </router-link>
                 </div>
+
             </div>
          
             </div>
@@ -99,6 +103,7 @@
   height: 100vh;
   color:white;
 }
+
 .wrap_aside{
   display: flex;
   height:100%;
@@ -126,19 +131,29 @@
 }
 .all{
 width:100%;
+text-decoration: none;
 display: flex;
 justify-content: center;
 }
+
+body a{
+  text-decoration: none;
+}
 .more{
 border:none;
+width:14%;
+display: flex;
+justify-content: center;
+align-items: center;
 border-radius: 5px;
 background:#52A4DF;
 color:white;
 cursor: pointer;
-width:14%;
+margin-bottom: 7%;
 font-size: 0.8vw;
 height:5vh;
 }
+
 .item2:nth-child(4){
 
   margin-left: 2%;

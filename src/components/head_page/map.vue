@@ -64,12 +64,22 @@
       </template> 
       <q-carousel-slide name="1" >
         <div class="slide_container">
+               <transition
+              appear
+              enter-active-class="animated bounceInLeft"
+              leave-active-class="animated bounceOutLeft slow">
           <img src="/statics/image/newmap.png">
+               </transition>
         </div>
       </q-carousel-slide>
             <q-carousel-slide name="2" >
         <div class="slide_container2">
+               <transition
+              appear
+              enter-active-class="animated bounceInLeft"
+              leave-active-class="animated bounceOutLeft slow">
           <img src="/statics/image/road.png.png">
+               </transition>
         </div>
       </q-carousel-slide>
              <q-carousel-slide name="3" >
@@ -87,7 +97,12 @@
       </q-carousel-slide>
             <q-carousel-slide name="4" >
         <div class="slide_container">
+               <transition
+              appear
+              enter-active-class="animated bounceInLeft"
+              leave-active-class="animated bounceOutLeft slow">
           <img src="/statics/image/avia.png.png">
+               </transition>
         </div>
       </q-carousel-slide>
                </q-carousel>

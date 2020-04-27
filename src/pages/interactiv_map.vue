@@ -5,11 +5,7 @@
          
             <div class="university">
               <h4> Интерактивная карта площадок </h4>
-                                     <transition
-              appear
-              
-              enter-active-class="animated bounceInDown"
-              leave-active-class="animated bounceOutLeft slow">
+                                   
             <div class="wrap">
               
             <button class="first"   id='first'  @click="active">  ОЭЗ "Липецк" </button>
@@ -18,9 +14,13 @@
                                     
                           <button class="second"  id = 'second'  @click="active">ОЭЗ РУ </button>
             </div>
-                                     </transition>
+                                     
             </div>
-        
+          <transition
+              appear
+              
+              enter-active-class="animated bounceInDown"
+              leave-active-class="animated bounceOutLeft slow">
             <div class="left_map">
               <svg viewBox="0 19 863 799" class="svg_map" id ='svg'>
                 <path
@@ -148,6 +148,7 @@
               </svg>
               <img src="/statics/image/map_png.svg" class="svg" />
             </div>
+            </transition>
             <div class="right_map">
                 <div class="right_wrapper" >
              
