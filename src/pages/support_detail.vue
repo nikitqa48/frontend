@@ -177,7 +177,7 @@ export default {
   },
   mounted() {
     const url =
-      "http://127.0.0.1:8000/support/detail/" +
+      "https://backendinvest.admlr.lipetsk.ru/support/detail/" +
       this.$route.params.id +
       "?format=json";
     fetch(url)

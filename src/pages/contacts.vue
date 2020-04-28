@@ -10,7 +10,7 @@
     <div class="border"> </div>
     <div class="parent">
     <div class="image">
-        <img src="/statics/image/OEZ.png">
+        <img src="statics/image/OEZ.png">
     </div>
      <div class="inside_parent">
         <span class="fio">
@@ -53,7 +53,7 @@
     <div class="border"> </div>
     <div class="parent">
     <div class="photo">
-        <img src="/statics/image/OEZ.png">
+        <img src="statics/image/OEZ.png">
     </div>
      <div class="inside_parent">
         <span class="fio">
@@ -96,7 +96,7 @@
     <div class="border"> </div>
     <div class="parent">
     <div class="photo">
-        <img src="/statics/image/OEZ.png">
+        <img src="statics/image/OEZ.png">
     </div>
      <div class="inside_parent">
         <span class="fio">
@@ -139,7 +139,7 @@
     <div class="border"> </div>
     <div class="parent">
     <div class="photo">
-        <img src="/statics/image/OEZ.png">
+        <img src="statics/image/OEZ.png">
     </div>
      <div class="inside_parent">
         <span class="fio">

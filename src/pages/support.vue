@@ -201,7 +201,7 @@ body a{
   -webkit-appearance: none;
   -moz-appearance: none;
   background: transparent;
-  background-image: url("/statics/image/select.png");
+  background-image: url("../statics/image/select.png");
   background-repeat: no-repeat;
   background-position-x: 98%;
   background-position-y: 50%;
@@ -301,9 +301,9 @@ export default {
       onSubmit (evt) {
       const formData = new FormData(evt.target)
       const submitResult = []
-      const url = 'http://127.0.0.1:8000/support/?format=json'+'&type='+this.type+'&territory='+this.territory+'&form='+this.recipient+'&industry='+this.industry
+      const url = 'https://backendinvest.admlr.lipetsk.ru/support/?format=json'+'&type='+this.type+'&territory='+this.territory+'&form='+this.recipient+'&industry='+this.industry
       if (this.industry.valueOf() == '') {
-        this.url = 'http://127.0.0.1:8000/support/?format=json'+'&type='+this.type+'&territory='+this.territory+'&form='+this.recipient
+        this.url = 'https://backendinvest.admlr.lipetsk.ru/support/?format=json'+'&type='+this.type+'&territory='+this.territory+'&form='+this.recipient
         console.log(this.url)
         fetch(this.url).then(response => response.json()).then(data => (this.support = data))
         this.submitResult = submitResult
@@ -315,7 +315,7 @@ export default {
     },
     },
         mounted(){
-        const url = 'http://127.0.0.1:8000/support/'
+        const url = 'https://backendinvest.admlr.lipetsk.ru/support/'
         fetch(url).then(response => response.json()).then(data => (this.support = data))
     }
 }

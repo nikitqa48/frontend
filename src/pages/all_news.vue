@@ -78,6 +78,9 @@
   width:100%;
   z-index: 0;
 }
+.dark:hover{
+  background:rgba(255, 255, 255, 0);
+}
 .image2 img{
   border-radius: 5px;
   width:100%;
@@ -152,7 +155,7 @@ export default {
         headerVue
     },
     mounted() {
-    const url = "http://127.0.0.1:8000/all_news/"
+    const url = "https://backendinvest.admlr.lipetsk.ru/all_news/"
     fetch(url)
       .then(response => response.json())
       .then(data => (this.news = data));

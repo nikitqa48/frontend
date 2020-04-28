@@ -19,7 +19,7 @@
             <span class="industry_inside__textbutton" v-if="industry == '3'">Туризм</span>
             <span class="industry_inside__textbutton" v-if="industry == '4'">Обработка</span>
             <div class="arrow">
-              <img src="/statics/image/Arrowright.svg" />
+              <img src="statics/image/Arrowright.svg" />
             </div>
           </div>
         </q-carousel-control>
@@ -30,7 +30,7 @@
             <span class="industry_inside__textbuttonleft" v-if="industry == '3'">Строительство</span>
             <span class="industry_inside__textbuttonleft" v-if="industry == '4'">Промышленность</span>
             <div class="arrow">
-              <img src="/statics/image/leftarrow.svg" />
+              <img src="statics/image/leftarrow.svg" />
             </div>
           </div>
         </q-carousel-control>
@@ -86,7 +86,7 @@
           <div class="left_slide">
             <div class="slidertext">
               <div class="image">
-                <img class="slide_image" src="/statics/image/list.png" />
+                <img class="slide_image" src="statics/image/list.png" />
               </div>
               <p
                 class="slide_text"
@@ -94,7 +94,7 @@
             </div>
             <div class="slidertext">
               <div class="image">
-                <img class="slide_image" src="/statics/image/list.png" />
+                <img class="slide_image" src="statics/image/list.png" />
               </div>
               <p
                 class="slide_text"

@@ -68,7 +68,7 @@
               appear
               enter-active-class="animated bounceInLeft"
               leave-active-class="animated bounceOutLeft slow">
-          <img src="/statics/image/newmap.png">
+          <img src="statics/image/newmap.png">
                </transition>
         </div>
       </q-carousel-slide>
@@ -78,7 +78,7 @@
               appear
               enter-active-class="animated bounceInLeft"
               leave-active-class="animated bounceOutLeft slow">
-          <img src="/statics/image/road.png.png">
+          <img src="statics/image/road.png.png">
                </transition>
         </div>
       </q-carousel-slide>
@@ -89,7 +89,7 @@
               appear
               enter-active-class="animated bounceInLeft"
               leave-active-class="animated bounceOutLeft slow">
-              <img src="/statics/image/asd.png">
+              <img src="statics/image/asd.png">
             </transition>
 
         </div>
@@ -101,7 +101,7 @@
               appear
               enter-active-class="animated bounceInLeft"
               leave-active-class="animated bounceOutLeft slow">
-          <img src="/statics/image/avia.png.png">
+          <img src="statics/image/avia.png.png">
                </transition>
         </div>
       </q-carousel-slide>

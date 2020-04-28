@@ -5,8 +5,8 @@
       <h4> Истории успеха </h4>
       <p class="today"> В Липецкой области </p>
       <div class="buttons">
-                <button   @click.prevent="slidePrev()" class="prev"><img src="/statics/image/prev_history.png"></button>
-            <button class="next" @click.prevent="slideNext()"><img src="/statics/image/next_history.png"></button>
+                <button   @click.prevent="slidePrev()" class="prev"><img src="statics/image/prev_history.png"></button>
+            <button class="next" @click.prevent="slideNext()"><img src="statics/image/next_history.png"></button>
       </div>
          <hooper :settings="hooperSettings" class="ok" ref="carousel">
       <slide>
@@ -27,7 +27,7 @@
            </div>
            <div class="right">
              <div class="image">
-             <img src="/statics/image/obrubok.png">
+             <img src="statics/image/obrubok.png">
              </div>
            </div>
          </div>
@@ -51,7 +51,7 @@
            </div>
            <div class="right">
              <div class="image">
-             <img src="/statics/image/indesit_obrubok.png">
+             <img src="statics/image/indesit_obrubok.png">
              </div>
            </div>
          </div>
@@ -74,7 +74,7 @@
            </div>
            <div class="right">
              <div class="image">
-             <img src="/statics/image/hawle.png">
+             <img src="statics/image/hawle.png">
              </div>
            </div>
          </div>
@@ -97,7 +97,7 @@
            </div>
            <div class="right">
              <div class="image">
-             <img src="/statics/image/angel1.png">
+             <img src="statics/image/angel1.png">
              </div>
            </div>
          </div>
@@ -106,7 +106,7 @@
 
      </hooper>
            <div class="hmm">
-  <img src="/statics/image/mouse.png">
+  <img src="statics/image/mouse.png">
 </div>
     </div>
   </div>
@@ -119,6 +119,7 @@
   align-items: center;
   justify-content: center;
  background: url('/statics/image/indesit.png');
+ /* ИСПРАВИТЬ УРЛ ТУТ */
  background-size:cover;
   height: 100vh;
 }
