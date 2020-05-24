@@ -292,7 +292,7 @@ export default {
   //  } 
   },
   mounted() {
-    const news_url = "http://127.0.0.1:8000/news/?format=json";
+    const news_url = "https://backendinvest.admlr.lipetsk.ru/news/?format=json";
 
     fetch(news_url)
       .then(response => response.json())

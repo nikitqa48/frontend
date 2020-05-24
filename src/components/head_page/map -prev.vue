@@ -122,7 +122,7 @@
                   d="M715.23,549.82a4.81,4.81,0,0,1-2.16-.64c-1.63-.83-3.33-1.59-5-2.32l-2.13-1c-1.15-.52-1.92-.78-2.91,0-4.48,3.71-9.9,3.86-14.87.43-5.77-4-5.77-4-10,1.69a3.36,3.36,0,0,1-2.41,1.65,3.32,3.32,0,0,1-2.58-1.43c-.69-.75-1.38-1.51-2.08-2.26-1.57-1.7-3.19-3.45-4.69-5.27-1.93-2.32-3.93-2.78-6.69-1.52a37.59,37.59,0,0,1-6.79,2.39,9.57,9.57,0,0,1-9.24-2.74,10.06,10.06,0,0,1-2.41-9.85c1.92-6.6,1.4-11.15-1.71-15.21-1.37-1.8-1.48-3.94-.32-6.54,2.45-5.53,2-6.88-3.06-9.61-2.48-1.34-3.87-2.91-2.54-6.2,1.77-4.36,1-8.38-2.47-12.28-.94-1.07-1.81-2.23-2.66-3.35a50,50,0,0,0-3.19-3.92c-4.57-4.87-6-10.84-4.27-18.25,2-8.63,6.54-16.73,13.94-24.75,1.75-1.89,3.58-3.67,5.31-5.34,3.62-3.47,5.23-7.26,4.94-11.59-.16-2.28.11-5,3.56-6.09,2.21-.67,2.44-2.66,2.37-4.71a9.08,9.08,0,0,1,2.72-7.09c1.2-1.26,3.08-3.84,2.18-6.89l-.05-.17.08-.17a14,14,0,0,1,5.57-6.05l.29-.18.27.2c1.81,1.32,3.79,2.6,6.41,2.63l1.1,0a25.25,25.25,0,0,0,2.61,0c2.34-.17,4,.26,5,1.31,1.35,1.43,1.35,3.8.92,6.92a2.87,2.87,0,0,1-2.83,2.45c-3.39.33-4.94,1.71-5.05,4.45,0,1,.94,2.68,2.38,4.16a6.31,6.31,0,0,0,3.72,2.22h.09c4.1,0,5.49,2.1,6.39,5.5.5,1.91.93,2.78,1.46,3s1.83-.33,3.68-1.42a7.8,7.8,0,0,1,4.1-1.39c5.47.14,10.58,2,15.53,3.79l1.57.57a3.39,3.39,0,0,1,2,2.75c.47,3.6,2.69,4.2,5.87,4a4,4,0,0,1,3.36,1.05,4.49,4.49,0,0,1,.9,3.78,32,32,0,0,0,.59,11.37c.4,1.65.86,3,2.37,3.22,1.2.14,1.45-.47,1.78-2,0-.25.11-.5.17-.73.5-1.85,1.86-2.9,4.05-3.13,4.12-.43,8.47-.47,12.29,2.05a77.47,77.47,0,0,1,10.81,9.24c.55.54,1.1,1.08,1.66,1.61a5.39,5.39,0,0,1,1.3,3,11.07,11.07,0,0,0,4,7.39h0a4.49,4.49,0,0,1,1.91,3.44,3.9,3.9,0,0,1-1.82,3c-.32.24-.64.53-1,.81-1.68,1.46-3.77,3.27-6.64.22-.45-.48-.88-1.05-1.34-1.65-1.2-1.59-2.43-3.23-3.79-2.74-.73.26-.56,2-.41,3.56a15.68,15.68,0,0,1,.1,3,5.12,5.12,0,0,0,0,.68c0,.81,0,1.92-1.16,2.39s-1.91-.34-2.47-.91a5.7,5.7,0,0,0-.51-.48c-1.8-1.4-3.12-1.59-4.56-.65-.65.43-1,.79-1,1.15a1.24,1.24,0,0,0,.29.91c2.3,3.22.83,6.1-.72,8.55a37.88,37.88,0,0,0-4.74,11.58,3.25,3.25,0,0,0,.06,2.49,2.66,2.66,0,0,0,1.86.93,5.74,5.74,0,0,1,4,2.28c.85,1.28,1,3.06.54,5.28a20.89,20.89,0,0,0-.16,8.72,4,4,0,0,1-2.63,5l-1,.39c-.7.28-1.42.56-2.09.89-5.3,2.59-10.85,6.28-11.94,14-.46,3.25-1.25,6.51-2,9.65-.43,1.77-.88,3.59-1.26,5.39-.33,1.61-.89,2.54-1.73,3A2.27,2.27,0,0,1,715.23,549.82Z"
                 />
               </svg>
-              <img src="/statics/image/redmap.svg" class="svg" />
+              <img src="statics/image/redmap.svg" class="svg" />
             </div>
             <div class="right_map">
                 <div class="right_wrapper" >
@@ -162,33 +162,33 @@
                    <p class="text_earth" v-if="show_greenfield == true"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Orci phasellus egestas tellus rutrum tellus pellentesque eu </p>
                 <div class="inside_greenfield" v-if="show_greenfield == true">
                   <div class="item_greend">
-                    <img src="/statics/image/approval 1.svg">
+                    <img src="statics/image/approval 1.svg">
                     <p class="usefull"> Вид разрешенного использования</p>
                     <span class="usefull_inside">  Для сельскохозяйственного использования </span>
                   </div>
                     <div class="item_greend">
-                    <img src="/statics/image/form.svg">
+                    <img src="statics/image/form.svg">
                     <p class="usefull"> Форма собственности</p>
                     <span class="usefull_inside" v-if="greenfield.form == 'goverment'">  Государственная </span> <span class="ne_znau1" v-if="greenfield.form == 'private'"> Частная </span>
                   </div>
                       <div class="item_greend">
-                    <img src="/statics/image/square.svg">
+                    <img src="statics/image/square.svg">
                     <p class="usefull"> Площадь</p>
                     <span class="usefull_inside">  Земельный участок - <br> {{greenfield.square}} га </span> 
                   </div>
                                <div class="item_greend">
-                    <img src="/statics/image/water.svg">
+                    <img src="statics/image/water.svg">
                     <p class="usefull"> Водоснабжение</p>
                     <span class="usefull_inside"> Скважина </span> 
                   </div>
               
                                                <div class="item_greend">
-                    <img src="/statics/image/burn.svg">
+                    <img src="statics/image/burn.svg">
                     <p class="usefull"> Газоснабжение</p>
                     <span class="usefull_inside"> Ближайшая ГРС Веневская (лимиты по запросу) </span> 
                   </div>
                                                          <div class="item_greend">
-                    <img src="/statics/image/energy.svg">
+                    <img src="statics/image/energy.svg">
                     <p class="usefull"> Электричество</p>
                     <span class="usefull_inside"> Ближайшая ПС Бельковская (лимиты по запросу)</span> 
                   </div>
@@ -284,7 +284,7 @@ margin-top: 5%;
 .wrapper {
   align-items: center;
   height: 100%;
-  background: url("/statics/image/lipetsk.png");
+  background: url("../statics/image/lipetsk.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;

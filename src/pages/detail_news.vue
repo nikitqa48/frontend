@@ -105,7 +105,7 @@ export default {
         headerVue
     },
     mounted() {
-    const url = "http://127.0.0.1:8000/news/detail/"+this.$route.params.id+'?format=json';
+    const url = "https://backendinvest.admlr.lipetsk.ru/news/detail/"+this.$route.params.id+'?format=json';
     fetch(url)
       .then(response => response.json())
       .then(data => (this.news = data));

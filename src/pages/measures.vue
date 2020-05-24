@@ -185,7 +185,7 @@ export default {
     methods:{
         onSubmit(){
         
-            const url = 'http://127.0.0.1:8000/support/?type=&recipient=&industry=1&territory=&form='+'&name='+this.text
+            const url = 'https://backendinvest.admlr.lipetsk.ru/support/?type=&recipient=&industry=1&territory=&form='+'&name='+this.text
             console.log(url)
         fetch(url).then(response => response.json()).then(data => (this.support = data))
         },
@@ -203,7 +203,7 @@ export default {
     }
     },
     mounted(){
-        const url = 'http://127.0.0.1:8000/support/?type=&recipient=&industry=1&territory=&form='
+        const url = 'https://backendinvest.admlr.lipetsk.ru/support/?type=&recipient=&industry=1&territory=&form='
         fetch(url).then(response => response.json()).then(data => (this.support = data))
     }
 }
