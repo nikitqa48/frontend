@@ -9,6 +9,7 @@
               <br />за 15 лет - RAEX rating agency
             </p>
           </div>
+ 
         </div>
         <video loop muted autoplay class="fullscreen-bg__video">
           <source src="statics/image/video_background.mp4" type="video/mp4" />
@@ -25,6 +26,10 @@
   position: relative;
   height: 100vh;
   width: 100%;
+}
+.hmm{
+  color:white;
+  margin-bottom: 2%;
 }
 .risk_container {
   height: 100%;

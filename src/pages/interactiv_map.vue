@@ -1,26 +1,24 @@
 <template>
 <div>
    <header-vue/>
+        <!-- <div class="form">
+      <forms-vue/>
+     </div> -->
         <div class="wrapper">
          
             <div class="university">
-              <h4> Интерактивная карта площадок </h4>
-                                   
+              <h4> Интерактивная карта площадок </h4>   
             <div class="wrap">
-              
-            <button class="first"   id='first'  @click="active">  ОЭЗ "Липецк" </button>
-                      
+            <button class="first"   id='first'  @click="active">  ОЭЗ "Липецк" </button>    
                   <button class="third" id='third' @click="active"> Индустриальные парки </button>
-                                    
                           <button class="second"  id = 'second'  @click="active">ОЭЗ РУ </button>
-            </div>
-                                     
+            </div> 
             </div>
           <transition
               appear
               
-              enter-active-class="animated bounceInDown"
-              leave-active-class="animated bounceOutLeft slow">
+              enter-active-class="animated fadeIn slow"
+              leave-active-class="animated fadeOut">
             <div class="left_map">
               <svg viewBox="0 19 863 799" class="svg_map" id ='svg'>
                 <path
@@ -151,28 +149,40 @@
             </transition>
             <div class="right_map">
                 <div class="right_wrapper" >
-             
-             
-                  <!-- <p class="sub_title">
-                    Площадь, кадастровый номер
-                    </p> -->
+
                     <div  v-if="show_greenfield == false">
               
                    
               <div  v-if="show_greenfield == false">
+                <div class="input">
                 <h4 class="list">
                   Список площадок 
                 </h4>
+              <q-form @submit="onSubmit" class="form">
+          
+ <div class="wrap_form">
+    <span class = 'text'>Тип площадки: </span>
+     <!-- <q-select v-model="model" :options="options" label="Standard" outlined label-color="white" class="select" color="white"/> -->
+     <select  v-model="type">  
+        <option value="greenfield">Гринфилд </option>
+        <option value="brownfield">Браунфилд </option>
+        <option value="">Все</option>
+      </select>
+      </div>
+       <button class="more" type="submit"> Поиск </button>
+ 
+    </q-form>
+                </div>
                    <q-scroll-area v-if="show_greenfield == false"
                    dark
       :visible="visable"
       style="height: 65vh; max-width: 99%;"
     >
                 <div class="items_greenfield" v-if="show_greenfield == false">
-                  <div class="green" >
-    
-                      <div class="greenfield_border" v-for="item in green" v-if="item.region == index+1" @click="ShowGreenfield(item)" >
-                        <div class="square">Участок №{{item.number}}</div>
+                  <h4 v-if="show_greenfield == false && oez_ppt.length != 0 && index == '0'"> ОЭЗ Липецк</h4>
+                                    <div class="green" >
+                      <div class="greenfield_border" v-for="item in oez_ppt" v-if="item.region == index+1" @click="ShowGreenfield(item)" >
+                        <div class="square">Участок №{{item.number_territory}}</div>
                         <div class="border"> </div>
                         <div class="square_number"> 
                           <div class="wrap_number">
@@ -200,16 +210,131 @@
                              <span>Форма собственности: </span>
                           </div>
                           <div class="inside_square">
-                           
-                            <span v-if="item.form == 'goverment'"> Государственная </span>
-                            <span v-if="item.form == 'private'"> Частная</span>
+                            <span v-if="item.form == 'goverment'" class="usefull_inside"> Государственная </span>
+                            <span v-if="item.form == 'private'" class="usefull_inside"> Частная</span>
                           </div>
                           </div>
                            </div>                  
           
                       </div>  
                   </div>
-                 
+                  <h4 v-if="show_greenfield == false && oez.length != 0"> ОЭЗ РУ</h4>
+                  <div class="green" >
+                      <div class="greenfield_border" v-for="item in oez" v-if="item.region == index+1" @click="ShowGreenfield(item)" >
+                        <div class="square">Участок №{{item.number_territory}}</div>
+                        <div class="border"> </div>
+                        <div class="square_number"> 
+                          <div class="wrap_number">
+                      <div class="number_row">
+                            <img src ="/statics/image/ploshad.svg">
+                             <span>Площадь: </span>
+                          </div>
+                          <div class="inside_square">
+                            {{item.square}} ГА
+                          </div>
+                          </div>
+                                          <div class="wrap_number">
+                      <div class="number_row">
+                            <img src ="/statics/image/ploshad.svg">
+                             <span>Тип участка: </span>
+                          </div>
+                          <div class="inside_square">
+                            <span v-if="item.type == 'greenfield'"> Гринфилд </span>
+                            <span v-if="item.type == 'brownfield'"> Браунфилд</span>
+                          </div>
+                          </div>
+                                                          <div class="wrap_number">
+                      <div class="number_row">
+                            <img src ="/statics/image/ploshad.svg">
+                             <span>Форма собственности: </span>
+                          </div>
+                          <div class="inside_square">
+                            <span v-if="item.form == 'goverment'" class="usefull_inside"> Государственная </span>
+                            <span v-if="item.form == 'private'" class="usefull_inside"> Частная</span>
+                          </div>
+                          </div>
+                           </div>                  
+          
+                      </div>  
+                  </div>
+                                    <h4 v-if="show_greenfield == false && industrial.length != 0" > Индустриальные парки</h4>
+                  <div class="green" >
+                      <div class="greenfield_border" v-for="item in industrial" v-if="item.region == index+1" @click="ShowGreenfield(item)" >
+                        <div class="square">Участок №{{item.number_territory}}</div>
+                        <div class="border"> </div>
+                        <div class="square_number"> 
+                          <div class="wrap_number">
+                      <div class="number_row">
+                            <img src ="/statics/image/ploshad.svg">
+                             <span>Площадь: </span>
+                          </div>
+                          <div class="inside_square">
+                            {{item.square}} ГА
+                          </div>
+                          </div>
+                                          <div class="wrap_number">
+                      <div class="number_row">
+                            <img src ="/statics/image/ploshad.svg">
+                             <span>Тип участка: </span>
+                          </div>
+                          <div class="inside_square">
+                            <span v-if="item.type == 'greenfield'"> Гринфилд </span>
+                            <span v-if="item.type == 'brownfield'"> Браунфилд</span>
+                          </div>
+                          </div>
+                                                          <div class="wrap_number">
+                      <div class="number_row">
+                            <img src ="/statics/image/ploshad.svg">
+                             <span>Форма собственности: </span>
+                          </div>
+                          <div class="inside_square">
+                            <span v-if="item.form == 'goverment'" class="usefull_inside"> Государственная </span>
+                            <span v-if="item.form == 'private'" class="usefull_inside"> Частная</span>
+                          </div>
+                          </div>
+                           </div>                  
+          
+                      </div>  
+                  </div>
+                   <h4 v-if="show_greenfield == false && any.length != 0" > Иные площадки</h4>
+                  <div class="green" >
+                      <div class="greenfield_border" v-for="item in any" v-if="item.region == index+1" @click="ShowGreenfield(item)" >
+                        <div class="square">Участок №{{item.number_territory}}</div>
+                        <div class="border"> </div>
+                        <div class="square_number"> 
+                          <div class="wrap_number">
+                      <div class="number_row">
+                            <img src ="/statics/image/ploshad.svg">
+                             <span>Площадь: </span>
+                          </div>
+                          <div class="inside_square">
+                            {{item.square}} ГА
+                          </div>
+                          </div>
+                                          <div class="wrap_number">
+                      <div class="number_row">
+                            <img src ="/statics/image/ploshad.svg">
+                             <span>Тип участка: </span>
+                          </div>
+                          <div class="inside_square">
+                            <span v-if="item.type == 'greenfield'"> Гринфилд </span>
+                            <span v-if="item.type == 'brownfield'"> Браунфилд</span>
+                          </div>
+                          </div>
+                                                          <div class="wrap_number">
+                      <div class="number_row">
+                            <img src ="/statics/image/ploshad.svg">
+                             <span>Форма собственности: </span>
+                          </div>
+                          <div class="inside_square">
+                            <span v-if="item.form == 'goverment'" class="usefull_inside"> Государственная </span>
+                            <span v-if="item.form == 'private'" class="usefull_inside"> Частная</span>
+                          </div>
+                          </div>
+                           </div>                  
+          
+                      </div>  
+                  </div>
                 </div>
                    </q-scroll-area>
               </div>
@@ -227,19 +352,18 @@
       style="height: 74.6vh; max-width: 90%;"
        v-if="show_greenfield == true"
     >   
-             
-                      <div class="greenfield_image" ref="grinf" @click="modalImage">
-                    <img :src="greenfield.image" class="greenfield_inside" v-if="show_greenfield == true" >
+                  <div class="greenfield_image" ref="grinf" @click="modalImage">
+                  <img :src="greenfield.image" class="greenfield_inside" v-if="show_greenfield == true" >
                   </div>
                   <div class="contain_qscroll">
                    <div class="table" v-if="show_greenfield == true"> <p class = "gr">Площадь:</p> <p class = "cadastr">{{greenfield.number}} </p></div>
                    <div class="table" v-if="show_greenfield == true"> <p class = "gr">Тип участка:</p> <p class = "cadastr"> <span v-if="greenfield.type == 'greenfield'"> Гринфилд </span>
                             <span v-if="greenfield.type == 'brownfield'"> Браунфилд</span></p></div>
                             <div class="table" v-if="show_greenfield == true"> <p class = "gr">Кадастровый номер:</p> <p class = "cadastr">{{greenfield.number}} </p></div>
-                   <p class="earth" v-if="show_greenfield == true"> Земельный участок на территории Веневского района</p>
-                   <p class="text_earth" v-if="show_greenfield == true"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Orci phasellus egestas tellus rutrum tellus pellentesque eu </p>
+                   <p class="earth" v-if="show_greenfield == true"> {{greenfield.earth}}</p>
+                   <p class="text_earth" v-if="show_greenfield == true">  {{greenfield.description}} </p>
                 <div class="inside_greenfield" v-if="show_greenfield == true">
-                  <div class="item_greend">
+                  <div class="item_greend" >
                     <div class="greend_inside__img">
                       <div class="icon">
                     <img src="/statics/image/approval 1.svg">
@@ -255,9 +379,9 @@
                         </div>
                     <p class="usefull"> Форма собственности</p>
                       </div>
-                    <span class="usefull_inside" v-if="greenfield.form == 'goverment'">  Государственная </span> <span class="ne_znau1" v-if="greenfield.form == 'private'"> Частная </span>
+                    <span class="usefull_inside" v-if="greenfield.form == 'goverment'">  Государственная </span> <span class="usefull_inside" v-if="greenfield.form == 'private'"> Частная </span>
                   </div>
-                      <div class="item_greend">
+                      <div class="item_greend" >
                         <div class="greend_inside__img">
                           <div class="icon">
                     <img src="/statics/image/square.svg">
@@ -266,42 +390,61 @@
                         </div>
                     <span class="usefull_inside">  Земельный участок - <br> {{greenfield.square}} га </span> 
                   </div>
-                               <div class="item_greend">
+                               <div class="item_greend" v-if="greenfield.water != '' && greenfield.water != 0">
                                  <div class="greend_inside__img">
                                    <div class="icon">
                     <img src="/statics/image/water.svg">
                                    </div>
                     <p class="usefull"> Водоснабжение</p>
                                  </div>
-                    <span class="usefull_inside"> Скважина </span> 
+                    <span class="usefull_inside"> {{greenfield.water}} </span> 
                   </div>
               
-                                               <div class="item_greend">
+                                               <div class="item_greend" v-if="greenfield.gas != '' && greenfield.gas != 0">
                                                  <div class="greend_inside__img">
                                                    <div class="icon">
                     <img src="/statics/image/burn.svg">
                                                    </div>
                     <p class="usefull"> Газоснабжение</p>
                                                  </div>
-                    <span class="usefull_inside"> Ближайшая ГРС Веневская (лимиты по запросу) </span> 
+                    <span class="usefull_inside"> {{greenfield.gas}}</span> 
                   </div>
-                                                         <div class="item_greend">
+                                                         <div class="item_greend"v-if="greenfield.power != '' && greenfield.power != 0">
                                                            <div class="greend_inside__img">
                                                              <div class="icon">
                     <img src="/statics/image/energy.svg">
                                                              </div>
                     <p class="usefull"> Электричество</p>
                                                            </div>
-                    <span class="usefull_inside"> Ближайшая ПС Бельковская (лимиты по запросу)</span> 
+                    <span class="usefull_inside"> {{greenfield.power}}</span> 
                   </div>
-             
+                                          <div class="item_greend" v-if="greenfield.customs_priveleges != ''">
+                                                 <div class="greend_inside__img">
+                                                   <div class="icon">
+                    <img src="/statics/image/burn.svg">
+                                                   </div>
+                    <p class="usefull"> Таможенные льготы</p>
+                                                 </div>
+                    <span class="usefull_inside"> {{greenfield.customs_priveleges}}</span> 
+                  </div>
+                      <div class="item_greend" v-if="greenfield.territory_priveleges != ''">
+                                                 <div class="greend_inside__img">
+                                                   <div class="icon">
+                    <img src="/statics/image/burn.svg">
+                                                   </div>
+                    <p class="usefull"> Льготная стоимость земли/аренды</p>
+                                                 </div>
+                    <span class="usefull_inside"> {{greenfield.territory_priveleges}}</span> 
+                  </div>
                 </div>
+                 
+          
                 <!-- <div class="lgoty_nalog" v-if="show_greenfield == true">
                 <p class="lgoty">Льготы</p>
                 <p class="number_lgoty"> 15.5% </p>
                 <p>
                 налог на прибыль</p>
-                </div> -->
+                </div>  -->
                   </div>
               </q-scroll-area>
                   </div>
@@ -337,7 +480,7 @@
   width:15%;
 }
 .list{
-  margin-top: 9.5vh;
+
   font-size: 2vw;
   font-weight: 600;
   letter-spacing: 0.001vw;
@@ -347,6 +490,55 @@
 }
 .wrap_number{
   margin-right: 1vw;
+}
+.input{
+  display: flex;
+  margin-top: 4vh;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.form{
+  margin:0;
+  width:40%;
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 15%;
+}
+.form button{
+  margin-right: 15%;
+  margin-left: 5%;
+}
+.form select{
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: transparent;
+  background-image: url("/statics/image/select.png");
+  background-repeat: no-repeat;
+  background-position-x: 98%;
+  background-position-y: 50%;
+  background-size: 2vh;
+  color: white;
+  border: 1px solid #dfdfdf;
+  min-height: 3vh;
+  width:100%;
+  outline: none;
+  border-radius: 5px;
+  padding-right: 2vw;
+  padding-left: 0.5vw;
+}
+.more{
+  align-self: flex-end;
+  height:50%;
+}
+.form select option{
+  color:black;
+}
+.select-selected{
+  color:white;
+}
+.select-selected:after{
+  color:white;
 }
 .inside_square span{
   font-size: 1vw;
@@ -359,8 +551,8 @@
   display: flex;
   flex-direction: column;
   min-height:15vh;
-  opacity:.5;
-  border:1px solid rgba(255, 255, 255, 0.7);
+  opacity:1;
+  border:1px solid rgba(255, 255, 255, 0.5);
   position: relative;
   width:48%;
 }
@@ -415,11 +607,12 @@
   margin:0;
   margin-left: 0.5vw;
   font-size: 0.93vw;
+  opacity:.5;
   color:white;
 }
 .usefull_inside{
   color: white;
-  opacity:.5;
+  opacity:.9;
   padding-left: 10%;
   font-size: .93vw;
 }
@@ -440,6 +633,10 @@ width:85%;
 flex-direction: column;
 flex-wrap: wrap;
 
+}
+.wrap_form{
+  display: flex;
+  flex-direction: column;
 }
 .inside_greenfield{
   display:flex;
@@ -479,14 +676,14 @@ flex-wrap: wrap;
   margin-bottom: 4vh;
 }
 .greenfield_image{
-  width:18vw;
+  max-width:40%;
   right: 5%;
+  cursor: pointer;
   top:3%;
   height:20%;
   position: absolute;
 }
 .greenfield_image img{
-
   height: 100%;
 }
 .back{
@@ -524,10 +721,13 @@ flex-wrap: wrap;
 margin:2%;
 font-size: 1vw; 
 display:flex;
+cursor: pointer;
 background:rgba(31, 37, 55, 0.7);
 flex-direction: column;
-cursor: pointer;
 width: 96%;
+}
+.greenfield_border:hover {
+  background: rgba(59, 70, 104, 0.7);
 }
 .sub_title{
   margin-top:2%;
@@ -614,10 +814,13 @@ width: 96%;
   height:100%;
   width: 50%;
 }
-.fixed-center {
-  width:50vw;
-  left:0%;
-  top:50%;
+.center {
+  min-width:70vw;
+  left:15%;
+  position: fixed;
+  top:8%;
+  height:90%;
+  overflow:visible!important;
   z-index: 15;
 }
 .table {
@@ -650,25 +853,63 @@ width: 96%;
 </style>
 <script>
 import headerVue from "../components/header.vue";
+import formsVue from "../components/forms.vue";
 export default {
   data() {
     return {
       greenfield:{
 
       },
+      oez_ppt:[],
+      any:[],
       visable:true,
       index: 0,
       toggle:true,
-      green:null,
+      green:{},
+      type:'',
+      industrial:[],
+      oez:[],
       show_greenfield:false,
     };
   },
   components:{
-    headerVue
+    headerVue, formsVue
   },
   methods: {
     modalImage() {
-      this.$refs.grinf.classList.toggle("fixed-center");
+      this.$refs.grinf.classList.toggle("center");
+    },
+    onSubmit(){
+      const greenfield_url = 'http://127.0.0.1:8000/greenfield/?format=json&type='+this.type
+      let oez_ppt = []
+      let oez = []
+      let industrial = []
+      let any = []
+      fetch(greenfield_url).then(response => response.json()).then(data => {
+      this.green = data
+      for (let i=0; i<data.length; i++){
+         
+          if (data[i].territory == 'oez' ){
+            oez_ppt.push(data[i])
+          }
+          else if (data[i].territory == 'oezru'){
+            oez.push(data[i])
+          }
+          else if (data[i].territory == 'industrial'){
+            industrial.push(data[i])
+          }
+          else if (data[i].territory == 'any'){
+            any.push(data[i])
+          }
+      }
+     this.any = any
+     this.industrial = industrial
+     this.oez_ppt = oez_ppt
+     this.oez = oez
+    
+    })
+          
+    
     },
     ShowGreenfield(object){
       this.show_greenfield = true, 
@@ -715,21 +956,31 @@ export default {
     }
   },
   mounted() {
-    const url = "https://backendinvest.admlr.lipetsk.ru/?format=json";
-    const url_region = "https://backendinvest.admlr.lipetsk.ru/inform/?format=json";
-    // const greenfield_url = 'https://backendinvest.admlr.lipetsk.ru/greenfield/?format=json'
     const greenfield_url = 'http://127.0.0.1:8000/greenfield/?format=json'
-    fetch(url, {
-      method: "GET"
+    fetch(greenfield_url).then(response => response.json()).then(data => {
+      this.green = data
+    
+      for (let i=0; i<data.length; i++){
+         
+          if (data[i].territory == 'oez' ){
+            this.oez_ppt.push(data[i])
+          }
+          else if (data[i].territory == 'oezru'){
+            this.oez.push(data[i])
+          }
+          else if (data[i].territory == 'industrial'){
+            this.industrial.push(data[i])
+          }
+          else if (data[i].territory == 'any'){
+            this.any.push(data[i])
+          }
+      }
+    
     })
-      .then(response => response.json())
-      .then(data => (this.info = data));
- 
-    fetch(url_region)
-      .then(response => response.json())
-      .then(data => (this.region = data));
-  
-    fetch(greenfield_url).then(response => response.json()).then(data => (this.green = data))
+      
+
+    
   },
+ 
 };
 </script>
