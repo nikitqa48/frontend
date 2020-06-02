@@ -421,9 +421,7 @@
 .item_greend:nth-child(3) {
   margin-top: 3%;
 }
-/* .item_greend:nth-child(3) span{
-  padding-top: 10%;
-  } */
+
 .item_greend:nth-child(4) {
   margin-top: 3%;
 }

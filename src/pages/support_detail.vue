@@ -11,8 +11,8 @@
          </router-link>
       <div class="name">{{support.name}}</div>
       <div class="category">
-        <div class="perekrestok">
-          <div class="wrapper">
+        <div class="perekrestok" v-if="support.recipient != ''">
+          <div class="wrapper" >
             <span class="text">Получатели:</span>
             <!-- <q-select v-model="model" :options="options" label="Standard" outlined label-color="white" class="select" color="white"/> -->
             <span
@@ -29,8 +29,8 @@
             <span class="vid" v-if="support.recipient == 'cooperatives'">Кооперативы</span>
           </div>
         </div>
-        <div class="perekrestok">
-          <div class="wrapper">
+        <div class="perekrestok" v-if="support.type != ''">
+          <div class="wrapper" >
             <span class="text">Тип поддержки:</span>
             <!-- <q-select v-model="model" :options="options" label="Standard" outlined label-color="white" class="select" color="white"/> -->
             <span class="vid" v-if="support.type == 'direct'">Инвестиции</span>
@@ -54,21 +54,22 @@
             >кредиты под залог создаваемого имущества</span>
           </div>
         </div>
-        <div class="perekrestok">
-          <div class="wrapper">
+        <div class="perekrestok" v-if="support.implementation != '' ">
+          <div class="wrapper" >
             <span class="text">Способ реализации проекта:</span>
             <span class="vid" v-if="support.implementation == 'agreement'">Соглашение</span>
             <span class="vid" v-if="support.implementation == 'gchp'">ГЧП</span>
             <span class="vid" v-if="support.implementation == 'any'">Любой</span>
           </div>
         </div>
-        <div class="perekrestok">
-          <div class="wrapper">
+        <div class="perekrestok" v-if="support.target != '' && support.target != '0'">
+          <div class="wrapper" >
             <span class="text">Цели/ адресаты государственной поддержки:</span>
-            <span class="vid" v-if="support.implementation == 'agreement'">{{support.target}}</span>
+            <!-- <span class="vid" v-if="support.implementation == 'agreement'">{{support.target}}</span> -->
+            <span class="vid" >{{support.target}}</span>
           </div>
         </div>
-        <div class="perekrestok">
+        <div class="perekrestok" v-if="support.condition != ''">
           <div class="wrapper">
             <span
               class="text"
@@ -76,7 +77,7 @@
             <span class="vid">{{support.condition}}</span>
           </div>
         </div>
-                <div class="perekrestok">
+                <div class="perekrestok" v-if="support.authority != ''">
           <div class="wrapper">
             <span
               class="text">Куррирующий орган:</span>
@@ -88,15 +89,16 @@
             <span class="vid" v-if="support.authority == 'business'">Центры "мой бизнес", Управляющие компании</span>
           </div>
         </div>
-                <div class="perekrestok">
+                <div class="perekrestok" v-if="support.project_name != '0' && support.project_name != ''">
           <div class="wrapper">
             <span
               class="text"
             >Наименование национального проекта:</span>
+            {{support}}
             <span class="vid">{{support.project_name}}</span>
           </div>
         </div>
-                        <div class="perekrestok">
+                        <div class="perekrestok" v-if="support.program_name != '0'">
           <div class="wrapper">
             <span
               class="text"
@@ -104,7 +106,7 @@
             <span class="vid">{{support.program_name}}</span>
           </div>
         </div>
-                                <div class="perekrestok">
+                                <div class="perekrestok" v-if="support.money != ''">
           <div class="wrapper">
             <span
               class="text"
@@ -112,17 +114,20 @@
             <span class="vid">{{support.money}}</span>
           </div>
         </div>
-                                        <div class="perekrestok">
+                                        <!-- <div class="perekrestok" v-if="support.form != ''">
+                                          {{support}}
           <div class="wrapper">
             <span
               class="text"
             >Категория получателя:</span>
+            {{support.form}}
              <span class="vid" v-if="support.form == 'lawyer'">Юр.лицо</span>
             <span class="vid" v-if="support.form == 'ip'">ИП</span>
             <span class="vid" v-if="support.form == 'municipality'">Муниципалитет</span>
+            
           </div>
-        </div>
-                                      <div class="perekrestok">
+        </div> -->
+                                      <div class="perekrestok" v-if="support.nds != ''">
           <div class="wrapper">
             <span
               class="text"
@@ -138,7 +143,7 @@
             <span class="vid">{{support.expenses}}</span>
           </div>
         </div>
-                                                      <div class="perekrestok">
+                                                      <div class="perekrestok" v-if="support.type_project != ''">
           <div class="wrapper">
             <span
               class="text"
@@ -149,7 +154,7 @@
             <span class="vid" v-if="support.type_project == 'all'">любой</span>
           </div>
         </div>                                                     
-                <div class="perekrestok">
+                <div class="perekrestok" v-if="support.territory != ''">
           <div class="wrapper">
             <span
               class="text"
@@ -222,6 +227,7 @@ body a{
   border-bottom: 1px solid white;
   opacity: 0.5;
 }
+
 .container {
   margin-top: 2%;
   height: 92%;

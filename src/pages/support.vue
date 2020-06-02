@@ -11,14 +11,14 @@
      <select  v-model="industry">  
         <option value="1">Промышленность </option>
         <option value="2">Сельское Хозяйство </option>
-        <option value="all">Все отрасли</option>
+        <option value="">Все отрасли</option>
       </select>
    </div>
       <div class="wrap">
    <span class = 'text'> Вид поддержки: </span>
     <select v-model="type">
       <option value="direct"> Прямая финансовая поддержка </option>
-      <option value="loan"> Заемная финансовая поддержка </option>
+      <option value="time_loan"> Заемная финансовая поддержка </option>
       <option value="profit"> Льготы по налогу на прибыль</option>
        <option value="transport"> Льготы по транспортному налогу</option>
       <option value="property"> Льготы по налогу на имущество</option>
@@ -39,6 +39,7 @@
       <option value="oez"> Модернизация </option>
       <option value="park"> Реконструкция </option>
       <option value="mono"> Новое строительство</option>
+       <option value=""> Все виды </option>
       </select> 
       </div>
       <div class="wrap">
@@ -46,6 +47,7 @@
       <select v-model="recipient">
       <option value="ip"> ИП </option>
       <option value="lawyer"> Юр. Лицо</option>
+      <option value=""> Все  </option>
 
       </select> 
      
@@ -55,7 +57,7 @@
     </q-form>
     <div class="items">
       
-      <div class="item" v-for="item in support">
+      <div class="item" v-for="item in support" >
         <router-link :to="{name: 'support_detail', params: { id: item.id}}" class="rout"> 
           <span class="item_name"> {{item.name}} </span>
           <div class="border"> </div>
@@ -117,7 +119,7 @@ body a{
   flex-direction: column;
 }
 .item_name{
-  padding-left: 1vw;
+  padding-left: 1%;
   padding-top: 2vh;
   font-size: 1vw;
 }
@@ -157,7 +159,7 @@ body a{
   font-size: 0.8vw;
   border-radius: 5px;
   margin-right: 2%;
-
+  margin-left: 3%;
   height:3.5vh;
   width:6vw;
 }
@@ -169,7 +171,9 @@ body a{
   flex-direction: column;
   width:100%;
   margin-bottom: 2vh;
- 
+}
+.item:hover{
+  background: rgba(59, 70, 104, 0.7);
 }
 .perekrestok{
     background:rgba(35, 46, 75, 0.7);
@@ -308,6 +312,7 @@ export default {
         fetch(this.url).then(response => response.json()).then(data => (this.support = data))
         this.submitResult = submitResult
       }
+     
         else {
           fetch(url).then(response => response.json()).then(data => (this.support = data))
         this.submitResult = submitResult

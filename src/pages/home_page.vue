@@ -52,7 +52,8 @@ export default {
         dir: "v",
         duration: 500,
         beforeChange: function(prev, next) {},
-        afterChange: function(prev, next) {}
+        afterChange: function(prev, next) {},
+        
       }
     };
   },
