@@ -389,7 +389,7 @@ margin-bottom: 0.5vh;
 }
 .support_wrap {
   min-height:100vh;
-background: linear-gradient(180deg, #202F40 0%, #0D0D1C 100%);
+background: linear-gradient(170deg, rgb(52, 98, 116) 0%, #0D0D1C 100%);
   display: flex;
 }
 .left_content {

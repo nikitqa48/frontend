@@ -78,25 +78,32 @@
               <span class="grey">Объем поддержки </span>
               <!-- <span class="poluch" v-if="item.implementation == 'agreement'">Соглашение </span>
               <span class="poluch" v-if="item.gchp == 'agreement'">ГЧП </span>
+<<<<<<< HEAD
               <span class="poluch" v-if="item.gchp == 'any'">Любой </span> -->
               <span class="poluch">{{item.money}}</span>
+=======
+              <span clas="poluch" v-if="item.gchp == 'any'">Любой </span> -->
+              
+              <span class="poluch" >{{item.money}}</span>
+>>>>>>> 615ad7973d75fb5dd2422d5d61a8be0513439178
             </div>
                                   <div class="wrapper">
               <span class="grey">Вид поддержки </span>
               <span class="poluch" v-if="item.type == 'direct'">Инвестиции </span>
-              <span class="poluch" v-if="item.type == 'loan'">Налоговые льготы по налогу на займ </span>
-              <span class="poluch" v-if="item.type == 'subsidies'">субсидии </span>
+              <span class="poluch" v-if="item.type == 'loan'">Заемное финансирование </span>
+              <span class="poluch" v-if="item.type == 'subsidies'">Субсидии </span>
               <span class="poluch" v-if="item.type == 'profit'">Налоговые льготы по налогу на прибыль </span>
               <span class="poluch" v-if="item.type == 'property'">Налоговые льготы по налогу на имущество </span>
+              <span class="poluch" v-if="item.type == 'loan_funding'">Налоговые льготы по налогу на займ</span>
               <span class="poluch" v-if="item.type == 'grant'">Гранты</span>
-              <span class="poluch" v-if="item.type == 'rent'">льготы по аренде</span>
-              <span class="poluch" v-if="item.type == 'garant'">гарантии</span>
+              <span class="poluch" v-if="item.type == 'rent'">Льготы по аренде</span>
+              <span class="poluch" v-if="item.type == 'garant'">Гарантии</span>
               <span class="poluch" v-if="item.type == 'transport'">Налоговые льготы по транспортному налогу</span>
-              <span class="poluch" v-if="item.type == 'earth'">налоговые льготы по земельному налогу</span>
-              <span class="poluch" v-if="item.type == 'nds'">налоговые льготы по уплате НДС</span>
-              <span class="poluch" v-if="item.type == 'customs'">таможенные льготы</span>
+              <span class="poluch" v-if="item.type == 'earth'">Налоговые льготы по земельному налогу</span>
+              <span class="poluch" v-if="item.type == 'nds'">Налоговые льготы по уплате НДС</span>
+              <span class="poluch" v-if="item.type == 'customs'">Таможенные льготы</span>
               <span class="poluch" v-if="item.type == 'infrastructure'">Субсидии на инфраструктуру</span>
-              <span class="poluch" v-if="item.type == 'loan_profit'">кредиты под залог создаваемого имущества</span>
+              <span class="poluch" v-if="item.type == 'loan_profit'">Кредиты под залог создаваемого имущества</span>
             </div>
               <div class="wrapper">
               <span class="grey">Вид деятельности </span>
@@ -105,6 +112,7 @@
               <span class="poluch" v-if="item.gchp == 'any'">Любой </span> -->
                <span class="poluch">{{item.industry[0]}} </span>
             </div>
+           
           </div>
         </router-link>
            </div>
@@ -335,9 +343,15 @@ export default {
       onSubmit (evt) {
       const formData = new FormData(evt.target)
       const submitResult = []
+<<<<<<< HEAD
       const url = 'http://127.0.0.1:8000/support/?format=json'+'&type='+this.type+'&type_project='+this.type_project+'&form='+this.recipient+'&industry='+this.industry
       if (this.industry.valueOf() == '') {
         this.url = 'http://127.0.0.1:8000/support/?format=json'+'&type='+this.type+'&type_project='+this.type_project+'&form='+this.recipient
+=======
+      const url = 'http://127.0.0.1:8000/support/?format=json'+'&type='+this.type+'&territory='+this.territory+'&form='+this.recipient+'&industry='+this.industry
+      if (this.industry.valueOf() == '') {
+        this.url = 'http://127.0.0.1:8000/support/?format=json'+'&type='+this.type+'&territory='+this.territory+'&form='+this.recipient
+>>>>>>> 615ad7973d75fb5dd2422d5d61a8be0513439178
         console.log(this.url)
         fetch(this.url).then(response => response.json()).then(data => (this.support = data))
         this.submitResult = submitResult
