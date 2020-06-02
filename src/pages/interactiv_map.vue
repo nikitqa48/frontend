@@ -126,9 +126,9 @@
                   d="M455.168 666.345L458.843 660.634L464.568 651.749L463.649 632.006L455.874 606.41L456.157 605.07L457.5 599.57L461.246 600.769L467.183 602.672L469.021 600.134L472.837 595.128L467.89 591.602V582.224L458.702 573.974L452.341 579.826L447.393 578.91L441.951 563.397H429.936L420.959 561.986L411.771 570.236L404.491 559.871L400.039 576.089L380.673 579.826L367.244 586.454L354.31 583.634L346.747 591.108L354.31 615.083L344.415 617.692L321.303 628.974L315.437 641.666L300.736 651.749L317.699 663.031V675.371L325.12 675.512L361.519 719.935L379.895 719.583L386.256 714.294L379.895 704.422L386.256 693.14L403.219 691.378L406.753 686.794L399.685 678.333L423.716 677.628L434.318 667.756L453.542 677.486L455.168 666.345Z"
                 />
                    <path
-                @click="index = 14, show_greenfield = false"
+                @click="index = 17, show_greenfield = false"
                   class="part"
-                  id="xz"
+                  id="volovo"
                   d="M128.281 722.264L112.732 713.802L108.844 690.886L123.333 681.014L103.543 678.898L96.1222 659.507L100.01 654.219L98.2426 648.225L75.2722 645.405V636.591L86.9341 610.289L76.6857 604.648L56.1891 610.995L46.2941 624.039H37.106L25.7975 642.373L19.083 638.495L13.0754 648.719L23.3237 656.123L5.30078 709.007L31.0983 728.751L42.4068 763.302L55.4823 768.238L89.0544 770.001L92.5883 762.245L110.965 757.309V747.437L126.514 743.911L128.988 749.905L146.304 748.142L152.735 729.738L138.883 722.264H128.281Z"
                 />
                 <path
@@ -354,7 +354,7 @@
                    &#8592; Вернуться назад </div>
 
                   <h3 class="title" v-if="show_greenfield == true" @click="show_greenfield = true">
-                    ОЭЗ «Липецк»
+                   Участок № {{greenfield.number_territory}}
                   </h3>
                       <q-scroll-area
       dark
@@ -366,7 +366,7 @@
                   <img :src="greenfield.image" class="greenfield_inside" v-if="show_greenfield == true" >
                   </div>
                   <div class="contain_qscroll">
-                   <div class="table" v-if="show_greenfield == true"> <p class = "gr">Площадь:</p> <p class = "cadastr">{{greenfield.number}} </p></div>
+                   <div class="table" v-if="show_greenfield == true"> <p class = "gr">Площадь:</p> <p class = "cadastr">{{greenfield.square}} </p></div>
                    <div class="table" v-if="show_greenfield == true"> <p class = "gr">Тип участка:</p> <p class = "cadastr"> <span v-if="greenfield.type == 'greenfield'"> Гринфилд </span>
                             <span v-if="greenfield.type == 'brownfield'"> Браунфилд</span></p></div>
                             <div class="table" v-if="show_greenfield == true"> <p class = "gr">Кадастровый номер:</p> <p class = "cadastr">{{greenfield.number}} </p></div>
@@ -446,6 +446,7 @@
                                                  </div>
                     <span class="usefull_inside"> {{greenfield.territory_priveleges}}</span>
                   </div>
+                  
                 </div>
 
 
