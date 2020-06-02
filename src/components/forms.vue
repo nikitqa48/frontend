@@ -1,7 +1,7 @@
 <template>
 <div>        
         <button 
-      class="absolute" 
+      class="fixed" 
        @click="show=!show"
     >
     <div class="img">
@@ -151,7 +151,7 @@ export default {
 }
 </script>
 <style scoped>
-.absolute{
+.fixed{
   right: 0;
   border:none;
   height: 6vh;
@@ -165,7 +165,7 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 45%;
+  bottom: 5%;
   cursor: pointer;
   z-index: 10;
 }

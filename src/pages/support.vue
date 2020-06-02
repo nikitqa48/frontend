@@ -2,13 +2,13 @@
   <div class="support_wrap">
     <div class="container">
         <h4> Государственная поддержка </h4>
-     
+
            <q-form @submit="onSubmit" class="blue_container">
              <div class="perekrestok">
    <div class="wrap">
     <span class = 'text'>Вид деятельности: </span>
      <!-- <q-select v-model="model" :options="options" label="Standard" outlined label-color="white" class="select" color="white"/> -->
-     <select  v-model="industry">  
+     <select  v-model="industry">
         <option value="1">Промышленность </option>
         <option value="2">Сельское Хозяйство </option>
         <option value="">Все отрасли</option>
@@ -35,12 +35,11 @@
       </div>
       <div class="wrap">
        <span class = 'text'> Тип проекта: </span>
-        <select v-model="territory">
-      <option value="oez"> Модернизация </option>
-      <option value="park"> Реконструкция </option>
-      <option value="mono"> Новое строительство</option>
-       <option value=""> Все виды </option>
-      </select> 
+        <select v-model="type_project">
+      <option value="3"> Модернизация </option>
+      <option value="2"> Реконструкция </option>
+      <option value="1"> Новое строительство</option>
+      </select>
       </div>
       <div class="wrap">
     <span class = 'text'>  Тип получателя поддержки: </span>
@@ -49,17 +48,17 @@
       <option value="lawyer"> Юр. Лицо</option>
       <option value=""> Все  </option>
 
-      </select> 
-     
+      </select>
+
       </div>
        <button class="more" type="submit"> Поиск </button>
              </div>
     </q-form>
     <div class="items">
-      
-      <div class="item" v-for="item in support" >
-        <router-link :to="{name: 'support_detail', params: { id: item.id}}" class="rout"> 
-          <span class="item_name"> {{item.name}} </span>
+
+      <div class="item" v-for="item in support" v-if="support.length != 0">
+        <router-link :to="{name: 'support_detail', params: { id: item.id}}" class="rout">
+          <div class="item_name"> {{item.name}} </div>
           <div class="border"> </div>
           <div class="sposob">
             <div class="wrapper">
@@ -76,16 +75,36 @@
               <span class="poluch" v-if="item.recipient == 'cooperatives'">Кооперативы</span>
               <span class="poluch" v-if="item.recipient == 'not_msp'">Все кроме МСП</span>
             </div>
-         
-                      <div class="wrapper">
-              <span class="grey">Способ реализации проекта </span>
-              <span class="poluch" v-if="item.implementation == 'agreement'">Соглашение </span>
+          <div class="wrapper">
+              <span class="grey">Объем поддержки </span>
+              <!-- <span class="poluch" v-if="item.implementation == 'agreement'">Соглашение </span>
               <span class="poluch" v-if="item.gchp == 'agreement'">ГЧП </span>
-              <span class="poluch" v-if="item.gchp == 'any'">Любой </span>
+              <span class="poluch" v-if="item.gchp == 'any'">Любой </span> -->
+              <span class="poluch">{{item.money}}</span>
             </div>
                                   <div class="wrapper">
-              <span class="grey">Цели/ адресаты государственной поддержки </span>
-              <span class="poluch">{{item.target}} </span>
+              <span class="grey">Вид поддержки </span>
+              <span class="poluch" v-if="item.type == 'direct'">Инвестиции </span>
+              <span class="poluch" v-if="item.type == 'loan'">Налоговые льготы по налогу на займ </span>
+              <span class="poluch" v-if="item.type == 'subsidies'">субсидии </span>
+              <span class="poluch" v-if="item.type == 'profit'">Налоговые льготы по налогу на прибыль </span>
+              <span class="poluch" v-if="item.type == 'property'">Налоговые льготы по налогу на имущество </span>
+              <span class="poluch" v-if="item.type == 'grant'">Гранты</span>
+              <span class="poluch" v-if="item.type == 'rent'">льготы по аренде</span>
+              <span class="poluch" v-if="item.type == 'garant'">гарантии</span>
+              <span class="poluch" v-if="item.type == 'transport'">Налоговые льготы по транспортному налогу</span>
+              <span class="poluch" v-if="item.type == 'earth'">налоговые льготы по земельному налогу</span>
+              <span class="poluch" v-if="item.type == 'nds'">налоговые льготы по уплате НДС</span>
+              <span class="poluch" v-if="item.type == 'customs'">таможенные льготы</span>
+              <span class="poluch" v-if="item.type == 'infrastructure'">Субсидии на инфраструктуру</span>
+              <span class="poluch" v-if="item.type == 'loan_profit'">кредиты под залог создаваемого имущества</span>
+            </div>
+              <div class="wrapper">
+              <span class="grey">Вид деятельности </span>
+              <!-- <span class="poluch" v-if="item.implementation == 'agreement'">Соглашение </span>
+              <span class="poluch" v-if="item.gchp == 'agreement'">ГЧП </span>
+              <span class="poluch" v-if="item.gchp == 'any'">Любой </span> -->
+               <span class="poluch">{{item.industry[0]}} </span>
             </div>
           </div>
         </router-link>
@@ -93,7 +112,7 @@
       </div>
     </div>
       </div>
-  </div>
+
 </template>
 <script>
 </script>
@@ -101,6 +120,9 @@
 .button {
   border: 1px solid white;
   border-radius: 15px;
+}
+.absolute{
+
 }
 body a{
   color:white;
@@ -119,9 +141,9 @@ body a{
   flex-direction: column;
 }
 .item_name{
-  padding-left: 1%;
-  padding-top: 2vh;
+  padding-left: 1vw;
   font-size: 1vw;
+  font-weight: 600;
 }
 
 .grey{
@@ -158,8 +180,7 @@ body a{
   color:white;
   font-size: 0.8vw;
   border-radius: 5px;
-  margin-right: 2%;
-  margin-left: 3%;
+  margin-left: 10%;
   height:3.5vh;
   width:6vw;
 }
@@ -167,13 +188,16 @@ body a{
   background:rgba(35, 46, 75, 0.7);
   display: flex;
   padding-top: 2vh;
-  margin-top: 5vh;
+  z-index: 1;
   flex-direction: column;
   width:100%;
-  margin-bottom: 2vh;
+  margin-bottom: 4vh;
 }
 .item:hover{
   background: rgba(59, 70, 104, 0.7);
+}
+.item:first-child{
+  margin-top:7vh;
 }
 .perekrestok{
     background:rgba(35, 46, 75, 0.7);
@@ -181,8 +205,8 @@ body a{
   align-self: center;
   display: flex;
   flex-direction: row;
-  min-width:80%;
-  justify-content: space-between;
+  min-width:90%;
+
 
 }
 .left {
@@ -205,7 +229,7 @@ body a{
   -webkit-appearance: none;
   -moz-appearance: none;
   background: transparent;
-  background-image: url("../statics/image/select.png");
+  background-image: url("/statics/image/select.png");
   background-repeat: no-repeat;
   background-position-x: 98%;
   background-position-y: 50%;
@@ -250,7 +274,11 @@ body a{
 }
 .support_wrap {
   min-height:100vh;
-    background: linear-gradient(180deg, #202F40 0%, #0D0D1C 100%);
+  /* background: linear-gradient(70deg, #224870 0%, #1b3b5e 100%); */
+  background-image: linear-gradient(rgba(0,0,0,.6), rgba(0,0,0,.6)), url('/statics/image/phone.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
   display: flex;
 }
 .left_content {
@@ -271,6 +299,8 @@ body a{
 .container h4{
   margin-top: 10vh;
   font-size: 1.8vw;
+
+  font-weight: 600;
 }
 .container li {
   cursor: pointer;
@@ -286,6 +316,7 @@ body a{
   height: 100%;
 }
 
+
 </style>
 <script>
 export default {
@@ -296,18 +327,18 @@ export default {
         industry:'1',
         type:'',
         recipient:'',
-        territory:'',
+        type_project:'',
     shape: 'line',
-      submitResult: []  
+      submitResult: []
     }
   },
       methods:{
       onSubmit (evt) {
       const formData = new FormData(evt.target)
       const submitResult = []
-      const url = 'https://backendinvest.admlr.lipetsk.ru/support/?format=json'+'&type='+this.type+'&territory='+this.territory+'&form='+this.recipient+'&industry='+this.industry
+      const url = 'https://backendinvest.admlr.lipetsk.ru/support/?format=json&name='+'&type='+this.type+'&form='+this.recipient+'&industry='+this.industry+'&type_project='+this.type_project
       if (this.industry.valueOf() == '') {
-        this.url = 'https://backendinvest.admlr.lipetsk.ru/support/?format=json'+'&type='+this.type+'&territory='+this.territory+'&form='+this.recipient
+        this.url = 'https://backendinvest.admlr.lipetsk.ru/support/?format=json'+'&type='+this.type+'&type_project='+this.type_project+'&form='+this.recipient
         console.log(this.url)
         fetch(this.url).then(response => response.json()).then(data => (this.support = data))
         this.submitResult = submitResult
@@ -317,6 +348,7 @@ export default {
           fetch(url).then(response => response.json()).then(data => (this.support = data))
         this.submitResult = submitResult
         }
+        console.log(url)
     },
     },
         mounted(){

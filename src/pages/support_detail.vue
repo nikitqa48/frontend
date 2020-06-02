@@ -11,8 +11,8 @@
          </router-link>
       <div class="name">{{support.name}}</div>
       <div class="category">
-        <div class="perekrestok" v-if="support.recipient != ''">
-          <div class="wrapper" >
+        <div class="item" v-if="support.recipient != ''">
+          <div class="wrapper">
             <span class="text">Получатели:</span>
             <!-- <q-select v-model="model" :options="options" label="Standard" outlined label-color="white" class="select" color="white"/> -->
             <span
@@ -29,47 +29,45 @@
             <span class="vid" v-if="support.recipient == 'cooperatives'">Кооперативы</span>
           </div>
         </div>
-        <div class="perekrestok" v-if="support.type != ''">
-          <div class="wrapper" >
+        <div class="item" v-if="support.type != ''">
+          <div class="wrapper">
             <span class="text">Тип поддержки:</span>
-            <!-- <q-select v-model="model" :options="options" label="Standard" outlined label-color="white" class="select" color="white"/> -->
             <span class="vid" v-if="support.type == 'direct'">Инвестиции</span>
             <span class="vid" v-if="support.type == 'loan'">Налоговые льготы по налогу на займ</span>
             <span class="vid" v-if="support.type == 'subsidies'">Субсидии</span>
             <span class="vid" v-if="support.type == 'profit'">Налоговые льготы по налогу на прибыль</span>
             <span class="vid" v-if="support.type == 'grant'">Гранты</span>
-            <span class="vid" v-if="support.type == 'rent'">льготы по аренде</span>
-            <span class="vid" v-if="support.type == 'garant'">гарантии</span>
-            <span
-              class="vid"
-              v-if="support.type == 'transport'"
-            >Налоговые льготы по транспортному налогу</span>
-            <span class="vid" v-if="support.type == 'earth'">налоговые льготы по земельному налогу</span>
-            <span class="vid" v-if="support.type == 'nds'">налоговые льготы по уплате НДС</span>
+            <span class="vid" v-if="support.type == 'rent'">Льготы по аренде</span>
+            <span class="vid" v-if="support.type == 'garant'">Гарантии</span>
+            <span class="vid" v-if="support.type == 'loan_funding'">Заемное финансирование</span>
+            <span class="vid" v-if="support.type == 'transport'" >Налоговые льготы по транспортному налогу</span>
+            <span class="vid" v-if="support.type == 'earth'">Налоговые льготы по земельному налогу</span>
+            <span class="vid" v-if="support.type == 'nds'">Налоговые льготы по уплате НДС</span>
             <span class="vid" v-if="support.type == 'customs'">таможенные льготы</span>
             <span class="vid" v-if="support.type == 'infrastructure'">Субсидии на инфраструктуру</span>
+            <span class="vid" v-if="support.type == 'property'">Налоговые льготы по налогу на имущество</span>
             <span
               class="vid"
               v-if="support.type == 'loan_profit'"
             >кредиты под залог создаваемого имущества</span>
           </div>
         </div>
-        <div class="perekrestok" v-if="support.implementation != '' ">
-          <div class="wrapper" >
+        <div class="item" v-if="support.implementation != ''">
+          <div class="wrapper">
             <span class="text">Способ реализации проекта:</span>
             <span class="vid" v-if="support.implementation == 'agreement'">Соглашение</span>
             <span class="vid" v-if="support.implementation == 'gchp'">ГЧП</span>
             <span class="vid" v-if="support.implementation == 'any'">Любой</span>
           </div>
         </div>
-        <div class="perekrestok" v-if="support.target != '' && support.target != '0'">
-          <div class="wrapper" >
+        <div class="item" v-if="support.target != 0 && support.target != ''">
+          <div class="wrapper">
             <span class="text">Цели/ адресаты государственной поддержки:</span>
             <!-- <span class="vid" v-if="support.implementation == 'agreement'">{{support.target}}</span> -->
             <span class="vid" >{{support.target}}</span>
           </div>
         </div>
-        <div class="perekrestok" v-if="support.condition != ''">
+        <div class="item" v-if="support.condition != ''">
           <div class="wrapper">
             <span
               class="text"
@@ -77,7 +75,7 @@
             <span class="vid">{{support.condition}}</span>
           </div>
         </div>
-                <div class="perekrestok" v-if="support.authority != ''">
+                <div class="item" v-if="support.authority != ''">
           <div class="wrapper">
             <span
               class="text">Куррирующий орган:</span>
@@ -89,7 +87,7 @@
             <span class="vid" v-if="support.authority == 'business'">Центры "мой бизнес", Управляющие компании</span>
           </div>
         </div>
-                <div class="perekrestok" v-if="support.project_name != '0' && support.project_name != ''">
+                <div class="item" v-if="support.project_name != '' && support.program_name != 0">
           <div class="wrapper">
             <span
               class="text"
@@ -98,7 +96,7 @@
             <span class="vid">{{support.project_name}}</span>
           </div>
         </div>
-                        <div class="perekrestok" v-if="support.program_name != '0'">
+                        <div class="item" v-if="support.program_name != 0 && support.program_name != ''">
           <div class="wrapper">
             <span
               class="text"
@@ -106,7 +104,7 @@
             <span class="vid">{{support.program_name}}</span>
           </div>
         </div>
-                                <div class="perekrestok" v-if="support.money != ''">
+     <div class="item" v-if="support.money != 0 && support.money != ''">
           <div class="wrapper">
             <span
               class="text"
@@ -114,8 +112,7 @@
             <span class="vid">{{support.money}}</span>
           </div>
         </div>
-                                        <!-- <div class="perekrestok" v-if="support.form != ''">
-                                          {{support}}
+                                        <div class="item" v-if="support.form != ''"> 
           <div class="wrapper">
             <span
               class="text"
@@ -126,8 +123,8 @@
             <span class="vid" v-if="support.form == 'municipality'">Муниципалитет</span>
             
           </div>
-        </div> -->
-                                      <div class="perekrestok" v-if="support.nds != ''">
+        </div>
+                                      <div class="item" v-if="support.nds != 0 && support.nds != ''">
           <div class="wrapper">
             <span
               class="text"
@@ -135,7 +132,7 @@
             <span class="vid">{{support.nds}}</span>
           </div>
         </div>
-                                              <div class="perekrestok">
+                                              <div class="item" v-if="support.expenses != '' && support.expenses != 0">
           <div class="wrapper">
             <span
               class="text"
@@ -143,18 +140,9 @@
             <span class="vid">{{support.expenses}}</span>
           </div>
         </div>
-                                                      <div class="perekrestok" v-if="support.type_project != ''">
-          <div class="wrapper">
-            <span
-              class="text"
-            >Тип проекта:</span>
-                <span class="vid" v-if="support.type_project == 'new'">Новое строительство</span>
-            <span class="vid" v-if="support.type_project == 'reconstuction'">Реконструкция</span>
-            <span class="vid" v-if="support.type_project == 'modernisation'">Модернизация</span>
-            <span class="vid" v-if="support.type_project == 'all'">любой</span>
-          </div>
+                                                      <div class="item" v-if="support.type_project != ''">
         </div>                                                     
-                <div class="perekrestok" v-if="support.territory != ''">
+                <div class="item" v-if="support.territory != ''">
           <div class="wrapper">
             <span
               class="text"
@@ -169,6 +157,39 @@
             <span class="vid" v-if="support.territory == 'cluster'">Участник кластера</span>
           </div>
         </div>
+           <div class="item" v-if="support.type_project != ''">
+          <div class="wrapper">
+            <span
+              class="text"
+            >Тип проекта:</span>
+
+                <span class="vid" v-if="support.type_project.includes('Новое строительство')">Новое строительство</span>
+            <span class="vid" v-if="support.type_project.includes('Реконструкция')">Реконструкция</span>
+            <span class="vid" v-if="support.type_project == 'Модернизация'">Модернизация</span>
+            <span class="vid" v-if="support.type_project == 'Любой'">любой</span>
+       
+          </div>
+        </div> 
+                   <div class="item" v-if="support.npa != 0 && support.npa != ''">
+          <div class="wrapper">
+            <span
+              class="text"
+            >НПА устанавливающий меры:</span>
+                
+            <span class="vid">{{support.npa}}</span>
+            
+          </div>
+        </div> 
+                           <div class="item" v-if="support.loan_time != '' && support.loan_time != 0">
+          <div class="wrapper">
+            <span
+              class="text"
+            >Сроки займа:</span>
+                
+            <span class="vid">{{support.loan_time}}</span>
+          </div>
+        </div> 
+
       </div>
     </div>
   </div>
@@ -182,9 +203,7 @@ export default {
   },
   mounted() {
     const url =
-      "https://backendinvest.admlr.lipetsk.ru/support/detail/" +
-      this.$route.params.id +
-      "?format=json";
+      "https://backendinvest.admlr.lipetsk.ru/support/detail/"+this.$route.params.id+"?format=json";
     fetch(url)
       .then(response => response.json())
       .then(data => (this.support = data));
@@ -210,7 +229,7 @@ body a{
   flex-direction: column;
   background: rgba(35, 46, 75, 0.7);
 }
-.perekrestok {
+.item {
   margin-top: 0.5vh;
   margin-bottom: 0.5vh;
   width: 100%;
@@ -252,7 +271,9 @@ body a{
 }
 .name {
   color: white;
-  font-size: 1vw;
+  font-size: 1.2vw;
+  align-self: center;
+  font-weight: 600;
   margin-top: 2%;
 }
 .back {
@@ -264,8 +285,9 @@ body a{
 .category {
   margin-top: 1.5vh;
   display: flex;
+  align-self: center;
   flex-direction: column;
-  width: 50%;
+  width: 75%;
   padding-bottom: 5vh;
 }
 </style>
