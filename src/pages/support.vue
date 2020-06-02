@@ -35,10 +35,10 @@
       </div>
       <div class="wrap">
        <span class = 'text'> Тип проекта: </span>
-        <select v-model="territory">
-      <option value="oez"> Модернизация </option>
-      <option value="park"> Реконструкция </option>
-      <option value="mono"> Новое строительство</option>
+        <select v-model="type_project">
+      <option value="3"> Модернизация </option>
+      <option value="2"> Реконструкция </option>
+      <option value="1"> Новое строительство</option>
       </select> 
       </div>
       <div class="wrap">
@@ -55,7 +55,7 @@
     </q-form>
     <div class="items">
       
-      <div class="item" v-for="item in support">
+      <div class="item" v-for="item in support" v-if="support.length != 0">
         <router-link :to="{name: 'support_detail', params: { id: item.id}}" class="rout"> 
           <div class="item_name"> {{item.name}} </div>
           <div class="border"> </div>
@@ -79,7 +79,7 @@
               <!-- <span class="poluch" v-if="item.implementation == 'agreement'">Соглашение </span>
               <span class="poluch" v-if="item.gchp == 'agreement'">ГЧП </span>
               <span class="poluch" v-if="item.gchp == 'any'">Любой </span> -->
-              {{item.money}}
+              <span class="poluch">{{item.money}}</span>
             </div>
                                   <div class="wrapper">
               <span class="grey">Вид поддержки </span>
@@ -326,7 +326,7 @@ export default {
         industry:'1',
         type:'',
         recipient:'',
-        territory:'',
+        type_project:'',
     shape: 'line',
       submitResult: []  
     }
@@ -335,9 +335,9 @@ export default {
       onSubmit (evt) {
       const formData = new FormData(evt.target)
       const submitResult = []
-      const url = 'https://backendinvest.admlr.lipetsk.ru/support/?format=json'+'&type='+this.type+'&territory='+this.territory+'&form='+this.recipient+'&industry='+this.industry
+      const url = 'http://127.0.0.1:8000/support/?format=json'+'&type='+this.type+'&type_project='+this.type_project+'&form='+this.recipient+'&industry='+this.industry
       if (this.industry.valueOf() == '') {
-        this.url = 'https://backendinvest.admlr.lipetsk.ru/support/?format=json'+'&type='+this.type+'&territory='+this.territory+'&form='+this.recipient
+        this.url = 'http://127.0.0.1:8000/support/?format=json'+'&type='+this.type+'&type_project='+this.type_project+'&form='+this.recipient
         console.log(this.url)
         fetch(this.url).then(response => response.json()).then(data => (this.support = data))
         this.submitResult = submitResult
@@ -346,10 +346,11 @@ export default {
           fetch(url).then(response => response.json()).then(data => (this.support = data))
         this.submitResult = submitResult
         }
+        console.log(url)
     },
     },
         mounted(){
-        const url = 'https://backendinvest.admlr.lipetsk.ru/support/'
+        const url = 'http://127.0.0.1:8000/support/'
         fetch(url).then(response => response.json()).then(data => (this.support = data))
     }
 }

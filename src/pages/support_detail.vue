@@ -137,15 +137,6 @@
           </div>
         </div>
                                                       <div class="item" v-if="support.type_project != ''">
-          <div class="wrapper">
-            <span
-              class="text"
-            >Тип проекта:</span>
-                <span class="vid" v-if="support.type_project == 'new'">Новое строительство</span>
-            <span class="vid" v-if="support.type_project == 'reconstuction'">Реконструкция</span>
-            <span class="vid" v-if="support.type_project == 'modernisation'">Модернизация</span>
-            <span class="vid" v-if="support.type_project == 'all'">любой</span>
-          </div>
         </div>                                                     
                 <div class="item" v-if="support.territory != ''">
           <div class="wrapper">
@@ -167,8 +158,9 @@
             <span
               class="text"
             >Тип проекта:</span>
-                <span class="vid" v-if="support.type_project == 'new'">Новое строительство</span>
-            <span class="vid" v-if="support.type_project == 'reconstuction'">Реконструкция</span>
+
+                <span class="vid" v-if="support.type_project.includes('Новое строительство')">Новое строительство</span>
+            <span class="vid" v-if="support.type_project.includes('Реконструкция')">Реконструкция</span>
             <span class="vid" v-if="support.type_project == 'modernisation'">Модернизация</span>
             <span class="vid" v-if="support.type_project == 'all'">любой</span>
           </div>
@@ -177,7 +169,7 @@
           <div class="wrapper">
             <span
               class="text"
-            >Тип проекта:</span>
+            >НПА устанавливающий меры:</span>
                 
             <span class="vid">{{support.npa}}</span>
             
@@ -206,7 +198,7 @@ export default {
   },
   mounted() {
     const url =
-      "https://backendinvest.admlr.lipetsk.ru/support/detail/"+this.$route.params.id+"?format=json";
+      "http://127.0.0.1:8000/support/detail/"+this.$route.params.id+"?format=json";
     fetch(url)
       .then(response => response.json())
       .then(data => (this.support = data));

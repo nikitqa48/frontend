@@ -218,7 +218,7 @@
           
                       </div>  
                   </div>
-                  <h4 v-if="show_greenfield == false && oez.length != 0"> ОЭЗ РУ</h4>
+                  <h4 v-if="show_greenfield == false && oez.length "> ОЭЗ РУ</h4>
                   <div class="green" >
                       <div class="greenfield_border" v-for="item in oez" v-if="item.region == index+1" @click="ShowGreenfield(item)" >
                         <div class="square">Участок №{{item.number_territory}}</div>
