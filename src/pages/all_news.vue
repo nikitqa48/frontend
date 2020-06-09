@@ -88,7 +88,7 @@
 }
 .news{
     min-height:100vh;
-    background: linear-gradient(170deg, rgb(52, 98, 116) 0%, #0D0D1C 100%);
+    background: linear-gradient(140deg, #00B0FF 0%,  #65799B 100%);
 }
 
 .wrapper{

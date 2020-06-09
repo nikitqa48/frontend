@@ -53,6 +53,8 @@ export default {
         duration: 500,
         beforeChange: function(prev, next) {},
         afterChange: function(prev, next) {},
+        lazyLoading: false,
+        responsiveWidth: 900
         
       }
     };

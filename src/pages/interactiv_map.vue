@@ -5,13 +5,14 @@
       <forms-vue/>
      </div> -->
         <div class="wrapper">
-
+          <div class="wrapp_container">
             <div class="university">
               <h4> Интерактивная карта площадок </h4>
             <div class="wrap">
             <button class="first"   id='first'  @click="active">  ОЭЗ "Липецк" </button>
                   <button class="third" id='third' @click="active"> Индустриальные парки </button>
                           <button class="second"  id = 'second'  @click="active">ОЭЗ РУ </button>
+                          <button class="four"  id = 'four'  @click="active">Технопарки </button>
             </div>
             </div>
           <transition
@@ -20,12 +21,12 @@
               enter-active-class="animated fadeIn slow"
               leave-active-class="animated fadeOut">
             <div class="left_map">
-              <svg viewBox="0 19 863 799" class="svg_map" id ='svg'>
+              <svg viewBox="0 0 868 760" class="svg_map" id ='svg'>
                 <path
                   class="part"
                   @click="index = 0, show_greenfield = false"
                   id="dankov"
-                  d="M282.218 202.373H301.513L308.157 220.212L326.957 215.982L340.174 225.642L354.521 220.706L362.791 237.629L376.926 231.071L385.903 210.341L397.14 207.45L405.692 205.193L417.425 178.046L414.598 174.661L430.147 145.046L423.079 129.533L441.456 122.905V118.674L457.994 109.789L448.877 94.1355L432.197 100.482L428.31 95.1932L398.978 92.0201L394.737 98.0137L389.083 97.3086V72.9817L380.602 71.924L380.248 42.6612L369.293 43.7188L372.827 10.5778L357.631 2.82141L352.684 7.40475L348.443 1.05859H336.074L333.601 15.8663L325.119 8.10988L286.6 22.565L282.006 35.2573L292.961 43.0137L284.479 51.4753L287.66 67.6932L300.029 78.9753L298.968 94.1355L288.367 101.539L274.584 98.7188L267.87 109.648L260.802 101.539L226.17 124.809L234.298 128.334L236.418 141.732L253.381 148.783L257.268 165.353L241.012 182.982L243.133 190.033L265.396 202.725L265.255 203.007L280.309 195.321L282.218 202.373Z"
+                  d='m 290.571,209.49 h 18.566 l 6.392,17.205 18.09,-4.08 12.717,9.317 13.805,-4.761 7.956,16.322 13.601,-6.325 8.637,-19.993 10.813,-2.789 8.228,-2.176 12.649,-24.482 -4.08,-4.964 14.961,-28.562 -6.801,-14.961 17.682,-6.393 v -4.08 l 15.913,-8.568 -8.773,-15.098 -16.049,6.121 -3.74,-5.1 -28.222,-3.061 -4.081,5.781 -5.44,-0.68 V 84.701 l -8.161,-1.0201 -0.34,-28.222 -10.54,1.02 3.4,-31.9623 -14.621,-7.4805 -4.761,4.4203 -4.08,-6.1205 h -11.901 l -2.38,14.2811 -8.161,-7.4806 -37.062,13.941 -4.421,12.2409 10.541,7.4806 -8.16,8.1606 3.06,15.6411 11.901,10.8808 -1.02,14.6206 -10.201,7.141 -13.261,-2.72 -6.461,10.541 -6.8,-7.821 -33.322,22.442 7.82,3.4 2.04,12.921 16.321,6.8 3.741,15.981 -15.641,17.002 2.04,6.8 21.421,12.241 -0.136,0.272 14.485,-7.412 z'
                 />
                 <path
                   class="part"
@@ -155,20 +156,19 @@
 
               <div  v-if="show_greenfield == false">
                 <div class="input">
-                <h4 class="list">
-                  Список площадок
-                </h4>
+                <p class="list">
+                  Список площадок — Липецк
+                </p>
               <q-form @submit="onSubmit" class="form">
 
- <div class="wrap_form">
-    <span class = 'text'>Тип площадки: </span>
+    <!-- <span class = 'text'>Тип площадки: </span> -->
      <!-- <q-select v-model="model" :options="options" label="Standard" outlined label-color="white" class="select" color="white"/> -->
-     <select  v-model="type">
+     <select  v-model="type"  >
+       <option hidden value="1">Тип площадки  </option>
         <option value="greenfield">Гринфилд </option>
         <option value="brownfield">Браунфилд </option>
         <option value="">Все</option>
       </select>
-      </div>
        <button class="more" type="submit"> Поиск </button>
 
     </q-form>
@@ -176,13 +176,13 @@
                    <q-scroll-area v-if="show_greenfield == false"
                    dark
       :visible="visable"
-      style="height: 65vh; max-width: 99%;"
+      style="height: 65vh; max-width: 99%; padding-top:2vh"
     >
                 <div class="items_greenfield" v-if="show_greenfield == false">
                   
-                  <h4 v-if="show_greenfield == false && oez_ppt.length != 0 && index == '8'"> ОЭЗ «Липецк»</h4>
-                  <h4 v-if="show_greenfield == false && oez_ppt.length != 0 && index == '11'"> ОЭЗ «Липецк»</h4>
-                  <h4 v-if="show_greenfield == false && oez_ppt.length != 0 && index == '10'"> ОЭЗ «Липецк»</h4>
+                  <p class="square_name__territory" v-if="show_greenfield == false && oez_ppt.length != 0 && index == '8'"> ОЭЗ «Липецк»</p>
+                  <p class="square_name__territory" v-if="show_greenfield == false && oez_ppt.length != 0 && index == '11'"> ОЭЗ «Липецк»</p>
+                  <p class="square_name__territory" v-if="show_greenfield == false && oez_ppt.length != 0 && index == '10'"> ОЭЗ «Липецк»</p>
                                     <div class="green" >
                       <div class="greenfield_border" v-for="item in oez_ppt" v-if="item.region == index+1" @click="ShowGreenfield(item)" >
                         <div class="square">Участок №{{item.number_territory}}</div>
@@ -207,7 +207,7 @@
                             <span v-if="item.type == 'brownfield'"> Браунфилд</span>
                           </div>
                           </div>
-                                                          <div class="wrap_number">
+                      <div class="wrap_number">
                       <div class="number_row">
                             <img src ="/statics/image/ploshad.svg">
                              <span>Форма собственности: </span>
@@ -221,14 +221,14 @@
 
                       </div>
                   </div>
-                  <h4 v-if="show_greenfield == false && oez.length && index == '0' "> ОЭЗ РУ «Данков»</h4>
-                  <h4 v-if="show_greenfield == false && oez.length && index == '9' "> ОЭЗ РУ «Задонщина»</h4>
-                  <h4 v-if="show_greenfield == false && oez.length && index == '7' "> ОЭЗ РУ «Измалково»</h4>
-                  <h4 v-if="show_greenfield == false && oez.length && index == '1' "> ОЭЗ РУ «Астапово»</h4>
-                  <h4 v-if="show_greenfield == false && oez.length && index == '13' "> ОЭЗ РУ «Тербуны»</h4>
-                  <h4 v-if="show_greenfield == false && oez.length && index == '8' "> ОЭЗ РУ «Елец»</h4>
-                  <h4 v-if="show_greenfield == false && oez.length && index == '14' "> ОЭЗ РУ «Хлевное»</h4>
-                  <h4 v-if="show_greenfield == false && oez.length && index == '2' "> ОЭЗ РУ «Чаплыгинская»</h4>
+                  <p class="square_name__territory" v-if="show_greenfield == false && oez.length && index == '0' "> ОЭЗ РУ «Данков»</p>
+                  <p class="square_name__territory" v-if="show_greenfield == false && oez.length && index == '9' "> ОЭЗ РУ «Задонщина»</p>
+                  <p class="square_name__territory" v-if="show_greenfield == false && oez.length && index == '7' "> ОЭЗ РУ «Измалково»</p>
+                  <p class="square_name__territory" v-if="show_greenfield == false && oez.length && index == '1' "> ОЭЗ РУ «Астапово»</p>
+                  <p class="square_name__territory" v-if="show_greenfield == false && oez.length && index == '13' "> ОЭЗ РУ «Тербуны»</p>
+                  <p class="square_name__territory" v-if="show_greenfield == false && oez.length && index == '8' "> ОЭЗ РУ «Елец»</p>
+                  <p class="square_name__territory" v-if="show_greenfield == false && oez.length && index == '14' "> ОЭЗ РУ «Хлевное»</p>
+                  <p class="square_name__territory" v-if="show_greenfield == false && oez.length && index == '2' "> ОЭЗ РУ «Чаплыгинская»</p>
                   <div class="green" >
                       <div class="greenfield_border" v-for="item in oez" v-if="item.region == index+1" @click="ShowGreenfield(item)" >
                         <div class="square">Участок №{{item.number_territory}}</div>
@@ -462,7 +462,7 @@
                 </div>
                 </div>
             </div>
-          </div>
+        </div>
 </div>
 </template>
 <style scoped>
@@ -472,6 +472,13 @@
 }
 *{
   font-family: 'Montserrat';
+}
+.square_name__territory{
+  padding:0;
+  margin-bottom:1%;
+  font-size: 1.1vw;
+  letter-spacing: 0.01vw;
+  font-weight: 600;
 }
 .contain_qscroll{
   width:90%;
@@ -492,9 +499,9 @@
 }
 .list{
 
-  font-size: 2vw;
+  font-size: 1.3vw;
   font-weight: 600;
-  letter-spacing: 0.001vw;
+  letter-spacing: 0.02vw;
 }
 .q-scrollarea__thumb{
  background: white!important;
@@ -504,21 +511,20 @@
 }
 .input{
   display: flex;
-  margin-top: 4vh;
-  justify-content: space-between;
-  align-items: center;
+  margin-top: 6vh;
+  flex-direction: column;
 }
 
 .form{
   margin:0;
-  width:40%;
+  width:100%;
   display: flex;
-  justify-content: flex-end;
-  margin-right: 15%;
+  justify-content: flex-start;
+  margin-bottom: 2vh;
+
 }
 .form button{
-  margin-right: 15%;
-  margin-left: 5%;
+  margin-left: 3%;
 }
 .form select{
   -webkit-appearance: none;
@@ -526,21 +532,31 @@
   background: transparent;
   background-image: url("/statics/image/select.png");
   background-repeat: no-repeat;
-  background-position-x: 98%;
+  background-position-x: 95%;
   background-position-y: 50%;
-  background-size: 2vh;
+  background-size: 1.5vh;
+  display: flex;
   color: white;
   border: 1px solid #dfdfdf;
-  min-height: 3vh;
-  width:100%;
+  min-height: 4.5vh;
+  min-width:13vw;
+  opacity: .9;
+  font-size: 0.9vw;
   outline: none;
   border-radius: 5px;
   padding-right: 2vw;
-  padding-left: 0.5vw;
+  padding-left: 1vw;
 }
 .more{
   align-self: flex-end;
-  height:50%;
+  min-height: 4.5vh;
+  min-width: 8vw;
+  outline: none;
+  border:none;
+  cursor: pointer;
+  background: #52A4DF;
+  color:white;
+  border-radius: 4.16226px;
 }
 .form select option{
   color:black;
@@ -640,15 +656,12 @@
 
 .green{
 display: flex;
-width:85%;
+width:98%;
 flex-direction: column;
 flex-wrap: wrap;
 
 }
-.wrap_form{
-  display: flex;
-  flex-direction: column;
-}
+
 .inside_greenfield{
   display:flex;
   justify-content: space-between;
@@ -675,7 +688,7 @@ flex-wrap: wrap;
   position: absolute;
   top:6%;
   z-index: 5;
-  left:9%;
+  left:7%;
 }
 
 .university h4{
@@ -729,9 +742,9 @@ flex-wrap: wrap;
   margin-bottom: 1vh;
 }
 .greenfield_border{
-margin:2%;
 font-size: 1vw;
 display:flex;
+margin-bottom: 1.2%;
 cursor: pointer;
 background:rgba(31, 37, 55, 0.7);
 flex-direction: column;
@@ -753,19 +766,19 @@ width: 96%;
   justify-content: center;
 }
 .svg_map {
-  left: 0;
-  z-index: 2;
-  top: 0;
-  width:100%;
-  margin-top: 4%;
-  height:96.5%;
-  opacity: 0.5;
-
-  position: absolute;
-  outline: none;
-}
+     left: 0;
+    z-index: 2;
+    top: 0;
+    width: 100%;
+    margin-top: 4%;
+    height: 96.5%;
+    opacity: 0.5;
+    position: absolute;
+    outline: none;
+     }
 .svg {
-  width: 100%;
+width: 100%;
+
 }
 .part {
   opacity: 0;
@@ -783,7 +796,7 @@ width: 96%;
   padding-left: 1.5vw;
   padding-right: 1.5vw;
   padding-top: 1vh;
-  padding-bottom: 1vh;
+  padding-bottom: 1.2vh;
   margin-right: 1vw;
   font-weight: 600;
   box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -793,7 +806,7 @@ width: 96%;
   justify-content: center;
   z-index: 5;
   letter-spacing: 0.05vw;
-  font-size: 1vw;
+  font-size: 0.9vw;
   border-radius: 100px;
   border:none;
   cursor: pointer;
@@ -801,6 +814,9 @@ width: 96%;
   outline: none;
   background:#C7D7E2;
   color:#42595B;
+}
+.first{
+  min-width: 7vw;
 }
 .square{
   padding:1vh;
@@ -810,20 +826,27 @@ width: 96%;
   color:#CECECE;
 }
 .right_map {
-  align-self: flex-start;
-  width:52%;
+  align-self: flex-end;
+  width:50%;
+  padding-left: 2%;
   height: 100%;
   color: white;
   position:relative;
 }
 .left_map {
-  margin-top: 7%;
-  margin-left: 6%;
-  margin-right: 1.5%;
-  position: relative;
+    margin-left: %;
+    position: relative;
+    margin-top: 2%;
+    display: flex;
+    height: 100%;
+    width: 50%;
+
+}
+.wrapp_container{
+  width:95%;
+  margin: auto;
+  justify-content: space-between;
   display: flex;
-  height:100%;
-  width: 50%;
 }
 .center {
   min-width:70vw;
@@ -844,10 +867,9 @@ width: 96%;
 }
 .right_wrapper{
   display: flex;
-  width:100%;
   flex-direction: column;
-  margin-top: 10%;
 }
+
 .gr{
   font-size: 0.93vw;
   opacity: .5;
@@ -877,7 +899,7 @@ export default {
       index: 0,
       toggle:true,
       green:{},
-      type:'',
+      type:'1',
       industrial:[],
       oez:[],
       show_greenfield:false,

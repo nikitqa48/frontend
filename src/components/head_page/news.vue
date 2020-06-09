@@ -291,7 +291,7 @@ export default {
   //       }
   //  } 
   },
-  mounted() {
+  beforeMount() {
     const news_url = "https://backendinvest.admlr.lipetsk.ru/news/?format=json";
 
     fetch(news_url)

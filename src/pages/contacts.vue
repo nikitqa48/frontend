@@ -443,39 +443,15 @@ export default {
 
   data(){
     return{
-      options:['1', '2', '3'],
-      support:{},
-        industry:'1',
-        type:'',
-        recipient:'',
-        territory:'',
-    shape: 'line',
-      submitResult: []  
+
     }
   },
   components:{
       headerVue
   },
       methods:{
-      onSubmit (evt) {
-      const formData = new FormData(evt.target)
-      const submitResult = []
-      const url = 'http://127.0.0.1:8000/support/?format=json'+'&type='+this.type+'&territory='+this.territory+'&form='+this.recipient+'&industry='+this.industry
-      if (this.industry.valueOf() == '') {
-        this.url = 'http://127.0.0.1:8000/support/?format=json'+'&type='+this.type+'&territory='+this.territory+'&form='+this.recipient
-        console.log(this.url)
-        fetch(this.url).then(response => response.json()).then(data => (this.support = data))
-        this.submitResult = submitResult
-      }
-        else {
-          fetch(url).then(response => response.json()).then(data => (this.support = data))
-        this.submitResult = submitResult
-        }
+
     },
-    },
-        mounted(){
-        const url = 'http://127.0.0.1:8000/support/'
-        fetch(url).then(response => response.json()).then(data => (this.support = data))
-    }
+
 }
 </script>

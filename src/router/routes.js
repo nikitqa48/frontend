@@ -45,8 +45,8 @@ const routes = [
       component: () => import('pages/contacts.vue')
     },
     {
-      path:'/example',
-      component:() => import('pages/measures.vue')
+      path:'/documents',
+      component:() => import('pages/documents.vue')
     }
  
 ]
