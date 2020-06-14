@@ -47,6 +47,10 @@ const routes = [
     {
       path:'/documents',
       component:() => import('pages/documents.vue')
+    },
+    {
+      path:'/project',
+      component:() => import('pages/project.vue')
     }
  
 ]

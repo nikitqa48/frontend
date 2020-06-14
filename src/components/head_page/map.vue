@@ -11,21 +11,21 @@
      class="rounded-borders"
     >
            <template v-slot:control>
-        <!-- <q-carousel-control position="center" :offset="[18, 18]">
+       <q-carousel-control position="right" :offset="[18, 18]">
           <div @click="arrow_right" class="industry_next">
             <div class="arrow">
-              <img src="/statics/image/Arrowright.svg" />
+              <!-- <img src="/statics/image/arrowright_map.png"  style="width:100%; height:100%;"/> -->
             </div>
           </div>
-        </q-carousel-control> -->
+        </q-carousel-control> 
         <!-- <q-carousel-control position="center" :offset="[18, 18]">
           <div @click="arrow_left" class="industry_prev">
  
             <div class="arrow">
-              <img src="/statics/image/leftarrow.svg" />
+              <img src="/statics/image/arrowleft_map.svg" />
             </div>
           </div>
-        </q-carousel-control> -->
+        </q-carousel-control>  -->
         <q-carousel-control position="top-left" class="dots_industry">
           <div class="dots_wrap">           
             <h3> <b>Географическое положение: <br> близость к рынкам</b> </h3>
@@ -73,18 +73,37 @@
         </div>
       </q-carousel-slide>
             <q-carousel-slide name="2" >
+         
         <div class="slide_container2">
-               <transition
+             
+         
+
+                    <div style="display:flex;flex-direction:column; position:absolute; width:30%; right:2%; top:30%; color:white;">
+             <div class="round">
+             <p style="font-size:1vw; font-weight:600;"> ГЕОГРАФИЧЕСКОЕ ПОЛОЖЕНИЕ: БЛИЗОСТЬ К РЫНКАМ</p></div>
+            <p style="font-size:0.8vw"> Но многие известные личности формируют глобальную экономическую сеть и при этом - функционально разнесены на независимые элементы. Мы вынуждены отталкиваться от того, что граница.</p>
+                    </div>
+                           <transition
               appear
               enter-active-class="animated bounceInLeft"
               leave-active-class="animated bounceOutLeft slow">
-          <img src="statics/image/road.png.png">
-               </transition>
+               <img src="statics/image/road.png.png">
+                   </transition>
         </div>
+    
       </q-carousel-slide>
              <q-carousel-slide name="3" >
                
         <div class="slide_container2" v-if="map == '3'">
+             <div style="display:flex;flex-direction:column; position:absolute; width:30%; right:0; top:30%; color:white;">
+             <div class="round">
+             <div class="green_round"> </div><p style="font-size:0.9vw;"> P119</p></div>
+            <p style="font-size:0.8vw"> Но многие известные личности формируют глобальную экономическую сеть и при этом - функционально разнесены на независимые элементы. Мы вынуждены отталкиваться от того, что граница.</p>
+          <div class="round">
+         <div class="blue_round"></div> <p style="font-size:0.9vw;"> М4 </p> </div>
+          <p style='font-size:0.8vw'> Но многие известные личности формируют глобальную экономическую сеть и при этом - функционально разнесены на независимые элементы. Мы вынуждены отталкиваться от того, что граница.</p>
+         
+          </div>
           <transition
               appear
               enter-active-class="animated bounceInLeft"
@@ -116,6 +135,9 @@
 }
 .rounded-borders{
   background:none;
+}
+.round{
+  display:flex;
 }
 .slide_container{
   width:80%;
@@ -157,6 +179,21 @@ margin-right: 0.5vw;
 .svg_jd svg{
   width:70%;
 }
+.green_round{
+  width: 1.2vw;
+  height: 2.2vh;
+  margin-right: 1%;
+  border-radius: 50%;
+  background: #5EBA50;
+}
+.blue_round{
+  width: 1.2vw;
+  height: 2.2vh;
+  margin-right: 1%;
+  border-radius: 50%;
+  background: #8FBEDF;
+}
+
 .svg{
 display:flex;
 align-items: center;

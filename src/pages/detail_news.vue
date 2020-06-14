@@ -109,7 +109,6 @@ export default {
     fetch(url)
       .then(response => response.json())
       .then(data => (this.news = data));
-        console.log(this.news)
     }
 }
 </script>

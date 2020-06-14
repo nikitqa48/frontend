@@ -21,8 +21,8 @@
            
                 <div class="item_container">
                   
-                <div class="item2">
-                  <router-link :to="{name: 'detail', params: { id: news[1].id}}" class="rout"> 
+                <div class="item2" >
+                   <router-link :to="{name: 'detail', params: { id: news[1].id}}" class="rout">  
                   <div class="image2">
                      <div class="dark"></div>
                        <div class="title">
@@ -30,7 +30,7 @@
                   </div>
                     <img :src="news[1].image">
                   </div>
-                  </router-link>
+                 </router-link> 
                 </div>
             <div class="item2">
               <router-link :to="{name: 'detail', params: { id: news[2].id}}" class="rout"> 
@@ -273,6 +273,15 @@ export default {
   
   },
   methods: {
+    navigation(id){
+      this.$router.push({ name: 'detail', params: { id } })
+    },
+    async loadLastNews(){
+      // this.news = input: `$(this.$store.getters.)`
+          await fetch(news_url)
+      .then(response => response.json())
+      .then(data => (this.news = data))
+    }
   //     splitWord(array){      
   //       let body = []
   //       let bodytext = []
@@ -291,10 +300,10 @@ export default {
   //       }
   //  } 
   },
-  beforeMount() {
+  created() {
     const news_url = "https://backendinvest.admlr.lipetsk.ru/news/?format=json";
-
-    fetch(news_url)
+  
+     fetch(news_url)
       .then(response => response.json())
       .then(data => (this.news = data))
   },

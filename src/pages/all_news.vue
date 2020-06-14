@@ -1,6 +1,7 @@
 <template>
     <div class="news">
      <header-vue/>
+     <forms-vue/>
      <div class="wrapper">
          <h4> Новости </h4>
          <div class="items">
@@ -88,7 +89,7 @@
 }
 .news{
     min-height:100vh;
-    background: linear-gradient(140deg, #00B0FF 0%,  #65799B 100%);
+    background: #3A4566;
 }
 
 .wrapper{
@@ -145,6 +146,7 @@
 </style>
 <script>
 import headerVue from "../components/header.vue";
+import formsVue from "../components/forms.vue";
 export default {
     data(){
         return {
@@ -152,7 +154,7 @@ export default {
         }
     },
     components:{
-        headerVue
+        headerVue, formsVue
     },
     mounted() {
     const url = "https://backendinvest.admlr.lipetsk.ru/all_news/"

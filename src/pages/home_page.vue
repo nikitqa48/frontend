@@ -89,5 +89,9 @@ export default {
   display: flex;
   justify-content: center;
 }
-
+  @media screen and (max-width: 900px) {
+     .section:nth-child(4){
+       display: none;
+     }
+   }
 </style>

@@ -1,6 +1,14 @@
 <template>
-  <div class="support_wrap">
-      <header-vue/>
+<div>
+<q-scroll-area
+      :visible="visable"
+      style="height:100vh; max-width: 100%;"
+      
+      :thumb-style="thumbStyle"
+    >
+    <div class="wrapper">
+<header-vue />
+  <forms-vue/>       
     <div class="container">
         <h4> Контакты </h4>
         
@@ -177,15 +185,19 @@
    </div>
              </div>
     </div>
-    <div class="items">
-      
-      </div>
-    </div>
-  
+
+ 
   </div>
+    
+    </q-scroll-area>
+    </div>
+                 
+
+              
+
+
+
 </template>
-<script>
-</script>
 <style scoped>
 .button {
   border: 1px solid white;
@@ -198,14 +210,13 @@
 .image{
     margin-top: 1vh;
     border-radius: 5px;
-    width:10%;
-    height:16vh;
+    width:13%;
+
 }
 .photo{
     margin-top: 1vh;
     border-radius: 5px;
     width:6%;
-    height:10vh;
 }
 .photo img{
     width:100%;
@@ -387,9 +398,10 @@ margin-bottom: 0.5vh;
   font-weight: 600;
   margin-left: 2%;
 }
-.support_wrap {
+.wrapper {
   min-height:100vh;
-background: linear-gradient(170deg, rgb(52, 98, 116) 0%, #0D0D1C 100%);
+  width: 100%;
+    background: #3A4566;;
   display: flex;
 }
 .left_content {
@@ -437,21 +449,25 @@ background: linear-gradient(170deg, rgb(52, 98, 116) 0%, #0D0D1C 100%);
 }
 
 </style>
+
+
 <script>
 import headerVue from "../components/header.vue";
-export default {
-
-  data(){
-    return{
-
-    }
-  },
-  components:{
-      headerVue
-  },
-      methods:{
-
+import formsVue from "../components/forms.vue";
+  export default {
+    name: 'App',
+    components: {
+     headerVue, formsVue
     },
-
-}
+    data(){
+      return{
+          thumbStyle: {
+        right: '2px',
+        borderRadius: '5px',
+        width: '10px',
+        opacity: 0.5
+      }
+      }
+    }
+  }
 </script>

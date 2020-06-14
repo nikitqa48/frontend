@@ -1,21 +1,23 @@
 <template>
-        <div class="header">
-      <q-separator dark vertical inset />
-      <q-btn class="invest" stretch flat label="Инвест Липецк" to = "/" />
+        <q-toolbar class="header" >
+     
+      <q-btn class="invest" stretch label="Инвест Липецк" to = "/" />
       <q-space />
-      <q-separator dark vertical />
-      <q-btn stretch flat label="РЕГИОН"  class="header_button"/>
-      <q-separator dark vertical />
-      <q-btn  class="header_button" to ='/state' stretch flat label="ГОСПОДДЕРЖКА" />
-       <q-separator dark vertical />
-       <q-btn class="header_button"  to = '/square' stretch flat label="ПЛОЩАДКИ" />
-       <q-separator dark vertical />
-       <q-btn class="header_button"  to ='/news' stretch flat label="НОВОСТИ" />
-        <q-separator dark vertical />
-        <q-btn  class="header_button"  to ='/contacts' stretch flat label="КОНТАКТЫ" />
-        <q-separator dark vertical />
-        <q-btn  class="header_button"  to ='/documents' stretch flat label="Документы" />
+    
+      <!-- <q-btn stretch flat label="РЕГИОН"  class="header_button"/> -->
+ <div style="margin-right:10%;display:flex;">
+      <q-item  class="header_button" clickable v-ripple="{color:'blue-6'}" to ='/state'   >Господдержка </q-item>
+       <!-- <q-separator dark vertical /> -->
+       <q-item  class="header_button" clickable v-ripple to ='/square' stretch flat >Площадки </q-item>
+  
+      <q-item  class="header_button" clickable v-ripple to ='/news' stretch flat >Новости </q-item>
+       
+         <q-item  class="header_button" clickable v-ripple to ='/contacts' stretch flat >Контакты </q-item>
+        
+           <q-item  class="header_button" clickable v-ripple to ='/documents' stretch flat >Документы </q-item>
+            <q-item  class="header_button" clickable v-ripple to ='/project' stretch flat >Проекты </q-item>
         </div>
+        </q-toolbar>
 </template>
 <script>
 export default {
@@ -35,9 +37,18 @@ export default {
 }
 .invest{
   width: 10%;
+  margin-left: 3%;
   font-size: 0.8vw;
 }
 .header_button{
   font-size: 0.8vw;
+  padding-bottom: 1%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.q-router-link--active{
+  color: #52A4DF;
+  border-bottom: 2px solid #52A4DF;
 }
 </style>

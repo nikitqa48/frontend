@@ -1,9 +1,9 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import VueFullPage from 'fullpage.js'
+
 // import example from './module-example'
 
-Vue.use(Vuex,VueFullPage)
+Vue.use(Vuex)
 
 /*
  * If not building with SSR mode, you can
@@ -16,10 +16,18 @@ Vue.use(Vuex,VueFullPage)
 
 export default function (/* { ssrContext } */) {
   const Store = new Vuex.Store({
+    state:{
+      backendUrl:'https://backendinvest.admlr.lipetsk.ru/news/?format=json'
+    },
     modules: {
       // example
     },
-
+    getters:{
+      getServerUrl: state=>{
+        return state.backendUrl
+      }
+    },
+  
     // enable strict mode (adds overhead!)
     // for dev mode only
     strict: process.env.DEV
