@@ -16,20 +16,19 @@
         style="border-radius: 4px; margin-top:2%; "
       >
         <div class="form_filter">
-            Стоимость проекта(млн.руб)
     <q-form @submit="getProjectItems" class="q-gutter-md">
       <div class="q-mt-xl">
-        <q-range
-          v-model="range"
-          label-always
-          :max="500"
-        />
-        
-        <!-- <q-select standout="bg-teal text-white" v-model="industry"  label="Custom standout"  :options= 'options'/> -->
+        <div style="display:flex; justify-content:space-between; ">
+        <q-input dark outlined v-model="number" label="Сумма инвестиций (млн руб)" stack-label  type="number" style="width:30%;" option-value = '1'/>
+       <q-select standout="bg-cyan-6 text-white"  bg-color="white" v-model="industry"  label="Отрасль"  :options= 'options'
+       option-value="id" 
+        style="width:30%;"/> 
+        <q-select standout="bg-cyan-6 text-white" bg-color="white" v-model="year"  label="Год реализации"  :options= 'years' style="width:30%;"/> 
+        </div>
       </div>
 
       <div>
-        <q-btn label="Поиск" type="submit" color="primary"/>
+        <q-btn label="Поиск" type="submit" color="cyan-6" />
       </div>
     </q-form>
         </div>
@@ -43,7 +42,8 @@
        <p class="text-h5"> {{item.name}}</p>
               <p> Отрасль: {{item.industry}} </p>
               <p> Текущее состояние проекта: {{item.now}}</p>
-              <p>Сроки реализации: {{item.time}}</p>
+              <p> Начало реализации проекта: {{item.start}} </p>
+              <p> конец реализации проекта: {{item.finish}} </p>
               <p> Сумма инвестиций: {{item.sum}} млн.руб.</p>
           </div>
       </div>
@@ -106,12 +106,26 @@ export default {
     
     data(){
         return{
-            industry:'',
-            range: {
-        min: 0,
-        max: 100,
-      },
-      options:['1','2','3','4'],
+            industry: '',
+            year:2010,
+            number:'',
+      options:[{ id: 'all',label:'Все' },
+      { id:'1', label:'Промышленность'},
+      { id:'4',label: 'Сельское хозяйство'},
+      {id:'6', label: 'Лесное хозяйство'}, {id:'7', label:'Строительство'},
+      {id:'8', label:'Прочие виды деятельности сферы материального производства'}, {id:'9', label:'Обслуживание сельского хозяйства'},
+      {id:'10', label:'Транспорт'}, {id:'11', label:'Связь'}, {id:'12', label:'Торговля и общественное питание'},
+      {id:'13', label:'Материально-техническое снабжение и сбыт'}, {id:'14', label:'Заготовки'},
+      {id:'15', label:'Информационно-вычислительное обслуживание'}, {id:'16', label:'Операции с недвижимым имуществом'},
+      {id:'17', label:'Геология и разведка недр, геодезическая и гидрометеологическая службы'}, {id:'18', label:'Жилищное хозяйство'},
+      {id:'19', label:'Коммунальное хозяйство'}, {id:'20', label:'Непроизводственные виды бытового обслуживания населения'},
+      {id:'21', label:'Здравоохранение, физическая культура и соц.обеспечение'}, {id:'22', label:'Народное образование'},
+      {id:'23', label:'Культура и искусство'}, {id:'24', label:'Наука и научное обслуживание'}, {id:'25', label:'Финансы, кредит, страхование, пенсионное обеспечение'},
+      {id:'26', label:'Управление'}, {id:'27', label:'Общественные объединения'}]
+      ,
+      years:['2010','2011','2012','2013', '2014', 
+      '2015','2016','2017','2018','2019','2020','2021',
+      '2022','2023','2024','2025','2026','2027','2028','2029','2030'],
       support:{},
       project:{}
         }
@@ -120,14 +134,58 @@ export default {
     headerVue, formsVue
   },
     methods:{
+      
         getProjectItems(){
-        const url = 'http://127.0.0.1:8000/project/'+this.range.min+'/'+this.range.max
-        fetch(url).then(response => response.json()).then(data => (this.project = data))
+        this.project = []
+        const url = 'http://127.0.0.1:8000/project/'
+        let resultUrl = ''
 
+      //  if (this.number == '' && this.industry.id != ''){
+        
+      //   resultUrl = 'http://127.0.0.1:8000/searchyear'+'/'+this.year+'/'+this.industry.id+'?format=json'
+      //   console.log(123123)
+      //    fetch(resultUrl).then(response => response.json()).then(data => (this.project = data))
+      //   }
+       
+
+         if (this.industry == '' && this.number == '') {
+           let searchyear = 'http://127.0.0.1:8000/searchyear'
+           console.log('asdas')
+           resultUrl = searchyear+'/'+this.year+'?format=json'.toString()
+           fetch(resultUrl).then(response => response.json()).then(data => (this.project=data))
+        }
+          else if(this.industry.id == 'all') {
+            resultUrl = 'http://127.0.0.1:8000/summyear/' + this.number + '/' + this.year +'?format=json'
+            fetch(resultUrl).then(response => response.json()).then(data => (this.project=data))
+          }
+        else if (this.industry == 'all' && this.number != ''){
+          console.log('123123')
+          let searchyear = 'http://127.0.0.1:8000/searchyear'
+          resultUrl = searchyear+'/'+this.year+'?format=json'.toString()
+          console.log(resultUrl)
+          fetch(resultUrl).then(response => response.json()).then(data => (this.project=data))
+        }
+            else if (this.industry == '' && this.number != ''){
+          console.log('123123')
+          let searchyear = 'http://127.0.0.1:8000/searchyear'
+          resultUrl = searchyear+'/'+this.year+'?format=json'.toString()
+          console.log(resultUrl)
+          fetch(resultUrl).then(response => response.json()).then(data => (this.project=data))
+        }
+         else{
+           resultUrl = url + this.number +'/' + this.industry.id +'/' +this.year + '?format=json'.toString()
+
+        fetch(resultUrl).then(response => response.json()).then(data => (this.project=data))
+        // //   resultUrl = url+this.number+'/'+this.industry.id+this.year+'?format=json'.toString()
+        // //   let massive = []
+        // //   fetch(resultUrl).then(response => response.json()).then(data => (massive.push(data)))
+        // //   console.log(massive)
+        // //   this.project = massive
+         }
     }
      },
     created(){
-         const url = 'http://127.0.0.1:8000/project/'
+         const url = 'https://backendinvest.admlr.lipetsk.ru/project/'
         fetch(url)
       .then(response => response.json())
       .then(data => (this.project = data));  

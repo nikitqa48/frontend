@@ -5,17 +5,18 @@
       <q-space />
     
       <!-- <q-btn stretch flat label="РЕГИОН"  class="header_button"/> -->
- <div style="margin-right:10%;display:flex;">
+ <div style="display:flex;">
+   <q-item  class="header_button" clickable v-ripple to ='/square' stretch flat >Площадки </q-item>
       <q-item  class="header_button" clickable v-ripple="{color:'blue-6'}" to ='/state'   >Господдержка </q-item>
        <!-- <q-separator dark vertical /> -->
-       <q-item  class="header_button" clickable v-ripple to ='/square' stretch flat >Площадки </q-item>
-  
-      <q-item  class="header_button" clickable v-ripple to ='/news' stretch flat >Новости </q-item>
        
+   <q-item  class="header_button" clickable v-ripple to ='/project' stretch flat >Проекты </q-item>
+      <q-item  class="header_button" clickable v-ripple to ='/news' stretch flat >Новости </q-item>
+       <q-item  class="header_button" clickable v-ripple to ='/documents' stretch flat >Документы </q-item>
          <q-item  class="header_button" clickable v-ripple to ='/contacts' stretch flat >Контакты </q-item>
         
-           <q-item  class="header_button" clickable v-ripple to ='/documents' stretch flat >Документы </q-item>
-            <q-item  class="header_button" clickable v-ripple to ='/project' stretch flat >Проекты </q-item>
+           
+           
         </div>
         </q-toolbar>
 </template>

@@ -104,7 +104,7 @@
               <!-- <span class="poluch" v-if="item.implementation == 'agreement'">Соглашение </span>
               <span class="poluch" v-if="item.gchp == 'agreement'">ГЧП </span>
               <span class="poluch" v-if="item.gchp == 'any'">Любой </span> -->
-               <span class="poluch">{{item.industry[0]}} </span>
+               <span class="poluch">{{item.industry.toString()}}</span>
             </div>
           </div>
         </router-link>

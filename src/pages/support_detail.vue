@@ -52,6 +52,14 @@
             >кредиты под залог создаваемого имущества</span>
           </div>
         </div>
+            <div class="item" v-if="support.industry != '' ">
+          <div class="wrapper">
+            <span
+              class="text"
+            >Вид деятельности:</span>
+            <span class="vid">{{support.industry.toString()}}</span>
+          </div>
+        </div>
         <div class="item" v-if="support.implementation != ''">
           <div class="wrapper">
             <span class="text">Способ реализации проекта:</span>
@@ -117,11 +125,7 @@
             <span
               class="text"
             >Категория получателя:</span>
-            {{support.form}}
-             <span class="vid" v-if="support.form == 'lawyer'">Юр.лицо</span>
-            <span class="vid" v-if="support.form == 'ip'">ИП</span>
-            <span class="vid" v-if="support.form == 'municipality'">Муниципалитет</span>
-            
+             <span class="vid">   {{support.form.toString()}}</span>
           </div>
         </div>
                                       <div class="item" v-if="support.nds != 0 && support.nds != ''">
@@ -140,8 +144,8 @@
             <span class="vid">{{support.expenses}}</span>
           </div>
         </div>
-                                                      <div class="item" v-if="support.type_project != ''">
-        </div>                                                     
+
+
                 <div class="item" v-if="support.territory != ''">
           <div class="wrapper">
             <span
@@ -163,10 +167,7 @@
               class="text"
             >Тип проекта:</span>
 
-                <span class="vid" v-if="support.type_project.includes('Новое строительство')">Новое строительство</span>
-            <span class="vid" v-if="support.type_project.includes('Реконструкция')">Реконструкция</span>
-            <span class="vid" v-if="support.type_project == 'Модернизация'">Модернизация</span>
-            <span class="vid" v-if="support.type_project == 'Любой'">любой</span>
+                <span class="vid" >{{support.type_project.toString('')}}</span>
        
           </div>
         </div> 
@@ -188,8 +189,72 @@
                 
             <span class="vid">{{support.loan_time}}</span>
           </div>
+          
         </div> 
-
+        <div class="item" v-if="support.organisation != '' ">
+  <div class="wrapper">
+            <span
+              class="text"
+            >Меру поддержки выдает:</span>
+                
+            <span class="vid">{{support.organisation}}</span>
+          </div>
+        </div>
+               <div class="item" v-if="support.category != '' ">
+  <div class="wrapper">
+            <span
+              class="text"
+            >Категория налогоплатильщиков:</span>
+                
+            <span class="vid">{{support.category}}</span>
+          </div>
+        </div>
+                      <div class="item" v-if="support.property_rate != '' ">
+  <div class="wrapper">
+            <span
+              class="text"
+            >Налоговая ставка на имущество:</span>
+                
+            <span class="vid">{{support.property_rate}}</span>
+          </div>
+        </div>
+                              <div class="item" v-if="support.profit != '' ">
+  <div class="wrapper">
+            <span
+              class="text"
+            >Налог на прибыль:</span>
+                
+            <span class="vid">{{support.profit}}</span>
+          </div>
+        </div>
+                                      <div class="item" v-if="support.transport != '' ">
+  <div class="wrapper">
+            <span
+              class="text"
+            >Налоговая ставка по транспортному налогу:</span>
+                
+            <span class="vid">{{support.transport}}</span>
+          </div>
+        </div>
+                                              <div class="item" v-if="support.land != '' ">
+  <div class="wrapper">
+            <span
+              class="text"
+            >Налоговая ставка по земельному налогу:</span>
+                
+            <span class="vid">{{support.land}}</span>
+          </div>
+        </div>
+                                                   <div class="item" v-if="support.summ != '' ">
+  <div class="wrapper">
+            <span
+              class="text"
+            >Сумма займа:</span>
+                
+            <span class="vid">{{support.summ}}</span>
+          </div>
+        </div>
+ 
       </div>
     </div>
   </div>
