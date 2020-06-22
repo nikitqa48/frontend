@@ -207,7 +207,7 @@
                       <div class="wrap_number">
                       <div class="number_row">
                             <img src ="/statics/image/ploshad.svg">
-                             <span>Форма собственности: </span>
+                             <span>Форма собственности:  </span>
                           </div>
                           <div class="inside_square">
                             <span  class="usefull_inside"> {{item.form.toString()}} </span>
@@ -255,8 +255,8 @@
                              <span>Форма собственности: </span>
                           </div>
                           <div class="inside_square">
-                            <span v-if="item.form == 'goverment'" class="usefull_inside"> Государственная </span>
-                            <span v-if="item.form == 'private'" class="usefull_inside"> Частная</span>
+                            <span  class="usefull_inside"> {{item.form.toString()}} </span>
+                            
                           </div>
                           </div>
                            </div>
@@ -294,8 +294,8 @@
                              <span>Форма собственности: </span>
                           </div>
                           <div class="inside_square">
-                            <span v-if="item.form == 'goverment'" class="usefull_inside"> Государственная </span>
-                            <span v-if="item.form == 'private'" class="usefull_inside"> Частная</span>
+                            <span class="usefull_inside"> {{item.form.toString()}} </span>
+                         
                           </div>
                           </div>
                            </div>
@@ -333,8 +333,7 @@
                              <span>Форма собственности: </span>
                           </div>
                           <div class="inside_square">
-                            <span v-if="item.form == 'goverment'" class="usefull_inside"> Государственная </span>
-                            <span v-if="item.form == 'private'" class="usefull_inside"> Частная</span>
+                            <span class="usefull_inside"> {{item.form.toString()}} </span>
                           </div>
                           </div>
                            </div>
@@ -411,17 +410,17 @@
                         </div>
                     <span class="usefull_inside">  Земельный участок - <br> {{greenfield.square}} га </span>
                   </div>
-                               <div class="item_greend" v-if="greenfield.water != '' && greenfield.water != 0">
+                               <div class="item_greend" v-if="greenfield.water != null && greenfield.water != ''">
                                  <div class="greend_inside__img">
                                    <div class="icon">
                     <img src="/statics/image/water.svg">
                                    </div>
-                    <p class="usefull"> Водоснабжение</p>
+                    <p class="usefull" > Водоснабжение</p>
                                  </div>
                     <span class="usefull_inside"> {{greenfield.water}} </span>
                   </div>
 
-                                               <div class="item_greend" v-if="greenfield.gas != '' && greenfield.gas != 0">
+                                               <div class="item_greend" v-if="greenfield.gas != '' && greenfield.gas != null">
                                                  <div class="greend_inside__img">
                                                    <div class="icon">
                     <img src="/statics/image/burn.svg">
@@ -430,7 +429,7 @@
                                                  </div>
                     <span class="usefull_inside"> {{greenfield.gas}}</span>
                   </div>
-                                                         <div class="item_greend"v-if="greenfield.power != '' && greenfield.power != 0">
+                                                         <div class="item_greend" v-if="greenfield.power != '' && greenfield.power != null">
                                                            <div class="greend_inside__img">
                                                              <div class="icon">
                     <img src="/statics/image/energy.svg">
@@ -439,16 +438,16 @@
                                                            </div>
                     <span class="usefull_inside"> {{greenfield.power}}</span>
                   </div>
-                                          <div class="item_greend" v-if="greenfield.customs_priveleges != ''">
+                                          <div class="item_greend" v-if="greenfield.customs_priveleges != '' && greenfield.customs_priveleges != null">
                                                  <div class="greend_inside__img">
                                                    <div class="icon">
                     <img src="/statics/image/burn.svg">
                                                    </div>
-                    <p class="usefull"> Таможенные льготы</p>
+                    <p class="usefull"> Таможенные льготы:</p>
                                                  </div>
                     <span class="usefull_inside"> {{greenfield.customs_priveleges}}</span>
                   </div>
-                  <div class="item_greend" v-if="greenfield.heat != '' && greenfield.heat!= null">
+                  <div class="item_greend" v-if="greenfield.heat!= null && greenfield.heat != ''">
                                                  <div class="greend_inside__img">
                                                    <div class="icon">
                     <img src="/statics/image/burn.svg">
@@ -457,7 +456,7 @@
                                                  </div>
                     <span class="usefull_inside"> {{greenfield.heat}}</span>
                   </div>
-                     <div class="item_greend" v-if="greenfield.water_out != '' && greenfield.water_out!= null">
+                     <div class="item_greend" v-if="greenfield.water_out!= null && greenfield.water_out != ''">
                                                  <div class="greend_inside__img">
                                                    <div class="icon">
                     <img src="/statics/image/burn.svg">
@@ -475,7 +474,7 @@
                                                  </div>
                     <span class="usefull_inside"> {{greenfield.danger}}</span>
                   </div>
-                      <div class="item_greend" v-if="greenfield.territory_priveleges != ''">
+                      <div class="item_greend" v-if="greenfield.territory_priveleges != '' && greenfield.territory_priveleges != null">
                                                  <div class="greend_inside__img">
                                                    <div class="icon">
                     <img src="/statics/image/burn.svg">
@@ -485,7 +484,7 @@
                     <span class="usefull_inside"> {{greenfield.territory_priveleges}}</span>
                   </div>
                   
-                  <div v-if="greenfield.nalog != '' && greenfield.nalog != null" >
+                  <div v-if="greenfield.nalog != '' && greenfield.nalog != null && greenfield.nalog != ''"  >
                    <p class="usefull" style="margin:auto;padding-top:1%;padding-bottom:1%; "> Налоговые льготы:</p>
                    <span class="usefull_inside"> {{greenfield.nalog}} </span>
                   </div>

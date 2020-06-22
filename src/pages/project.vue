@@ -41,9 +41,9 @@
           <div class="right_content" >
        <p class="text-h5"> {{item.name}}</p>
               <p> Отрасль: {{item.industry}} </p>
+              <p> {{item.body}} </p>
               <p> Текущее состояние проекта: {{item.now}}</p>
-              <p> Начало реализации проекта: {{item.start}} </p>
-              <p> конец реализации проекта: {{item.finish}} </p>
+              <p> Реализация проекта:  с {{item.start}} по {{item.finish}}г.</p>
               <p> Сумма инвестиций: {{item.sum}} млн.руб.</p>
           </div>
       </div>
@@ -137,7 +137,7 @@ export default {
       
         getProjectItems(){
         this.project = []
-        const url = 'http://127.0.0.1:8000/project/'
+        const url = 'https://backendinvest.admlr.lipetsk.ru/project/'
         let resultUrl = ''
 
       //  if (this.number == '' && this.industry.id != ''){
@@ -149,25 +149,25 @@ export default {
        
 
          if (this.industry == '' && this.number == '') {
-           let searchyear = 'http://127.0.0.1:8000/searchyear'
+           let searchyear = 'https://backendinvest.admlr.lipetsk.ru/searchyear'
            console.log('asdas')
            resultUrl = searchyear+'/'+this.year+'?format=json'.toString()
            fetch(resultUrl).then(response => response.json()).then(data => (this.project=data))
         }
           else if(this.industry.id == 'all') {
-            resultUrl = 'http://127.0.0.1:8000/summyear/' + this.number + '/' + this.year +'?format=json'
+            resultUrl = 'https://backendinvest.admlr.lipetsk.ru/summyear/' + this.number + '/' + this.year +'?format=json'
             fetch(resultUrl).then(response => response.json()).then(data => (this.project=data))
           }
         else if (this.industry == 'all' && this.number != ''){
           console.log('123123')
-          let searchyear = 'http://127.0.0.1:8000/searchyear'
+          let searchyear = 'https://backendinvest.admlr.lipetsk.ru/searchyear'
           resultUrl = searchyear+'/'+this.year+'?format=json'.toString()
           console.log(resultUrl)
           fetch(resultUrl).then(response => response.json()).then(data => (this.project=data))
         }
             else if (this.industry == '' && this.number != ''){
           console.log('123123')
-          let searchyear = 'http://127.0.0.1:8000/searchyear'
+          let searchyear = 'https://backendinvest.admlr.lipetsk.ru/searchyear'
           resultUrl = searchyear+'/'+this.year+'?format=json'.toString()
           console.log(resultUrl)
           fetch(resultUrl).then(response => response.json()).then(data => (this.project=data))
