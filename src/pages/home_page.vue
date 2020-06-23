@@ -5,7 +5,9 @@
       <forms-vue />
     <video-vue/>
       <full-page ref="fullpage" :options="opts" id="fullpage">
-          
+        <div class="section">
+          <gubernator-vue/>
+        </div>
         <div class="section">
           <map-vue />
         </div>
@@ -26,6 +28,7 @@ import vuescroll from "vue-scroll";
 import fullpage from "vue-fullpage.js";
 import Vue from "vue";
 import industryVue from "../components/head_page/industry.vue";
+import gubernatorVue from "../components/head_page/gubernator.vue";
 import mapVue from "../components/head_page/map.vue";
 import historyVue from "../components/head_page/history";
 import videoVue from '../components/head_page/video.vue';
@@ -39,6 +42,7 @@ export default {
     fullpage,
     formsVue,
     historyVue,
+    gubernatorVue,
     videoVue,
     industryVue,
     headerVue,

@@ -1,7 +1,6 @@
 <template>
 <div>
 <q-scroll-area
-      :visible="visable"
       style="height:100vh; max-width: 100%;"
       
       :thumb-style="thumbStyle"

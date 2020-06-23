@@ -204,6 +204,10 @@ margin-right: 0.5vw;
 .svg svg{
   width:70%;
 }
+
+*{
+  font-family: 'Montserrat';
+}
 .dots_wrap{
   display:flex;
   width:100%;
@@ -256,7 +260,6 @@ margin-right: 0.5vw;
   .buttons button:nth-child(2), .buttons button:nth-child(3), .buttons button:nth-child(4){
     margin-left: 1vw;
   }
-
 </style>
 <script>
 export default {
@@ -278,7 +281,7 @@ data() {
       button3.classList.remove('isactive')
       button4.classList.remove('isactive')
       event.target.classList.add("isactive");
-      console.log(event.target)
+     
     },
     arrow_left(){
       this.$refs.map.previous()

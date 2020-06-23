@@ -7,11 +7,11 @@
   src: url("../assets/fonts/Montserrat/Montserrat-Regular.woff") format("woff");
   font-style: normal;
 }
-@font-face {
+/* @font-face {
   font-family: "Montserrat bold";
-  src: url('../assets/fonts/Montserrat/Montserrat-Bold.woff') format('woff');
+  src: url('/assets/fonts/Montserrat/Montserrat-Bold.woff') format('woff');
   font-style: bold;
-}
+} */
 
 *{
   font-family: 'Montserrat';

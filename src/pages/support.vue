@@ -10,7 +10,10 @@
      <!-- <q-select v-model="model" :options="options" label="Standard" outlined label-color="white" class="select" color="white"/> -->
      <select  v-model="industry">
         <option value="1">Промышленность </option>
-        <option value="2">Сельское Хозяйство </option>
+        <option value="4">Сельское Хозяйство </option>
+        <option value="6">Лесное Хозяйство </option>
+         <option value="7">Строительство </option>
+         <!-- <option value="8">Прочие виды материального произ-ва</option> -->
         <option value="">Все отрасли</option>
       </select>
    </div>
@@ -18,10 +21,11 @@
    <span class = 'text'> Вид поддержки: </span>
     <select v-model="type">
       <option value="direct"> Прямая финансовая поддержка </option>
-      <option value="time_loan"> Заемная финансовая поддержка </option>
+      <option value="loan_funding"> Заемная финансовая поддержка </option>
       <option value="profit"> Льготы по налогу на прибыль</option>
        <option value="transport"> Льготы по транспортному налогу</option>
       <option value="property"> Льготы по налогу на имущество</option>
+       <option value="subsidies"> Субсидии</option>
       <option value="grant"> Гранты</option>
       <option value="rent"> Льготы по аренде</option>
       <option value="garant"> Гарантии</option>
@@ -35,10 +39,11 @@
       </div>
       <div class="wrap">
        <span class = 'text'> Тип проекта: </span>
-        <select v-model="type_project">
+        <select v-model="type_project" >
       <option value="3"> Модернизация </option>
       <option value="2"> Реконструкция </option>
       <option value="1"> Новое строительство</option>
+      <option value=""> Все</option>
       </select>
       </div>
       <div class="wrap">
@@ -85,8 +90,10 @@
                                   <div class="wrapper">
               <span class="grey">Вид поддержки </span>
               <span class="poluch" v-if="item.type == 'direct'">Инвестиции </span>
+              <span class="poluch" v-if="item.type == 'loan_funding'">Заемное финансирование </span>
+              
               <span class="poluch" v-if="item.type == 'loan'">Налоговые льготы по налогу на займ </span>
-              <span class="poluch" v-if="item.type == 'subsidies'">субсидии </span>
+              <span class="poluch" v-if="item.type == 'subsidies'">Субсидии </span>
               <span class="poluch" v-if="item.type == 'profit'">Налоговые льготы по налогу на прибыль </span>
               <span class="poluch" v-if="item.type == 'property'">Налоговые льготы по налогу на имущество </span>
               <span class="poluch" v-if="item.type == 'grant'">Гранты</span>
@@ -100,11 +107,12 @@
               <span class="poluch" v-if="item.type == 'loan_profit'">кредиты под залог создаваемого имущества</span>
             </div>
               <div class="wrapper">
+            
               <span class="grey">Вид деятельности </span>
               <!-- <span class="poluch" v-if="item.implementation == 'agreement'">Соглашение </span>
               <span class="poluch" v-if="item.gchp == 'agreement'">ГЧП </span>
               <span class="poluch" v-if="item.gchp == 'any'">Любой </span> -->
-               <span class="poluch">{{item.industry.toString()}}</span>
+               <span class="poluch">{{item.industry.join(', ')}}</span>
             </div>
           </div>
         </router-link>
@@ -329,7 +337,8 @@ export default {
         recipient:'',
         type_project:'',
     shape: 'line',
-      submitResult: []
+      submitResult: [],
+      support_type:''
     }
   },
       methods:{
@@ -337,23 +346,33 @@ export default {
       const formData = new FormData(evt.target)
       const submitResult = []
       const url = 'https://backendinvest.admlr.lipetsk.ru/support/?format=json&name='+'&type='+this.type+'&form='+this.recipient+'&industry='+this.industry+'&type_project='+this.type_project
-      if (this.industry.valueOf() == '') {
-        this.url = 'https://backendinvest.admlr.lipetsk.ru/support/?format=json'+'&type='+this.type+'&type_project='+this.type_project+'&form='+this.recipient
-        console.log(this.url)
+      if (this.industry.valueOf() == '' && this.type_project.valueOf() == '') {
+        this.url = 'https://backendinvest.admlr.lipetsk.ru/support/?format=json'+'&type='+this.type+'&form='+this.recipient
         fetch(this.url).then(response => response.json()).then(data => (this.support = data))
         this.submitResult = submitResult
       }
-     
+     else if(this.type_project.valueOf()== ''){
+      
+        this.url = 'https://backendinvest.admlr.lipetsk.ru/support/?format=json'+'&type='+this.type+'&form='+this.recipient+'&industry='+this.industry
+  
+         fetch(this.url).then(response => response.json()).then(data => (this.support = data))
+        this.submitResult = submitResult
+     }
+     else if(this.industry.valueOf() == '' ){
+         this.url = 'https://backendinvest.admlr.lipetsk.ru/support/?format=json'+'&type='+this.type+'&type_project='+this.type_project+'&form='+this.recipient
+        fetch(this.url).then(response => response.json()).then(data => (this.support = data))
+        this.submitResult = submitResult
+     }
         else {
           fetch(url).then(response => response.json()).then(data => (this.support = data))
         this.submitResult = submitResult
         }
-        console.log(url)
+      
     },
     },
         mounted(){
         const url = 'https://backendinvest.admlr.lipetsk.ru/support/'
         fetch(url).then(response => response.json()).then(data => (this.support = data))
-    }
+    },
 }
 </script>

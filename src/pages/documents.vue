@@ -1,7 +1,7 @@
 <template>
   <div>
     <q-scroll-area
-      :visible="visable"
+      
       style="height:100vh; max-width: 100%;"
       :thumb-style="thumbStyle"
     >
@@ -660,7 +660,8 @@ export default {
   name: "App",
   components: {
     headerVue,
-    formsVue
+    formsVue,
+    visable:true
   },
   data() {
     return {

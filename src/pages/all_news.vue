@@ -52,9 +52,8 @@
 .item2{
   border-radius: 5px;
   cursor:pointer;
-  margin:2vh;
+  margin:1%;
   width:22.3%;
-  height:25vh;
 
 }
 .item2 a {

@@ -266,7 +266,7 @@ export default {
   data() {
     return {
     slide: "1",
-    news: {},
+    news: [{id:'1'}, {id:'1'},{id:'1'},{id:'1'}, {id:'1'}],
     };
   },
   components:{
