@@ -85,13 +85,13 @@
               <path
                 @click="index = 10, activeMap($event)"
                 class="part"
-                id="lipetsk"
+          
                 d="m 476.701,429.145 16.525,-7.684 -8.296,-10.405 26.386,-22.238 v 7.277 c 0,0 -2.925,4.08 -2.244,4.556 0.68,0.476 7.956,5.237 7.956,5.237 l 6.325,-7.481 4.964,4.284 -2.924,8.161 23.733,6.596 0.068,2.245 2.517,6.12 -2.041,10.201 9.997,25.366 -9.997,4.76 -7.684,-6.801 -17.681,8.569 1.156,6.597 -4.557,3.876 -15.913,-10.473 -11.765,-24.006 -10.88,-4.08 -5.645,-7.48 z"
               />
               <path
                 @click="index = 10,activeMap($event)"
                 class="part"
-                id="lipetsk"
+               id="lipetsk"
                 d="m 374.897,376.985 h 11.017 v 7.141 l 8.84,3.06 4.761,-8.841 14.145,3.74 7.956,-11.9 2.04,-15.301 h 28.222 l 19.382,-13.942 11.561,4.421 13.601,-6.461 4.08,4.761 -1.7,7.14 1.7,4.081 -5.44,6.12 20.401,4.08 v 6.597 l 20.061,7.684 15.982,-4.76 6.324,7.14 -13.125,6.393 -0.952,11.085 5.032,7.684 0.34,10.473 -23.733,-6.596 2.992,-8.161 -5.032,-4.284 -6.325,7.48 -7.956,-5.236 2.312,-4.556 v -7.209 l -26.454,22.17 8.296,10.472 -16.525,7.685 v 3.196 l 5.645,7.481 10.88,4.08 11.765,24.006 -1.768,12.581 6.121,4.216 7.208,20.605 -15.845,12.445 12.037,14.553 -4.353,9.045 -3.4,-0.476 -10.201,4.556 -15.029,-8.5 -5.78,5.576 5.44,11.289 -1.36,6.392 7.481,9.249 -5.101,12.241 -11.22,3.196 v -9.044 l -8.841,-7.957 -6.12,5.644 -5.373,-2.584 -4.624,-13.261 h -11.561 l -8.637,-1.36 -8.84,7.957 -22.646,-32.235 2.04,-10.2 5.441,-2.04 -1.157,-18.77 9.113,-5.236 v -15.437 h -10.881 l -3.672,-2.449 3.672,-7.752 -4.76,-4.488 22.442,-18.022 8.16,4.625 3.128,-8.365 -9.928,-9.793 -23.394,6.597 3.876,-9.521 -3.876,-9.317 -6.12,2.721 -5.169,-2.721 -12.921,-1.564 -2.992,-2.516 5.712,-6.528 -1.156,-6.801 11.085,-5.916 -2.244,-9.045 -9.045,-4.76 z"
               />
 
@@ -1079,15 +1079,21 @@ export default {
       console.log(this.index);
     },
     active(event) {
+        let buttons = [first,second,third,four]
+      
+        for (let i = 0; i<buttons.length; i++){
+          
+          buttons[i].classList.remove('button_active')
+        }
+        event.target.classList.add('button_active')
       if (event.target.id == "first") {
         for (let i = 0; i < svg.children.length; i++) {
           svg.children[i].classList.remove("active");
         }
-        first.classList.add("button_active");
-        second.classList.remove("button_active");
-        third.classList.remove("button_active");
+    
         gryasi.classList.add("active");
         elec.classList.add("active");
+        lipetsk.classList.add('active')
       } else if (event.target.id == "second") {
         first.classList.remove("button_active");
         second.classList.add("button_active");
@@ -1104,15 +1110,20 @@ export default {
         lev.classList.add("active");
         chaplygin.classList.add("active");
       } else if (event.target.id == "third") {
-        first.classList.remove("button_active");
-        second.classList.remove("button_active");
-        third.classList.add("button_active");
+      
         for (let i = 0; i < svg.children.length; i++) {
           svg.children[i].classList.remove("active");
         }
         krasnoe.classList.add("active");
         elec.classList.add("active");
-        lipetsk.classList.add("active");
+        
+      }
+      else if(event.target.id == 'four'){
+        four.classList.add('button_active')
+           for (let i = 0; i < svg.children.length; i++) {
+          svg.children[i].classList.remove("active");
+        }
+        lipetsk.classList.add('active')
       }
     }
   },

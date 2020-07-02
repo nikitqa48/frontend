@@ -94,9 +94,11 @@
     }
 .item_image__div{
     width:20%;
+
 }
 .item_image__div img{
-    width:100%;
+    width:100%!important;
+
 }
 </style>
 <script>

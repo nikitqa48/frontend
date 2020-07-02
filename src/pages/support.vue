@@ -49,8 +49,10 @@
       <div class="wrap">
     <span class = 'text'>  Тип получателя поддержки: </span>
       <select v-model="recipient">
-      <option value="ip"> ИП </option>
+      <option value="ip"> МСП </option>
       <option value="lawyer"> Юр. Лицо</option>
+      <option value="municipality">Муниципалитет</option>
+      <!-- <option value="all">Для всех</option> -->
       <option value=""> Все  </option>
 
       </select>
@@ -65,7 +67,7 @@
         <router-link :to="{name: 'support_detail', params: { id: item.id}}" class="rout">
           <div class="item_name"> {{item.name}} </div>
           <div class="border"> </div>
-          <div class="sposob">
+          <div class="item_bottom">
             <div class="wrapper">
               <span class="grey">Получатели </span>
               <span class="poluch" v-if="item.recipient == 'small'">МСП </span>
@@ -91,7 +93,7 @@
               <span class="grey">Вид поддержки </span>
               <span class="poluch" v-if="item.type == 'direct'">Инвестиции </span>
               <span class="poluch" v-if="item.type == 'loan_funding'">Заемное финансирование </span>
-              
+   
               <span class="poluch" v-if="item.type == 'loan'">Налоговые льготы по налогу на займ </span>
               <span class="poluch" v-if="item.type == 'subsidies'">Субсидии </span>
               <span class="poluch" v-if="item.type == 'profit'">Налоговые льготы по налогу на прибыль </span>
@@ -112,7 +114,7 @@
               <!-- <span class="poluch" v-if="item.implementation == 'agreement'">Соглашение </span>
               <span class="poluch" v-if="item.gchp == 'agreement'">ГЧП </span>
               <span class="poluch" v-if="item.gchp == 'any'">Любой </span> -->
-               <span class="poluch">{{item.industry.join(', ')}}</span>
+               <span class="poluch" v-if="item.industry != undefined">{{item.industry.join(', ')}}</span>
             </div>
           </div>
         </router-link>
@@ -129,9 +131,7 @@
   border: 1px solid white;
   border-radius: 15px;
 }
-.absolute{
 
-}
 body a{
   color:white;
   text-decoration: none;
@@ -144,7 +144,7 @@ body a{
 }
 .wrapper{
   display:flex;
-  margin-right: 10%;
+  width:20%;
   padding-bottom: 5%;
   flex-direction: column;
 }
@@ -270,8 +270,9 @@ body a{
   flex-direction: row;
   justify-content: space-between;
 }
-.sposob{
+.item_bottom{
   display:flex;
+  justify-content: space-around;
   flex-direction: row;
 }
 .title {
@@ -327,52 +328,51 @@ body a{
 
 </style>
 <script>
+import { mapState, mapActions } from 'vuex'
 export default {
   data(){
     return{
-      options:['1', '2', '3'],
-      support:{},
+        options:['1', '2', '3'],
         industry:'1',
         type:'',
         recipient:'',
         type_project:'',
-    shape: 'line',
-      submitResult: [],
-      support_type:''
+        shape: 'line',
+        support_type:''
     }
   },
       methods:{
       onSubmit (evt) {
       const formData = new FormData(evt.target)
+      let url = 'https://backendinvest.admlr.lipetsk.ru/support/'
       const submitResult = []
-      const url = 'https://backendinvest.admlr.lipetsk.ru/support/?format=json&name='+'&type='+this.type+'&form='+this.recipient+'&industry='+this.industry+'&type_project='+this.type_project
       if (this.industry.valueOf() == '' && this.type_project.valueOf() == '') {
-        this.url = 'https://backendinvest.admlr.lipetsk.ru/support/?format=json'+'&type='+this.type+'&form='+this.recipient
-        fetch(this.url).then(response => response.json()).then(data => (this.support = data))
-        this.submitResult = submitResult
+       url = 'https://backendinvest.admlr.lipetsk.ru/support/?format=json'+'&type='+this.type+'&form='+this.recipient
+       this.$store.dispatch('filterSupportData', url)
       }
      else if(this.type_project.valueOf()== ''){
-      
-        this.url = 'https://backendinvest.admlr.lipetsk.ru/support/?format=json'+'&type='+this.type+'&form='+this.recipient+'&industry='+this.industry
-  
-         fetch(this.url).then(response => response.json()).then(data => (this.support = data))
-        this.submitResult = submitResult
+        url = 'https://backendinvest.admlr.lipetsk.ru/support/?format=json'+'&type='+this.type+'&form='+this.recipient+'&industry='+this.industry
+         this.$store.dispatch('filterSupportData', url)
      }
      else if(this.industry.valueOf() == '' ){
-         this.url = 'https://backendinvest.admlr.lipetsk.ru/support/?format=json'+'&type='+this.type+'&type_project='+this.type_project+'&form='+this.recipient
-        fetch(this.url).then(response => response.json()).then(data => (this.support = data))
-        this.submitResult = submitResult
+         url = 'https://backendinvest.admlr.lipetsk.ru/support/?format=json'+'&type='+this.type+'&type_project='+this.type_project+'&form='+this.recipient
+         this.$store.dispatch('filterSupportData', url)
      }
-        else {
-          fetch(url).then(response => response.json()).then(data => (this.support = data))
-        this.submitResult = submitResult
-        }
-      
+      else {
+        this.$store.dispatch('filterSupportData', url)
+        }   
     },
     },
         mounted(){
-        const url = 'https://backendinvest.admlr.lipetsk.ru/support/'
-        fetch(url).then(response => response.json()).then(data => (this.support = data))
+
+         this.$store.dispatch('allSupportData')
     },
+    computed: {
+  
+        support(){
+          return this.$store.getters.supports
+        }
+    }
+
 }
 </script>

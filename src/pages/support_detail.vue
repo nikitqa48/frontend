@@ -61,7 +61,7 @@
         <div class="item" v-if="support.industry != '' ">
           <div class="wrapper">
             <span class="text">Вид деятельности:</span>
-            <span class="vid">{{support.industry.toString()}}</span>
+            <span class="vid" v-if="support.industry!=undefined">{{support.industry.toString()}}</span>
           </div>
         </div>
         <div class="item" v-if="support.implementation != ''">
@@ -217,7 +217,7 @@
             <span class="vid">{{support.land}}</span>
           </div>
         </div>
-        <div class="item" v-if="support.summ != '' ">
+        <div class="item" v-if="support.summ != '' && support.summ != null ">
           <div class="wrapper">
             <span class="text">Сумма займа:</span>
 
