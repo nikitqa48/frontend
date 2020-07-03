@@ -1,7 +1,7 @@
 <template>
         <q-toolbar class="header" >
      
-      <q-btn class="invest" stretch label="Инвест Липецк" to = "/" />
+      <q-btn class="invest" stretch flat to = "/" > Главная страница</q-btn>
       <q-space />
     
       <!-- <q-btn stretch flat label="РЕГИОН"  class="header_button"/> -->
@@ -37,7 +37,6 @@ export default {
   background: #262626;
 }
 .invest{
-  width: 10%;
   margin-left: 3%;
   font-size: 0.8vw;
 }

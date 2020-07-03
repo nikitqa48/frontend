@@ -1,11 +1,12 @@
 <template>
     <div class="wrapper">
         <div class="text">
-            <p style="padding:1%;font-size: 1.2vw;"> «Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit»</p>
+            <p style="padding:1%;font-size: 1.2vw;"> «Липецкая область – надёжный и проверенный партнер для инвестора. Нам доверяют, мы это ценим. Могу с уверенностью сказать, что наш опыт в реализации проектов сформировал положительный имидж региона не только на территории России, но и во всем мире.
+<br>Липецкая область - открытый регион для инвестиций»</p>
         <p style="font-size: 1vw; padding:1%;">  Глава администрации Липецкой области, Игорь Георгиевич Артамонов</p>
         </div>
-        <div class="button">Обратиться к губернатору 
-        </div>
+        <a href="https://xn--80aacoonefzg3am8b1fsb.xn--p1ai/appeal"><div class="button">Обратиться к губернатору 
+        </div> </a>
     </div>
 </template>
 <style scoped>
@@ -18,8 +19,11 @@
     display: flex;
     flex-direction: column;
 }
+body a{
+    text-decoration: none;
+}
 .button{
-    width: 30%;
+    width: 25%;
     padding-top: 1vh;
     padding-bottom: 1vh;
     cursor: pointer;
@@ -33,15 +37,15 @@
     margin-left: 2%;
 }
 .text{
-        margin-left: 2%;
-    padding-top: 5%;
-    padding-bottom: 5%;
+    margin-left: 2%;
+    
+    padding:1%;
     margin-top: 10%;
     margin-bottom: 5%;
     color: #fff;
     background: #000;
     opacity: .5;
-    width: 40%;
+    width: 35%;
 }
 </style>
 <script>

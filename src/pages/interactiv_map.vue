@@ -9,10 +9,10 @@
         <div class="university">
           <h4>Интерактивная карта площадок</h4>
           <div class="wrap">
-            <button class="first" id="first" @click="active">ОЭЗ "Липецк"</button>
-            <button class="third" id="third" @click="active">Индустриальные парки</button>
-            <button class="second" id="second" @click="active">ОЭЗ РУ</button>
-            <button class="four" id="four" @click="active">Технопарки</button>
+            <button class="first" id="first" @click="active" v-bind:class = '{button_active: oez_button}'>ОЭЗ "Липецк"</button>
+            <button class="third" id="third" @click="active" v-bind:class = '{button_active: industrial_button}' >Индустриальные парки</button>
+            <button class="second" id="second" @click="active" v-bind:class = '{button_active: oezru_button}'>ОЭЗ РУ</button>
+            <button class="four" id="four" @click="active" v-bind:class = '{button_active: techno_button}'>Технопарки</button>
           </div>
         </div>
         <transition
@@ -127,7 +127,7 @@
                 d="m 324.70999,665.66598 v -11.901 l -16.321,-10.881 14.145,-9.72301 5.645,-12.24099 22.237,-10.881 9.52099,-2.516 -5.64499,-15.165 -1.63201,-7.957 7.277,-7.20799 12.445,2.72 12.92101,-6.39301 18.633,-3.60399 4.07999,-14.757 7.208,9.11199 8.84001,-7.957 8.63699,1.36 h 11.561 l 4.624,13.261 5.373,2.584 6.12001,-5.644 8.841,7.957 v 9.044 l 4.76099,3.4 -5.44,7.277 -9.31699,-2.992 -1.56401,6.59601 7.481,24.68599 0.88401,19.041 -9.04501,14.077 -1.564,10.74499 -18.497,-9.38499 -10.20099,9.521 -22.408,0.68099 6.81299,8.161 -4.12699,4.41901 -15.631,1.70199 -6.132,10.88001 6.132,9.521 -6.81001,5.099 -17.68099,0.33999 -34.44301,-42.842 z"
               />
               <path
-                @click="index = 17, activeMap($event), show_greenfield = false"
+                @click="index = 12, activeMap($event), show_greenfield = false"
                 class="part"
                 id="volovo"
                 d="m 41.510198,647.10198 -17.373499,51.00399 24.868,19.04101 10.900998,33.322 12.6043,4.76099 32.361993,1.7 3.407,-7.48099 17.714,-4.76001 v -9.52099 l 14.98901,-3.40001 2.385,5.78 16.692,-1.69999 5.92699,-17.748 -13.329,-7.208 H 142.456 l -14.961,-8.161 -3.74001,-22.102 13.94101,-9.52 -19.042,-2.04101 -7.14,-18.70099 3.74,-5.10001 -1.70001,-5.78099 -22.101893,-2.72 v -8.501 l 11.220903,-25.365 -9.723603,-5.442 -19.7581,6.121 -9.538399,12.581 h -8.8571 l -10.901,17.681 -6.472499,-3.74 -5.791101,9.86 z"
@@ -153,7 +153,27 @@
             <div v-if="show_greenfield == false">
               <div v-if="show_greenfield == false">
                 <div class="input">
-                  <p class="list">Список площадок —</p>
+                  <p class="list">Список площадок — 
+                    <span v-if="index == 15"> Усмань</span>
+                    <span v-if="index == 16"> Добринка</span>
+                    <span v-if="index == 12"> Волово</span>
+                    <span v-if="index == 17">Долгоруково</span>
+                    <span v-if="index == 14"> Хлевное</span>
+                    <span v-if="index == 13"> Тербуны</span>
+                    <span v-if="index == 10"> Липецк</span>
+                    <span v-if="index == 11"> Грязи</span>
+                    <span v-if="index == 9"> Задонск</span>
+                    <span v-if="index == 8"> Елец</span>
+                    <span v-if="index == 7">Измалково</span>
+                    <span v-if="index == 3">Становое</span>
+                    <span v-if="index == 4">Красное</span>
+                     <span v-if="index == 6">Доброе</span>
+                     <span v-if="index == 5">Лебедянь</span>
+                     <span v-if="index == 2">Чаплыгин</span>
+                     <span v-if="index == 1">Лев-Толстой</span>
+                     <span v-if="index == 0">Данков</span>
+                    </p>
+                  
                   <q-form @submit="onSubmit" class="form">
                     <!-- <span class = 'text'>Тип площадки: </span> -->
                     <!-- <q-select v-model="model" :options="options" label="Standard" outlined label-color="white" class="select" color="white"/> -->
@@ -172,7 +192,9 @@
                   :visible="visable"
                   style="height: 65vh; max-width: 99%; padding-top:2vh"
                 >
+                
                   <div class="items_greenfield" v-if="show_greenfield == false">
+                    <div v-if="show_oez">
                     <p
                       class="square_name__territory"
                       v-if="show_greenfield == false && oez_ppt.length != 0 && index == '8'"
@@ -185,7 +207,7 @@
                       class="square_name__territory"
                       v-if="show_greenfield == false && oez_ppt.length != 0 && index == '10'"
                     >ОЭЗ «Липецк»</p>
-                    <div class="green">
+                    <div class="green" >
                       <div
                         class="greenfield_border"
                         v-for="item in oez_ppt"
@@ -224,6 +246,8 @@
                         </div>
                       </div>
                     </div>
+                    </div>
+                    <div v-if="show_oezru">
                     <p
                       class="square_name__territory"
                       v-if="show_greenfield == false && oez.length && index == '0' "
@@ -295,6 +319,8 @@
                         </div>
                       </div>
                     </div>
+                    </div>
+                    <div v-if="show_industrial">
                     <p class="square_name__territory"
                       v-if="show_greenfield == false  && index=='8' || index == '4'" 
                     >Индустриальные парки</p>
@@ -337,6 +363,8 @@
                         </div>
                       </div>
                     </div>
+                    </div>
+                    <div id="also" v-if="show_any">
                     <p class="square_name__territory" v-if="show_greenfield == false && any.length != 0">Иные площадки</p>
                     <div class="green">
                       <div
@@ -376,6 +404,7 @@
                           </div>
                         </div>
                       </div>
+                    </div>
                     </div>
                   </div>
                 </q-scroll-area>
@@ -1002,12 +1031,15 @@
 }
 .active {
   opacity: 1 !important;
-  fill: #8fbedf !important;
+  fill: #8fbedf;
 }
 .button_active {
   background: #2cccd8 !important;
   color: white !important;
   box-shadow: 0px 2px 10px #8be0e6;
+}
+.hide{
+  display:none;
 }
 </style>
 <script>
@@ -1019,9 +1051,18 @@ export default {
       greenfield: {},
       oez_ppt: [],
       any: [],
+      show_any:true,
       visable: true,
+      oez_button:false,
+      industrial_button:false,
+      oezru_button:false,
+      techno_button:false,
       index: 0,
       toggle: true,
+      show_oez:true,
+      show_industrial:true,
+      show_oezru:true,
+      button_active:true,
       isActive: false,
       green: {},
       type: "1",
@@ -1076,32 +1117,49 @@ export default {
         svg.children[i].classList.remove("active_map");
       }
       object.currentTarget.classList.add("active_map");
-      console.log(this.index);
+    
     },
     active(event) {
-        let buttons = [first,second,third,four]
-      
-        for (let i = 0; i<buttons.length; i++){
-          
-          buttons[i].classList.remove('button_active')
-        }
-        event.target.classList.add('button_active')
       if (event.target.id == "first") {
+         this.oez_button =!this.oez_button
+          this.oezru_button = false
+          this.industrial_button = false
+          this.techno_button = false
         for (let i = 0; i < svg.children.length; i++) {
+         
           svg.children[i].classList.remove("active");
         }
-    
+        if (this.oez_button){
         gryasi.classList.add("active");
         elec.classList.add("active");
         lipetsk.classList.add('active')
+        this.show_oez =true
+        this.show_any = false
+        this.show_oezru = false
+        this.show_industrial = false
+        
+        }
+        else{
+          this.show_oez = true
+          this.show_any = true
+          this.show_industrial = true
+          this.show_oezru = true
+        }
+      
       } else if (event.target.id == "second") {
-        first.classList.remove("button_active");
-        second.classList.add("button_active");
-        third.classList.remove("button_active");
-        for (let i = 0; i < svg.children.length; i++) {
+          this.oez_button = false
+          this.oezru_button = ! this.oezru_button
+          this.industrial_button = false
+          this.techno_button = false
+          if (this.oezru_button){
+            this.show_oezru = true
+        this.show_oez =false
+        this.show_any = false
+        this.show_industrial = false
+            for (let i = 0; i < svg.children.length; i++) {
           svg.children[i].classList.remove("active");
         }
-        dankov.classList.add("active");
+          dankov.classList.add("active");
         elec.classList.add("active");
         zadonsk.classList.add("active");
         hlevnoe.classList.add("active");
@@ -1109,21 +1167,56 @@ export default {
         ismalkovo.classList.add("active");
         lev.classList.add("active");
         chaplygin.classList.add("active");
+        this.also = false
+          }
+          else{
+                 for (let i = 0; i < svg.children.length; i++) {
+          svg.children[i].classList.remove("active");
+          this.show_oez = true
+         this.show_any = true
+          this.show_industrial = true
+        }
+          }
+        also.style.display='none'
       } else if (event.target.id == "third") {
-      
-        for (let i = 0; i < svg.children.length; i++) {
+          this.oez_button = false
+          this.oezru_button = false
+          this.industrial_button = !this.industrial_button
+          this.techno_button = false
+          if (this.industrial_button ){
+            this.show_industrial = true
+            this.show_oezru = false
+            this.show_oez = false
+            this.show_any = false
+               for (let i = 0; i < svg.children.length; i++) {
           svg.children[i].classList.remove("active");
         }
-        krasnoe.classList.add("active");
+          krasnoe.classList.add("active");
         elec.classList.add("active");
-        
+          }
+          else {
+                     this.show_industrial = true
+            this.show_oezru = true
+            this.show_oez = true
+            this.show_any = true
+            for (let i = 0; i < svg.children.length; i++) {
+          svg.children[i].classList.remove("active");
+          
+        }
+          } 
       }
       else if(event.target.id == 'four'){
-        four.classList.add('button_active')
-           for (let i = 0; i < svg.children.length; i++) {
-          svg.children[i].classList.remove("active");
+          this.oez_button = false
+          this.oezru_button = false
+          this.industrial_button = false
+          this.techno_button = ! this.techno_button
+          if(this.techno_button){
+            lipetsk.classList.add('active')
+          }
+           else{
+             for (let i = 0; i < svg.children.length; i++) {
+          svg.children[i].classList.remove("active");}
         }
-        lipetsk.classList.add('active')
       }
     }
   },
