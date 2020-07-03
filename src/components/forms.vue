@@ -55,8 +55,7 @@
         label-color = 'grey-2'
         v-model="middle_name"
         label="Ваше отчество *"
-        lazy-rules
-        :rules="[ val => val && val.length > 0 || 'Пожалуйста, введите ваше отчество(если есть)']"
+       
       />
             <q-input
             dark outlined
@@ -65,8 +64,7 @@
         type = 'tel'
         v-model="phone"
         label="Телефон *"
-        lazy-rules
-        :rules="[ val => val && val.length > 0 || 'Пожалуйста, введите свой номер телефона']"
+       
       />
      </div>
      <div class="inside">
@@ -87,8 +85,7 @@
     
         v-model="organisation"
         label="Организация*"
-        lazy-rules
-        :rules="[ val => val && val.length > 0 || 'Пожалуйста, введите название вашей организации']"
+
       />
       
    </div>

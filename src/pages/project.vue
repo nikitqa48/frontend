@@ -34,6 +34,40 @@
         </div>
       
       </q-expansion-item>
+ <q-dialog
+      v-model="medium"
+    >
+      <q-card style="width: 700px; max-width: 80vw;">
+        <q-card-section>
+          <div class="text-h6">Стать инвестором</div>
+        </q-card-section>
+
+        <q-card-section class="q-pt-none">
+          Этот проект нуждается в инвестировании. Отправьте ваши контакты и наши сотрудники свяжутся с вами в ближайшее время 
+        </q-card-section>
+  <q-card-section class="q-pt-none">
+         <q-form class='form'>
+          <q-input class ='input'  filled v-model="name" label="ФИО" lazy-rules
+        :rules="[ val => val && val.length > 0 || 'Пожалуйста, введите ваше имя']"/>
+          <q-input class ='input' filled v-model="organisation" label="Организация" />
+          <q-input class ='input' type="number" filled v-model="phone" label="Телефон" />
+          <q-input class ='input'   lazy-rules
+        :rules="[ val => val && val.length > 0 || 'Пожалуйста, введите вашу почту']"
+         filled v-model="email" type='email' label="Почта" />
+             <q-input
+      v-model="comment"
+      filled
+      autogrow
+      label="комментарий"
+      type="textarea"
+    />
+         </q-form>
+        </q-card-section>
+        <q-card-actions align="right" class="bg-white text-teal">
+          <q-btn flat label="Отправить" type ='submit'v-close-popup  @click="submit"/>
+        </q-card-actions>
+      </q-card>
+    </q-dialog>
       <div class="item" v-for="item in project">
           <div class="item_image__div">
             <img :src="item.image">
@@ -45,13 +79,23 @@
               <p> Текущее состояние проекта: {{item.now}}</p>
               <p> Реализация проекта:  с {{item.start}} по {{item.finish}}г.</p>
               <p> Сумма инвестиций: {{item.sum}} млн.руб.</p>
+              <q-btn flat class="invest" @click="form(item)" v-if="item.help == true">Стать инвестором </q-btn>
           </div>
       </div>
+      
             </div>
         </div>
     </div>
 </template>
 <style scoped>
+.form{
+  display:flex;
+  flex-direction: column;
+}
+
+.input{
+  margin-bottom: 1%;
+}
     .container{
         display: flex;
         flex-direction: column;
@@ -71,6 +115,7 @@
     }
     .right_content{
         display:flex; 
+        width:80%;
         flex-direction:column; 
         margin-left:2%;
     }
@@ -101,6 +146,13 @@
     width:100%!important;
 
 }
+.invest{
+  color:white;
+  width: 20%;
+  border-radius: 15px;
+  background:#2CCCD8;
+  font-size: 0.8em;
+}
 </style>
 <script>
 import headerVue from "../components/header.vue";
@@ -110,6 +162,13 @@ export default {
     data(){
         return{
             industry: '',
+            medium:false,
+            name:'',
+            project_id:'',
+            email:'',
+            phone:'',
+            organisation:'',
+            comment:'',
             year:2010,
             number:'',
       options:[{ id: 'all',label:'Все' },
@@ -137,7 +196,32 @@ export default {
     headerVue, formsVue
   },
     methods:{
-      
+      form(project){
+         this.project_id = project.id
+     this.medium =! this.medium
+          
+      },
+      submit(){
+ let data2 ={name:this.name,
+                  organisation:this.organisation,
+                  phone:this.phone,
+                  email:this.email,
+                  comment:this.comment,
+                  project_id: this.project_id
+                  }
+      let data = JSON.stringify(data2)
+    fetch('https://backendinvest.admlr.lipetsk.ru/request/',{
+      method:'POST',
+      body:data,
+      headers:{'content-type':'application/json'}
+    }).then(function(response){
+      return response.json()
+    }).then(function(data){
+      alert('С вами свяжутся')
+    })
+          this.medium =! this.medium
+         
+      },
         getProjectItems(){
         this.project = []
         const url = 'https://backendinvest.admlr.lipetsk.ru/project/'
@@ -153,7 +237,7 @@ export default {
 
          if (this.industry == '' && this.number == '') {
            let searchyear = 'https://backendinvest.admlr.lipetsk.ru/searchyear'
-           console.log('asdas')
+           
            resultUrl = searchyear+'/'+this.year+'?format=json'.toString()
            fetch(resultUrl).then(response => response.json()).then(data => (this.project=data))
         }
@@ -162,17 +246,17 @@ export default {
             fetch(resultUrl).then(response => response.json()).then(data => (this.project=data))
           }
         else if (this.industry == 'all' && this.number != ''){
-          console.log('123123')
+          
           let searchyear = 'https://backendinvest.admlr.lipetsk.ru/searchyear'
           resultUrl = searchyear+'/'+this.year+'?format=json'.toString()
-          console.log(resultUrl)
+         
           fetch(resultUrl).then(response => response.json()).then(data => (this.project=data))
         }
             else if (this.industry == '' && this.number != ''){
-          console.log('123123')
+          
           let searchyear = 'https://backendinvest.admlr.lipetsk.ru/searchyear'
           resultUrl = searchyear+'/'+this.year+'?format=json'.toString()
-          console.log(resultUrl)
+          
           fetch(resultUrl).then(response => response.json()).then(data => (this.project=data))
         }
          else{

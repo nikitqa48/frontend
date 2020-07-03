@@ -208,8 +208,8 @@
 .image{
     margin-top: 1vh;
     border-radius: 5px;
-    width:13%;
-
+    min-width: 13%;
+    max-width: 13%;
 }
 .photo{
     margin-top: 1vh;
@@ -254,6 +254,7 @@ body a{
 }
 .parent{
     display:flex;
+    width:100%;
     flex-direction: row;
     justify-content: space-between;
 }
@@ -347,6 +348,7 @@ margin-bottom: 0.5vh;
   padding-left: 0.5vw;
   display:flex;
   font-size: 0.8vw;
+  width:100%;
   flex-direction: column;
 }
 .wrap select {

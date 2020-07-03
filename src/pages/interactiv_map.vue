@@ -1211,6 +1211,8 @@ export default {
           this.industrial_button = false
           this.techno_button = ! this.techno_button
           if(this.techno_button){
+              for (let i = 0; i < svg.children.length; i++) {
+          svg.children[i].classList.remove("active");}
               this.$refs.lipetsk.classList.add('active')
           }
            else{
