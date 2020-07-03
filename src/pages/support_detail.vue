@@ -224,6 +224,12 @@
             <span class="vid">{{support.summ}}</span>
           </div>
         </div>
+                <div class="item" v-if="support.percent != '' && support.percent != null ">
+          <div class="wrapper">
+            <span class="text">Процентная ставка:</span>
+            <span class="vid">{{support.percent}}</span>
+          </div>
+        </div>
       </div>
     </div>
   </div>

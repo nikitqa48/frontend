@@ -93,7 +93,8 @@
        background: #3A4566;
     }
 .item_image__div{
-    width:20%;
+    min-width:15vw;
+    max-width: 15vw;
 
 }
 .item_image__div img{

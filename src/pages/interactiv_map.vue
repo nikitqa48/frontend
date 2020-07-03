@@ -85,7 +85,7 @@
               <path
                 @click="index = 10, activeMap($event)"
                 class="part"
-          
+                ref = 'lipetsk'
                 d="m 476.701,429.145 16.525,-7.684 -8.296,-10.405 26.386,-22.238 v 7.277 c 0,0 -2.925,4.08 -2.244,4.556 0.68,0.476 7.956,5.237 7.956,5.237 l 6.325,-7.481 4.964,4.284 -2.924,8.161 23.733,6.596 0.068,2.245 2.517,6.12 -2.041,10.201 9.997,25.366 -9.997,4.76 -7.684,-6.801 -17.681,8.569 1.156,6.597 -4.557,3.876 -15.913,-10.473 -11.765,-24.006 -10.88,-4.08 -5.645,-7.48 z"
               />
               <path
@@ -1132,7 +1132,7 @@ export default {
         if (this.oez_button){
         gryasi.classList.add("active");
         elec.classList.add("active");
-        lipetsk.classList.add('active')
+      
         this.show_oez =true
         this.show_any = false
         this.show_oezru = false
@@ -1211,7 +1211,7 @@ export default {
           this.industrial_button = false
           this.techno_button = ! this.techno_button
           if(this.techno_button){
-            lipetsk.classList.add('active')
+              this.$refs.lipetsk.classList.add('active')
           }
            else{
              for (let i = 0; i < svg.children.length; i++) {

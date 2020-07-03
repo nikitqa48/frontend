@@ -10,21 +10,20 @@
   <forms-vue/>       
     <div class="container">
         <h4> Контакты </h4>
-        
-             <div class="perekrestok">
+             <div class="perekrestok" v-for="item in contact">
    <div class="wrap">
-    <span class = 'text'> Начальник</span>
+    <span class = 'text'> {{item.position}}</span>
     <div class="border"> </div>
     <div class="parent">
     <div class="image">
-        <img src="/statics/image/OEZ.png">
+        <img :src="item.image">
     </div>
      <div class="inside_parent">
         <span class="fio">
             Ф.И.О
         </span>
         <span class="name">
-            Имя Фамилия
+           {{item.name}}
         </span>
     </div>
          <div class="inside_parent">
@@ -32,29 +31,29 @@
             Телефон
         </span>
         <span class="name">
-            (4742) 22-84-45 
+            {{item.phone}}
         </span>
     </div>
-             <div class="inside_parent">
+             <!-- <div class="inside_parent">
         <span class="fio">
             Должность
         </span>
         <span class="name">
-            Начальник управления
+            {{item.position}}
         </span>
-    </div>
+    </div> -->
                  <div class="inside_parent">
         <span class="fio">
             E-mail
         </span>
         <span class="name">
-            ugskr@admlr.lipetsk.ru *
+          {{item.email}}
         </span>
     </div>
     </div>
    </div>
              </div>
-             <div class="perekrestok">
+             <!-- <div class="perekrestok">
    <div class="wrap">
     <span class = 'text'> Заместитель</span>
     <div class="border"> </div>
@@ -96,8 +95,8 @@
     </div>
     </div>
    </div>
-             </div>
-             <div class="perekrestok">
+             </div> -->
+             <!-- <div class="perekrestok">
    <div class="wrap">
     <span class = 'text'> Заместитель</span>
     <div class="border"> </div>
@@ -139,8 +138,8 @@
     </div>
     </div>
    </div>
-             </div>
-             <div class="perekrestok">
+             </div> -->
+             <!-- <div class="perekrestok">
    <div class="wrap">
     <span class = 'text'> Заместитель</span>
     <div class="border"> </div>
@@ -182,7 +181,7 @@
     </div>
     </div>
    </div>
-             </div>
+             </div> -->
     </div>
 
  
@@ -235,13 +234,12 @@
 .inside_parent{
     display: flex;
     flex-direction: column;
+    width:30%;
     margin-left: 1.2vw;
     margin-top: 2vh;
     padding-bottom: 3vh;
 }
-.inside_parent:nth-child(3), .inside_parent:nth-child(4), .inside_parent:nth-child(5){
-    margin-left: 5%;
-}
+
 
 .image img{
     width:100%;
@@ -257,6 +255,7 @@ body a{
 .parent{
     display:flex;
     flex-direction: row;
+    justify-content: space-between;
 }
 .but{
   align-self: flex-end;
@@ -332,7 +331,7 @@ margin-bottom: 0.5vh;
   align-self: center;
   display: flex;
   flex-direction: row;
-  min-width:80%;
+  min-width:100%;
   justify-content: space-between;
 
 }
@@ -467,6 +466,15 @@ import formsVue from "../components/forms.vue";
         opacity: 0.5
       }
       }
-    }
+    },
+      mounted(){
+        this.$store.dispatch('allContactData')
+       
+      },
+      computed:{
+        contact(){
+          return this.$store.getters.contact
+        }
+      }
   }
 </script>
