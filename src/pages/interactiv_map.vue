@@ -149,10 +149,10 @@
           </div>
         </transition>
         <div class="right_map">
-          <div class="right_wrapper">
+          <div class="right_wrapper" >
             <div v-if="show_greenfield == false">
               <div v-if="show_greenfield == false">
-                <div class="input">
+                <div class="input" v-if="right == false">
                   <p class="list">Список площадок — 
                     <span v-if="index == 15"> Усмань</span>
                     <span v-if="index == 16"> Добринка</span>
@@ -174,7 +174,7 @@
                      <span v-if="index == 0">Данков</span>
                     </p>
                   
-                  <q-form @submit="onSubmit" class="form">
+                  <q-form @submit="onSubmit" class="form" >
                     <!-- <span class = 'text'>Тип площадки: </span> -->
                     <!-- <q-select v-model="model" :options="options" label="Standard" outlined label-color="white" class="select" color="white"/> -->
                     <select v-model="type">
@@ -187,7 +187,7 @@
                   </q-form>
                 </div>
                 <q-scroll-area
-                  v-if="show_greenfield == false"
+                  v-if="show_greenfield == false && right == false"
                   dark
                   :visible="visable"
                   style="height: 65vh; max-width: 99%; padding-top:2vh"
@@ -641,6 +641,9 @@
                 </div>
               </q-scroll-area>
             </div>
+            <div class="choice text-h2" v-if="right" >
+              Выберите район
+            </div>
           </div>
         </div>
       </div>
@@ -654,6 +657,11 @@
 }
 * {
   font-family: "Montserrat";
+}
+.choice{
+  margin-top: 2%;
+  align-self: center;
+  color:white;
 }
 .square_name__territory {
   padding: 0;
@@ -1000,6 +1008,7 @@
 }
 .wrapp_container {
   width: 95%;
+  height:100vh;
   margin: auto;
   justify-content: space-between;
   display: flex;
@@ -1023,6 +1032,7 @@
 }
 .right_wrapper {
   display: flex;
+  margin-top: 15%;
   flex-direction: column;
 }
 .gr {
@@ -1058,6 +1068,7 @@ export default {
       oezru_button:false,
       techno_button:false,
       index: 0,
+      region_active:false,
       toggle: true,
       show_oez:true,
       show_industrial:true,
@@ -1065,6 +1076,7 @@ export default {
       button_active:true,
       isActive: false,
       green: {},
+      right:true,
       type: "1",
       industrial: [],
       oez: [],
@@ -1113,10 +1125,30 @@ export default {
     },
     activeMap(object) {
       this.show_greenfield = false;
-      for (let i = 0; i < svg.children.length; i++) {
-        svg.children[i].classList.remove("active_map");
+      this.region_active = true
+      let region = object
+        if(region.currentTarget.classList.contains('active_map')){
+           this.right = true
+          for (let i = 0; i < svg.children.length; i++) {
+        svg.children[i].classList.remove("active_map");  
+        this.region_active = false  
+      }
+      }
+      else if (this.region_active){
+          for (let i = 0; i < svg.children.length; i++) {
+        svg.children[i].classList.remove("active_map");    
       }
       object.currentTarget.classList.add("active_map");
+      this.right = false
+      }
+     
+      else{
+          for (let i = 0; i < svg.children.length; i++) {
+        svg.children[i].classList.remove("active_map");
+      }
+      }
+   
+
     
     },
     active(event) {

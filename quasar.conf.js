@@ -54,7 +54,7 @@ module.exports = function (ctx) {
       ],
 
       // Quasar plugins
-      plugins: []
+      plugins: ['Meta']
     },
 
     // https://quasar.dev/quasar-cli/cli-documentation/supporting-ie
@@ -92,7 +92,7 @@ module.exports = function (ctx) {
 
     // https://quasar.dev/quasar-cli/developing-ssr/configuring-ssr
     ssr: {
-      pwa: false
+      pwa: true
     },
 
     // https://quasar.dev/quasar-cli/developing-pwa/configuring-pwa
@@ -101,8 +101,8 @@ module.exports = function (ctx) {
       workboxOptions: {}, // only for GenerateSW
       manifest: {
         name: 'Инвест Липецк',
-        short_name: 'Инвест',
-        description: 'Инвестиционный портал Липецкой области',
+        short_name: 'Инвестиционный портал Липецкой области',
+        description: 'Инвестируй в Липецкую область',
         display: 'standalone',
         orientation: 'portrait',
         background_color: '#ffffff',

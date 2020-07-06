@@ -169,7 +169,7 @@ html.fp-enabled,
     height: 4px;
     width: 4px;
     border: 0;
-    background: #333;
+    background: #2CCCD8;
     left: 50%;
     top: 50%;
     margin: -2px 0 0 -2px;
@@ -188,10 +188,10 @@ html.fp-enabled,
     position: absolute;
     top: -2px;
     color: #fff;
-    font-size: 14px;
+    font-size: 16px;
     font-family: arial, helvetica, sans-serif;
     white-space: nowrap;
-    max-width: 220px;
+    max-width: 250px;
     overflow: hidden;
     display: block;
     opacity: 0;

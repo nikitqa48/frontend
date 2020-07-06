@@ -7,6 +7,9 @@
         </div>
         <a href="https://xn--80aacoonefzg3am8b1fsb.xn--p1ai/appeal"><div class="button">Обратиться к губернатору 
         </div> </a>
+         <div class="hmm">
+  <img src="statics/image/mouse.png">
+</div>
     </div>
 </template>
 <style scoped>
@@ -46,6 +49,11 @@ body a{
     background: #000;
     opacity: .5;
     width: 35%;
+}
+.hmm{
+  color:white;
+  align-self: center;
+  margin-top: 4%;
 }
 </style>
 <script>

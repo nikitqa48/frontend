@@ -8,8 +8,11 @@
               Минимальный риск инвестирования В РФ
               <br />за 15 лет - RAEX rating agency
             </p>
+                     <div class="arrow_slide">
+  <img src="statics/image/mouse.png">
+</div>
           </div>
- 
+  
         </div>
         <video loop muted autoplay class="fullscreen-bg__video">
           <source src="statics/image/video_background.mp4" type="video/mp4" />
@@ -30,6 +33,12 @@
 .hmm{
   color:white;
   margin-bottom: 2%;
+}
+.arrow_slide{
+  position: absolute;
+  bottom:0;
+  margin-bottom: 2%;
+
 }
 .risk_container {
   height: 100%;

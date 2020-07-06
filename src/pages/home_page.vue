@@ -3,18 +3,20 @@
     <q-page-container>
       <header-vue />
       <forms-vue />
+    <div data-anchor="investinlipetsk">
     <video-vue/>
+    </div>
       <full-page ref="fullpage" :options="opts" id="fullpage">
-        <div class="section">
+        <div class="section" data-anchor='video'>
           <gubernator-vue/>
         </div>
-        <div class="section">
+        <div class="section" >
           <map-vue />
         </div>
-        <div class="section">
+        <div class="section" >
           <history-vue />
         </div>
-        <div class="section">
+        <div class="section" >
           <news-vue />
         </div>
         <div class="section">
@@ -58,28 +60,35 @@ export default {
         beforeChange: function(prev, next) {},
         afterChange: function(prev, next) {},
         lazyLoading: false,
-        responsiveWidth: 900
+        responsiveWidth: 900,
+        dots:true,
+        anchors: ['video', 'about-us', 'contact', 'novosti'],
+        lockAnchors:true,
+        navigation:true,
+        navigationTooltips:['Инвестируй в Липецкую область', 'Обратиться к губернатору', 'Географическое положение', 'Истории успеха', 'Новости'],
+        slidesNavPosition:'color:white',
+    
         
       }
     };
   },
   methods: {
-    showInstitute(event) {
-      let id = event.target.classList.value;
-      let object = document.getElementById(id);
-      setTimeout(() => {
-        object.classList.remove("part");
-        object.classList.add("yellow");
-      }, 300);
-    },
-    hideInstitute(event) {
-      let id = event.target.classList.value;
-      let object = document.getElementById(id);
-      setTimeout(() => {
-        object.classList.remove("yellow");
-        object.classList.add("part");
-      }, 300);
-    }
+    // showInstitute(event) {
+    //   let id = event.target.classList.value;
+    //   let object = document.getElementById(id);
+    //   setTimeout(() => {
+    //     object.classList.remove("part");
+    //     object.classList.add("yellow");
+    //   }, 300);
+    // },
+    // hideInstitute(event) {
+    //   let id = event.target.classList.value;
+    //   let object = document.getElementById(id);
+    //   setTimeout(() => {
+    //     object.classList.remove("yellow");
+    //     object.classList.add("part");
+    //   }, 300);
+    // }
   }
 };
 </script>
@@ -88,10 +97,19 @@ export default {
   display: flex;
   flex-direction: column;
 }
+#fp-nav ul li a span{
+background-color:white!important;
+}
+#fp-nav ul li a span, .fp-slidesNav ul li a span{
+  background-color:white!important;
+}
 .data_center {
   margin-top: 5%;
   display: flex;
   justify-content: center;
+}
+.fp-right ul{
+  border:1px solid red;
 }
   @media screen and (max-width: 900px) {
      .section:nth-child(4){

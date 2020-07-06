@@ -1,7 +1,7 @@
 {
   "name": "frontend",
   "version": "0.0.1",
-  "description": "vuejs and django",
+  "description": "Инвестируй в Липецкую область",
   "productName": "Инвест Липецк",
   "cordovaId": "org.cordova.quasar.app",
   "capacitorId": "",

@@ -38,8 +38,16 @@
       v-model="medium"
     >
       <q-card style="width: 700px; max-width: 80vw;">
-        <q-card-section>
+        <q-card-section class="card">
           <div class="text-h6">Стать инвестором</div>
+              <q-btn
+              v-close-popup
+              align="right"
+      padding="none"
+      color="primary"
+      flat
+      icon="close"
+    />
         </q-card-section>
 
         <q-card-section class="q-pt-none">
@@ -47,20 +55,21 @@
         </q-card-section>
   <q-card-section class="q-pt-none">
          <q-form class='form'>
-          <q-input class ='input'  filled v-model="name" label="ФИО" lazy-rules
+          <q-input class ='input'  filled v-model="name" label="ФИО*" lazy-rules
         :rules="[ val => val && val.length > 0 || 'Пожалуйста, введите ваше имя']"/>
           <q-input class ='input' filled v-model="organisation" label="Организация" />
           <q-input class ='input' type="number" filled v-model="phone" label="Телефон" />
           <q-input class ='input'   lazy-rules
         :rules="[ val => val && val.length > 0 || 'Пожалуйста, введите вашу почту']"
-         filled v-model="email" type='email' label="Почта" />
+         filled v-model="email" type='email' label="Почта*" />
              <q-input
       v-model="comment"
       filled
       autogrow
-      label="комментарий"
+      label="Комментарий"
       type="textarea"
     />
+    <p> <br>Поля помеченные * обязательны для заполнения</p>
          </q-form>
         </q-card-section>
         <q-card-actions align="right" class="bg-white text-teal">
@@ -73,6 +82,7 @@
             <img :src="item.image">
           </div>
           <div class="right_content" >
+            
        <p class="text-h5"> {{item.name}}</p>
               <p> Отрасль: {{item.industry}} </p>
               <p> {{item.body}} </p>
@@ -92,7 +102,10 @@
   display:flex;
   flex-direction: column;
 }
-
+.card{
+  display: flex;
+  justify-content: space-between;
+}
 .input{
   margin-bottom: 1%;
 }

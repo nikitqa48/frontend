@@ -27,7 +27,7 @@ export default {
 </script>
 <style scoped>
 .header{
-  font-size: 1vw;
+  font-size: 1em;
   position: absolute;
   width:100%;
   height:5vh;
