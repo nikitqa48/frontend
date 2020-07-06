@@ -247,7 +247,7 @@ height:5vh;
   width:100%;
 }
 .title{
-  bottom:55%;
+  bottom:30%;
   font-size: 1vw;
   margin-left: 2%;
   position: absolute;
