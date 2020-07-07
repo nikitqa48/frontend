@@ -2,7 +2,7 @@
   "name": "frontend",
   "version": "0.0.1",
   "description": "Инвестируй в Липецкую область",
-  "productName": "Инвест Липецк",
+  "productName": "Инвестиционный портал Липецкой области",
   "cordovaId": "org.cordova.quasar.app",
   "capacitorId": "",
   "author": "nikitqa48 <Princen1k@yandex.ru>",
