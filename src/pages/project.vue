@@ -37,9 +37,10 @@
  <q-dialog
       v-model="medium"
     >
-      <q-card style="width: 700px; max-width: 80vw;">
+      <q-card style="width: 50%; max-width: 80vw;">
+        <q-card-section class="form_container">
         <q-card-section class="card">
-          <div class="text-h6">Стать инвестором</div>
+          <div class="text-h6"> <b>Стать инвестором</b></div>
               <q-btn
               v-close-popup
               align="right"
@@ -51,30 +52,59 @@
         </q-card-section>
 
         <q-card-section class="q-pt-none">
-          Этот проект нуждается в инвестировании. Отправьте ваши контакты и наши сотрудники свяжутся с вами в ближайшее время 
+          Отправьте ваши контакты и наши сотрудники свяжутся с вами в ближайшее время 
         </q-card-section>
   <q-card-section class="q-pt-none">
+    
          <q-form class='form'>
-          <q-input class ='input'  filled v-model="name" label="ФИО*" lazy-rules
-        :rules="[ val => val && val.length > 0 || 'Пожалуйста, введите ваше имя']"/>
-          <q-input class ='input' filled v-model="organisation" label="Организация" />
-          <q-input class ='input' type="number" filled v-model="phone" label="Телефон" />
+           <div class="wrap">
+              <div class="column">
+           <span><b>ФИО *</b></span>
+          
+          <q-input class ='input'  filled v-model="name"  lazy-rules placeholder="Введите ФИО"
+        :rules="[ val => val && val.length > 0 || 'Пожалуйста, введите ваше имя']" style="width:100%;" />
+        </div>
+        <div class="column">
+       <span> <b>Организация</b> </span>
+       
+          <q-input class ='input' filled v-model="organisation" placeholder="Введите название" style="width:100%;" />
+       </div>
+          </div>
+          <div class="wrap">
+            <div class="column">
+            <span> <b>Телефон</b></span>
+          <q-input class ='input' type="number" filled v-model="phone" placeholder="Введите телефон" />
+          </div>
+          <div class="column">
+          <span> <b>Email * </b> </span>
           <q-input class ='input'   lazy-rules
         :rules="[ val => val && val.length > 0 || 'Пожалуйста, введите вашу почту']"
-         filled v-model="email" type='email' label="Почта*" />
+         filled v-model="email" type='email' placeholder="Введите email*" />
+          </div>
+          </div>
+          <div class="wrap">
+            <div class="column">
+              <span > <b>Комментарий </b> </span>
              <q-input
       v-model="comment"
       filled
-      autogrow
-      label="Комментарий"
+      
+      placeholder="Введите комментарий"
       type="textarea"
+      
     />
-    <p> <br>Поля помеченные * обязательны для заполнения</p>
+            </div>
+    <span class="comment"> <br>Поля помеченные * обязательны для заполнения
+    <br><br>Нажимая на кнопку «Отправить» Вы даёте согласие на обработку своих персональных данных в соответствии со статьей 9 Федерального закона от 27 июля 2006 г. N 152-ФЗ «О персональных данных»
+    </span>
+          </div>
          </q-form>
-        </q-card-section>
-        <q-card-actions align="right" class="bg-white text-teal">
-          <q-btn flat label="Отправить" type ='submit'v-close-popup  @click="submit"/>
+             <q-card-actions align="left" class="bg-white text-teal">
+           <q-btn label="Отправить" rounded type ='submit'v-close-popup  no-caps color="cyan-6" @click="submit" style="width:20%; margin-top:5%;" />
         </q-card-actions>
+        </q-card-section>
+    
+        </q-card-section>
       </q-card>
     </q-dialog>
       <div class="item" v-for="item in project">
@@ -101,6 +131,30 @@
 .form{
   display:flex;
   flex-direction: column;
+}
+.form_container{
+  margin:auto;
+  padding-top: 1.3vw;
+  width:95%;
+}
+.wrap{
+  display: flex;
+  flex-direction: row;
+  margin-top: 2%;
+  flex-wrap: nowrap;
+  width: 100%;
+ 
+  justify-content: space-between;
+}
+.comment{
+  color: #353535d7;
+  align-self: flex-start;
+  width:48%;
+  font-size: 0.7vw;
+}
+.column{
+
+  width:48%;
 }
 .card{
   display: flex;

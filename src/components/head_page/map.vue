@@ -270,7 +270,7 @@ data() {
   },
   methods: {
     active(event) {
-      let id = event.target.id;
+      let id = event.currentTarget.id;
       this.map = id;  
       let button1 = document.getElementById("1");
       let button2 = document.getElementById("2");
@@ -280,7 +280,7 @@ data() {
       button2.classList.remove('isactive')
       button3.classList.remove('isactive')
       button4.classList.remove('isactive')
-      event.target.classList.add("isactive");
+      event.currentTarget.classList.add("isactive");
      
     },
     arrow_left(){

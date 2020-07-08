@@ -1,7 +1,8 @@
 <template>
         <q-toolbar class="header" >
      
-      <q-btn class="invest" stretch flat to = "/" > Главная страница</q-btn>
+      <!-- <q-btn class="invest" stretch flat to = "/" > Главная страница</q-btn> -->
+      <q-btn align="between" flat class="btn-fixed-width" color="white" label="Главная страница"  no-wrap  no-caps icon= 'img:statics/icons/logo.png'  to="/"/>
       <q-space />
     
       <!-- <q-btn stretch flat label="РЕГИОН"  class="header_button"/> -->
@@ -21,11 +22,20 @@
         </q-toolbar>
 </template>
 <script>
+
 export default {
     
 }
 </script>
 <style scoped>
+  @media screen and (max-width: 900px) {
+     .header_button{
+       font-size: 1.2vw!important;
+     }
+     .invest{
+       font-size: 1.2vw!important;
+     }
+   }
 .header{
   font-size: 1em;
   position: absolute;

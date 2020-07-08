@@ -65,8 +65,10 @@ export default {
         anchors: ['video', 'about-us', 'contact', 'novosti'],
         lockAnchors:true,
         navigation:true,
+        loopBottom:true,
         navigationTooltips:['Инвестируй в Липецкую область', 'Обратиться к губернатору', 'Географическое положение', 'Истории успеха', 'Новости'],
         slidesNavPosition:'color:white',
+        // fixedElements: '.header'
     
         
       }
@@ -108,9 +110,12 @@ background-color:white!important;
   display: flex;
   justify-content: center;
 }
-.fp-right ul{
-  border:1px solid red;
-}
+  @media screen and (max-width: 900px) {
+     .section:nth-child(4){
+       display: none;
+     }
+   }
+
   @media screen and (max-width: 900px) {
      .section:nth-child(4){
        display: none;

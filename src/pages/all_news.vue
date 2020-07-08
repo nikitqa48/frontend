@@ -156,7 +156,7 @@ export default {
         headerVue, formsVue
     },
     mounted() {
-    const url = "https://backendinvest.admlr.lipetsk.ru/all_news/"
+    const url = "http://127.0.0.1:8000/all_news/"
     fetch(url)
       .then(response => response.json())
       .then(data => (this.news = data));

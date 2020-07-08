@@ -16,8 +16,8 @@
                  <img :src="news.image">
              </div>
          </div>
-         <div class='bottom'>
-             {{news.body}}
+         <div class='bottom' >
+             <span v-html="news.body">{{news.body}}</span>
     </div>
      </div>
     </div>
@@ -44,7 +44,7 @@ body a{
 }
 .news{
     min-height:100vh;
-    background: linear-gradient(180deg, #202F40 0%, #0D0D1C 100%);
+     background: linear-gradient(180deg, #202F40 0%, #0D0D1C 100%); 
 }
 
 .wrapper{
@@ -58,6 +58,7 @@ body a{
 .bottom{
     width:70%;
     margin:0 auto;
+    line-height: 100%;
     color:white;
     font-size: 0.8vw;
     padding-bottom: 4vh;
@@ -65,6 +66,9 @@ body a{
 .arrow{
     margin:0;
     width: 10%;
+}
+body a{
+   
 }
 .all_news{
     align-items: center;
@@ -95,10 +99,13 @@ body a{
 </style>
 <script>
 import headerVue from "../components/header.vue";
+import Vue from 'vue';
+
 export default {
     data(){
         return {
-          news:{}  
+          news:{},  
+        
         }
     },
     components:{

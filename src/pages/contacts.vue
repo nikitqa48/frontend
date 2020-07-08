@@ -9,7 +9,7 @@
 <header-vue />
   <forms-vue/>       
     <div class="container">
-        <h4> Контакты </h4>
+        <h4> Наша команда </h4>
              <div class="perekrestok" v-for="item in contact">
    <div class="wrap">
     <span class = 'text'> {{item.position}}</span>

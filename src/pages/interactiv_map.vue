@@ -148,7 +148,7 @@
             <img src="/statics/image/lipetsk_map.svg" class="svg" />
           </div>
         </transition>
-        <div class="right_map">
+        <div class="right_map"  >
           <div class="right_wrapper" >
             <div v-if="show_greenfield == false">
               <div v-if="show_greenfield == false">
@@ -185,6 +185,7 @@
                     </select>
                     <button class="more" type="submit">Поиск</button>
                   </q-form>
+                 
                 </div>
                 <q-scroll-area
                   v-if="show_greenfield == false && right == false"
@@ -237,10 +238,11 @@
                           <div class="wrap_number">
                             <div class="number_row">
                               <img src="/statics/image/ploshad.svg" />
-                              <span>Форма собственности:</span>
+                              <span>Форма сделки:</span>
                             </div>
                             <div class="inside_square">
                               <span class="usefull_inside">{{item.form.toString()}}</span>
+                             
                             </div>
                           </div>
                         </div>
@@ -313,7 +315,8 @@
                               <span>Форма собственности:</span>
                             </div>
                             <div class="inside_square">
-                              <span class="usefull_inside">{{item.form.toString()}}</span>
+                               <span class="usefull_inside" v-if="item.desired == 'goverment'">Государственная</span>
+                                <span class="usefull_inside" v-if="item.desired == 'private'">Частная</span>
                             </div>
                           </div>
                         </div>
@@ -357,7 +360,10 @@
                               <span>Форма собственности:</span>
                             </div>
                             <div class="inside_square">
-                              <span class="usefull_inside">{{item.form.toString()}}</span>
+                                 <div class="inside_square">
+                               <span class="usefull_inside" v-if="item.desired == 'goverment'">Государственная</span>
+                                <span class="usefull_inside" v-if="item.desired == 'private'">Частная</span>
+                            </div>
                             </div>
                           </div>
                         </div>
@@ -399,7 +405,10 @@
                               <span>Форма собственности:</span>
                             </div>
                             <div class="inside_square">
-                              <span class="usefull_inside">{{item.form.toString()}}</span>
+                                 <div class="inside_square">
+                               <span class="usefull_inside" v-if="item.desired == 'goverment'">Государственная</span>
+                                <span class="usefull_inside" v-if="item.desired == 'private'">Частная</span>
+                            </div>
                             </div>
                           </div>
                         </div>
@@ -425,7 +434,7 @@
               <q-scroll-area
                 dark
                 class="bg-dark text-white rounded-borders"
-                style="height: 74.6vh; max-width: 90%;"
+                style="height: 70.3vh; max-width: 90%;"
                 v-if="show_greenfield == true"
               >
                 <div class="greenfield_image" ref="grinf" @click="modalImage">
@@ -452,7 +461,7 @@
                     <p class="cadastr">{{greenfield.number}}</p>
                   </div>
                   <p class="earth" v-if="show_greenfield == true">{{greenfield.earth}}</p>
-                  <p class="text_earth" v-if="show_greenfield == true">{{greenfield.description}}</p>
+                  <p class="text_earth" v-if="show_greenfield == true" v-html="greenfield.description">{{greenfield.description}}</p>
                   <div class="inside_greenfield" v-if="show_greenfield == true">
                     <div class="item_greend">
                       <div class="greend_inside__img">
@@ -512,7 +521,7 @@
                         <div class="icon">
                           <img src="/statics/image/form.svg" />
                         </div>
-                        <p class="usefull">Форма собственности</p>
+                        <p class="usefull">Форма сделки</p>
                       </div>
                       <span class="usefull_inside">{{greenfield.form.toString()}}</span>
                     </div>
@@ -660,9 +669,13 @@
 }
 .choice{
   margin-top: 2%;
+  font-size: 3vw;
+  font-weight: 600;
+  opacity: .8;
   align-self: center;
   color:white;
 }
+
 .square_name__territory {
   padding: 0;
   margin-bottom: 1%;
@@ -992,26 +1005,27 @@
   color: #cecece;
 }
 .right_map {
-  align-self: flex-end;
-  width: 50%;
-  padding-left: 2%;
-  height: 100%;
-  color: white;
-  position: relative;
+    align-self: flex-end;
+    width: 50%;
+    padding-left: 2%;
+    height: 100%;
+    color: #fff;
+    position: relative;
 }
 .left_map {
-  position: relative;
-  text-align: center;
-  margin-top: 5%;
-  display: flex;
-  width: 50%;
+    position: relative;
+    text-align: center;
+    margin-top: 5%;
+    display: flex;
+    width: 50%;
 }
 .wrapp_container {
-  width: 95%;
-  height:100vh;
-  margin: auto;
-  justify-content: space-between;
-  display: flex;
+width: 95%;
+    height: 100vh;
+    margin: auto;
+    justify-content: space-between;
+    display: flex;
+    
 }
 .center {
   min-width: 70vw;
@@ -1031,9 +1045,9 @@
   margin: 0;
 }
 .right_wrapper {
-  display: flex;
-  margin-top: 15%;
-  flex-direction: column;
+    display: flex;
+    margin-top: 15%;
+    flex-direction: column;
 }
 .gr {
   font-size: 0.93vw;

@@ -615,6 +615,8 @@
 }
 .q-tab {
   text-transform: none;
+ font-size: calc(14px + (15 - 14) * ((100vw - 800px) / (1440 - 800))); 
+  /* font-size: 14px; */
   justify-content: flex-start;
   padding-left: 1vw;
   padding-right: 1vw;

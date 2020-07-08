@@ -179,7 +179,7 @@
           <div class="wrapper">
             <span class="text">Меру поддержки выдает:</span>
 
-            <span class="vid">{{support.organisation}}</span>
+            <span class="vid" v-html="support.organisation">{{support.organisation}}</span>
           </div>
         </div>
         <div class="item" v-if="support.category != '' ">
