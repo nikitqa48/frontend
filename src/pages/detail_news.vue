@@ -58,7 +58,7 @@ body a{
 .bottom{
     width:70%;
     margin:0 auto;
-    line-height: 100%;
+    line-height: 130%;
     color:white;
     font-size: 0.8vw;
     padding-bottom: 4vh;
