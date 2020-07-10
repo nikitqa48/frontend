@@ -97,8 +97,9 @@
                 <q-card-actions align="left" class="text-white">
           <q-btn label="Отправить" rounded type ='submit'v-close-popup  no-caps color="cyan-6" @click="onSubmit" style="width:20%; margin-top:3%;" />
         </q-card-actions>
-        </q-card-section>
  
+        </q-card-section>
+    
         </q-card-section>
       </q-card>
     </q-dialog>
@@ -189,6 +190,7 @@
       </div>
         </div>
     </q-form> -->
+    
 </div>
 </template>
 <script>
@@ -239,6 +241,12 @@ export default {
     this.onReset()
     data.show=!show
     },
+    OpenPDF(){
+window.open("data:application/pdf;base64, " + base64EncodedPDF);
+// window.open(fileURL);
+      // pdfWindow.document.write("<iframe width='100%' height='100%' src='data:assets/example.pdf;base64,"  +"'></iframe>");
+    }
+
 
   }
 }
