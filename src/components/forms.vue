@@ -36,12 +36,15 @@
            <span class="text-white" style="opacity:.8"><b>Фамилия *</b></span>
           
           <q-input class ='input'  filled v-model="surname" dark lazy-rules placeholder="Введите фамилию"
-        :rules="[ val => val && val.length > 0 || 'Пожалуйста, введите ваше имя']" style="width:100%;" />
+        :rules="[ val => val && val.length > 0 || 'Пожалуйста, введите вашу Фамилию']" style="width:100%;" />
         </div>
         <div class="column">
        <span class="text-white " style="opacity:.8"> <b>Имя *</b> </span>
        
-          <q-input class ='input' dark filled v-model="name" placeholder="Введите имя" style="width:100%; opacity:.8" />
+          <q-input class ='input' dark filled v-model="name"
+          lazy-rules
+        :rules="[ val => val && val.length > 0 || 'Пожалуйста, введите ваше Имя']"
+           placeholder="Введите имя" style="width:100%; opacity:.8" />
        </div>
           </div>
                      <div class="wrap">

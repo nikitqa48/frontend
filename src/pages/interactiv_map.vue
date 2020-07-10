@@ -9,10 +9,10 @@
         <div class="university">
           <h4>Интерактивная карта площадок</h4>
           <div class="wrap">
-            <button class="first" id="first" @click="active" v-bind:class = '{button_active: oez_button}'>ОЭЗ "Липецк"</button>
-            <button class="third" id="third" @click="active" v-bind:class = '{button_active: industrial_button}' >Индустриальные парки</button>
-            <button class="second" id="second" @click="active" v-bind:class = '{button_active: oezru_button}'>ОЭЗ РУ</button>
-            <button class="four" id="four" @click="active" v-bind:class = '{button_active: techno_button}'>Технопарки</button>
+            <button id="first" @click="active" v-bind:class = '{button_active: oez_button}'>Особо экономическая зона "Липецк"</button>
+            <button id="third" @click="active" v-bind:class = '{button_active: industrial_button}' >Индустриальные парки</button>
+            <button  id="second" @click="active" v-bind:class = '{button_active: oezru_button}'>Особо экономическая зона Регионального Уровня</button>
+            <button  id="four" @click="active" v-bind:class = '{button_active: techno_button}'>Технопарки</button>
           </div>
         </div>
         <transition
@@ -152,7 +152,7 @@
           <div class="right_wrapper" >
             <div v-if="show_greenfield == false">
               <div v-if="show_greenfield == false">
-                <div class="input" v-if="right == false">
+                <div class="input_list" v-if="right == false">
                   <p class="list">Список площадок — 
                     <span v-if="index == 15"> Усмань</span>
                     <span v-if="index == 16"> Добринка</span>
@@ -184,6 +184,7 @@
                       <option value>Все</option>
                     </select>
                     <button class="more" type="submit">Поиск</button>
+                    <div class="square_button" @click="medium =! medium">Подобрать площадку</div>
                   </q-form>
                  
                 </div>
@@ -650,6 +651,79 @@
                 </div>
               </q-scroll-area>
             </div>
+            <q-dialog
+      v-model="medium"
+    >
+      <q-card style="width: 50%; max-width: 80vw;">
+        <q-card-section class="form_container">
+        <q-card-section class="card">
+          <div class="text-h6"> <b>Подобрать площадку</b></div>
+              <q-btn
+              v-close-popup
+              align="right"
+      padding="none"
+      color="primary"
+      flat
+      icon="close"
+    />
+        </q-card-section>
+
+        <q-card-section class="q-pt-none">
+          Отправьте ваши контакты и наши сотрудники свяжутся с вами в ближайшее время 
+        </q-card-section>
+  <q-card-section class="q-pt-none">
+    
+         <q-form class='form_square'>
+           <div class="wrap_square">
+              <div class="column">
+           <span><b>ФИО *</b></span>
+          
+          <q-input class ='input'  filled v-model="name"  lazy-rules placeholder="Введите ФИО"
+        :rules="[ val => val && val.length > 0 || 'Пожалуйста, введите ваше имя']" style="width:100%;" />
+        </div>
+        <div class="column">
+       <span> <b>Организация</b> </span>
+       
+          <q-input class ='input' filled v-model="organisation" placeholder="Введите название" style="width:100%;" />
+       </div>
+          </div>
+          <div class="wrap_square">
+            <div class="column">
+            <span> <b>Телефон</b></span>
+          <q-input class ='input' type="number" filled v-model="phone" placeholder="Введите телефон" />
+          </div>
+          <div class="column">
+          <span> <b>Email * </b> </span>
+          <q-input class ='input'   lazy-rules
+        :rules="[ val => val && val.length > 0 || 'Пожалуйста, введите вашу почту']"
+         filled v-model="email" type='email' placeholder="Введите email*" />
+          </div>
+          </div>
+          <div class="wrap_square">
+            <div class="column">
+              <span > <b>Комментарий </b> </span>
+             <q-input
+      v-model="comment"
+      filled
+      
+      placeholder="Введите комментарий"
+      type="textarea"
+      
+    />
+            </div>
+    <span class="comment"> <br>Поля помеченные * обязательны для заполнения
+    <br><br>Нажимая на кнопку «Отправить» Вы даёте согласие на обработку своих персональных данных в соответствии со статьей 9 Федерального закона от 27 июля 2006 г. N 152-ФЗ «О персональных данных»
+    </span>
+          </div>
+         </q-form>
+             <q-card-actions align="left" class="bg-white text-teal">
+           <q-btn label="Отправить" rounded type ='submit'v-close-popup  no-caps color="cyan-6" @click="submit" style="width:20%; margin-top:5%;" />
+        </q-card-actions>
+        </q-card-section>
+    
+        </q-card-section>
+      </q-card>
+    </q-dialog>
             <div class="choice text-h2" v-if="right" >
               Выберите район
             </div>
@@ -668,14 +742,39 @@
   font-family: "Montserrat";
 }
 .choice{
-  margin-top: 2%;
+  margin-top: 2vh;
   font-size: 3vw;
   font-weight: 600;
   opacity: .8;
   align-self: center;
   color:white;
 }
-
+.form_container{
+  margin:auto;
+  padding-top: 1.3vw;
+  width:95%;
+}
+.card{
+  display: flex;
+  justify-content: space-between;
+}
+.column{
+  width:48%;
+}
+.wrap_square{
+  display: flex;
+  flex-direction: row;
+  margin-top: 2%;
+  flex-wrap: nowrap;
+  width: 100%;
+  justify-content: space-between;
+}
+.comment{
+  color: #353535d7;
+  align-self: flex-start;
+  width:48%;
+  font-size: 0.7vw;
+}
 .square_name__territory {
   padding: 0;
   margin-bottom: 1%;
@@ -711,9 +810,8 @@
 .wrap_number {
   margin-right: 1vw;
 }
-.input {
+.input_list {
   display: flex;
-  margin-top: 6vh;
   flex-direction: column;
 }
 .form {
@@ -757,6 +855,26 @@
   background: #52a4df;
   color: white;
   border-radius: 4.16226px;
+}
+.square_button{
+   align-self: flex-end;
+  min-height: 4.5vh;
+  min-width: 8vw;
+  display: flex;
+  margin-left: 3%;
+  padding-left: 2vw;
+  padding-right: 2vw;
+  align-items: center;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  background: #52a4df;
+  color: white;
+  border-radius: 4.16226px;
+}
+.form_square{
+  display:flex;
+  flex-direction: column;
 }
 .form select option {
   color: black;
@@ -866,8 +984,7 @@
   flex-direction: column;
   position: absolute;
   top: 6%;
-  z-index: 5;
-  left: 7%;
+  left: 3%;
 }
 .university h4 {
   color: white;
@@ -940,7 +1057,7 @@
 }
 .wrap {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
 }
 .inside_square {
   display: flex;
@@ -976,23 +1093,25 @@
   padding-right: 1.5vw;
   padding-top: 1vh;
   padding-bottom: 1.2vh;
+  margin-bottom: 1vh;
   margin-right: 1vw;
   font-weight: 600;
   box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
   display: flex;
   align-items: center;
+  max-width:40%;
   text-align: center;
   justify-content: center;
   z-index: 5;
   letter-spacing: 0.05vw;
-  font-size: 0.9vw;
+  font-size: 0.7vw;
   border-radius: 100px;
-  border: none;
+  border: 1px solid white;
   cursor: pointer;
   z-index: 999;
   outline: none;
-  background: #c7d7e2;
-  color: #42595b;
+  background: rgba(255, 255, 255, 0.25);
+  color: white;
 }
 .first {
   min-width: 7vw;
@@ -1058,7 +1177,7 @@ width: 95%;
   fill: #8fbedf;
 }
 .button_active {
-  background: #2cccd8 !important;
+  background: #2ccdd8 !important;
   color: white !important;
   box-shadow: 0px 2px 10px #8be0e6;
 }
@@ -1076,7 +1195,13 @@ export default {
       oez_ppt: [],
       any: [],
       show_any:true,
+      organisation:'',
+      phone:'',
+      comment:'',
+      name:'',
+      email:'',
       visable: true,
+      medium:false,
       oez_button:false,
       industrial_button:false,
       oezru_button:false,
@@ -1134,6 +1259,27 @@ export default {
           this.oez = oez;
         });
     },
+          submit(){
+ let data2 ={name:this.name,
+                  organisation:this.organisation,
+                  phone:this.phone,
+                  email:this.email,
+                  comment:this.comment,
+                  project_id: this.project_id
+                  }
+      let data = JSON.stringify(data2)
+    fetch('https://backendinvest.admlr.lipetsk.ru/request/',{
+      method:'POST',
+      body:data,
+      headers:{'content-type':'application/json'}
+    }).then(function(response){
+      return response.json()
+    }).then(function(data){
+      alert('С вами свяжутся')
+    })
+          this.medium =! this.medium
+         
+      },
     ShowGreenfield(object) {
       (this.show_greenfield = true), (this.greenfield = object);
     },
