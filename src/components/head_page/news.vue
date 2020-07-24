@@ -88,10 +88,59 @@
 </template>
 
 <style scoped>
-
+@media screen and (max-width: 800px) {
+.news_head{
+  margin-top: 0!important;
+  font-size: 4vw!important;
+  text-align: left!important;
+}
+.overlay{
+  height: 110vh!important;
+}
+.item2:nth-child(4){
+  display: none!important;
+}
+.item2:nth-child(3){
+  display: none!important;
+}
+.item2:nth-child(5){
+  display: none!important;
+}
+.itms{
+  margin-top: 0!important;
+}
+.title{
+  font-size: 3.5vw!important;
+}
+.more{
+  width: 100%!important;
+  font-size: 4vw!important;
+}
+.item1{
+  margin-left: 0!important;
+  margin-bottom: 3%;
+  width:100%!important;
+}
+.item2{
+  width:100%!important;
+  margin-bottom: 3%;
+  margin-left: 0!important;
+}
+.wrap_aside{
+  flex-direction: column!important;
+}
+.aside{
+  height: auto!important;
+}
+.item_container{
+  width: 100%!important;
+  align-self: center!important;
+  flex-direction: column!important;
+  flex-wrap: nowrap!important;
+}
+}
 .item_container{
   align-self: flex-end;
-
   height: 100%;
   width:45%;
   display: flex;

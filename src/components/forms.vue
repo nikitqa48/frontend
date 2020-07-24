@@ -252,6 +252,11 @@ window.open("data:application/pdf;base64, " + base64EncodedPDF);
 }
 </script>
 <style scoped>
+@media screen and (max-width: 800px) {
+  .fixed{
+    display: none!important;
+  }
+}
 .style{
   display:flex;
   flex-direction: column;

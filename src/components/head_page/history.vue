@@ -27,7 +27,11 @@
            </div>
            <div class="right">
              <div class="image">
-             <img src="statics/image/obrubok.png">
+                <picture>
+              <source media="(max-width: 799px)" srcset="statics/image/yokohama_mobile.png" />
+              <source media="(min-width: 800px)" srcset="statics/image/obrubok.png" />
+              <img src="elva-800w.jpg" alt="lipetsk map" />
+            </picture>
              </div>
            </div>
          </div>
@@ -51,7 +55,12 @@
            </div>
            <div class="right">
              <div class="image">
-             <img src="statics/image/indesit_obrubok.png">
+                    <picture>
+              <source media="(max-width: 799px)" srcset="statics/image/indesit_mobile.png" />
+              <source media="(min-width: 800px)" srcset="statics/image/indesit_obrubok.png" />
+              <img src="elva-800w.jpg" alt="lipetsk map" />
+            </picture>
+             
              </div>
            </div>
          </div>
@@ -74,7 +83,11 @@
            </div>
            <div class="right">
              <div class="image">
-             <img src="statics/image/hawle.png">
+                       <picture>
+              <source media="(max-width: 799px)" srcset="statics/image/hawle_mobile.png" />
+              <source media="(min-width: 800px)" srcset="statics/image/hawle.png" />
+              <img src="elva-800w.jpg" alt="lipetsk map" />
+            </picture>
              </div>
            </div>
          </div>
@@ -97,7 +110,12 @@
            </div>
            <div class="right">
              <div class="image">
-             <img src="statics/image/angel1.png">
+                              <picture>
+              <source media="(max-width: 799px)" srcset="statics/image/angel_mobile.png" />
+              <source media="(min-width: 800px)" srcset="statics/image/angel1.png" />
+              <img src="elva-800w.jpg" alt="lipetsk map" />
+            </picture>
+      
              </div>
            </div>
          </div>
@@ -112,7 +130,74 @@
   </div>
 </template>
 <style scoped>
-
+@media screen and (max-width: 800px) {
+   .wrap{
+     flex-wrap: nowrap!important;
+  height:100%!important;
+  width:100%;
+  display:flex;
+  flex-direction: column!important;
+   }
+  .right{
+    /* height: auto!important; */
+  }
+   .hooper{
+     margin-top: 5%;
+     height: 75%!important;
+   }
+   .title{
+     line-height: 130%!important;
+     font-size: 3vw!important;
+   }
+   .left_text{
+     font-size: 2.5vw!important;
+   }
+   .left_text p{
+    padding:2%!important;
+   min-width: 75%!important;
+     font-size: 2.5vw!important;
+   }
+   .image img{
+     width: 100%!important; 
+   }
+   .levo{
+    width: 100%!important;
+   }
+   .left{
+   width:100%!important;
+     height: 100%!important; 
+   }
+   .image{
+      position: relative!important; 
+   }
+   .levo{
+      height:auto!important;
+   }
+   .images{
+     margin-right: 8%!important;
+     height:100%!important 
+   }
+   .slide{
+     height: 100vh!important; 
+   }
+    .image{
+     left:0!important;
+     position: relative!important;
+   } 
+   
+   .history h4{
+     margin-top: 0!important;
+   }
+   .history{
+     justify-content: flex-start!important;
+   }
+   .buttons{
+     display: none!important;
+   }
+   .hmm{
+     display: none;
+   }
+ }
 .history{
   display: flex;
   flex-direction: column;
@@ -375,7 +460,7 @@ export default {
                             itemsToShow: 1.3
                         },
                         0: { // 0px ~ 600px
-                            itemsToShow: 1
+                            itemsToShow: 1.3
                         }
                     }
                 }   

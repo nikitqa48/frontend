@@ -140,10 +140,8 @@
 .wrap{
   display: flex;
   flex-direction: row;
-  margin-top: 2%;
   flex-wrap: nowrap;
   width: 100%;
- 
   justify-content: space-between;
 }
 .comment{
@@ -153,7 +151,6 @@
   font-size: 0.7vw;
 }
 .column{
-
   width:48%;
 }
 .card{

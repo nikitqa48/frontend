@@ -1,16 +1,20 @@
 <template>
+<div>
           <div class="risk">
         <div class="overlay">
           <div class="risk_container">
             <h2 class="heading">Липецкая область</h2>
             <div class="white_heading"></div>
+            
             <p class="risk_p">
               Минимальный риск инвестирования В РФ
               <br />за 15 лет - RAEX rating agency
             </p>
+            
                      <div class="arrow_slide">
   <img src="statics/image/mouse.png">
 </div>
+
           </div>
   
         </div>
@@ -18,17 +22,71 @@
           <source src="statics/image/video_background.mp4" type="video/mp4" />
         </video>
       </div>
+       <div class="presentation"> <span>Презентация <br> <b>Липецкой области</b> </span><button class="open" @click="open"> Открыть</button></div>
+</div>
+     
 </template>
 <style scoped>
+@media screen and (max-width: 800px) {
+  .presentation{
+    display: none!important;
+  }
+  .risk_container{
+    background: url("/statics/image/mobile_video.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  .risk_p{
+    font-size: 4vw!important;
+    width:70%;
+  }
+  .fullscreen-bg__video {
+display: none!important;
+}
+.heading {
+  line-height: 100%!important;
+  font-weight: 600;
+  text-align: center;
+  color: white;
+  font-size: 15vw!important;
+}
+}
 .risk {
   display: flex;
   justify-content: center;
   align-items: center;
   overflow: hidden;
-  z-index: -100;
+  z-index: -1;
   position: relative;
   height: 100vh;
   width: 100%;
+}
+.open{
+height:70%;
+background: #2CCCD8;
+outline: none;
+border-radius: 5px;
+
+border:none;
+color:white;
+cursor: pointer;
+padding-left: 1vw;
+padding-right: 1vw;
+margin-left: 1.3vw;
+}
+.presentation{
+  border:1px solid #2CCCD8;
+  position: absolute;
+  align-items: center;
+  color:white;
+  border-radius: 5px;
+  padding:1vw;
+  text-align: center;
+  display: flex;
+  top:0;
+  margin-left: 5vw;
+  margin-top: 10vh;
+  left:0;
 }
 .hmm{
   color:white;
@@ -87,6 +145,10 @@
 </style>
 <script>
 export default {
-    
+    methods:{
+      open(){
+        window.open('statics/lipetsk.pdf')
+      }
+    }
 }
 </script>

@@ -5,8 +5,9 @@
       style="height:100vh; max-width: 100%;"
       :thumb-style="thumbStyle"
     >
+    <header-vue />
       <div class="wrapper">
-        <header-vue />
+        
         <forms-vue />
         <div class="document">
           <h5 class="document_title">Документы</h5>

@@ -8,10 +8,10 @@
       <div class="wrapp_container">
         <div class="university">
           <h4>Интерактивная карта площадок</h4>
-          <div class="wrap">
+          <div class="wrap_buttons">
             <button id="first" @click="active" v-bind:class = '{button_active: oez_button}'>Особо экономическая зона "Липецк"</button>
             <button id="third" @click="active" v-bind:class = '{button_active: industrial_button}' >Индустриальные парки</button>
-            <button  id="second" @click="active" v-bind:class = '{button_active: oezru_button}'>Особо экономическая зона Регионального Уровня</button>
+            <button  id="second" @click="active" v-bind:class = '{button_active: oezru_button}'>Особые экономические зоны Регионального Уровня</button>
             <button  id="four" @click="active" v-bind:class = '{button_active: techno_button}'>Технопарки</button>
           </div>
         </div>
@@ -720,7 +720,7 @@
            <q-btn label="Отправить" rounded type ='submit'v-close-popup  no-caps color="cyan-6" @click="submit" style="width:20%; margin-top:5%;" />
         </q-card-actions>
         </q-card-section>
-    
+
         </q-card-section>
       </q-card>
     </q-dialog>
@@ -742,7 +742,6 @@
   font-family: "Montserrat";
 }
 .choice{
-  margin-top: 2vh;
   font-size: 3vw;
   font-weight: 600;
   opacity: .8;
@@ -983,8 +982,8 @@
   display: flex;
   flex-direction: column;
   position: absolute;
-  top: 6%;
-  left: 3%;
+  top: 3%;
+  left: 2%;
 }
 .university h4 {
   color: white;
@@ -1059,6 +1058,12 @@
   display: flex;
   flex-direction: column;
 }
+.wrap_buttons{
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 5vh;
+}
+
 .inside_square {
   display: flex;
   justify-content: center;
@@ -1125,8 +1130,8 @@
 }
 .right_map {
     align-self: flex-end;
-    width: 50%;
     padding-left: 2%;
+    width: 45%;
     height: 100%;
     color: #fff;
     position: relative;
@@ -1134,12 +1139,14 @@
 .left_map {
     position: relative;
     text-align: center;
+    margin-left:3%;
     margin-top: 5%;
     display: flex;
     width: 50%;
 }
 .wrapp_container {
 width: 95%;
+
     height: 100vh;
     margin: auto;
     justify-content: space-between;

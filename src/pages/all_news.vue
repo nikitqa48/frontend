@@ -17,6 +17,8 @@
                   </router-link>
          </div>
          </div>
+           <div class="q-pa-lg flex flex-center">
+  </div>
      </div>
     </div>
 </template>
@@ -149,7 +151,8 @@ import formsVue from "../components/forms.vue";
 export default {
     data(){
         return {
-          news:{}  
+          news:{},
+          items: 3  
         }
     },
     components:{

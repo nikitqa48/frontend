@@ -1,6 +1,5 @@
 <template>
-  <q-layout view="lHh Lpr lFf">
-    <q-page-container>
+  <div>
       <header-vue />
       <forms-vue />
     <div data-anchor="investinlipetsk">
@@ -22,8 +21,7 @@
         <div class="section">
         </div>
       </full-page>
-    </q-page-container>
-  </q-layout>
+  </div>
 </template>
 <script>
 import vuescroll from "vue-scroll";
@@ -110,14 +108,10 @@ background-color:white!important;
   display: flex;
   justify-content: center;
 }
-  @media screen and (max-width: 900px) {
-     .section:nth-child(4){
-       display: none;
-     }
-   }
+ 
 
-  @media screen and (max-width: 900px) {
-     .section:nth-child(4){
+  @media screen and (max-width: 800px) {
+     .section:nth-child(5){
        display: none;
      }
    }
