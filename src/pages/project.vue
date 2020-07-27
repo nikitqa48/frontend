@@ -18,17 +18,17 @@
         <div class="form_filter">
     <q-form @submit="getProjectItems" class="q-gutter-md">
       <div class="q-mt-xl">
-        <div style="display:flex; justify-content:space-between; ">
-        <q-input dark outlined v-model="number" label="Сумма инвестиций (млн руб)" stack-label  type="number" style="width:30%;" option-value = '1'/>
-       <q-select standout="bg-cyan-6 text-white"  bg-color="white" v-model="industry"  label="Отрасль"  :options= 'options'
+        <div class='mobile' style="display:flex; justify-content:space-between; ">
+        <q-input dark outlined v-model="number" label="Сумма инвестиций (млн руб)" class = 'input_filter' stack-label  type="number"  option-value = '1' />
+       <q-select standout="bg-cyan-6 text-white"   v-model="industry"  label="Отрасль"  :options= 'options'  dark  outlined
        option-value="id" 
-        style="width:30%;"/> 
-        <q-select standout="bg-cyan-6 text-white" bg-color="white" v-model="year"  label="Год реализации"  :options= 'years' style="width:30%;"/> 
+        class = 'input_filter'/> 
+        <q-select standout="bg-cyan-6 text-white"  dark  outlined v-model="year"  label="Год реализации"  :options= 'years' class = 'input_filter'/> 
         </div>
       </div>
 
-      <div>
-        <q-btn label="Поиск" type="submit" color="cyan-6" />
+      <div class="btn">
+        <q-btn label="Поиск" type="submit" color="cyan-6" class="search" />
       </div>
     </q-form>
         </div>
@@ -36,6 +36,7 @@
       </q-expansion-item>
  <q-dialog
       v-model="medium"
+  
     >
       <q-card style="width: 50%; max-width: 80vw;">
         <q-card-section class="form_container">
@@ -100,7 +101,7 @@
           </div>
          </q-form>
              <q-card-actions align="left" class="bg-white text-teal">
-           <q-btn label="Отправить" rounded type ='submit'v-close-popup  no-caps color="cyan-6" @click="submit" style="width:20%; margin-top:5%;" />
+           <q-btn label="Отправить" rounded type ='submit'v-close-popup  no-caps color="cyan-6" @click="submit" class='sub' style="width:20%; margin-top:5%;" />
         </q-card-actions>
         </q-card-section>
     
@@ -114,11 +115,11 @@
           <div class="right_content" >
             
        <p class="text-h5"> {{item.name}}</p>
-              <p> Отрасль: {{item.industry}} </p>
-              <p> {{item.body}} </p>
-              <p> Текущее состояние проекта: {{item.now}}</p>
-              <p> Реализация проекта:  с {{item.start}} по {{item.finish}}г.</p>
-              <p> Сумма инвестиций: {{item.sum}} млн.руб.</p>
+              <p> <span style="opacity: .6;"> Отрасль:</span> {{item.industry}} </p>
+              <p> <span style="opacity: .6;">Описание: </span>{{item.body}} </p>
+              <p> <span style="opacity: .6;">Текущее состояние проекта: </span>  {{item.now}}</p>
+              <p> <span style="opacity: .6;"> Реализация проекта: </span>  с {{item.start}} по {{item.finish}}г.</p>
+              <p> <span style="opacity: .6;">Сумма инвестиций: </span>{{item.sum}} млн.руб.</p>
               <q-btn flat class="invest" @click="form(item)" v-if="item.help == true">Стать инвестором </q-btn>
           </div>
       </div>
@@ -128,6 +129,79 @@
     </div>
 </template>
 <style scoped>
+@media screen and (max-width: 900px) {
+  .form_filter{
+    flex-direction: column!important;
+  }
+  .comment{
+    width:100%!important;
+    font-size: 3vw!important;
+  }
+  .q-card{
+    width: 100%!important;
+    height: 100%!important;
+    max-width: 100vw!important;
+  }
+  .wrap{
+    flex-direction: column!important;
+  }
+  .column{
+    width: 100%!important;
+  }
+  .sub{
+    width:100%!important;
+  }
+.form_container{
+  width:100%!important;
+  padding:0!important;
+}
+.blue_container{
+  height: auto!important;
+}
+  .invest{
+    width:100%!important;
+  }
+  .item_image__div{
+    max-width: 100%!important;
+  }
+  .mobile{
+    flex-direction: column;
+  }
+  .right_content{
+    width: 95%!important;
+  }
+  .text-h4{
+    margin-top: 9vh!important;
+    text-align: center;
+    font-weight: 600!important;
+    font-size: 5.3vw!important;
+  }
+  .text-h5{
+    font-size: 1.3rem!important;
+  }
+  .item{
+    flex-direction: column;
+  }
+  .container{
+    width: 90%!important;
+  }
+  .search{
+    width:100%!important;
+  }
+  .q-mt-xl{
+    align-self: center;
+    margin-top: 7%!important;
+  }
+  .btn{
+    padding-bottom: 2%;
+  }
+  .input_filter{
+    margin-bottom: 3%!important;
+    background:none!important;
+    margin:auto;
+    width: 100%!important;
+  }
+}
 .form{
   display:flex;
   flex-direction: column;
@@ -136,6 +210,9 @@
   margin:auto;
   padding-top: 1.3vw;
   width:95%;
+}
+.input_filter{
+  width: 30%;
 }
 .wrap{
   display: flex;

@@ -23,6 +23,19 @@
     </div>
 </template>
 <style scoped>
+  @media screen and (max-width: 800px) {
+    .items{
+      flex-direction: column!important;
+    }
+    .item2{
+      width: 100%!important;
+      margin-left: 0!important;
+      margin-bottom: 2%!important;
+    }
+    .item2 a{
+      font-size: 3.5vw!important;
+    }
+  }
 @font-face {
   font-family: "Montserrat";
   src: url("../assets/fonts/Montserrat/Montserrat-Regular.woff") format("woff");

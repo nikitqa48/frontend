@@ -5,20 +5,25 @@
 
            <q-form @submit="onSubmit" class="blue_container">
              <div class="perekrestok">
+               <div class="mobile">
    <div class="wrap">
     <span class = 'text'>Вид деятельности: </span>
-     <!-- <q-select v-model="model" :options="options" label="Standard" outlined label-color="white" class="select" color="white"/> -->
+  
      <select  v-model="industry">
         <option value="1">Промышленность </option>
         <option value="4">Сельское Хозяйство </option>
         <option value="6">Лесное Хозяйство </option>
          <option value="7">Строительство </option>
-         <!-- <option value="8">Прочие виды материального произ-ва</option> -->
+         <option value="8">Прочие виды материального произ-ва</option>
         <option value="">Все отрасли</option>
       </select>
+      <!-- <q-select standout="text-white" class="inp"  v-model="industry"  :options= 'optns'    outlined :dense='true'  hide-bottom-space
+       option-value="id" /> -->
    </div>
       <div class="wrap">
    <span class = 'text'> Вид поддержки: </span>
+    <!-- <q-select standout="text-white" class="inp"  v-model="type"  :options= 'optns_type'  outlined :dense='true'  hide-bottom-space  
+       option-value="id" /> -->
     <select v-model="type">
       <option value="direct"> Прямая финансовая поддержка </option>
       <option value="loan_funding"> Заемная финансовая поддержка </option>
@@ -33,7 +38,7 @@
       <option value="nds"> Льготы по уплате НДС</option>
       <option value="customs"> Льготы по уплате НДС</option>
       <option value="infrastructure"> Субсидии на инфраструктуру</option>
-      <option value="loan_profit"> Кредиты под залог создаваемого имущества</option>
+      <!-- <option value="loan_profit"> Кредиты под залог создаваемого имущества</option> -->
       <option value=""> Все виды поддержки</option>
       </select>
       </div>
@@ -59,6 +64,7 @@
 
       </div>
        <button class="more" type="submit"> Поиск </button>
+             </div>
              </div>
     </q-form>
     <div class="items">
@@ -127,11 +133,82 @@
 <script>
 </script>
 <style scoped>
+ @media screen and (max-width: 900px) {
+   .mobile{
+     width: 95%;
+     display: flex;
+     flex-direction: column;
+     margin:auto;
+   }
+   .grey{
+     font-size: 3vw!important;
+    margin:2%!important;
+   }
+   .poluch{
+     margin:2%!important;
+     font-size: 3vw!important;
+   }
+   .wrapper{
+     padding-bottom: 2%!important;
+     width: 100%!important;
+   }
+   .item_bottom{
+     flex-direction: column!important;
+   }
+   .item{
+     margin-bottom: 2vh!important;
+   }
+   .blue_container{
+     height: auto!important;
+   }
+   .container h4{
+     font-size: 5vw!important;
+   }
+   .perekrestok{
+     padding-top: 2%!important;
+     flex-direction: column!important;
+     width: 100%!important;
+   }
+   .container{
+     width: 95%!important;
+   }
+   .text{
+     font-size: 3vw!important;
+     margin-bottom: 1%!important;
+   }
+   .wrap{
+     padding:1%!important;
+     font-size: 3vw!important;
+   }
+   .wrap select{
+     padding-left: 2%!important;
+     margin-top: 0!important;
+     margin-bottom: 1vh!important;
+   }
+   .more{
+     width:100%!important;
+     margin-top: 1vh!important;
+     border-radius: 26px!important;
+     font-size: 3vw!important;
+     margin-left: 0!important;
+   }
+   .item_name{
+     font-size: 3.5vw!important;
+     padding-left: 2%!important;
+   }
+   .item_bottom{
+     display: flex;
+     flex-direction: column;
+   }
+ }
 .button {
   border: 1px solid white;
   border-radius: 15px;
 }
-
+.mobile{
+  width:100%;
+  display: flex;
+}
 body a{
   color:white;
   text-decoration: none;
@@ -262,7 +339,9 @@ body a{
 .select-selected:after{
   color:white;
 }
-
+.inp{
+  width:15vw;
+}
 .blue_container{
   width:100%;
   height:10%;
@@ -333,12 +412,46 @@ export default {
   data(){
     return{
         options:['1', '2', '3'],
-        industry:'1',
+        industry:'',
         type:'',
         recipient:'',
         type_project:'',
         shape: 'line',
-        support_type:''
+        support_type:'',
+              optns:[
+                { id: '',label:'Все' },
+      { id:'1', label:'Промышленность'},
+      { id:'4',label: 'Сельское хозяйство'},
+      {id:'6', label: 'Лесное хозяйство'}, {id:'7', label:'Строительство'},
+      {id:'8', label:'Прочие виды деятельности сферы материального производства'}, {id:'9', label:'Обслуживание сельского хозяйства'},
+      {id:'10', label:'Транспорт'}, {id:'11', label:'Связь'}, {id:'12', label:'Торговля и общественное питание'},
+      {id:'13', label:'Материально-техническое снабжение и сбыт'}, {id:'14', label:'Заготовки'},
+      {id:'15', label:'Информационно-вычислительное обслуживание'}, {id:'16', label:'Операции с недвижимым имуществом'},
+      {id:'17', label:'Геология и разведка недр, геодезическая и гидрометеологическая службы'}, {id:'18', label:'Жилищное хозяйство'},
+      {id:'19', label:'Коммунальное хозяйство'}, {id:'20', label:'Непроизводственные виды бытового обслуживания населения'},
+      {id:'21', label:'Здравоохранение, физическая культура и соц.обеспечение'}, {id:'22', label:'Народное образование'},
+      {id:'23', label:'Культура и искусство'}, {id:'24', label:'Наука и научное обслуживание'}, {id:'25', label:'Финансы, кредит, страхование, пенсионное обеспечение'},
+      {id:'26', label:'Управление'}, {id:'27', label:'Общественные объединения'}
+      ],
+      optns_type:[
+                     { id: '',label:'Все виды поддержки' },
+      { id:'direct', label:'Прямая финансовая поддержка'},
+      { id:'loan_funding',label: 'Заемная финансовая поддержка'},
+      {id:'profit', label: 'Льготы по налогу на прибыль'},
+       {id:'transport', label:'Льготы по транспортному налогу'},
+      {id:'property', label:'Льготы по налогу на имущество'},
+       {id:'subsidies', label:'Субсидии'},
+      {id:'grant', label:'Гранты'},
+       {id:'rent', label:'Льготы по аренде'}, 
+       {id:'garant', label:'Гарантии'},
+      {id:'earth', label:'Льготы по земельному налогу'},
+       {id:'nds', label:'Льготы по уплате НДС'},
+      {id:'infrastructure', label:'Субсидии на инфраструктуру'}, 
+      {id:'loan_profit', label:'Кредиты под залог создаваемого имущества'},
+      {id:'17', label:'Геология и разведка недр, геодезическая и гидрометеологическая службы'}, {id:'18', label:'Жилищное хозяйство'},
+   
+      ]
+      
     }
   },
       methods:{
@@ -346,11 +459,13 @@ export default {
       const formData = new FormData(evt.target)
       let url = 'https://backendinvest.admlr.lipetsk.ru/support/'
       const submitResult = []
-      if (this.industry.valueOf() == '' && this.type_project.valueOf() == '') {
+      if (this.industry == '' && this.type_project.valueOf() == '') {
+        
        url = 'https://backendinvest.admlr.lipetsk.ru/support/?format=json'+'&type='+this.type+'&form='+this.recipient
        this.$store.dispatch('filterSupportData', url)
       }
      else if(this.type_project.valueOf()== ''){
+       console.log(this.type.id)
         url = 'https://backendinvest.admlr.lipetsk.ru/support/?format=json'+'&type='+this.type+'&form='+this.recipient+'&industry='+this.industry
          this.$store.dispatch('filterSupportData', url)
      }

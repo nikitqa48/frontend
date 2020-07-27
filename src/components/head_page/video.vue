@@ -19,7 +19,7 @@
   
         </div>
         <video loop muted autoplay class="fullscreen-bg__video">
-          <source src="statics/image/video_background.mp4" type="video/mp4" />
+          <source src="statics/image/video_background.mp4" media="(min-width: 800px)" type="video/mp4" />
         </video>
       </div>
        <div class="presentation"> <span>Презентация <br> <b>Липецкой области</b> </span><button class="open" @click="open"> Открыть</button></div>

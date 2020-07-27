@@ -9,7 +9,7 @@
         <div class="university">
           <h4>Интерактивная карта площадок</h4>
           <div class="wrap_buttons">
-            <button id="first" @click="active" v-bind:class = '{button_active: oez_button}'>Особо экономическая зона "Липецк"</button>
+            <button id="first" @click="active" v-bind:class = '{button_active: oez_button}'>Особая экономическая зона "Липецк"</button>
             <button id="third" @click="active" v-bind:class = '{button_active: industrial_button}' >Индустриальные парки</button>
             <button  id="second" @click="active" v-bind:class = '{button_active: oezru_button}'>Особые экономические зоны Регионального Уровня</button>
             <button  id="four" @click="active" v-bind:class = '{button_active: techno_button}'>Технопарки</button>

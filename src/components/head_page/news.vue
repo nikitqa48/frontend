@@ -94,8 +94,17 @@
   font-size: 4vw!important;
   text-align: left!important;
 }
+.left{
+  height: 60%!important;
+}
+.right{
+  height: 60%!important;
+}
+.news{
+  height: auto!important;
+}
 .overlay{
-  height: 110vh!important;
+  min-height: 100%!important;
 }
 .item2:nth-child(4){
   display: none!important;

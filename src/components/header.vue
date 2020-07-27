@@ -17,13 +17,11 @@
         </div>
         </q-toolbar>
              
-      
+      <div class="mobile">
         <q-toolbar  class="moble_header bg-grey-10" >
           <q-btn flat @click="drawer = !drawer" round dense icon="menu" color="white"/>
           <q-btn flat  dense icon="img:statics/icons/logo.png"  label="Инвест. Липецк" to="/" no-caps color="white"/> 
         </q-toolbar>
-    
-
       <q-menu
       max-height="100vh"
       max-width="300px"
@@ -31,12 +29,11 @@
       no-parent-event
       v-model="drawer"
       auto-close
-        :content-style="{ background: 'rgba(31, 37, 55, 0.9)', color:'#FFFFFF', position:'fixed' }"
+        :content-style="{ background: 'rgba(31, 37, 55, 0.9)', color:'#FFFFFF', position:'fixed', height:'100%' }"
         transition-show="slide-right"
         transition-hide="slide-left"
-      
       >
- <q-list style="width: 70vw; height:95vh;"  >
+ <q-list style="width: 70vw; height:100%;"  >
             <q-item   clickable v-ripple to ='/square' stretch flat >Площадки </q-item>
            
               <q-item   clickable v-ripple="{color:'blue-6'}" to ='/state'   >Господдержка </q-item>
@@ -54,7 +51,7 @@
     
 
   </div>
-
+</div>
 </template>
 <script>
 
@@ -69,9 +66,13 @@ export default {
 }
 </script>
 <style scoped>
-  @media screen and (max-width: 800px) {
+  @media screen and (max-width: 900px) {
 .header{
   display: none!important;
+}
+.mobile{
+  height: 100%;
+  width: 100%;
 }
 .wrap{
   position: fixed;

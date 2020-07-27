@@ -164,8 +164,9 @@
     width: 100%!important;
    }
    .left{
+     
    width:100%!important;
-     height: 100%!important; 
+     height: 60%!important; 
    }
    .image{
       position: relative!important; 

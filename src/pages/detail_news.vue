@@ -3,14 +3,13 @@
      <header-vue/>
      <div class="wrapper">
          <div class="top">
-             <router-link :to="{name: 'news' }" class="rout"> 
+             
              <div class="all_news">
-                 <div class="arrow">
-                 <img src="/statics/image/detail_arrow.png">
-                 </div>
-                 <span class = 'all_news__text'> Все новости</span>
+                 <router-link :to="{name: 'news' }" class="rout"> 
+                 <q-btn color="white" flat icon="keyboard_backspace"  label="Все новости" no-caps />
+                      </router-link>    
              </div>
-             </router-link>             
+                 
              <h5>{{news.title}}</h5>
              <div class="news_image">
                  <img :src="news.image">
@@ -23,6 +22,29 @@
     </div>
 </template>
 <style scoped>
+  @media screen and (max-width: 800px) {
+   .wrapper{
+       padding-top: 8vh!important;
+   }
+   .all_news{
+       margin-top: 1vh;
+   }
+   .all_news__text{
+       font-size: 2vw!important;
+   }
+   .top{
+       width: 95%!important;
+   }
+   .top h5{
+       font-size: 4vw!important;
+       line-height: 150%!important;
+   }
+   .bottom{
+       width: 95%!important;
+       font-size: 3.5vw!important;
+       opacity: .8;
+   }
+    }
 @font-face {
   font-family: "Montserrat";
   src: url("../assets/fonts/Montserrat/Montserrat-Regular.woff") format("woff");
@@ -73,7 +95,7 @@ body a{
 .all_news{
     align-items: center;
     display: flex;
-    width:20%;
+    
     }
 .arrow img{
     width:100%;

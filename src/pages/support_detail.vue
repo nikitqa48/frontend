@@ -1,14 +1,13 @@
 <template>
   <div class="wrap">
     <div class="container">
-      <router-link :to="{name: 'support', }" class="rout">
+   
         <div class="back">
-          <div class="arrow_back">
-            <img class="arrow" src="statics/image/arrow_back.svg" />
-          </div>
-          <p>Вернуться назад</p>
+     <router-link :to="{name: 'support', }" class="rout">
+               <q-btn color="white" flat icon="keyboard_backspace"  label="Вернуться назад" no-caps />
+                </router-link>
         </div>
-      </router-link>
+     
       <div class="name">{{support.name}}</div>
       <div class="category">
         <div class="item" v-if="support.recipient != ''">
@@ -253,6 +252,20 @@ export default {
 };
 </script>
 <style scoped>
+@media screen and (max-width: 900px) {
+  .container{
+    margin-top: 4vh!important;
+    width:95%!important;
+  }
+  .name{
+    margin-top: 2vh!important;
+    align-self: start!important;
+    font-size: 3.5vw!important;
+  }
+  .category{
+    width: 100%!important;
+  }
+}
 body a {
   text-decoration: none;
 }
