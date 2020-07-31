@@ -2,9 +2,11 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 
 import routes from './routes'
-
+import VueYandexMetrika from 'vue-yandex-metrika'
 Vue.use(VueRouter)
-
+Vue.use(VueYandexMetrika, {
+  id:66014770
+})
 /*
  * If not building with SSR mode, you can
  * directly export the Router instantiation;

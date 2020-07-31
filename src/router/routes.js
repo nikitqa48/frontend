@@ -51,6 +51,30 @@ const routes = [
     {
       path:'/project',
       component:() => import('pages/project.vue')
+    },
+    {
+      path:'/example',
+      component:() => import ('layouts/layexample.vue'),
+      children:[{
+        path:'',
+        component:() => import('pages/novosti.vue')
+      },
+      {
+        path:'contact',
+        name:'contact',
+        component:() => import('pages/newpage2.vue')
+      },
+      {
+        path:'head',
+        name:'head',
+        component:() => import('pages/newhead.vue')
+      },
+      {
+        path:'map',
+        name:'map',
+        component:() => import('pages/square_map.vue')
+      }
+    ]
     }
  
 ]
