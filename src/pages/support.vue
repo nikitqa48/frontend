@@ -465,7 +465,7 @@ export default {
        this.$store.dispatch('filterSupportData', url)
       }
      else if(this.type_project.valueOf()== ''){
-       console.log(this.type.id)
+       
         url = 'https://backendinvest.admlr.lipetsk.ru/support/?format=json'+'&type='+this.type+'&form='+this.recipient+'&industry='+this.industry
          this.$store.dispatch('filterSupportData', url)
      }

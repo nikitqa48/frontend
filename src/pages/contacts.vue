@@ -1,23 +1,50 @@
 <template>
 <div>
 <q-scroll-area
-      style="height:100vh; max-width: 100%;"
-      
+      style="height:94.8vh; max-width: 100%;"
       :thumb-style="thumbStyle"
     >
+    
     <div class="wrapper">
-<header-vue />
-  <forms-vue/>       
+
+     
     <div class="container">
-        <h4> Наша команда </h4>
-             <div class="perekrestok" v-for="item in contact">
+        <h4> Контакты </h4>
+        <div class="tab">
+        <q-tabs
+          v-model="tab"
+          dense
+          class="q-tab"
+          
+          active-color="primary"
+          indicator-color="primary"
+          align="start"
+          
+        >
+          <q-tab name="Руководство"   no-caps >  <span class='tab'> Руководство </span> </q-tab>
+          <q-tab name="Агенство"    no-caps > <span class="tab"> Агенство </span> </q-tab>
+ 
+        </q-tabs>
+        </div>
+       
+
+        <q-tab-panels v-model="tab" >
+          <q-tab-panel name="Руководство" >
+                     <div class="items_wrap" v-for="item in contact.leader">
    <div class="wrap">
     <span class = 'text'> {{item.position}}</span>
     <div class="border"> </div>
     <div class="parent">
     <div class="image">
-        <img :src="item.image">
+          <q-img
+      :src="item.image"
+      spinner-color="white"
+ 
+    />
+ 
+        <!-- <img :src="item.image"> -->
     </div>
+    <div class="mobile">
      <div class="inside_parent">
         <span class="fio">
             Ф.И.О
@@ -51,8 +78,78 @@
         </span>
     </div>
     </div>
+    </div>
    </div>
              </div>
+          </q-tab-panel>
+
+          <q-tab-panel name="Агенство"  class="text-black">
+                              <div class="items_wrap" v-for="item in contact.agent">
+   <div class="wrap">
+    <span class = 'text'> {{item.position}}</span>
+    <div class="border"> </div>
+    
+    <div class="parent">
+    <div class="image">
+          <q-img
+      :src="item.image"
+      spinner-color="white"
+ 
+    />
+     <img src="/statics/image/OEZ.png">
+        <!-- <img :src="item.image"> -->
+    </div>
+    <div class="mobile">
+     <div class="inside_parent">
+        <span class="fio">
+            Ф.И.О
+        </span>
+        <span class="name">
+           {{item.name}}
+        </span>
+    </div>
+         <div class="inside_parent">
+        <span class="fio">
+            Телефон
+        </span>
+        <span class="name">
+            {{item.phone}}
+        </span>
+    </div>
+             <!-- <div class="inside_parent">
+        <span class="fio">
+            Должность
+        </span>
+        <span class="name">
+            {{item.position}}
+        </span>
+    </div> -->
+                 <div class="inside_parent">
+        <span class="fio">
+            E-mail
+        </span>
+        <span class="name">
+          {{item.email}}
+        </span>
+    </div>
+    </div>
+    </div>
+   </div>
+             </div>
+          
+          </q-tab-panel>
+
+          <q-tab-panel name="movies"  class="text-black">
+            <div class="text-h6">Movies</div>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          </q-tab-panel>
+        </q-tab-panels>
+    
+
+
+             
+
+             
              <!-- <div class="perekrestok">
    <div class="wrap">
     <span class = 'text'> Заместитель</span>
@@ -195,6 +292,11 @@
 
 
 
+
+
+
+
+
 </template>
 <style scoped>
 .button {
@@ -204,6 +306,10 @@
 .border{
     width:100%;
     border-bottom: 1px solid white;
+}
+.mobile{
+  display: flex;
+  width: 100%;
 }
 .image{
     margin-top: 1vh;
@@ -279,6 +385,9 @@ body a{
   margin: 2vh;
   font-size: 0.8vw;
 }
+.myclass{
+  border:1px solid red;
+}
 .poluch{
   color:#C9C9C9;
   font-size: 0.8vw;
@@ -324,7 +433,7 @@ body a{
   margin-bottom: 2vh;
  
 }
-.perekrestok{
+.items_wrap{
 background:rgba(35, 46, 75, 0.7);
 padding-bottom: 2vh;
 margin-top: 1vh;
@@ -336,6 +445,7 @@ margin-bottom: 0.5vh;
   justify-content: space-between;
 
 }
+
 .left {
   border-right: 1px solid rgba(255, 255, 255, 0.6);
   width: 50%;
@@ -420,7 +530,7 @@ margin-bottom: 0.5vh;
   color: white;
 }
 .container h4{
-    margin-top: 14vh;
+
     font-size: 2.25vw;
     letter-spacing: 0.1vw;
     margin-bottom: 4vh;
@@ -440,6 +550,27 @@ margin-bottom: 0.5vh;
 .container_image img {
   height: 100%;
 }
+.q-tab{
+  padding: 0;
+  background: none;
+  color:white;
+
+  margin-right: 1%;
+}
+.q-tab-panels{
+  background: none;
+}
+.q-tab-panel {
+  padding:0;
+}
+.text{
+  color:white;
+}
+.tab{
+ padding:0;
+ font-weight: 600;
+ letter-spacing: 0.02vw;
+}
 @font-face {
   font-family: "Montserrat";
   src: url("../assets/fonts/Montserrat/Montserrat-Regular.woff") format("woff");
@@ -447,13 +578,50 @@ margin-bottom: 0.5vh;
 *{
   font-family: 'Montserrat';
 }
-
+@media screen and (max-width: 900px) {
+.container{
+  width:95%!important;
+}
+.mobile{
+  margin-left: 2%;
+  flex-direction: column;
+}
+.inside_parent{
+  width:auto!important;
+  margin-top: 0!important;
+  margin-bottom: 2vh!important;
+  padding-bottom: 0!important;
+}
+.container h4{
+  margin-bottom: 0!important;
+  font-size: 5vw!important;
+}
+.text{
+  padding-left: 2vw;
+  padding-right: 2vw;
+  font-size: 3.5vw!important;
+}
+.border{
+  border:none!important;
+}
+.fio{
+ 
+  font-size: 3vw!important;
+}
+.name{
+  font-size: 3vw!important;
+}
+.image{
+  max-width:40%!important;
+}
+}
 </style>
 
 
 <script>
 import headerVue from "../components/header.vue";
 import formsVue from "../components/forms.vue";
+import {mapState, mapGetters} from 'vuex'
   export default {
     name: 'App',
     components: {
@@ -466,17 +634,24 @@ import formsVue from "../components/forms.vue";
         borderRadius: '5px',
         width: '10px',
         opacity: 0.5
-      }
+      },
+      tab:'Руководство',
+
+      
       }
     },
       mounted(){
+       
         this.$store.dispatch('allContactData')
        
       },
       computed:{
+     
         contact(){
-          return this.$store.getters.contact
+          
+          return this.$store.getters.role
         }
-      }
+      },
+
   }
 </script>

@@ -1,20 +1,49 @@
 <template>
-  <router-view/>
+<div class="invest">
+   
+      <header-vue/>
+      <router-view />
+        <q-inner-loading :showing="visible">
+        <q-spinner-gears size="50px" color="primary" />
+      </q-inner-loading>
+      <form-vue/>
+</div>
 </template>
 <style scoped>
 @font-face {
   font-family: "Montserrat";
   src: url("../assets/fonts/Montserrat/Montserrat-Regular.woff") format("woff");
-  font-style: normal;
 }
-/* @font-face {
-  font-family: "Montserrat bold";
-  src: url('/assets/fonts/Montserrat/Montserrat-Bold.woff') format('woff');
-  font-style: bold;
-} */
-
 *{
   font-family: 'Montserrat';
-  font-style: normal;
+}
+.invest{
+  min-height: 100vh;
 }
 </style>
+
+<script>
+import headerVue from "../components/example_header.vue";
+import formsVue from "../components/forms";
+export default {
+    components:{
+        headerVue,
+        formsVue
+    },
+    data(){
+        return{
+            visible:false
+        }
+    },
+      methods: {
+    showTextLoading () {
+      this.visible = true
+      this.showSimulatedReturnData = false
+      setTimeout(() => {
+        this.visible = false
+        this.showSimulatedReturnData = true
+      }, 3000)
+    }
+  }
+}
+</script>

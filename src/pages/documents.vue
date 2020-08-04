@@ -5,7 +5,7 @@
       style="height:100vh; max-width: 100%;"
       :thumb-style="thumbStyle"
     >
-    <header-vue />
+
       <div class="wrapper">
         
         <forms-vue />

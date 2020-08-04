@@ -18,36 +18,81 @@
         </div> -->
         <q-tabs
         indicator-color="blue-7"
-        
+        class='q-tabs'
         active-color='blue-7'
         >
+            <!-- <q-route-tab
+  flat class="btn-fixed-width" color="white"   no-wrap  no-caps icon= 'img:statics/icons/logo.png' 
+    label="Главная страница"
+    no-caps
+    to="/example/head"
+    exact
+  /> -->
+  <!-- <q-btn align="between" flat class="btn-fixed-width" color="white" style="width:15%;"
+    no-caps icon= 'img:statics/icons/logo.png'  to="/example/head">
+  <span> Инвестиционный портал Липецкой области </span>
+  </q-btn> -->
+  <router-link to = '/' style="align-self:flex-end;">
+  <button class="btn" > 
+    <div class="img">
+    <img src="statics/icons/logo.png">
+    </div>
+     <div style="display:flex;flex-direction:column;">
+       <span class="investition"> Инвестиционный портал  </span> <span class="lipetsk">Липецкой области </span></div>
+       </button>
+  </router-link>
+      <q-space/>
+
+        <q-route-tab
+    label="Площадки"
+    no-caps
+    to="/square"
+    exact
+  /> 
+    <q-route-tab
+    label="Господдержка"
+    no-caps
+    to="/state"
+    exact
+      
+  />
+  
   <q-route-tab
-    to="/example"
+    label="Проекты"
+    no-caps
+    to="/project"
+    exact
+  />
+  <q-route-tab
+    to="/news"
     label='Новости'
     no-caps=""
+    exact
+  />
+    <q-route-tab
+    label="Документы"
+    no-caps
+    to="/documents"
+    exact
+  />
+      <q-route-tab
+    label="Регион"
+    no-caps
+    to="/region"
     exact
   />
   <q-route-tab
 
     label="Контакты"
     no-caps
-    to="/example/contact"
+    to="/contacts"
     exact
   />
-    <q-route-tab
 
-    label="Главная страница"
-    no-caps
-    to="/example/head"
-    exact
-  />
-      <q-route-tab
 
-    label="Площадки"
-    no-caps
-    to="/example/map"
-    exact
-  />
+
+ 
+
 </q-tabs>
         </q-toolbar>
        
@@ -108,6 +153,7 @@ export default {
   height: 100%;
   width: 100%;
 }
+
 .wrap_header{
   /* position: fixed; */
   width: 100%;
@@ -137,6 +183,14 @@ export default {
   z-index: 1;
   background: #262626;
 }
+.img{
+  padding-right: 0.2vw;
+  margin-right: 0.2vw;
+  width: 10%;
+}
+.img img{
+  width: 100%;
+}
 .moble_header{
   display: none;
 }
@@ -154,6 +208,36 @@ export default {
   height: 100%;
   display: flex;
   align-items: center;
+}
+.q-tabs{
+  width: 100%;
+  display: flex;
+  justify-content: space-between!important;
+}
+.investition{
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  line-height: 100%;
+  letter-spacing: 0.02vw;
+  font-weight: 600;
+}
+.lipetsk{
+  font-weight: 100;
+}
+.btn{
+  display: flex;
+  align-self: flex-end;
+  background:none;
+  text-align: left;
+  outline: none;
+  border:none;
+  cursor: pointer;
+  color:white;
+  align-items: center;
+}
+body a{
+
+ text-decoration: none;
 }
 /* .q-router-link--active{
   color: #52A4DF;

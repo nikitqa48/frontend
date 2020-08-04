@@ -4,35 +4,19 @@ const routes = [
     path: '/',
     component: () => import('layouts/HomeLayout.vue'),
     children: [
-      { path: '', component: () => import('pages/home_page.vue') }
-    ]
-  },
-  {
-    path: '/state',
-    component: () => import('layouts/second_layout.vue'),
-    children: [
-      {
-        name:'support',
-        path: '/', component: () => import('pages/support.vue'),
-        
-      },
-      {
-        path:'/state/support/:id',
-        name: 'support_detail',
-        component: () => import('pages/support_detail.vue')
-      }
-    ]
-  },
-    {
-      path: '/news/:id',
-      name: 'detail',
-      component: () => import('pages/detail_news.vue'),
-      props: true,
+      { 
+        path: '', 
+        component: () => import('pages/home_page.vue') 
     },
     {
-      path:'/news/',
-      name: 'news',
-      component: () => import('pages/all_news.vue'),
+      path: '/state',
+      name:'support',
+      component: () => import('pages/support.vue'),
+    },
+    {
+      path:'/state/support/:id',
+      name: 'support_detail',
+      component: () => import('pages/support_detail.vue')
     },
     {
       path:'/square',
@@ -40,43 +24,36 @@ const routes = [
       component: () => import ('pages/interactiv_map.vue')
     },
     {
-      path:'/contacts',
-      name:'contacts',
-      component: () => import('pages/contacts.vue')
+      path:'/news/',
+      name: 'news',
+      component: () => import('pages/all_news.vue'),
     },
-    {
-      path:'/documents',
-      component:() => import('pages/documents.vue')
-    },
-    {
-      path:'/project',
-      component:() => import('pages/project.vue')
-    },
-    {
-      path:'/example',
-      component:() => import ('layouts/layexample.vue'),
-      children:[{
-        path:'',
-        component:() => import('pages/novosti.vue')
-      },
-      {
-        path:'contact',
-        name:'contact',
-        component:() => import('pages/newpage2.vue')
-      },
-      {
-        path:'head',
-        name:'head',
-        component:() => import('pages/newhead.vue')
-      },
-      {
-        path:'map',
-        name:'map',
-        component:() => import('pages/square_map.vue')
-      }
+{
+  path: '/news/:id',
+  name: 'detail',
+  component: () => import('pages/detail_news.vue'),
+  props: true,
+},
+
+{
+  path:'/contacts',
+  name:'contacts',
+  component: () => import('pages/contacts.vue')
+},
+{
+  path:'/project',
+  component:() => import('pages/project.vue')
+},
+{
+  path:'/documents',
+  component:() => import('pages/documents.vue')
+},
+{
+  path:'region',
+  component:() => import('pages/region.vue')
+}
     ]
-    }
- 
+  },
 ]
 
 // Always leave this as last one

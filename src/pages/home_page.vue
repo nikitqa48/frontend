@@ -1,11 +1,10 @@
 <template>
   <div>
-      <header-vue />
       <forms-vue />
     <div data-anchor="investinlipetsk">
     <video-vue/>
     </div>
-      <full-page ref="fullpage" :options="opts" id="fullpage">
+      <full-page ref="fullpage" :options="opts" id="fullpage"> 
         <div class="section" data-anchor='video'>
           <gubernator-vue/>
         </div>
@@ -34,7 +33,7 @@ import historyVue from "../components/head_page/history";
 import videoVue from '../components/head_page/video.vue';
 import newsVue from "../components/head_page/news.vue";
 import formsVue from "../components/forms.vue";
-import headerVue from "../components/header.vue";
+import headerVue from "../components/example_header.vue";
 import hooper from 'hooper';
 Vue.use(fullpage, vuescroll);
 export default {
@@ -59,6 +58,7 @@ export default {
         afterChange: function(prev, next) {},
         lazyLoading: false,
         responsiveWidth: 900,
+        fitToSection:true,
         dots:true,
         anchors: ['video', 'about-us', 'contact', 'novosti'],
         lockAnchors:true,

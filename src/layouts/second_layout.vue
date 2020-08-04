@@ -1,6 +1,6 @@
 <template>
 <div class="title">
-     <header-vue/>
+   
      <div class="form">
       <forms-vue/>
      </div>

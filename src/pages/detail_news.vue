@@ -1,6 +1,5 @@
 <template>
     <div class="news">
-     <header-vue/>
      <div class="wrapper">
          <div class="top">
              
@@ -70,7 +69,7 @@ body a{
 }
 
 .wrapper{
-    padding-top: 4%;
+    padding-top: 2%;
     width:100%;
     height:100%;
     margin: auto;

@@ -1,6 +1,6 @@
 <template>
     <div class=wrapper>
-        <header-vue/>
+
         <forms-vue/>
         <div class="container">
             <div class="text-h4 q-mb-md">
@@ -244,6 +244,7 @@
         margin:auto;
     }
     .text-h4{
+        margin-top: 4vh;
         color:white;
     }
     .item{

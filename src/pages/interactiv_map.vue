@@ -1,26 +1,29 @@
 <template>
-  <div>
-    <header-vue />
+  <div class="div" >
+   
     <!-- <div class="form">
       <forms-vue/>
     </div>-->
     <div class="wrapper">
       <div class="wrapp_container">
-        <div class="university">
-          <h4>Интерактивная карта площадок</h4>
-          <div class="wrap_buttons">
-            <button id="first" @click="active" v-bind:class = '{button_active: oez_button}'>Особая экономическая зона "Липецк"</button>
-            <button id="third" @click="active" v-bind:class = '{button_active: industrial_button}' >Индустриальные парки</button>
-            <button  id="second" @click="active" v-bind:class = '{button_active: oezru_button}'>Особые экономические зоны Регионального Уровня</button>
-            <button  id="four" @click="active" v-bind:class = '{button_active: techno_button}'>Технопарки</button>
-          </div>
-        </div>
+  
         <transition
           appear
           enter-active-class="animated fadeIn slow"
           leave-active-class="animated fadeOut"
         >
+        <div class="infinity">
+            <div class="university">
+          <h4>Интерактивная карта площадок</h4>
+          <!-- <div class="wrap_buttons">
+            <button id="first" @click="active" v-bind:class = '{button_active: oez_button}'>Особая экономическая зона "Липецк"</button>
+            <button id="third" @click="active" v-bind:class = '{button_active: industrial_button}' >Индустриальные парки</button>
+            <button  id="second" @click="active" v-bind:class = '{button_active: oezru_button}'>Особые экономические зоны Регионального Уровня</button>
+            <button  id="four" @click="active" v-bind:class = '{button_active: techno_button}'>Технопарки</button>
+          </div> -->
+        </div>
           <div class="left_map">
+                
             <svg viewBox="0 0 868 760" class="svg_map" id="svg">
               <path
                 class="part"
@@ -147,12 +150,13 @@
             </svg>
             <img src="/statics/image/lipetsk_map.svg" class="svg" />
           </div>
+        </div>
         </transition>
+        
         <div class="right_map"  >
           <div class="right_wrapper" >
-            <div v-if="show_greenfield == false">
-              <div v-if="show_greenfield == false">
-                <div class="input_list" v-if="right == false">
+                         <div class="input_list" v-if="right == false && show_greenfield == false">
+                  <div class="class">
                   <p class="list">Список площадок — 
                     <span v-if="index == 15"> Усмань</span>
                     <span v-if="index == 16"> Добринка</span>
@@ -173,28 +177,48 @@
                      <span v-if="index == 1">Лев-Толстой</span>
                      <span v-if="index == 0">Данков</span>
                     </p>
-                  
-                  <q-form @submit="onSubmit" class="form" >
+                  <div class="square_button" @click="medium =! medium">Подобрать площадку</div>
+                  </div>
+           
+                 
+                </div>
+            <div v-if="show_greenfield == false">
+              <div v-if="show_greenfield == false">
+     
+                <q-scroll-area
+                  v-if="show_greenfield == false && right == false"
+                  dark
+                  :visible="visable"
+                  class="square_scroll"
+
+                >
+                       <q-form @submit="onSubmit" class="form" >
                     <!-- <span class = 'text'>Тип площадки: </span> -->
                     <!-- <q-select v-model="model" :options="options" label="Standard" outlined label-color="white" class="select" color="white"/> -->
-                    <select v-model="type">
+                      <div style="display:flex; flex-direction:column;">
+                          <p style="opacity:0.9;"> Выберите инвестиционную площадку</p>
+                    <select v-model="params">
+                      
+                
+                      <option value="зона">Особая экономическая зона "Липецк"</option>
+                      <option value="регион">Особые экономические зоны Регионального уровня</option>
+                      <option value="индустриальные">Индустриальные парки</option>
+                      <option value="технопарки">Технопарки</option>
+                      <option value="все">Все</option>
+                      <!-- <option value="brownfield">Браунфилд</option> -->
+                      <!-- <option value>Все</option> -->
+                    </select>
+                    <p style="margin-top:2vh; opacity:0.9;"> Выберите тип площадки</p>
+                          <select v-model="type" >
                       <option hidden value="1">Тип площадки</option>
                       <option value="greenfield">Гринфилд</option>
                       <option value="brownfield">Браунфилд</option>
                       <option value>Все</option>
                     </select>
+                  </div>
                     <button class="more" type="submit">Поиск</button>
-                    <div class="square_button" @click="medium =! medium">Подобрать площадку</div>
+                    <!--  -->
                   </q-form>
-                 
-                </div>
-                <q-scroll-area
-                  v-if="show_greenfield == false && right == false"
-                  dark
-                  :visible="visable"
-                  style="height: 65vh; max-width: 99%; padding-top:2vh"
-                >
-                
                   <div class="items_greenfield" v-if="show_greenfield == false">
                     <div v-if="show_oez">
                     <p
@@ -420,12 +444,14 @@
                 </q-scroll-area>
               </div>
             </div>
-            <div class="q-scroll">
-              <div
+            <div class="q-scroll" >
+              <!-- <div
                 class="back"
                 v-if="show_greenfield == true"
                 @click="show_greenfield = false"
-              >&#8592; Вернуться назад</div>
+              >&#8592; Вернуться назад</div> -->
+               <q-btn color="white"  v-if="show_greenfield == true"
+                @click="show_greenfield = false" flat icon="keyboard_backspace"  label="Вернуться назад" no-caps />
 
               <h3
                 class="title"
@@ -435,7 +461,7 @@
               <q-scroll-area
                 dark
                 class="bg-dark text-white rounded-borders"
-                style="height: 70.3vh; max-width: 90%;"
+                style="height: 80vh; max-width: 90%;"
                 v-if="show_greenfield == true"
               >
                 <div class="greenfield_image" ref="grinf" @click="modalImage">
@@ -734,6 +760,7 @@
   </div>
 </template>
 <style scoped>
+
 @font-face {
   font-family: "Montserrat";
   src: url("../assets/fonts/Montserrat/Montserrat-Regular.woff") format("woff");
@@ -786,7 +813,7 @@
   margin: auto;
 }
 .q-scroll {
-  margin-top: 2%;
+  margin-top: 4vh;
 }
 .cadastr {
   font-size: 0.93vw;
@@ -810,6 +837,7 @@
   margin-right: 1vw;
 }
 .input_list {
+  margin-top: 4.2vh;
   display: flex;
   flex-direction: column;
 }
@@ -856,8 +884,8 @@
   border-radius: 4.16226px;
 }
 .square_button{
-   align-self: flex-end;
-  min-height: 4.5vh;
+    align-self: flex-end;
+  height: 4.5vh;
   min-width: 8vw;
   display: flex;
   margin-left: 3%;
@@ -945,11 +973,9 @@
 }
 .wrapper {
   align-items: center;
-  min-height: 100vh;
-  background: url("/statics/image/space.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+  min-height: 94.8vh;
+  width: 100%;
+
   display: flex;
   flex-direction: row;
 }
@@ -981,16 +1007,14 @@
 .university {
   display: flex;
   flex-direction: column;
-  position: absolute;
-  top: 3%;
-  left: 2%;
+
 }
 .university h4 {
   color: white;
   letter-spacing: 0.05vw;
   font-weight: 600;
   margin-top: 4vh;
-  font-size: 2.35vw;
+  font-size: 1.85vw;
   margin-bottom: 4vh;
 }
 .greenfield_image {
@@ -1129,9 +1153,9 @@
   color: #cecece;
 }
 .right_map {
-    align-self: flex-end;
-    padding-left: 2%;
-    width: 45%;
+    
+    
+    width: 50%;
     height: 100%;
     color: #fff;
     position: relative;
@@ -1139,19 +1163,15 @@
 .left_map {
     position: relative;
     text-align: center;
-    margin-left:3%;
-    margin-top: 5%;
     display: flex;
-    width: 50%;
+    width: 100%;
 }
 .wrapp_container {
-width: 95%;
-
-    height: 100vh;
+    width: 95%;
+    /* height: 94.8vh; */
     margin: auto;
     justify-content: space-between;
     display: flex;
-    
 }
 .center {
   min-width: 70vw;
@@ -1172,7 +1192,6 @@ width: 95%;
 }
 .right_wrapper {
     display: flex;
-    margin-top: 15%;
     flex-direction: column;
 }
 .gr {
@@ -1191,6 +1210,29 @@ width: 95%;
 .hide{
   display:none;
 }
+.class{
+    display: flex;
+    justify-content: space-between;
+}
+.square_scroll{
+
+    height: 70vh;
+     max-width: 100%; 
+     margin-top:9vh
+}
+.infinity{
+    width: 50%;
+    
+}
+.div{
+    background: url("/statics/image/space.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+</style>
+<style>
+
 </style>
 <script>
 import headerVue from "../components/header.vue";
@@ -1226,7 +1268,8 @@ export default {
       type: "1",
       industrial: [],
       oez: [],
-      show_greenfield: false
+      show_greenfield: false,
+      params:'зона'
     };
   },
   components: {
@@ -1377,7 +1420,8 @@ export default {
         }
           }
         also.style.display='none'
-      } else if (event.target.id == "third") {
+      } 
+      else if (event.target.id == "third") {
           this.oez_button = false
           this.oezru_button = false
           this.industrial_button = !this.industrial_button
@@ -1440,6 +1484,123 @@ export default {
           }
         }
       });
+  },
+  watch:{
+      params(){
+          console.log(this.params)
+           if (this.params == "зона") {
+         this.oez_button =!this.oez_button
+          this.oezru_button = false
+          this.industrial_button = false
+          this.techno_button = false
+        for (let i = 0; i < svg.children.length; i++) {
+         
+          svg.children[i].classList.remove("active");
+        }
+        if (this.oez_button){
+        gryasi.classList.add("active");
+        elec.classList.add("active");
+      
+        this.show_oez =true
+        this.show_any = false
+        this.show_oezru = false
+        this.show_industrial = false
+        
+        }
+        else{
+          this.show_oez = true
+          this.show_any = true
+          this.show_industrial = true
+          this.show_oezru = true
+        }
+      
+      }
+      else if (this.params== "регион") {
+          this.oez_button = false
+          this.oezru_button = ! this.oezru_button
+          this.industrial_button = false
+          this.techno_button = false
+          if (this.oezru_button){
+            this.show_oezru = true
+        this.show_oez =false
+        this.show_any = false
+        this.show_industrial = false
+            for (let i = 0; i < svg.children.length; i++) {
+          svg.children[i].classList.remove("active");
+        }
+          dankov.classList.add("active");
+        elec.classList.add("active");
+        zadonsk.classList.add("active");
+        hlevnoe.classList.add("active");
+        terbuny.classList.add("active");
+        ismalkovo.classList.add("active");
+        lev.classList.add("active");
+        chaplygin.classList.add("active");
+        this.also = false
+          }
+          else{
+                 for (let i = 0; i < svg.children.length; i++) {
+          svg.children[i].classList.remove("active");
+          this.show_oez = true
+         this.show_any = true
+          this.show_industrial = true
+        }
+          }
+        also.style.display='none'
+      }
+            else if (this.params == "индустриальные") {
+          this.oez_button = false
+          this.oezru_button = false
+          this.industrial_button = !this.industrial_button
+          this.techno_button = false
+          if (this.industrial_button ){
+            this.show_industrial = true
+            this.show_oezru = false
+            this.show_oez = false
+            this.show_any = false
+               for (let i = 0; i < svg.children.length; i++) {
+          svg.children[i].classList.remove("active");
+        }
+          krasnoe.classList.add("active");
+        elec.classList.add("active");
+          }
+          else {
+                     this.show_industrial = true
+            this.show_oezru = true
+            this.show_oez = true
+            this.show_any = true
+            for (let i = 0; i < svg.children.length; i++) {
+          svg.children[i].classList.remove("active");
+          
+        }
+          } 
+      }
+            else if(this.params == 'технопарки'){
+          this.oez_button = false
+          this.oezru_button = false
+          this.industrial_button = false
+          this.techno_button = ! this.techno_button
+          if(this.techno_button){
+              for (let i = 0; i < svg.children.length; i++) {
+          svg.children[i].classList.remove("active");}
+              this.$refs.lipetsk.classList.add('active')
+          }
+           else{
+             for (let i = 0; i < svg.children.length; i++) {
+          svg.children[i].classList.remove("active");}
+        }
+      }
+      else if (this.params == 'все'){
+          this.show_industrial = true
+           this.show_oezru = true
+            this.show_oez = true
+            this.show_any = true
+              for (let i = 0; i < svg.children.length; i++) {
+          svg.children[i].classList.remove("active");
+          
+        }
+      }
+      }
   }
 };
 </script>

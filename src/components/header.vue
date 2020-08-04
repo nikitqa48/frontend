@@ -3,7 +3,6 @@
         <q-toolbar class="header" >
       <q-btn align="between" flat class="btn-fixed-width" color="white" label="Главная страница"  no-wrap  no-caps icon= 'img:statics/icons/logo.png'  to="/"/>
       <q-space />
-    
       <!-- <q-btn stretch flat label="РЕГИОН"  class="header_button"/> -->
  <div style="display:flex;">
    <q-item  class="header_button" clickable v-ripple to ='/square' stretch flat >Площадки </q-item>
