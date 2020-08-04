@@ -1,9 +1,9 @@
 <template>
 <div>
-<q-scroll-area
+<!-- <q-scroll-area
       style="height:94.8vh; max-width: 100%;"
       :thumb-style="thumbStyle"
-    >
+    > -->
     
     <div class="wrapper">
 
@@ -96,7 +96,7 @@
       spinner-color="white"
  
     />
-     <img src="/statics/image/OEZ.png">
+   
         <!-- <img :src="item.image"> -->
     </div>
     <div class="mobile">
@@ -284,7 +284,7 @@
  
   </div>
     
-    </q-scroll-area>
+    <!-- </q-scroll-area> -->
     </div>
                  
 

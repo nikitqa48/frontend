@@ -23,7 +23,7 @@
   </div>
 </template>
 <script>
-import vuescroll from "vue-scroll";
+
 import fullpage from "vue-fullpage.js";
 import Vue from "vue";
 import industryVue from "../components/head_page/industry.vue";
@@ -35,7 +35,7 @@ import newsVue from "../components/head_page/news.vue";
 import formsVue from "../components/forms.vue";
 import headerVue from "../components/example_header.vue";
 import hooper from 'hooper';
-Vue.use(fullpage, vuescroll);
+Vue.use(fullpage);
 export default {
   components: {
     fullpage,

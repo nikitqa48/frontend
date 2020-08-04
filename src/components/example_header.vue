@@ -43,6 +43,12 @@
   </router-link>
       <q-space/>
 
+      <q-route-tab
+    label="Регион"
+    no-caps
+    to="/region"
+    exact
+  />
         <q-route-tab
     label="Площадки"
     no-caps
@@ -53,10 +59,8 @@
     label="Господдержка"
     no-caps
     to="/state"
-    exact
-      
+    exact  
   />
-  
   <q-route-tab
     label="Проекты"
     no-caps
@@ -75,12 +79,7 @@
     to="/documents"
     exact
   />
-      <q-route-tab
-    label="Регион"
-    no-caps
-    to="/region"
-    exact
-  />
+
   <q-route-tab
 
     label="Контакты"
