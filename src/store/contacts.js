@@ -15,7 +15,7 @@ const state = {
    }
    const actions = {
        allContactData(context){
-           const url = 'http://127.0.0.1:8000/contacts/'
+           const url = 'https://backendinvest.admlr.lipetsk.ru/contacts/'
            fetch(url).then(response => response.json()).then(data =>
             {
                 

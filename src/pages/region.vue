@@ -51,7 +51,7 @@
               </div>
                            <div class="wrap">
 
-                                    <div class="item" style="width:25%;">
+                                    <div class="item" style="width:35%;">
                 <div class="pen">
                       <img src="/statics/image/bottle.png">
                   </div>
@@ -60,7 +60,7 @@
                       <span class="number"> 321 </span>
                       <span class="sub"> единиц</span>
                       </div>
-                      <span class="text"> 
+                      <span class="text" style="font-size:1vw; "> 
                          Крупные, средние и малые предприятия за январь-декабрь 2019г. 
                         <br> <span class ='from'>Из них: </span>
                       </span>
@@ -71,17 +71,17 @@
                   <div class="numbers">
                       
                       <span class="number">258 </span>
-                      <span class="sub"> Производство пищевых продуктов </span>
+                      <span class="sub" style="font-size:1vw; line-height:150%;"> Производство пищевых продуктов </span>
                     
                  
                    </div>
               </div>
-                                                    <div class="item" style="width:25%;">
+                                                    <div class="item" style="width:20%;">
           
                   <div class="numbers">
                 
                       <span class="number">57 </span>
-                      <span class="sub"> Производство напитков </span>
+                      <span class="sub" style="font-size:1vw; line-height:150%; width:30%;"> Производство напитков </span>
                       
                  
                    </div>
@@ -91,7 +91,7 @@
                   <div class="numbers">
                   
                       <span class="number">6 </span>
-                      <span class="sub"> Производство тобака </span>
+                      <span class="sub" style="font-size:1vw; width:25%; line-height:150%;"> Производство табака </span>
                      
                  
                    </div>
@@ -132,8 +132,8 @@
                   <img src="/statics/image/book.png" >
               </div>
                                        <div class="item" style="width:50%; margin-top:3vh;">
-                <div class="pen" style="width:auto; margin-top:3%;">
-                      <img src="/statics/image/plant.png">
+                <div class="pen" style="width:20%; margin-top:1%; ">
+                      <img src="/statics/image/book_svg.png">
                   </div>
                   <div class="numbers">
                       <div class="border">
@@ -145,19 +145,19 @@
                     <div class="wrapper_student">
                         <div class="column">
                         <span class="number"> 11</span>
-                        <span class="sub" style="font-size:1.1vw;"> образовательных организаций высшего образования </span>
+                        <span class="sub" style="font-size:1.1vw; line-height:150%;"> образовательных организаций высшего образования </span>
                         </div>
                               <div class="column">
                         <span class="number"> 30</span>
-                        <span class="sub" style="font-size:1.1vw;"> профессиональных образовательных организаций </span>
+                        <span class="sub" style="font-size:1.1vw; line-height:150%;"> профессиональных образовательных организаций </span>
                         </div>
                     </div>
             
                    </div>
               </div>
                                    <div class="item" style="width:80%; margin-top:3vh;">
-                <div class="pen" style="width:3vw; ">
-                      <img src="/statics/image/plant.png">
+                <div class="pen" style="width:11%; ">
+                      <img src="/statics/image/teach.png">
                   </div>
                   <div class="numbers">
                       <div class="border">
@@ -169,11 +169,11 @@
                     <div class="wrapper_student">
                         <div class="column" >
                         <span class="number"> 5 687</span>
-                        <span class="sub" style="font-size:1.1vw; "> специалистов, обучавшихся по программам среднего профессионального образования </span>
+                        <span class="sub" style="font-size:1vw; width:70%; line-height:150%; "> специалистов, обучавшихся по программам среднего профессионального образования </span>
                         </div>
                               <div class="column">
                         <span class="number"> 4 692</span>
-                        <span class="sub" style="font-size:1.1vw; width:60%;">человека, обучавшихся по программам высшего образования </span>
+                        <span class="sub" style="font-size:1.1vw; width:60%; line-height:150%;">человека, обучавшихся по программам высшего образования </span>
                         </div>
                     </div>
             
@@ -184,7 +184,7 @@
               </p>
                          <div class="item" style="width:100%; margin-top:3vh;">
                 <div class="pen" style="width:3vw; ">
-                      <img src="/statics/image/plant.png">
+                      <img src="/statics/image/blank.png">
                   </div>
                   <div class="numbers">
                       <div class="border">
@@ -196,11 +196,11 @@
                     <div class="wrapper_student" style="width:50%;">
                         <div class="column" >
                         <span class="number"> 75 </span>
-                        <span class="sub" style="font-size:1.1vw; width:60%;"> специальностям среднего профессионального образования </span>
+                        <span class="sub" style="font-size:1.1vw; width:60%; line-height:150%;"> специальностям среднего профессионального образования </span>
                         </div>
                               <div class="column">
                         <span class="number">117</span>
-                        <span class="sub" style="font-size:1.1vw; width:70%;">профессиям в рамках программ профессионального обучения</span>
+                        <span class="sub" style="font-size:1.1vw; width:70%; line-height:150%;">профессиям в рамках программ профессионального обучения</span>
                         </div>
                     </div>
             
@@ -209,28 +209,28 @@
               <p class="wrapper_text">
                   Липецкая область занимает первое место в Российской Федерации по количеству созданных в системе профессионального образования базовых профессиональных образовательных организаций в части поддержки инклюзивного среднего профессионального образования. </p>
                                      <div class="item" style="width:100%; margin-top:3vh;">
-                <div class="pen" style="width:3vw; ">
-                      <img src="/statics/image/plant.png">
+                <div class="pen" style="width:3.5vw; margin-top:1%;">
+                      <img src="/statics/image/machine.png">
                   </div>
-                  <div class="numbers">
+                  <div class="numbers" >
                       <div class="border">
                      
                      <span class="text" style="width:50%; margin-left:0;"> 
                       В рамках работы по повышению квалификации, подготовке и переподготовке кадров в <b>2019</b> году было обеспечено функционирование
                       </span>
                       </div>
-                    <div class="wrapper_column" >
+                    <div class="wrapper_column" style="margin-top:1%;">
                         <div class="row" >
                         <span class="number"> 2 </span>
                         <span class="sub" style="font-size:1.1vw; width:60%; margin-left:1vw;"> ресурсных центра </span>
                         </div>
                               <div class="row">
                         <span class="number">2</span>
-                        <span class="sub" style="font-size:1.1vw; width:70%; margin-left:1vw;">региональных инновационно-образовательного центров подготовки кадров в агропромышленной сфере и станочников</span>
+                        <span class="sub" style="font-size:1vw; width:50%; margin-left:1vw; line-height:150%;">региональных инновационно-образовательного центров подготовки кадров в агропромышленной сфере и станочников</span>
                         </div>
                                  <div class="row">
                         <span class="number">9</span>
-                        <span class="sub" style="font-size:1.1vw; width:70%; margin-left:1vw;">многофункциональных центров прикладных квалификаций</span>
+                        <span class="sub" style="font-size:1.1vw; width:20%; margin-left:1vw; line-height:150%;">многофункциональных центров прикладных квалификаций</span>
                         </div>
                     </div>
             
@@ -325,12 +325,15 @@ export default {
     display:flex;
     flex-direction: column;
     margin-left: 1vw;
-    
+}
+.from{
+    color: #28A5FF;
 }
 .text{
     margin-left: 4%;
     margin-top: 1vh;
     font-size: 1vw;
+    line-height: 150%;
     width: 80%;
 }
 .number{
