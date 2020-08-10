@@ -15,10 +15,10 @@
           v-model="tab"
           dense
           class="q-tab"
-          
-          active-color="primary"
-          indicator-color="primary"
-          align="start"
+      
+          active-color="light-blue-14"
+          indicator-color="light-blue-14"
+          align="left"
           
         >
           <q-tab name="Руководство"   no-caps >  <span class='tab'> Руководство </span> </q-tab>
@@ -91,13 +91,9 @@
     
     <div class="parent">
     <div class="image">
-          <q-img
-      :src="item.image"
-      spinner-color="white"
- 
-    />
+
    
-        <!-- <img :src="item.image"> -->
+     <img :src="item.image"> 
     </div>
     <div class="mobile">
      <div class="inside_parent">

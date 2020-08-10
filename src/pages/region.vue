@@ -22,7 +22,7 @@
               </div>
               <div class="wrap">
               <div class="item" >
-                  <div class="pen">
+                  <div class="pen" style="width:35%; margin-top:8%;">
                       <img src="/statics/image/pen.png">
                   </div>
                   <div class="numbers">
@@ -52,7 +52,7 @@
                            <div class="wrap">
 
                                     <div class="item" style="width:35%;">
-                <div class="pen">
+                <div class="pen" style="width:30%; margin-top:10%;">
                       <img src="/statics/image/bottle.png">
                   </div>
                   <div class="numbers">
@@ -102,8 +102,8 @@
 
 
                                     <div class="item" style="width:50%;">
-                <div class="pen">
-                      <img src="/statics/image/plant.png">
+                <div class="pen" style="width:30%; margin-top:8%;">
+                      <img src="/statics/image/plant.png" >
                   </div>
                   <div class="numbers">
                       <div class="border">
@@ -249,7 +249,7 @@
 export default {
     data(){
         return{
-            tab:'образование'
+            tab:'производство'
         }
     }
 }

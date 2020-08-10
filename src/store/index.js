@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import supportData from './support'
 import contactData from './contacts'
+import newsData from './news'
 
 Vue.use(Vuex)
 
@@ -19,8 +20,8 @@ export default function (/* { ssrContext } */) {
  
     modules: {
       supportData,
-      contactData
-
+      contactData,
+      newsData
     },
   
     // enable strict mode (adds overhead!)

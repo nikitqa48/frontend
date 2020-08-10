@@ -110,7 +110,13 @@
     </q-dialog>
       <div class="item" v-for="item in project">
           <div class="item_image__div">
-            <img :src="item.image">
+                <q-img
+        :src="item.image"
+        style="height:100%"
+        spinner-color="white"
+      >
+                </q-img>
+           
           </div>
           <div class="right_content" >
             

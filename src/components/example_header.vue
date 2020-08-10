@@ -19,7 +19,8 @@
         <q-tabs
         indicator-color="blue-7"
         class='q-tabs'
-        active-color='blue-7'
+        active-color='light-blue-13
+'
         >
             <!-- <q-route-tab
   flat class="btn-fixed-width" color="white"   no-wrap  no-caps icon= 'img:statics/icons/logo.png' 

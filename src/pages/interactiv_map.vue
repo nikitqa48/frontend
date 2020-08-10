@@ -1230,6 +1230,9 @@
   background-position: center;
   background-size: cover;
 }
+@media screen and (max-width: 900px) {
+  
+}
 </style>
 <style>
 

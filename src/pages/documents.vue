@@ -2,7 +2,7 @@
   <div>
     <q-scroll-area
       
-      style="height:100vh; max-width: 100%;"
+      style="height:94.7vh; max-width: 100%;"
       :thumb-style="thumbStyle"
     >
 

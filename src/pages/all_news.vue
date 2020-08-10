@@ -11,19 +11,8 @@
          <div class="items">
 
 
-   
-       <!-- <q-virtual-scroll
-    class="virtual_scroll"
-    type="table"
-    :items-size="size"
-    :items-fn="getItems"
-    
-
-  
-  >
-    <template v-slot="{ item, index }"> -->
      
-       <div class = "item2" v-for ='item in news'>  
+       <div class = "item2" v-for ='item in news.results'>  
   
           <router-link :to="{name: 'detail', params: { id: item.id}}" class="rout"> 
                 
@@ -33,22 +22,36 @@
         style="height:100%"
         spinner-color="white"
       >
+     
         <div class="absolute-bottom text-subtitle2 text-center">
          {{item.title}}
+         
         </div>
       </q-img>
     </q-card>
+   
                   </router-link>
     
      
         </div>
       </div>
-    <!-- </template>
-  </q-virtual-scroll> -->
+
+
   
-              
+        
          </div>
-           <div class="q-pa-lg flex flex-center">
+      <div class="q-pa-lg flex flex-center">
+
+        <q-pagination
+      v-model="page"
+      color="blue-6"
+      style="margin-top:5%"
+      :max="Math.ceil(news.count/12)"
+      :max-pages="5"
+      :boundary-numbers="true"
+      @click="getPaginationNews"
+    >
+    </q-pagination>
   </div>
      
     
@@ -197,6 +200,13 @@
     margin-left:0.5vw;
     color:#808080;
 }
+.q-pa-lg{
+  margin:0;
+
+}
+.q-pagination{
+  margin-top: 0!important;
+}
 </style>
 <script>
 
@@ -205,9 +215,10 @@ import formsVue from "../components/forms.vue";
 export default {
     data(){
         return {
-          news:{},
+    
           items: 3,
           size: 0,
+          page:1,
                 thumbStyle: {
         right: '4px',
         borderRadius: '5px',
@@ -223,30 +234,30 @@ export default {
         headerVue, formsVue,
         
     },
-    mounted() {
-    const url = "https://backendinvest.admlr.lipetsk.ru/all_news/"
-    fetch(url)
-      .then(response => response.json())
-      .then(data => (this.news = data));
-    },
+
   
     methods:{
-    getItems (from, size) {    
-      const items = []
-        for (let i = 0; i < size; i++) { 
-      items.push({
-        news:this.news[i]
-        })
-        
+      getPaginationNews(){
+        let url = 'https://backendinvest.admlr.lipetsk.ru/all_news/'
+        let paginationUrl = ''
+        if(this.page != 1){
+         paginationUrl = `${url}?offset=${(this.page-1)*12}`
+         url = paginationUrl 
+        }
+        this.$store.dispatch('paginationNews', url)
       }
-       console.log(items)
- 
-      return Object.freeze(items)
-        },
-         clock(object){
-        console.log(object)
-    }
     },
-   
+
+    computed:{
+        news(){
+          return this.$store.getters.returnNews
+        }
+    },
+    mounted(){
+
+     
+      this.$store.dispatch('getNews')
+
+    }
 }
 </script>
