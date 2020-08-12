@@ -88,8 +88,8 @@
           >
             <!-- <img src="statics/image/newmap.png"> -->
             <picture>
-              <source media="(max-width: 799px)" srcset="statics/image/mobilemap.png" />
-              <source media="(min-width: 800px)" srcset="statics/image/newmap.png" />
+              <source media="(max-width: 799px)" srcset="image/mobilemap.png" />
+              <source media="(min-width: 800px)" srcset="image/newmap.png" />
               <img src="elva-800w.jpg" alt="lipetsk map" />
             </picture>
           </transition>
@@ -113,7 +113,7 @@
             enter-active-class="animated bounceInLeft"
             leave-active-class="animated bounceOutLeft slow"
           >
-            <img src="statics/image/road.png.png" />
+            <img src="image/road.png.png" />
             <!-- <picture>
   <source media="(max-width: 799px)" srcset="statics/image/mobile_jd.png">
   <source media="(min-width: 800px)" srcset="statics/image/road.png.png">
@@ -149,7 +149,7 @@
             enter-active-class="animated bounceInLeft"
             leave-active-class="animated bounceOutLeft slow"
           >
-            <img src="statics/image/asd.png" />
+            <img src="image/asd.png" />
           </transition>
         </div>
       </q-carousel-slide>
@@ -161,8 +161,8 @@
             leave-active-class="animated bounceOutLeft slow"
           >
            <picture>
-              <source media="(max-width: 799px)" srcset="statics/image/mobile_avia.png" />
-              <source media="(min-width: 800px)" srcset="statics/image/avia.png.png" />
+              <source media="(max-width: 799px)" srcset="image/mobile_avia.png" />
+              <source media="(min-width: 800px)" srcset="image/avia.png.png" />
               <img src="elva-800w.jpg" alt="lipetsk map" />
             </picture>
             <!-- <img src="statics/image/avia.png.png" /> -->
@@ -281,7 +281,7 @@
 }
 .background {
   height: 100vh;
-  background: url("/statics/image/space.png");
+  background: url("/image/space.png");
   background-size: cover;
   background-repeat: repeat;
 }

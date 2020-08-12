@@ -18,12 +18,12 @@
             <q-tab-panels v-model="tab" >
           <q-tab-panel name="производство" class="panel">
               <div class="image">
-                  <img src="/statics/image/zakat.png" >
+                  <img src="image/zakat.png" >
               </div>
               <div class="wrap">
               <div class="item" >
                   <div class="pen" style="width:35%; margin-top:8%;">
-                      <img src="/statics/image/pen.png">
+                      <img src="image/pen.png">
                   </div>
                   <div class="numbers">
                       <div class="border">
@@ -53,7 +53,7 @@
 
                                     <div class="item" style="width:35%;">
                 <div class="pen" style="width:30%; margin-top:10%;">
-                      <img src="/statics/image/bottle.png">
+                      <img src="image/bottle.png">
                   </div>
                   <div class="numbers">
                       <div class="border">
@@ -103,7 +103,7 @@
 
                                     <div class="item" style="width:50%;">
                 <div class="pen" style="width:30%; margin-top:8%;">
-                      <img src="/statics/image/plant.png" >
+                      <img src="image/plant.png" >
                   </div>
                   <div class="numbers">
                       <div class="border">
@@ -129,11 +129,11 @@
           </q-tab-panel>
             <q-tab-panel name="образование" class="panel">
                <div class="image">
-                  <img src="/statics/image/book.png" >
+                  <img src="image/book.png" >
               </div>
                                        <div class="item" style="width:50%; margin-top:3vh;">
                 <div class="pen" style="width:20%; margin-top:1%; ">
-                      <img src="/statics/image/book_svg.png">
+                      <img src="image/book_svg.png">
                   </div>
                   <div class="numbers">
                       <div class="border">
@@ -157,7 +157,7 @@
               </div>
                                    <div class="item" style="width:80%; margin-top:3vh;">
                 <div class="pen" style="width:11%; ">
-                      <img src="/statics/image/teach.png">
+                      <img src="image/teach.png">
                   </div>
                   <div class="numbers">
                       <div class="border">
@@ -184,7 +184,7 @@
               </p>
                          <div class="item" style="width:100%; margin-top:3vh;">
                 <div class="pen" style="width:3vw; ">
-                      <img src="/statics/image/blank.png">
+                      <img src="image/blank.png">
                   </div>
                   <div class="numbers">
                       <div class="border">
@@ -210,7 +210,7 @@
                   Липецкая область занимает первое место в Российской Федерации по количеству созданных в системе профессионального образования базовых профессиональных образовательных организаций в части поддержки инклюзивного среднего профессионального образования. </p>
                                      <div class="item" style="width:100%; margin-top:3vh;">
                 <div class="pen" style="width:3.5vw; margin-top:1%;">
-                      <img src="/statics/image/machine.png">
+                      <img src="image/machine.png">
                   </div>
                   <div class="numbers" >
                       <div class="border">

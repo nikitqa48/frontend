@@ -44,6 +44,11 @@ export default {
         this.showSimulatedReturnData = true
       }, 3000)
     }
+  },
+  computed:{
+    get(){
+      return this.$store.state.loading.load
+    }
   }
 }
 </script>

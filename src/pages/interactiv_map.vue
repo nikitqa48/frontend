@@ -148,7 +148,7 @@
                 d="m 691.93697,480.48798 v 18.362 l 26.45901,1.36101 3.74699,8.16099 -10.56099,12.921 3.748,12.921 56.88899,12.241 v 10.2 l 10.561,-2.72 9.19701,9.52101 -4.769,12.92099 7.83499,7.48 13.96701,-9.52 38.83499,34.342 -10.90099,13.261 -14.98901,-22.442 -11.923,11.901 7.154,14.62099 -12.94499,8.50101 -7.57601,21.08 7.82001,6.121 0.77799,19.042 -16.011,8.841 -6.188,27.88099 -12.92099,3.06 -41.187,-6.45899 -4.376,13.939 -23.80201,-20.061 -19.722,6.46 -9.671,-7.81901 -1.88899,-11.562 4.07999,-5.23599 v -12.24101 l -4.07999,-5.101 4.07999,-6.79999 -4.07999,-10.201 -7.481,-6.12 4.08,-4.08101 -4.08,-24.14099 -19.721,-11.561 13.25898,-36.04202 5.78101,-4.07998 -2.72101,-5.10102 17.00202,-19.04097 -4.76102,-8.50103 7.48102,-6.11998 v -10.881 l 9.657,-10.881 -3.87704,-8.16001 z"
               />
             </svg>
-            <img src="/statics/image/lipetsk_map.svg" class="svg" />
+            <img src="image/lipetsk_map.svg" class="svg" />
           </div>
         </div>
         </transition>
@@ -245,14 +245,14 @@
                         <div class="square_number">
                           <div class="wrap_number">
                             <div class="number_row">
-                              <img src="/statics/image/ploshad.svg" />
+                              <img src="image/ploshad.svg" />
                               <span>Площадь:</span>
                             </div>
                             <div class="inside_square">{{item.square}} ГА</div>
                           </div>
                           <div class="wrap_number">
                             <div class="number_row">
-                              <img src="/statics/image/ploshad.svg" />
+                              <img src="/image/ploshad.svg" />
                               <span>Тип участка:</span>
                             </div>
                             <div class="inside_square">
@@ -262,7 +262,7 @@
                           </div>
                           <div class="wrap_number">
                             <div class="number_row">
-                              <img src="/statics/image/ploshad.svg" />
+                              <img src="image/ploshad.svg" />
                               <span>Форма сделки:</span>
                             </div>
                             <div class="inside_square">
@@ -319,14 +319,14 @@
                         <div class="square_number">
                           <div class="wrap_number">
                             <div class="number_row">
-                              <img src="/statics/image/ploshad.svg" />
+                              <img src="image/ploshad.svg" />
                               <span>Площадь:</span>
                             </div>
                             <div class="inside_square">{{item.square}} ГА</div>
                           </div>
                           <div class="wrap_number">
                             <div class="number_row">
-                              <img src="/statics/image/ploshad.svg" />
+                              <img src="image/ploshad.svg" />
                               <span>Тип участка:</span>
                             </div>
                             <div class="inside_square">
@@ -336,7 +336,7 @@
                           </div>
                           <div class="wrap_number">
                             <div class="number_row">
-                              <img src="/statics/image/ploshad.svg" />
+                              <img src="image/ploshad.svg" />
                               <span>Форма собственности:</span>
                             </div>
                             <div class="inside_square">
@@ -364,14 +364,14 @@
                         <div class="square_number">
                           <div class="wrap_number">
                             <div class="number_row">
-                              <img src="/statics/image/ploshad.svg" />
+                              <img src="image/ploshad.svg" />
                               <span>Площадь:</span>
                             </div>
                             <div class="inside_square">{{item.square}} ГА</div>
                           </div>
                           <div class="wrap_number">
                             <div class="number_row">
-                              <img src="/statics/image/ploshad.svg" />
+                              <img src="image/ploshad.svg" />
                               <span>Тип участка:</span>
                             </div>
                             <div class="inside_square">
@@ -381,7 +381,7 @@
                           </div>
                           <div class="wrap_number">
                             <div class="number_row">
-                              <img src="/statics/image/ploshad.svg" />
+                              <img src="image/ploshad.svg" />
                               <span>Форма собственности:</span>
                             </div>
                             <div class="inside_square">
@@ -409,14 +409,14 @@
                         <div class="square_number">
                           <div class="wrap_number">
                             <div class="number_row">
-                              <img src="/statics/image/ploshad.svg" />
+                              <img src="image/ploshad.svg" />
                               <span>Площадь:</span>
                             </div>
                             <div class="inside_square">{{item.square}} ГА</div>
                           </div>
                           <div class="wrap_number">
                             <div class="number_row">
-                              <img src="/statics/image/ploshad.svg" />
+                              <img src="image/ploshad.svg" />
                               <span>Тип участка:</span>
                             </div>
                             <div class="inside_square">
@@ -426,7 +426,7 @@
                           </div>
                           <div class="wrap_number">
                             <div class="number_row">
-                              <img src="/statics/image/ploshad.svg" />
+                              <img src="image/ploshad.svg" />
                               <span>Форма собственности:</span>
                             </div>
                             <div class="inside_square">
@@ -493,7 +493,7 @@
                     <div class="item_greend">
                       <div class="greend_inside__img">
                         <div class="icon">
-                          <img src="/statics/image/approval 1.svg" />
+                          <img src="image/approval 1.svg" />
                         </div>
                         <p class="usefull">Вид разрешенного использования</p>
                       </div>
@@ -546,7 +546,7 @@
                     <div class="item_greend">
                       <div class="greend_inside__img">
                         <div class="icon">
-                          <img src="/statics/image/form.svg" />
+                          <img src="image/form.svg" />
                         </div>
                         <p class="usefull">Форма сделки</p>
                       </div>
@@ -555,7 +555,7 @@
                     <div class="item_greend">
                       <div class="greend_inside__img">
                         <div class="icon">
-                          <img src="/statics/image/square.svg" />
+                          <img src="image/square.svg" />
                         </div>
                         <p class="usefull">Площадь</p>
                       </div>
@@ -571,7 +571,7 @@
                     >
                       <div class="greend_inside__img">
                         <div class="icon">
-                          <img src="/statics/image/water.svg" />
+                          <img src="image/water.svg" />
                         </div>
                         <p class="usefull">Водоснабжение</p>
                       </div>
@@ -581,7 +581,7 @@
                     <div class="item_greend" v-if="greenfield.gas != '' && greenfield.gas != null">
                       <div class="greend_inside__img">
                         <div class="icon">
-                          <img src="/statics/image/burn.svg" />
+                          <img src="image/burn.svg" />
                         </div>
                         <p class="usefull">Газоснабжение</p>
                       </div>
@@ -593,7 +593,7 @@
                     >
                       <div class="greend_inside__img">
                         <div class="icon">
-                          <img src="/statics/image/energy.svg" />
+                          <img src="image/energy.svg" />
                         </div>
                         <p class="usefull">Электричество</p>
                       </div>
@@ -605,7 +605,7 @@
                     >
                       <div class="greend_inside__img">
                         <div class="icon">
-                          <img src="/statics/image/burn.svg" />
+                          <img src="image/burn.svg" />
                         </div>
                         <p class="usefull">Таможенные льготы:</p>
                       </div>
@@ -614,7 +614,7 @@
                     <div class="item_greend" v-if="greenfield.heat!= null && greenfield.heat != ''">
                       <div class="greend_inside__img">
                         <div class="icon">
-                          <img src="/statics/image/burn.svg" />
+                          <img src="image/burn.svg" />
                         </div>
                         <p class="usefull">Теплоснабжение</p>
                       </div>
@@ -626,7 +626,7 @@
                     >
                       <div class="greend_inside__img">
                         <div class="icon">
-                          <img src="/statics/image/burn.svg" />
+                          <img src="image/burn.svg" />
                         </div>
                         <p class="usefull">Водоотведение</p>
                       </div>
@@ -638,7 +638,7 @@
                     >
                       <div class="greend_inside__img">
                         <div class="icon">
-                          <img src="/statics/image/burn.svg" />
+                          <img src="image/burn.svg" />
                         </div>
                         <p class="usefull">Класс опасности:</p>
                       </div>
@@ -650,7 +650,7 @@
                     >
                       <div class="greend_inside__img">
                         <div class="icon">
-                          <img src="/statics/image/burn.svg" />
+                          <img src="image/burn.svg" />
                         </div>
                         <p class="usefull">Льготная стоимость земли/аренды</p>
                       </div>
@@ -1225,7 +1225,7 @@
     
 }
 .div{
-    background: url("/statics/image/space.png");
+    background: url("/image/space.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;

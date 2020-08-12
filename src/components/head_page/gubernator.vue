@@ -3,12 +3,12 @@
         <div class="text">
             <p style="padding:1%;font-size: 1.2vw;"> «<span style="font-weight:600;">Липецкая область</span> – <span style="opacity:.8;">надёжный и проверенный партнер для инвестора. Нам доверяют, мы это ценим. Могу с уверенностью сказать, что наш опыт в реализации проектов сформировал положительный имидж региона не только на территории России, но и во всем мире.
 <br>Липецкая область - открытый регион для инвестиций»</span></p>
-        <div class="wrap"><p style="font-size: 1vw; padding:1%;">  Глава администрации Липецкой области, Игорь Георгиевич Артамонов</p> <img src="statics/image/painting.png"> </div>
+        <div class="wrap"><p style="font-size: 1vw; padding:1%;">  Глава администрации Липецкой области, Игорь Георгиевич Артамонов</p> <img src="image/painting.png"> </div>
         </div>
         <a href="https://xn--80aacoonefzg3am8b1fsb.xn--p1ai/appeal"><div class="button">Обратиться к губернатору 
         </div> </a>
          <div class="hmm">
-  <img src="statics/image/mouse.png">
+  <img src="image/mouse.png">
 </div>
     </div>
 </template>
@@ -45,7 +45,7 @@
 
   }
 .wrapper{
-    background: url(/statics/image/ArtomonovIgor.png);
+    background: url('/image/ArtomonovIgor.png');
     min-height: 100vh;
     background-repeat: no-repeat;
     background-position: 60%;

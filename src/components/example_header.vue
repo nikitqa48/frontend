@@ -36,7 +36,7 @@
   <router-link to = '/' style="align-self:flex-end;">
   <button class="btn" > 
     <div class="img">
-    <img src="statics/icons/logo.png">
+    <img src="icons/logo.png">
     </div>
      <div style="display:flex;flex-direction:column;">
        <span class="investition"> Инвестиционный портал  </span> <span class="lipetsk">Липецкой области </span></div>

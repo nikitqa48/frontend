@@ -238,7 +238,7 @@ height:5vh;
 }
 
 .overlay {
-  background: url('/statics/image/OEZ.png');
+  background: url('/image/OEZ.png');
   background-size: cover;
   position: absolute;
   height: 100vh;

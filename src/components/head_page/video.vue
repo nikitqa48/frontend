@@ -12,14 +12,13 @@
             </p>
             
                      <div class="arrow_slide">
-  <img src="statics/image/mouse.png">
+  <img src="image/mouse.png">
 </div>
-
           </div>
   
         </div>
         <video loop muted autoplay class="fullscreen-bg__video">
-          <source src="statics/image/video_background.mp4" media="(min-width: 800px)" type="video/mp4" />
+          <source src="image/video_background.mp4" media="(min-width: 800px)" type="video/mp4" />
         </video>
       </div>
        <div class="presentation"> <span>Презентация <br> <b>Липецкой области</b> </span><button class="open" @click="open"> Открыть</button></div>
@@ -32,7 +31,7 @@
     display: none!important;
   }
   .risk_container{
-    background: url("/statics/image/mobile_video.png");
+    background: url("/image/mobile_video.png");
     background-size: cover;
     background-repeat: no-repeat;
   }
@@ -147,7 +146,7 @@ margin-left: 1.3vw;
 export default {
     methods:{
       open(){
-        window.open('statics/lipetsk.pdf')
+        window.open('lipetsk.pdf')
       }
     }
 }

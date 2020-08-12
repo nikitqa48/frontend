@@ -2,7 +2,6 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 
 import routes from './routes'
-import VueYandexMetrika from 'vue-yandex-metrika'
 Vue.use(VueRouter)
 
 /*

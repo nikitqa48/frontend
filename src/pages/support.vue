@@ -326,7 +326,7 @@ body a {
   -webkit-appearance: none;
   -moz-appearance: none;
   background: transparent;
-  background-image: url("/statics/image/select.png");
+  background-image: url("/image/select.png");
   background-repeat: no-repeat;
   background-position-x: 98%;
   background-position-y: 50%;
@@ -375,7 +375,7 @@ body a {
   min-height: 100vh;
   /* background: linear-gradient(70deg, #224870 0%, #1b3b5e 100%); */
   background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-    url("/statics/image/background.jpg");
+    url("/image/background.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;

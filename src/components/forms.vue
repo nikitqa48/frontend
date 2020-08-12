@@ -4,7 +4,7 @@
       class="fixed" 
        @click="show=!show">
     <div class="img">
-      <img src="/statics/image/call.svg">
+      <img src="image/call.svg">
     </div>
      Обратная связь
         </button>

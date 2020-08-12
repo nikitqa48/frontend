@@ -5,8 +5,8 @@
       <h4> Истории успеха </h4>
       <p class="today"> В Липецкой области </p>
       <div class="buttons">
-                <button   @click.prevent="slidePrev()" class="prev"><img src="statics/image/prev_history.png"></button>
-            <button class="next" @click.prevent="slideNext()"><img src="statics/image/next_history.png"></button>
+                <button   @click.prevent="slidePrev()" class="prev"><img src="image/prev_history.png"></button>
+            <button class="next" @click.prevent="slideNext()"><img src="image/next_history.png"></button>
       </div>
          <hooper :settings="hooperSettings" class="ok" ref="carousel">
       <slide>
@@ -28,8 +28,8 @@
            <div class="right">
              <div class="image">
                 <picture>
-              <source media="(max-width: 799px)" srcset="statics/image/yokohama_mobile.png" />
-              <source media="(min-width: 800px)" srcset="statics/image/obrubok.png" />
+              <source media="(max-width: 799px)" srcset="image/yokohama_mobile.png" />
+              <source media="(min-width: 800px)" srcset="image/obrubok.png" />
               <img src="elva-800w.jpg" alt="lipetsk map" />
             </picture>
              </div>
@@ -56,8 +56,8 @@
            <div class="right">
              <div class="image">
                     <picture>
-              <source media="(max-width: 799px)" srcset="statics/image/indesit_mobile.png" />
-              <source media="(min-width: 800px)" srcset="statics/image/indesit_obrubok.png" />
+              <source media="(max-width: 799px)" srcset="image/indesit_mobile.png" />
+              <source media="(min-width: 800px)" srcset="image/indesit_obrubok.png" />
               <img src="elva-800w.jpg" alt="lipetsk map" />
             </picture>
              
@@ -84,8 +84,8 @@
            <div class="right">
              <div class="image">
                        <picture>
-              <source media="(max-width: 799px)" srcset="statics/image/hawle_mobile.png" />
-              <source media="(min-width: 800px)" srcset="statics/image/hawle.png" />
+              <source media="(max-width: 799px)" srcset="image/hawle_mobile.png" />
+              <source media="(min-width: 800px)" srcset="image/hawle.png" />
               <img src="elva-800w.jpg" alt="lipetsk map" />
             </picture>
              </div>
@@ -111,8 +111,8 @@
            <div class="right">
              <div class="image">
                               <picture>
-              <source media="(max-width: 799px)" srcset="statics/image/angel_mobile.png" />
-              <source media="(min-width: 800px)" srcset="statics/image/angel1.png" />
+              <source media="(max-width: 799px)" srcset="image/angel_mobile.png" />
+              <source media="(min-width: 800px)" srcset="image/angel1.png" />
               <img src="elva-800w.jpg" alt="lipetsk map" />
             </picture>
       
@@ -124,7 +124,7 @@
 
      </hooper>
            <div class="hmm">
-  <img src="statics/image/mouse.png">
+  <img src="image/mouse.png">
 </div>
     </div>
   </div>
@@ -204,7 +204,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
- background: url('/statics/image/indesit.png');
+ background: url('/image/indesit.png');
  /* ИСПРАВИТЬ УРЛ ТУТ */
  background-size:cover;
   height: 100vh;
