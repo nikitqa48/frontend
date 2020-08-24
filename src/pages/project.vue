@@ -1,7 +1,10 @@
 <template>
-    <div class=wrapper>
-
-        <forms-vue/>
+    <q-page class='wrapper'>
+    <q-scroll-area
+      style="height:93vh; max-width: 100%;"
+    :thumb-style="thumbStyle"
+    >
+     
         <div class="container">
             <div class="text-h4 q-mb-md">
                 Реализуемые проекты Липецкой области
@@ -19,7 +22,7 @@
     <q-form @submit="getProjectItems" class="q-gutter-md">
       <div class="q-mt-xl">
         <div class='mobile' style="display:flex; justify-content:space-between; ">
-        <q-input dark outlined v-model="number" label="Сумма инвестиций (млн руб)" class = 'input_filter' stack-label  type="number"  option-value = '1' />
+        <q-input dark outlined v-model="number" label="Сумма инвестиций (млн руб)" class = 'input_filter' stack-label  type="number"   />
        <q-select standout="bg-cyan-6 text-white"   v-model="industry"  label="Отрасль"  :options= 'options'  dark  outlined
        option-value="id" 
         class = 'input_filter'/> 
@@ -32,11 +35,9 @@
       </div>
     </q-form>
         </div>
-      
       </q-expansion-item>
  <q-dialog
       v-model="medium"
-  
     >
       <q-card style="width: 50%; max-width: 80vw;">
         <q-card-section class="form_container">
@@ -132,7 +133,8 @@
       
             </div>
         </div>
-    </div>
+        </q-scroll-area>
+    </q-page>
 </template>
 <style scoped>
 @media screen and (max-width: 900px) {
@@ -267,12 +269,7 @@
         flex-direction:column; 
         margin-left:2%;
     }
-    @font-face {
-  font-family: "Montserrat";
-  src: url("../assets/fonts/Montserrat/Montserrat-Regular.woff") format("woff");
-}
 *{
-
   font-family: 'Montserrat';
 }
 .form_filter{
@@ -282,7 +279,6 @@
 }
     .wrapper{
         color:white;
-        min-height: 100vh;
        background: #3A4566;
     }
 .item_image__div{
@@ -305,11 +301,24 @@
 <script>
 import headerVue from "../components/header.vue";
 import formsVue from "../components/forms.vue";
+
 export default {
-    
+  preFetch({store}){
+    return store.dispatch('project/getProject')
+  },
     data(){
         return{
-            industry: '',
+            industry:{
+              label:'все',
+              id:''
+            },
+                    thumbStyle: {
+        right: '4px',
+        borderRadius: '5px',
+        backgroundColor: '#027be3',
+        width: '5px',
+        opacity: 0.75
+      },
             medium:false,
             name:'',
             project_id:'',
@@ -319,9 +328,9 @@ export default {
             comment:'',
             year:2010,
             number:'',
-      options:[{ id: 'all',label:'Все' },
-      { id:'1', label:'Промышленность'},
-      { id:'4',label: 'Сельское хозяйство'},
+            options:[{ id: '',label:'Все' },
+            { id:'1', label:'Промышленность'},
+            { id:'4',label: 'Сельское хозяйство'},
       {id:'6', label: 'Лесное хозяйство'}, {id:'7', label:'Строительство'},
       {id:'8', label:'Прочие виды деятельности сферы материального производства'}, {id:'9', label:'Обслуживание сельского хозяйства'},
       {id:'10', label:'Транспорт'}, {id:'11', label:'Связь'}, {id:'12', label:'Торговля и общественное питание'},
@@ -343,6 +352,20 @@ export default {
       components:{
     headerVue, formsVue
   },
+  computed:{
+      getProject(){
+        return this.project = this.$store.state.project.items
+      }
+  },
+    mounted(){
+    return this.$emit('disableLoading', false)
+  },
+  destroyed(){
+    return this.$emit('disableLoading', true)
+  },
+  created(){
+      this.project = this.getProject
+  },
     methods:{
       form(project){
          this.project_id = project.id
@@ -350,7 +373,7 @@ export default {
           
       },
       submit(){
- let data2 ={name:this.name,
+                let data2 ={name:this.name,
                   organisation:this.organisation,
                   phone:this.phone,
                   email:this.email,
@@ -370,61 +393,27 @@ export default {
           this.medium =! this.medium
          
       },
-        getProjectItems(){
-        this.project = []
-        const url = 'https://backendinvest.admlr.lipetsk.ru/project/'
-        let resultUrl = ''
-
-      //  if (this.number == '' && this.industry.id != ''){
-        
-      //   resultUrl = 'http://127.0.0.1:8000/searchyear'+'/'+this.year+'/'+this.industry.id+'?format=json'
-      //   console.log(123123)
-      //    fetch(resultUrl).then(response => response.json()).then(data => (this.project = data))
-      //   }
-       
-
-         if (this.industry == '' && this.number == '') {
-           let searchyear = 'https://backendinvest.admlr.lipetsk.ru/searchyear'
-           
-           resultUrl = searchyear+'/'+this.year+'?format=json'.toString()
-           fetch(resultUrl).then(response => response.json()).then(data => (this.project=data))
+        getProjectItems(){''
+      let url = ''
+      if (this.industry.id == "" && this.number == "") {
+        url = `https://backendinvest.admlr.lipetsk.ru/searchyear/${this.year}`
+      }
+        else if(this.industry.id == '') {
+          url = `https://backendinvest.admlr.lipetsk.ru/summyear/${this.number}/${this.year}?format=json`
         }
-          else if(this.industry.id == 'all') {
-            resultUrl = 'https://backendinvest.admlr.lipetsk.ru/summyear/' + this.number + '/' + this.year +'?format=json'
-            fetch(resultUrl).then(response => response.json()).then(data => (this.project=data))
-          }
-        else if (this.industry == 'all' && this.number != ''){
-          
-          let searchyear = 'https://backendinvest.admlr.lipetsk.ru/searchyear'
-          resultUrl = searchyear+'/'+this.year+'?format=json'.toString()
-         
-          fetch(resultUrl).then(response => response.json()).then(data => (this.project=data))
-        }
-            else if (this.industry == '' && this.number != ''){
-          
-          let searchyear = 'https://backendinvest.admlr.lipetsk.ru/searchyear'
-          resultUrl = searchyear+'/'+this.year+'?format=json'.toString()
-          
-          fetch(resultUrl).then(response => response.json()).then(data => (this.project=data))
-        }
-         else{
-           resultUrl = url + this.number +'/' + this.industry.id +'/' +this.year + '?format=json'.toString()
-
-        fetch(resultUrl).then(response => response.json()).then(data => (this.project=data))
-        // //   resultUrl = url+this.number+'/'+this.industry.id+this.year+'?format=json'.toString()
-        // //   let massive = []
-        // //   fetch(resultUrl).then(response => response.json()).then(data => (massive.push(data)))
-        // //   console.log(massive)
-        // //   this.project = massive
-         }
+      else if (this.industry == '' && this.number != ''){
+        url = `https://backendinvest.admlr.lipetsk.ru/searchyear${this.year}`
+      }
+      else {
+        url = `https://backendinvest.admlr.lipetsk.ru/project/${this.number}/${this.industry.id}/${this.year}`
+      }
+       fetch(url)
+        .then((response) => response.json())
+        .then((data) => {
+      this.project = data})
     }
      },
-    created(){
-         const url = 'https://backendinvest.admlr.lipetsk.ru/project/'
-        fetch(url)
-      .then(response => response.json())
-      .then(data => (this.project = data));  
-    }
+     
     }
 
 </script>

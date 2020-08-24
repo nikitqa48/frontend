@@ -1,67 +1,87 @@
+import { route } from 'quasar/wrappers'
 
 const routes = [
   {
     path: '/',
-    component: () => import('layouts/HomeLayout.vue'),
+    component: () => import('layouts/MainLayout.vue'),
     children: [
-      { 
-        path: '', 
-        component: () => import('pages/home_page.vue') 
-    },
-    {
-      path: '/state',
-      name:'support',
-      component: () => import('pages/support.vue'),
-    },
-    {
-      path:'/state/support/:id',
-      name: 'support_detail',
-      component: () => import('pages/support_detail.vue')
-    },
-    {
-      path:'/square',
-      name:'square',
-      component: () => import ('pages/interactiv_map.vue')
-    },
-    {
-      path:'/news/',
-      name: 'news',
-      component: () => import('pages/all_news.vue'),
-    },
-{
-  path: '/news/:id',
-  name: 'detail',
-  component: () => import('pages/detail_news.vue'),
-  props: true,
-},
+      { path: '',
+       component: () => import('pages/homePage.vue'),
+       },
+      {
+        path: '/square',
+        name: 'map',
+        component: () => import('pages/interactiv_map.vue'),
+        children: [
+          {
+            path: 'square/region/:id',
+            name: 'detail_region',
+            component: () => import('pages/map/detail_map.vue')
+          }
+        ],
+      },
+      {
+        path: '/support',
+        component: () => import('layouts/SupportLayout.vue'),
+        children:[
+          {
+            path:'', 
+            component:() => import('pages/support.vue'), 
+            name:'support'
+          },
+          {
+            path: '/support/:id',
+            name: 'support_detail',
+            component: () => import('pages/support_detail.vue'),
+            props:true
+          },
+        ]
+      },
+      {
+        path: 'region',
+        name: 'region',
+        component: () => import('pages/region.vue')
+      },
+      {
+        path: '/documents',
+        name: 'documents',
+        component: () => import('pages/documents.vue')
+      },
+      {
+        path: '/contacts',
+        name: 'contacts',
+        component: () => import('pages/contacts.vue')
+      },
+      {
+        path: '/project',
+        component: () => import('pages/project.vue')
+      },
+      {
+        path: '/news/',
+        component: () => import('layouts/news.vue'),
+        children:[
+          {
+            path:'',
+            name: 'news',
+            params:true,
+            component:() => import('pages/all_news.vue')
+          },
+          {
+            path:'detail/:id',
+            name:'detail',
+            component:()=> import('pages/detail_news.vue')
+          }
 
-{
-  path:'/contacts',
-  name:'contacts',
-  component: () => import('pages/contacts.vue')
-},
-{
-  path:'/project',
-  component:() => import('pages/project.vue')
-},
-{
-  path:'/documents',
-  component:() => import('pages/documents.vue')
-},
-{
-  path:'region',
-  component:() => import('pages/region.vue')
-}
+        ]
+      },
     ]
   },
-]
-
-// Always leave this as last one
-if (process.env.MODE !== 'ssr') {
-  routes.push({
+  // Always leave this as last one,
+  // but you can also remove it
+  {
     path: '*',
     component: () => import('pages/Error404.vue')
-  })
-}
+  }
+]
 
 export default routes

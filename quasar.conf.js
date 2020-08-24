@@ -8,17 +8,26 @@
 
 module.exports = function (/* ctx */) {
   return {
+
     // https://quasar.dev/quasar-cli/supporting-ts
     supportTS: false,
 
     // https://quasar.dev/quasar-cli/prefetch-feature
-    // preFetch: true,
+    preFetch: true,
 
     // app boot file (/src/boot)
     // --> boot files are part of "main.js"
     // https://quasar.dev/quasar-cli/boot-files
     boot: [
-      
+      {
+        server:false,
+        path:'fullpage'
+      },
+        'axios',
+      {
+        client:false,
+        path:'hooper'
+      }
     ],
 
     // https://quasar.dev/quasar-cli/quasar-conf-js#Property%3A-css
@@ -42,7 +51,7 @@ module.exports = function (/* ctx */) {
 
     // Full list of options: https://quasar.dev/quasar-cli/quasar-conf-js#Property%3A-build
     build: {
-      vueRouterMode: 'hash', // available values: 'hash', 'history'
+      vueRouterMode: 'history', // available values: 'hash', 'history'
 
       // transpile: false,
 
@@ -108,38 +117,38 @@ module.exports = function (/* ctx */) {
       workboxPluginMode: 'GenerateSW', // 'GenerateSW' or 'InjectManifest'
       workboxOptions: {}, // only for GenerateSW
       manifest: {
-        name: `Инвистиционный портал Липецкой области`,
-        short_name: `Инвистиционный портал Липецкой области`,
-        description: `Инвестируй в Липецкую область`,
+        name: 'Инвест Липецк',
+        short_name: 'Инвестиционный портал Липецкой области',
+        description: 'Инвестируй в Липецкую область',
         display: 'standalone',
         orientation: 'portrait',
         background_color: '#ffffff',
         theme_color: '#027be3',
         icons: [
           {
-            src: 'icons/icon-128x128.png',
-            sizes: '128x128',
-            type: 'image/png'
+            'src': 'statics/icons/logo.png',
+            'sizes': '128x128',
+            'type': 'image/png'
           },
           {
-            src: 'icons/icon-192x192.png',
-            sizes: '192x192',
-            type: 'image/png'
+            'src': 'statics/icons/logo.png',
+            'sizes': '192x192',
+            'type': 'image/png'
           },
           {
-            src: 'icons/icon-256x256.png',
-            sizes: '256x256',
-            type: 'image/png'
+            'src': 'statics/icons/logo.png',
+            'sizes': '256x256',
+            'type': 'image/png'
           },
           {
-            src: 'icons/icon-384x384.png',
-            sizes: '384x384',
-            type: 'image/png'
+            'src': 'statics/icons/logo.png',
+            'sizes': '384x384',
+            'type': 'image/png'
           },
           {
-            src: 'icons/icon-512x512.png',
-            sizes: '512x512',
-            type: 'image/png'
+            'src': 'statics/icons/logo.png',
+            'sizes': '512x512',
+            'type': 'image/png'
           }
         ]
       }

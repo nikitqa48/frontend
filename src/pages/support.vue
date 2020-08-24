@@ -1,6 +1,9 @@
 <template>
-  <div class="support_wrap">
+  <q-page class="support_wrap">
+ 
     <div class="container">
+  
+      
       <h4>Государственная поддержка</h4>
 
       <q-form @submit="onSubmit" class="blue_container">
@@ -66,6 +69,8 @@
         </div>
       </q-form>
       <div class="items">
+
+
         <div class="item" v-for="item in support" v-if="support.length != 0">
           <router-link :to="{name: 'support_detail', params: { id: item.id}}" class="rout">
             <div class="item_name">{{item.name}}</div>
@@ -141,8 +146,10 @@
         </div>
 
       </div>
+
     </div>
-  </div>
+   
+  </q-page>
 </template>
 <script>
 </script>
@@ -417,12 +424,22 @@ body a {
 }
 </style>
 <script>
-import { mapState, mapActions } from "vuex";
 export default {
+  preFetch({store}){
+    return store.dispatch('support/getSupport')
+  },
   data() {
     return {
       options: ["1", "2", "3"],
       page: 1,
+      support:{},
+                        thumbStyle: {
+        right: '4px',
+        borderRadius: '5px',
+        backgroundColor: '#027be3',
+        width: '5px',
+        opacity: 0.75
+      },
       url: "http://127.0.0.1:8000/support/?format=json",
       form: {
         industry: "",
@@ -504,7 +521,7 @@ export default {
   },
   methods: {
     onSubmit() {
-      let backendurl = "http://127.0.0.1:8000/support/?format=json";
+      let backendurl = "https://backendinvest.admlr.lipetsk.ru/support/?format=json";
       let url = backendurl;
       if (this.form.industry == "" && this.form.type_project.valueOf() == "") {
         url = `${backendurl}&type=${this.form.type}&recipient=${this.form.recipient}`;
@@ -515,17 +532,22 @@ export default {
       else if (this.form.industry.valueOf() == "") {
         url = `${backendurl}&type=${this.form.type}&type_project=${this.form.type_project}&recipient=${this.form.recipient}`;
       }
-      this.$store.dispatch("filterSupportData", url);
+       fetch(url)
+        .then((response) => response.json())
+        .then((data) => {
+      this.support = data})
     },
 
   },
-  mounted() {
-    this.$store.dispatch("allSupportData");
-  },
+
+
   computed: {
-    support() {
-      return this.$store.getters.supports;
+    getSupport() {
+      return this.support = this.$store.state.support.stateSupport
     },
   },
+  created(){
+    this.support = this.getSupport
+  }
 };
 </script>

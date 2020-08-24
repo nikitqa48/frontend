@@ -1,5 +1,9 @@
 <template>
-    <div class="news">
+    <q-page class="news">
+        <q-scroll-area
+      style="height:93vh; max-width: 100%;"
+      :thumb-style="thumbStyle"
+    >
      <div class="wrapper">
          <div class="top">
              
@@ -18,7 +22,8 @@
              <span v-html="news.body">{{news.body}}</span>
     </div>
      </div>
-    </div>
+     </q-scroll-area>
+    </q-page>
 </template>
 <style scoped>
   @media screen and (max-width: 800px) {
@@ -44,10 +49,7 @@
        opacity: .8;
    }
     }
-@font-face {
-  font-family: "Montserrat";
-  src: url("../assets/fonts/Montserrat/Montserrat-Regular.woff") format("woff");
-}
+
 *{
   font-family: 'Montserrat';
 }
@@ -126,7 +128,13 @@ export default {
     data(){
         return {
           news:{},  
-        
+                thumbStyle: {
+        right: '4px',
+        borderRadius: '5px',
+        backgroundColor: '#027be3',
+        width: '5px',
+        opacity: 0.75
+      },
         }
     },
     components:{
@@ -137,6 +145,10 @@ export default {
     fetch(url)
       .then(response => response.json())
       .then(data => (this.news = data));
-    }
+     this.$emit('disableLoading', false)
+    },
+  destroyed(){
+    return this.$emit('disableLoading', true)
+  }
 }
 </script>

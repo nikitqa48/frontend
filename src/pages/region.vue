@@ -8,7 +8,7 @@
           style="margin-top:3vh"
           active-color="primary"
           indicator-color="primary"
-          align="start"
+          align="left"
           
         >
           <q-tab name="производство"   no-caps >  <span class='tab'>Производство </span> </q-tab>
@@ -247,11 +247,19 @@
 </template>
 <script>
 export default {
+
     data(){
         return{
             tab:'производство'
         }
-    }
+        
+    },
+ mounted(){
+    return this.$emit('disableLoading', false)
+  },
+  destroyed(){
+    return this.$emit('disableLoading', true)
+  }
 }
 </script>
 <style scoped>

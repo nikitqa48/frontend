@@ -234,21 +234,38 @@
   </div>
 </template>
 <script>
+
+
 export default {
+ preFetch($route){
+   const url = `https://backendinvest.admlr.lipetsk.ru/support/detail/${$route.currentRoute.params.id}?format=json`
+   return $route.store.dispatch('support/getDetailSupport', url)
+ },
+// preFetch({router}){
+
+// console.log('деталь')
+// },
   data() {
     return {
-      support: {}
+
     };
   },
-  mounted() {
-    const url =
-      "https://backendinvest.admlr.lipetsk.ru/support/detail/" +
-      this.$route.params.id +
-      "?format=json";
-    fetch(url)
-      .then(response => response.json())
-      .then(data => (this.support = data));
-  }
+  computed:{
+    support(){
+      return this.$store.state.support.detailSupport
+
+    }
+  },
+
+  // mounted() {
+  //   const url =
+  //     "https://backendinvest.admlr.lipetsk.ru/support/detail/" +
+  //     this.$route.params.id +
+  //     "?format=json";
+  //   fetch(url)
+  //     .then(response => response.json())
+  //     .then(data => (this.support = data));
+  // }
 };
 </script>
 <style scoped>
@@ -303,7 +320,6 @@ body a {
 }
 
 .container {
-  margin-top: 2%;
   height: 92%;
   display: flex;
   flex-direction: column;

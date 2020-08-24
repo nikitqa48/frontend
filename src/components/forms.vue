@@ -4,7 +4,7 @@
       class="fixed" 
        @click="show=!show">
     <div class="img">
-      <img src="image/call.svg">
+      <img src="icons/call.svg">
     </div>
      Обратная связь
         </button>
@@ -392,10 +392,6 @@ window.open("data:application/pdf;base64, " + base64EncodedPDF);
   height:75%;
   width: 50%;
   background:rgba(0, 0, 0, .9);
-}
-    @font-face {
-  font-family: "Montserrat";
-  src: url("../assets/fonts/Montserrat/Montserrat-Regular.woff") format("woff");
 }
 *{
 

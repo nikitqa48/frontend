@@ -1,8 +1,11 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import supportData from './support'
-import contactData from './contacts'
-import newsData from './news'
+import loading from './loading'
+import lastNews from './lastNews'
+import square from './territory'
+import support from './support'
+import contacts from './conctact'
+import project from './project'
 
 Vue.use(Vuex)
 
@@ -17,13 +20,15 @@ Vue.use(Vuex)
 
 export default function (/* { ssrContext } */) {
   const Store = new Vuex.Store({
- 
     modules: {
-      supportData,
-      contactData,
-      newsData
+      loading,
+      lastNews,
+      square,
+      support,
+      contacts,
+      project
     },
-  
+
     // enable strict mode (adds overhead!)
     // for dev mode only
     strict: process.env.DEV

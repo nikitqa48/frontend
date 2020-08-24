@@ -1,8 +1,8 @@
 <template>
-    <div class="news">
+    <q-page class="news">
 
     <q-scroll-area
-      style="height:94.8vh; max-width: 100%;"
+      style="height:93vh; max-width: 100%;"
     :thumb-style="thumbStyle"
     >
 
@@ -35,10 +35,6 @@
      
         </div>
       </div>
-
-
-  
-        
          </div>
       <div class="q-pa-lg flex flex-center">
 
@@ -53,10 +49,9 @@
     >
     </q-pagination>
   </div>
-     
-    
+
     </q-scroll-area>
-    </div>
+    </q-page>
 </template>
 <style scoped>
   @media screen and (max-width: 800px) {
@@ -72,10 +67,7 @@
       font-size: 3.5vw!important;
     }
   }
-@font-face {
-  font-family: "Montserrat";
-  src: url("../assets/fonts/Montserrat/Montserrat-Regular.woff") format("woff");
-}
+
 *{
   font-family: 'Montserrat';
 }
@@ -116,7 +108,7 @@
 }
 .image2{
   border-radius: 5px;
-  height:100%;
+  height:20vh;
   position: relative;
   width:100%;
 }
@@ -213,21 +205,23 @@
 import headerVue from "../components/header.vue";
 import formsVue from "../components/forms.vue";
 export default {
+  preFetch({store}){
+  
+   return store.dispatch('lastNews/getAllNews')
+  },
     data(){
         return {
-    
-          items: 3,
-          size: 0,
-          page:1,
-                thumbStyle: {
+        items: 3,
+        size: 0,
+        page:1,
+        news:{},
+        thumbStyle: {
         right: '4px',
         borderRadius: '5px',
         backgroundColor: '#027be3',
         width: '5px',
         opacity: 0.75
       },
-          
-
         }
     },
     components:{
@@ -238,26 +232,35 @@ export default {
   
     methods:{
       getPaginationNews(){
+        
+      
+        this.$router.push({name:'news', params:{id:this.page}})
         let url = 'https://backendinvest.admlr.lipetsk.ru/all_news/'
         let paginationUrl = ''
         if(this.page != 1){
          paginationUrl = `${url}?offset=${(this.page-1)*12}`
          url = paginationUrl 
         }
-        this.$store.dispatch('paginationNews', url)
+         fetch(url)
+        .then((response) => response.json())
+        .then((data) => {
+      this.news = data})
       }
     },
 
     computed:{
-        news(){
-          return this.$store.getters.returnNews
+        allnews(){
+          return this.$store.state.lastNews.all_news
         }
     },
-    mounted(){
-
-     
-      this.$store.dispatch('getNews')
-
-    }
+    created(){
+      this.news = this.allnews
+    },
+ mounted(){
+    return this.$emit('disableLoading', false)
+  },
+  destroyed(){
+    return this.$emit('disableLoading', true)
+  }
 }
 </script>

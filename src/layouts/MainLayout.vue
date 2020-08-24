@@ -1,107 +1,81 @@
 <template>
-  <q-layout view="lHh Lpr lFf">
-    <q-header elevated>
-      <q-toolbar>
-        <q-btn
-          flat
-          dense
-          round
-          icon="menu"
-          aria-label="Menu"
-          @click="leftDrawerOpen = !leftDrawerOpen"
-        />
+<q-layout view="lhh LpR lff"> 
+  <q-header elevated>
+ <header-vue/>
+  </q-header>
+  <q-page-container>
+  
+ <router-view :visible ='visible'  @disableLoading ='visible = $event'/>
 
-        <q-toolbar-title>
-          Quasar App
-        </q-toolbar-title>
-
-        <div>Quasar v{{ $q.version }}</div>
-      </q-toolbar>
-    </q-header>
-
-    <q-drawer
-      v-model="leftDrawerOpen"
-      show-if-above
-      bordered
-      content-class="bg-grey-1"
-    >
-      <q-list>
-        <q-item-label
-          header
-          class="text-grey-8"
-        >
-          Essential Links
-        </q-item-label>
-        <EssentialLink
-          v-for="link in essentialLinks"
-          :key="link.title"
-          v-bind="link"
-        />
-      </q-list>
-    </q-drawer>
-
-    <q-page-container>
-      <router-view />
-    </q-page-container>
-  </q-layout>
+  </q-page-container>
+<forms-vue/>
+   <q-inner-loading :showing="visible" dark >
+    <q-spinner-dots color="light-blue-6" size='150px' />
+      </q-inner-loading>
+</q-layout>
 </template>
+<style scoped>
+
+</style>
 
 <script>
-import EssentialLink from 'components/EssentialLink.vue'
-
-const linksData = [
-  {
-    title: 'Docs',
-    caption: 'quasar.dev',
-    icon: 'school',
-    link: 'https://quasar.dev'
-  },
-  {
-    title: 'Github',
-    caption: 'github.com/quasarframework',
-    icon: 'code',
-    link: 'https://github.com/quasarframework'
-  },
-  {
-    title: 'Discord Chat Channel',
-    caption: 'chat.quasar.dev',
-    icon: 'chat',
-    link: 'https://chat.quasar.dev'
-  },
-  {
-    title: 'Forum',
-    caption: 'forum.quasar.dev',
-    icon: 'record_voice_over',
-    link: 'https://forum.quasar.dev'
-  },
-  {
-    title: 'Twitter',
-    caption: '@quasarframework',
-    icon: 'rss_feed',
-    link: 'https://twitter.quasar.dev'
-  },
-  {
-    title: 'Facebook',
-    caption: '@QuasarFramework',
-    icon: 'public',
-    link: 'https://facebook.quasar.dev'
-  },
-  {
-    title: 'Quasar Awesome',
-    caption: 'Community Quasar projects',
-    icon: 'favorite',
-    link: 'https://awesome.quasar.dev'
-  }
-];
-
+import headerVue from "../components/header.vue";
+import store from 'vuex'
+import formsVue from "components/forms";
+let data = false
 export default {
-  name: 'MainLayout',
-  components: { EssentialLink },
-  data () {
-    return {
-      leftDrawerOpen: false,
-      essentialLinks: linksData
-    }
-  }
+    preFetch ({store}) {
+      let news = store.dispatch('lastNews/getNews')
+      let loading = store.state.loading.loading
+    return news
+    // return new Promise(resolve => {
+    //   store.dispatch('lastNews/getNews')
+    //   resolve()
+    // }).then(() => {
+    //   Loading.hide()
+    // })
+  },
+    components:{
+        headerVue,
+        formsVue
+    },
+    data(){
+      return{
+        visible:true,
+        question:'',
+        answer: this.$store.state.loading.loading
+      }
+    },
+    computed:{
+   
+    },
+    watch:{
+      visible(){
+          // alert('ты че там меняешь собака')
+      }
+    },
+      methods: {
+        disableLoading(value){
+          this.visible= value
+        }
+  },
+    computed:{
+      loadingState: {
+        get (){
+          this.visible = this.$store.state.loading.load
+          return this.$store.state.loading.load
+        }
+      },
+    // action(){
+    //       return this.visible = store.state.loading.loading
+    //     }
+
+  },
+
 }
 </script>
+<style scoped>
+* {
+  font-family: "Montserrat";
+}
+</style>

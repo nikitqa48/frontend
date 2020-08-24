@@ -1,11 +1,11 @@
 <template>
-<div>
-<!-- <q-scroll-area
-      style="height:94.8vh; max-width: 100%;"
+<q-page class="wrapper">
+<q-scroll-area
+      style="height:93vh; max-width: 100%;"
       :thumb-style="thumbStyle"
-    > -->
+    >
     
-    <div class="wrapper">
+    <div>
 
      
     <div class="container">
@@ -22,12 +22,10 @@
           
         >
           <q-tab name="Руководство"   no-caps >  <span class='tab'> Руководство </span> </q-tab>
-          <q-tab name="Агенство"    no-caps > <span class="tab"> Агенство </span> </q-tab>
+          <q-tab name="Агентство"    no-caps > <span class="tab"> Агентство </span> </q-tab>
  
         </q-tabs>
         </div>
-       
-
         <q-tab-panels v-model="tab" >
           <q-tab-panel name="Руководство" >
                      <div class="items_wrap" v-for="item in contact.leader">
@@ -83,7 +81,7 @@
              </div>
           </q-tab-panel>
 
-          <q-tab-panel name="Агенство"  class="text-black">
+          <q-tab-panel name="Агентство"  class="text-black">
                               <div class="items_wrap" v-for="item in contact.agent">
    <div class="wrap">
     <span class = 'text'> {{item.position}}</span>
@@ -280,8 +278,8 @@
  
   </div>
     
-    <!-- </q-scroll-area> -->
-    </div>
+    </q-scroll-area>
+</q-page>
                  
 
               
@@ -367,7 +365,8 @@ body a{
 .wrapper{
   display:flex;
   margin-right: 10%;
-  padding-bottom: 5%;
+ 
+ 
   flex-direction: column;
 }
 .item_name{
@@ -505,7 +504,6 @@ margin-bottom: 0.5vh;
   margin-left: 2%;
 }
 .wrapper {
-  min-height:100vh;
   width: 100%;
     background: #3A4566;;
   display: flex;
@@ -567,10 +565,7 @@ margin-bottom: 0.5vh;
  font-weight: 600;
  letter-spacing: 0.02vw;
 }
-@font-face {
-  font-family: "Montserrat";
-  src: url("../assets/fonts/Montserrat/Montserrat-Regular.woff") format("woff");
-}
+
 *{
   font-family: 'Montserrat';
 }
@@ -616,15 +611,19 @@ margin-bottom: 0.5vh;
 
 <script>
 import headerVue from "../components/header.vue";
-import formsVue from "../components/forms.vue";
+import formsVue from "components/forms.vue";
 import {mapState, mapGetters} from 'vuex'
   export default {
-    name: 'App',
+    preFetch({store}){
+        return store.dispatch('contacts/getConctact')
+    },
     components: {
-     headerVue, formsVue
+      formsVue
     },
     data(){
       return{
+        
+        contact:{},
           thumbStyle: {
         right: '2px',
         borderRadius: '5px',
@@ -632,22 +631,24 @@ import {mapState, mapGetters} from 'vuex'
         opacity: 0.5
       },
       tab:'Руководство',
-
       
       }
     },
-      mounted(){
-       
-        this.$store.dispatch('allContactData')
-       
-      },
       computed:{
-     
-        contact(){
-          
-          return this.$store.getters.role
+        getContact(){
+          return this.contact = this.$store.state.contacts.team
         }
       },
+        created(){
+    this.contact = this.getContact
+    
+  },
+  mounted(){
+    return this.$emit('disableLoading', false)
+  },
+  destroyed(){
+    return this.$emit('disableLoading', true)
+  }
 
   }
 </script>
